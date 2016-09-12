@@ -1,5 +1,5 @@
 (function () {
-    var app=angular.module('NotePairApp',['ui-router']);
+    var app=angular.module('NotePairApp',[]);
 
     app.controller('MainController', ['$scope',function($scope){
 

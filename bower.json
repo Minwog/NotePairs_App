@@ -1,5 +1,5 @@
 {
-  "name": "NotePairsApp",
+  "name": "notepairsapp",
   "description": "An app to use gracefully and beautifully our fantastic NotePairs_API",
   "version": "0.0.0",
   "dependencies": {

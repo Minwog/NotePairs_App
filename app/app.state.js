@@ -1,3 +1,12 @@
 angular.module('NotePairApp')
 
-.config()
+.config(
+    ['$stateProvider',function ($stateProvider){
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl:'index.html',
+                controller:'MainController'
+            })
+    }]
+);
