@@ -1,9 +1,5 @@
 
-body{
-    margin-left:50px
-}
-
-/*navbar*/
+/*-----------------------------NAVBAR-------------------------------*/
 
 .nav_dty {
     border-radius: 0px;
@@ -13,3 +9,6 @@ body{
     font-family: 'Asap', sans-serif;
     font-size: large;
 }
+
+
+/*---------------------------------------------------------------------*/

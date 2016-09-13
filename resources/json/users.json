@@ -1,0 +1,37 @@
+[
+  {
+    "_id":1,
+    "username":"René",
+    "email":"rene@rene.com",
+    "password":"rene",
+    "role":"enseignant"
+  },
+  {
+    "_id":2,
+    "username":"Marc",
+    "email":"marc@marc.com",
+    "password":"marc",
+    "role":"enseignant"
+  },
+  {
+    "_id":3,
+    "username":"Jeanne",
+    "email":"jeanne@jeanne.com",
+    "password":"jeanne",
+    "role":"eleve"
+  },
+  {
+    "_id":4,
+    "username":"Sophie",
+    "email":"sophie@sophie.com",
+    "password":"sophie",
+    "role":"eleve"
+  },
+  {
+    "_id":5,
+    "username":"Admin",
+    "email":"admin@admin.com",
+    "password":"admin",
+    "role":"admin"
+  }
+]
