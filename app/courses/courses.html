@@ -1,0 +1,97 @@
+<div ng-controller="CoursesCtrl">
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Liste des cours
+                    <small>Secondary Text</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div class="row" ng-repeat="course in courses">
+            <div class="col-md-4">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/350x200" alt="">
+                </a>
+            </div>
+            <div class="col-md-8">
+                <h3><a href="views/course.html">{{course.title}}</a></h3>
+                <h4>Subheading</h4>
+                <p>{{course.description}}</p>
+                <a class="btn btn-primary" ng-href="/course">Accéder au cours<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+    <script src="courses.js"></script>
+    <script src="../services/httpq.js"></script>
+
+
+
+
+</div>
