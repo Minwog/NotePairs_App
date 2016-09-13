@@ -16,7 +16,7 @@
     "_id":2,
     "intitule":"Representation analytique des signaux et systemes",
     "bloc":2,
-    "description":"Richmond Agitation-Sedation Scale is a medical scale used to measure the agitation or sedation level of a patient. It was developed with efforts of different practitioners, represented by physicians, nurses and pharmacists."
+    "description":"Richmond Agitation-Sedation Scale is a medical scale used to measure the agitation or sedation level of a patient. It was developed with efforts of different practitioners, represented by physicians, nurses and pharmacists.",
     "enseignants":[
       1
     ],
@@ -27,8 +27,8 @@
   {
     "_id":3,
     "intitule":"Nickanal",
-    "bloc":2:,
-    "description":"Chef de projet - Mission de la Pédagogie et du Numérique pour l'Enseignement Supérieur"
+    "bloc":2,
+    "description":"Chef de projet - Mission de la Pédagogie et du Numérique pour l'Enseignement Supérieur",
     "enseignants":[
       2
     ],
@@ -40,7 +40,7 @@
     "_id":4,
     "intitule":"Fondements de l'informatique",
     "bloc":2,
-    "description":"Robert Vesoul"
+    "description":"Robert Vesoul",
     "enseignants":[
       2
     ],
