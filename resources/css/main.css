@@ -1,0 +1,15 @@
+
+body{
+    margin-left:50px
+}
+
+/*navbar*/
+
+.nav_dty {
+    border-radius: 0px;
+    text-decoration-color: white;
+    padding-top:10px;
+    padding-bottom: 10px;
+    font-family: 'Asap', sans-serif;
+    font-size: large;
+}
