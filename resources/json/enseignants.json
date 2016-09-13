@@ -1,0 +1,14 @@
+[
+  {
+    "_id":1,
+    "nom":"Gerard",
+    "prenom":"Marc",
+    "cours":[1,2]
+  },
+  {
+    "_id":2,
+    "nom":"Declerc",
+    "prenom":"René",
+    "cours":[3,4]
+  }
+]
