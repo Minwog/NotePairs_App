@@ -14,10 +14,6 @@ app.get('/', function(req, res) {
     res.sendfile('index.html');
 });
 
-app.get('/admin',function (req,res) {
-    res.sendfile('app/Admin/pages/index.html')
-});
-
 
 
 app.listen('3000',function () {
