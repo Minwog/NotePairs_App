@@ -1,5 +1,5 @@
 (function () {
-    var app=angular.module('NotePairApp',[]);
+    var app=angular.module('NotePairApp',['ngResource']);
 
     app.controller('MainController', ['$scope',function($scope){
 
