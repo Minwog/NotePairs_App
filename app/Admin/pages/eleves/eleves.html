@@ -14,48 +14,40 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                        <thead>
-                        <tr>
+                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">                        <thead>
+                        <tr class="">
                             <th>Nom</th>
                             <th>Prenom</th>
-                            <th>username</th>
-                            <th>Mail</th>
-                            <th>Statut</th>
-                            <th>eleves_id</th>
-                            <th>user_id</th>
-                            <th>Groupes</th>
-                            <th>Cours</th>
-
+                            <th class="hidden-sm hidden-xs">username</th>
+                            <th class="hidden-xs">Mail</th>
+                            <th class="hidden-md hidden-sm hidden-xs">eleves_id</th>
+                            <th class="hidden-md hidden-sm hidden-xs">user_id</th>
+                            <th class="hidden-sm hidden-xs">Groupes</th>
+                            <th class="hidden-sm hidden-xs">Cours</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr class="infos" ng-repeat="eleve in ElevesList | orderBy:'Nom'" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>{{eleve.Nom}}</td>
                             <td>{{eleve.Prenom}}</td>
-                            <td>{{eleve.username}}</td>
-                            <td>{{eleve.Mail}}</td>
-                            <td>{{eleve.role}}</td>
-                            <td>{{eleve.eleves_id}}</td>
-                            <td>{{eleve.user_id}}</td>
-                            <td>{{eleve.Groupes}}</td>
-                            <td>{{eleve.cours}}</td>
-                        </tr>
-
-                        <tr class="gradeA">
-                            <td>Noemie</td>
-                            <td>NetFront 3.1</td>
-                            <td>Embedded devices</td>
-                            <td class="center">-</td>
-                            <td class="center">
-                                <button type="button" class="btn btn-success btn-circle"><i class="fa fa-plus"></i>
+                            <td class="hidden-sm hidden-xs">{{eleve.username}}</td>
+                            <td class="hidden-xs">{{eleve.email}}</td>
+                            <td class="hidden-md hidden-sm hidden-xs">{{eleve.eleves_id}}</td>
+                            <td class="hidden-md hidden-sm hidden-xs">{{eleve.user_id}}</td>
+                            <td class="hidden-sm hidden-xs">{{eleve.Groupes}}</td>
+                            <td class="hidden-sm hidden-xs">{{eleve.cours}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-circle-micro"><i class="fa fa-plus"></i>
                                 </button>
-                                <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-list"></i>
+                                <button type="button" class="btn btn-primary btn-circle-micro"><i class="fa fa-list"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-danger btn-circle-micro"><i class="fa fa-times"></i>
                                 </button>
                             </td>
                         </tr>
+
+
 
                         </tbody>
                     </table>

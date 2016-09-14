@@ -29,5 +29,69 @@
     "cours":[
       1,4,3
     ]
+  },
+
+  {
+    "eleves_id":1,
+    "user_id":4,
+    "Prenom": "Sophie",
+    "Nom": "Miramal",
+    "email":"sophie@sophie.com",
+    "role":"eleve",
+    "username":"Sophieakjfbsd",
+    "Groupes":[
+      2
+    ],
+    "cours":[
+      2,3
+    ]
+  },
+
+  {
+    "eleves_id":2,
+    "user_id":3,
+    "Prenom": "Jeanne",
+    "username":"Jeanne",
+    "email":"jeanne@jeanne.com",
+    "Nom": "Sobet",
+    "role":"eleve",
+    "Groupes":[
+      2
+    ],
+    "cours":[
+      1,4,3
+    ]
+  },
+
+  {
+    "eleves_id":1,
+    "user_id":4,
+    "Prenom": "Sophie",
+    "Nom": "Miramal",
+    "email":"sophie@sophie.com",
+    "role":"eleve",
+    "username":"Sophieakjfbsd",
+    "Groupes":[
+      2
+    ],
+    "cours":[
+      2,3
+    ]
+  },
+
+  {
+    "eleves_id":2,
+    "user_id":3,
+    "Prenom": "Jeanne",
+    "username":"Jeanne",
+    "email":"jeanne@jeanne.com",
+    "Nom": "Sobet",
+    "role":"eleve",
+    "Groupes":[
+      2
+    ],
+    "cours":[
+      1,4,3
+    ]
   }
 ]
