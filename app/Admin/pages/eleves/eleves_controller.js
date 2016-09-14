@@ -29,7 +29,9 @@ angular.module('NotePairApp')
         $scope.Eleve=ElevesService.get({id:$stateParams.id});
     };
 //--- Methode get pour afficher un Eleve à partir de son id ---//
-    $scope.getAllEleve
+    $scope.getAllEleves=function () {
+        $scope.ElevesList= ElevesService.query();
+    }
 
 //--- Methode delete pour supprimer un Eleve à partir de son id ---//
     $scope.deleteEleve=function() {
