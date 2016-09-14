@@ -5,7 +5,9 @@ angular.module('NotePairApp')
             method:'PUT'
         }
     });
-}).service('alerteService',function ($window) {
+    }])
+
+    .service('alerteService',['$window',function ($window) {
     this.showPopup = function (message) {
         return $window.confirm(message);
     }
