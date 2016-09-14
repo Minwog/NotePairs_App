@@ -5,32 +5,41 @@
     <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- MetisMenu CSS -->
+    <link href="/app/bower_components/metisMenu/dist/metisMenu.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/app/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+
+    <!-- Custom Fonts -->
+    <link href="/app/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
     <!--------------------------------- SCRIPTS ---------------------------------------------->
     <script src="app/bower_components/jquery/dist/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-    <script src="app/services/api.js"></script>
-    <script src="app/app.js"></script>
+    <script src="app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/app/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/app/Admin/dist/js/sb-admin-2.js"></script>
+
+
+    <!--------------------------------- SERVICES------------------------------------------------>
+    <script src="app/app.js"></script>
+    <script src="app/services/api.js"></script>
+    <script src="app/app_state.js"></script>
+    <script src="app/Admin/pages/admin_state.js"></script>
     <script src="app/navbar/navbar.directive.js"></script>
 
 </head>
 <body>
 
-<navbar></navbar>
-<h1>Welcome to NotePairs_app, an app which would be better to get renamed.</h1>
-<p> In this app, you will use our API to create evaluations if you're a teacher, and, if you're on the contrary, a student, you'll return them. </p>
+<div ui-view="layout"></div>
 
-<p> What's the biggest change ? You will correct your colleagues' handouts. </p>
-
-
-
-<a href="app/course/course.html">course.html</a><br>
-<a href="app/courses/courses.html">courses.html</a>
-
-
-
-<h3 align="center"> WOW ! HOW AMAZING !</h3>
 <footer>
     <hr>
     Ceci n'est pas un footer
