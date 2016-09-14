@@ -1,5 +1,5 @@
 angular.module('NotePairApp')
-    .factory('EnseignantsService', function($resource) {
+    .factory('EnseignantsService', ['$resource',function($resource) {
         return $resource('/resources/json/enseignants.json',{},{
             update: {
                 method:'PUT'
@@ -9,4 +9,4 @@ angular.module('NotePairApp')
     this.showPopup = function (message) {
         return $window.confirm(message);
     }
-});
+}]);
