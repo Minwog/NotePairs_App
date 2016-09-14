@@ -5,8 +5,14 @@ angular.module('NotePairApp')
         return $resource('/resources/json/enseignants.json',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
-                method: 'GET'
-                },
+                method: 'GET',
+                transformResponse: function (data) {
+                    if (data) {
+                        data = angular.fromJson(data);
+                    }
+                    return data;
+                }
+            },
             'update': {method: 'PUT'}
         });
     }])

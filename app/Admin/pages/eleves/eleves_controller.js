@@ -15,7 +15,7 @@ angular.module('NotePairApp')
 
 
 //--- Methode update pour modifier un Eleve à partir de son id ---//
-    $scope.Eleve=ElevesService.get({id:$stateParams.id});
+    $scope.Eleve=ElevesService.query({id:$stateParams.id});
 
     $scope.updateEleves=function(){
         $scope.Eleve.$update(function(){
@@ -26,7 +26,7 @@ angular.module('NotePairApp')
 
 //--- Methode get pour afficher un Eleve à partir de son id ---//
     $scope.getEleve=function(){
-        $scope.Eleve=ElevesService.get({id:$stateParams.id});
+        $scope.Eleve=ElevesService.query({id:$stateParams.id});
     };
 //--- Methode get pour afficher un Eleve à partir de son id ---//
     $scope.getAllEleves=function () {
@@ -35,7 +35,7 @@ angular.module('NotePairApp')
 
 //--- Methode delete pour supprimer un Eleve à partir de son id ---//
     $scope.deleteEleve=function() {
-        $scope.Eleve = ElevesService.get({id: $stateParams.id});
+        $scope.Eleve = ElevesService.query({id: $stateParams.id});
         if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Eleve ?')){
             Eleve.$delete();
         }

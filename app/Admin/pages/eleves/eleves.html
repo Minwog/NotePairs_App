@@ -30,7 +30,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="infos" ng-repeat="eleve in eleves | orderBy:'Nom'" ng-class-odd="'odd'" ng-class-even="'even'">
+                        <tr class="infos" ng-repeat="eleve in ElevesList | orderBy:'Nom'" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>{{eleve.Nom}}</td>
                             <td>{{eleve.Prenom}}</td>
                             <td>{{eleve.username}}</td>

@@ -8,24 +8,24 @@ angular.module('NotePairApp')
             $scope.Enseignant=new EnseignantsService();
             $scope.Enseignant.$save(function(){
                 //retourner à la liste d'élèves
-                $state.go('Enseignant');
+
             })
         };
 
 
 //--- Methode update pour modifier un Enseignant à partir de son id ---//
-        $scope.Enseignant=EnseignantsService.get({id:$stateParams.id});
+        $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
 
         $scope.updateEnseignant=function(){
             $scope.Enseignant.$update(function(){
                 //retourner à la liste d'Enseignants
-                $state.go('Enseignant');
+
             });
         };
 
 //--- Methode get pour afficher un Enseignant à partir de son id ---//
         $scope.getEnseignant=function(){
-            $scope.Enseignant=EnseignantsService.get({id:$stateParams.id});
+            $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
         };
 //--- Methode get pour afficher un Enseignant à partir de son id ---//
         $scope.getAllEnseignants=function () {
@@ -34,7 +34,7 @@ angular.module('NotePairApp')
 
 //--- Methode delete pour supprimer un Enseignant à partir de son id ---//
         $scope.deleteEnseignant=function() {
-            $scope.Enseignant = EnseignantsService.get({id: $stateParams.id});
+            $scope.Enseignant = EnseignantsService.query({id: $stateParams.id});
             if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Enseignant ?')){
                 Enseignant.$delete();
             }
