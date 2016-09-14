@@ -1,8 +1,12 @@
 [
   {
-    "_id":1,
-    "Prénom": "Sophie",
+    "eleves_id":1,
+    "user_id":4,
+    "Prenom": "Sophie",
     "Nom": "Miramal",
+    "email":"sophie@sophie.com",
+    "role":"eleve",
+    "username":"Sophieakjfbsd",
     "Groupes":[
       2
     ],
@@ -12,9 +16,13 @@
   },
 
   {
-    "_id":2,
-    "Prénom": "Jeanne",
+    "eleves_id":2,
+    "user_id":3,
+    "Prenom": "Jeanne",
+    "username":"Jeanne",
+    "email":"jeanne@jeanne.com",
     "Nom": "Sobet",
+    "role":"eleve",
     "Groupes":[
       2
     ],
