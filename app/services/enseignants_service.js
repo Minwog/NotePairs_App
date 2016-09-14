@@ -3,9 +3,11 @@
 angular.module('NotePairApp')
     .factory('EnseignantsService', ['$resource',function($resource) {
         return $resource('/resources/json/enseignants.json',{},{
-            update: {
-                method:'PUT'
-            }
+            'query': {method: 'GET', isArray: true},
+            'get': {
+                method: 'GET'
+                },
+            'update': {method: 'PUT'}
         });
     }])
 

@@ -1,9 +1,11 @@
 angular.module('NotePairApp')
     .factory('ElevesService', ['$resource',function($resource) {
     return $resource('/resources/json/eleves.json',{},{
-        update: {
-            method:'PUT'
-        }
+        'query': {method: 'GET', isArray: true},
+        'get': {
+            method: 'GET'
+        },
+        'update': {method: 'PUT'}
     });
     }])
 
