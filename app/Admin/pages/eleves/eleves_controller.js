@@ -1,7 +1,10 @@
 
-angular.module('NotePairApp').controller('ElevesController',function ($scope,$state,$stateParams,ElevesService) {
-    $scope.ElevesList = ElevesService.query();
+angular.module('NotePairApp')
+    .controller('ElevesController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService', function ($scope,$state,$stateParams, alerteService, ElevesService) {
 
+        $scope.ElevesList = ElevesService.query();
+
+//--- Methode add pour ajouter un Eleve à la liste ---//
     $scope.addEleve=function(){
         $scope.Eleve=new ElevesService();
         $scope.Eleve.$save(function(){
@@ -25,8 +28,14 @@ angular.module('NotePairApp').controller('ElevesController',function ($scope,$st
     $scope.getEleve=function(){
         $scope.Eleve=ElevesService.get({id:$stateParams.id});
     };
+//--- Methode get pour afficher un Eleve à partir de son id ---//
+    $scope.getAllEleve
 
-    $scope.getEleve();
-});
-
-    $scope.Eleve = ElevesService.get({})
+//--- Methode delete pour supprimer un Eleve à partir de son id ---//
+    $scope.deleteEleve=function() {
+        $scope.Eleve = ElevesService.get({id: $stateParams.id});
+        if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Eleve ?')){
+            Eleve.$delete();
+        }
+    }
+}]);
