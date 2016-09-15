@@ -11,7 +11,8 @@
       2
     ],
     "cours":[
-      2,3
+      "Representation analytique des signaux et systemes",
+      "Elétronique analogique"
     ]
   },
 
@@ -27,7 +28,9 @@
       2
     ],
     "cours":[
-      1,4,3
+      "Enconomie d'entreprise",
+      "Representation analytique des signaux et systemes",
+      "Elétronique analogique"
     ]
   },
 
@@ -43,7 +46,8 @@
       2
     ],
     "cours":[
-      2,3
+      "Representation analytique des signaux et systemes",
+      "Elétronique analogique"
     ]
   },
 
@@ -59,7 +63,9 @@
       2
     ],
     "cours":[
-      1,4,3
+      "Enconomie d'entreprise",
+      "Fondements de l'informatique",
+      "Elétronique analogique"
     ]
   },
 
@@ -75,7 +81,8 @@
       2
     ],
     "cours":[
-      2,3
+      "Representation analytique des signaux et systemes",
+      "Elétronique analogique"
     ]
   },
 
@@ -91,7 +98,9 @@
       2
     ],
     "cours":[
-      1,4,3
+      "Enconomie d'entreprise",
+      "Fondements de l'informatique",
+      "Elétronique analogique"
     ]
   }
 ]
