@@ -20,7 +20,11 @@ angular.module('NotePairApp')
 
  //---- Control de la page
 
-        $scope.add=function () {
+        $scope.goToAdd=function () {
             $state.go('admin.students.add')
+        }
+
+        $scope.goToUpdate=function () {
+            $state.go('admin.students.update')
         }
 }]);

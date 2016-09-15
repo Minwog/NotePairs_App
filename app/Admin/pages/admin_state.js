@@ -52,11 +52,30 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants.html',
-                                controller:'EnseignantController'
-                    }
-                }
+                                controller:'EnseignantsController'
+                             }
+                         }
                     })
-
+                    .state('admin.enseignants.add',{
+                        parent:'admin',
+                        url:'/enseignant/new',
+                        views:{
+                            'content':{
+                                templateUrl:'app/Admin/pages/enseignants/enseignants_add.html',
+                                controller:'EnseignantsController'
+                            }
+                        }
+                    })
+                    .state('admin.enseignants.update',{
+                        parent:'admin',
+                        url:'/enseignant/:id',
+                        views:{
+                            'content':{
+                                templateUrl:'app/Admin/pages/enseignants/enseignants_update.html',
+                                controller:'EnseignantsController'
+                            }
+                        }
+                    })
                     .state('admin.cours',{
                         parent:'admin',
                         url:'/cours',

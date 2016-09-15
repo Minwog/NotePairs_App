@@ -1,5 +1,5 @@
 angular.module('NotePairApp')
-    .controller('EnseignantController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService', function ($scope,$state,$stateParams, alerteService, EnseignantsService) {
+    .controller('EnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService', function ($scope,$state,$stateParams, alerteService, EnseignantsService) {
 
         $scope.EnseignantsList = EnseignantsService.query();
 
@@ -30,7 +30,7 @@ angular.module('NotePairApp')
 //--- Methode get pour afficher un Enseignant à partir de son id ---//
         $scope.getAllEnseignants=function () {
             $scope.EnseignantsList= EnseignantsService.query();
-        }
+        };
 
 //--- Methode delete pour supprimer un Enseignant à partir de son id ---//
         $scope.deleteEnseignant=function() {
@@ -38,5 +38,13 @@ angular.module('NotePairApp')
             if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Enseignant ?')){
                 Enseignant.$delete();
             }
-        }
+        };
+
+        $scope.goToAdd=function () {
+            $state.go('admin.enseignants.add')
+        };
+
+        $scope.goToUpdate=function () {
+            $state.go('admin.enseignants.update')
+        };
     }]);

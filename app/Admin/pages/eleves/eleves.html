@@ -1,4 +1,4 @@
-<div id="page-wrapper" ng-controller="ElevesController">
+<div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Tables</h1>
@@ -63,7 +63,7 @@
                                 </div>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-circle-micro"><i class="fa fa-list"></i>
+                                <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate()"><i class="fa fa-list"></i>
                                 </button>
                                 <button type="button" class="btn btn-danger btn-circle-micro"><i class="fa fa-times"></i>
                                 </button>
@@ -85,7 +85,7 @@
                         </tbody>
                     </table>
                     <!-- /.table-responsive -->
-                    <button class="btn btn-primary pull-right" ng-click="add()">Ajouter un étudiant</button>
+                    <button class="btn btn-primary pull-right" ng-click="goToAdd()">Ajouter un étudiant</button>
                 </div>
                 <!-- /.panel-body -->
             </div>
