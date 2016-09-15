@@ -19,26 +19,32 @@
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th class="hidden-sm hidden-xs">username</th>
-                            <th class="hidden-xs">Mail</th>
-                            <th class="hidden-md hidden-sm hidden-xs">eleves_id</th>
-                            <th class="hidden-md hidden-sm hidden-xs">user_id</th>
+                            <th class="hidden-md hidden-sm hidden-xs">Mail</th>
                             <th class="hidden-sm hidden-xs">Groupes</th>
                             <th class="hidden-sm hidden-xs">Cours</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
+
                         <tr class="infos" ng-repeat="eleve in ElevesList | orderBy:'Nom'" ng-class-odd="'odd'" ng-class-even="'even'">
-                            <td>{{eleve.Nom}}</td>
+                            <td class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span> {{eleve.Nom}}</a>
+                                <ul class="dropdown-menu">
+                                    <li class="hidden-xl hidden-lg hidden-md"><a href="#">username: {{eleve.username}}</a></li>
+                                    <li class="hidden-xl hidden-lg"><a href="#">email: {{eleve.email}}</a></li>
+                                    <li class=""><a href="#">eleve_id: {{eleve.eleves_id}}</a></li>
+                                    <li class=""><a href="#">user_id: {{eleve.user_id}}</a></li>
+                                </ul>
+                            </td>
                             <td>{{eleve.Prenom}}</td>
                             <td class="hidden-sm hidden-xs">{{eleve.username}}</td>
-                            <td class="hidden-xs">{{eleve.email}}</td>
-                            <td class="hidden-md hidden-sm hidden-xs">{{eleve.eleves_id}}</td>
-                            <td class="hidden-md hidden-sm hidden-xs">{{eleve.user_id}}</td>
+                            <td class="hidden-md hidden-sm hidden-xs">{{eleve.email}}</td>
                             <td class="hidden-sm hidden-xs">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Liste des groupes
+                                        <span class="hidden-md">Liste des groupes</span>
+                                        <span class="hidden-xl hidden-lg">Liste</span>
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
@@ -48,11 +54,12 @@
                             </td>
                             <td class="hidden-sm hidden-xs">
                                 <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Liste des cours
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span class="hidden-md">Liste des cours</span>
+                                        <span class="hidden-xl hidden-lg">Liste</span>
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                                         <li ng-repeat="c in eleve.cours"><a href="#">{{c}}</a></li>
                                     </ul>
                                 </div>
