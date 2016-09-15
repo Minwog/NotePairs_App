@@ -19,4 +19,8 @@ angular.module('NotePairApp')
     this.showPopup = function (message) {
         return $window.confirm(message);
     }
-}]);
+}])
+
+    // le service pour aller chercher les données en mode démo dans le localstorage
+
+
