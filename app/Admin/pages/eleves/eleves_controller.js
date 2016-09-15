@@ -12,11 +12,12 @@ angular.module('NotePairApp')
             $state.go('Eleves');
         })
     };
-
+        //--- Methode get pour afficher un Eleve à partir de son id ---//
+        $scope.getAllEleves=function () {
+            $scope.ElevesList= ElevesService.query();
+        };
 
 //--- Methode update pour modifier un Eleve à partir de son id ---//
-    $scope.Eleve=ElevesService.query({id:$stateParams.id});
-
     $scope.updateEleves=function(){
         $scope.Eleve.$update(function(){
             //retourner à la liste d'élèves
@@ -28,10 +29,6 @@ angular.module('NotePairApp')
     $scope.getEleve=function(){
         $scope.Eleve=ElevesService.query({id:$stateParams.id});
     };
-//--- Methode get pour afficher un Eleve à partir de son id ---//
-    $scope.getAllEleves=function () {
-        $scope.ElevesList= ElevesService.query();
-    }
 
 //--- Methode delete pour supprimer un Eleve à partir de son id ---//
     $scope.deleteEleve=function() {
@@ -39,7 +36,8 @@ angular.module('NotePairApp')
         if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Eleve ?')){
             Eleve.$delete();
         }
-    }
+    };
+
  //---- Control de la page
 
         $scope.add=function () {
