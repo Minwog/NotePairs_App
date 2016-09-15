@@ -40,4 +40,9 @@ angular.module('NotePairApp')
             Eleve.$delete();
         }
     }
+ //---- Control de la page
+
+        $scope.add=function () {
+            $state.go('admin.students.add')
+        }
 }]);

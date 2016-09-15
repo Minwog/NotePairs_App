@@ -25,6 +25,15 @@
                             }
                         }
                     })
+                    .state('admin.students.add',{
+                        parent:'admin',
+                        url:'/students/new',
+                        views:{
+                            'content':{
+                                templateUrl:'app/Admin/pages/eleves/eleves_add.html'
+                            }
+                        }
+                    })
 
                     .state('admin.enseignants',{
                         parent:'admin',
