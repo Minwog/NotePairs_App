@@ -31,7 +31,7 @@
                         url:'/enseignant',
                         views:{
                             'content':{
-                                templateUrl:'app/Admin/pages/eleves/eleves.html',
+                                templateUrl:'app/Admin/pages/enseignants/enseignants.html',
                                 controller:'EnseignantController'
                     }
                 }
@@ -42,7 +42,7 @@
                         url:'/cours',
                         views:{
                             'content':{
-                                templateUrl:"app/Admin/pages/eleves/eleves.html"
+                                templateUrl:"app/Admin/pages/cours/cours.html"
                             }
                         }
                     })
