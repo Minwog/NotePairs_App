@@ -1,14 +1,92 @@
 [
   {
-    "_id":1,
-    "nom":"Gerard",
-    "prenom":"Marc",
-    "cours":[1,2]
+    "enseignants_id":1,
+    "user_id":4,
+    "Prenom": "Sophie",
+    "Nom": "Miramal",
+    "email":"sophie@sophie.com",
+    "role":"enseignants",
+    "username":"Sophieakjfbsd",
+    "cours":[
+      2,3
+    ]
   },
+
   {
-    "_id":2,
-    "nom":"Declerc",
-    "prenom":"René",
-    "cours":[3,4]
+    "enseignants_id":2,
+    "user_id":3,
+    "Prenom": "Jeanne",
+    "username":"Jeanne",
+    "email":"jeanne@jeanne.com",
+    "Nom": "Sobet",
+    "role":"enseignants",
+    "cours":[
+      1,4,3
+    ]
+  },
+
+  {
+    "enseignants_id":3,
+    "user_id":6,
+    "Prenom": "Jeannette",
+    "username":"Jeannezaet",
+    "email":"jeanne@jeasdfgnne.com",
+    "Nom": "Lagrosse",
+    "role":"enseignants",
+    "cours":[
+      1,4,3
+    ]
+  },
+
+  {
+    "enseignants_id":4,
+    "user_id":7,
+    "Prenom": "Marie",
+    "username":"sdg",
+    "email":"Marie@sdf.com",
+    "Nom": "Blabla",
+    "role":"enseignants",
+    "cours":[
+      1,4,3
+    ]
+  },
+
+  {
+    "enseignants_id":5,
+    "user_id":8,
+    "Prenom": "Jeassssssnne",
+    "username":"Jeaddddnne",
+    "email":"jeanne@jeanne.com",
+    "Nom": "Sobet",
+    "role":"enseignants",
+    "cours":[
+      1,4,3
+    ]
+  },
+
+  {
+    "enseignants_id":6,
+    "user_id":9,
+    "Prenom": "Jeanne",
+    "username":"Jefsanne",
+    "email":"jeanne@jeanne.com",
+    "Nom": "Sobet",
+    "role":"enseignants",
+    "cours":[
+      1,4,3
+    ]
+  },
+
+  {
+    "enseignants_id":7,
+    "user_id":10,
+    "Prenom": "Jeanne",
+    "username":"Jeanne",
+    "email":"jeanne@jeanne.com",
+    "Nom": "Sobet",
+    "role":"enseignants",
+    "cours":[
+      1,4,3
+    ]
   }
 ]
