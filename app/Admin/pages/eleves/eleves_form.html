@@ -1,28 +1,34 @@
 <div class="form-group">
-    <label for="title" class="col-sm-2 control-label">Title</label>
+    <label for="nom" class="col-sm-2 control-label">Nom</label>
     <div class="col-sm-10">
-        <input type="text" ng-model="movie.title" class="form-control" id="title" placeholder="Movie Title Here"/>
+        <input type="text" ng-model="Eleve.Nom" class="form-control" id="nom" placeholder="Nom"/>
     </div>
 </div>
 <div class="form-group">
-    <label for="year" class="col-sm-2 control-label">Release Year</label>
+    <label for="prenom" class="col-sm-2 control-label">Prenom</label>
     <div class="col-sm-10">
-        <input type="text" ng-model="movie.releaseYear" class="form-control" id="year" placeholder="When was the movie released?"/>
-    </div>
-</div>
-<div class="form-group">
-    <label for="director" class="col-sm-2 control-label">Director</label>
-    <div class="col-sm-10">
-        <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?"/>
+        <input type="text" ng-model="Eleve.Prenom" class="form-control" id="prenom" placeholder="Prenom"/>
     </div>
 </div>
 
 <div class="form-group">
-    <label for="plot" class="col-sm-2 control-label">Movie Genre</label>
+    <label for="email" class="col-sm-2 control-label">Adresse Mail</label>
     <div class="col-sm-10">
-        <input type="text" ng-model="movie.genre" class="form-control" id="plot" placeholder="Movie genre here"/>
+        <input type="text" ng-model="Eleve.email" class="form-control" id="email" placeholder="email"/>
     </div>
 </div>
+<div class="form-group">
+    <label for="username" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="Eleve.username" class="form-control" id="username" placeholder="username"/>
+    </div>
+</div>
+
+<!-- Ajouter Menu déroulant pour associer l'élève à un ou DES cours -->
+
+<!-- Ajouter Menu déroulant pour associer l'élève à un ou DES groupes -->
+
+
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
