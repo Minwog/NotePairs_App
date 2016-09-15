@@ -4,26 +4,6 @@ angular.module('NotePairApp')
 
         $scope.ElevesList = ElevesService.query();
 
-//--- Methode add pour ajouter un Eleve à la liste ---//
-    $scope.addEleve=function(){
-        $scope.Eleve=new ElevesService();
-        $scope.Eleve.$save(function(){
-            //retourner à la liste d'élèves
-            $state.go('Eleves');
-        })
-    };
-        //--- Methode get pour afficher un Eleve à partir de son id ---//
-        $scope.getAllEleves=function () {
-            $scope.ElevesList= ElevesService.query();
-        };
-
-//--- Methode update pour modifier un Eleve à partir de son id ---//
-    $scope.updateEleves=function(){
-        $scope.Eleve.$update(function(){
-            //retourner à la liste d'élèves
-            $state.go('Eleves');
-        });
-    };
 
 //--- Methode get pour afficher un Eleve à partir de son id ---//
     $scope.getEleve=function(){

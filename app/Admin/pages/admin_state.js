@@ -30,7 +30,18 @@
                         url:'/students/new',
                         views:{
                             'content':{
-                                templateUrl:'app/Admin/pages/eleves/eleves_add.html'
+                                templateUrl:'app/Admin/pages/eleves/eleves_add.html',
+                                controller:'AddEleveController'
+                            }
+                        }
+                    })
+                    .state('admin.students.update',{
+                        parent:'admin',
+                        url:'/students/:id',
+                        views:{
+                            'content':{
+                                templateUrl:'app/Admin/pages/eleves/eleve_update.html',
+                                controller:'UpdateEleveController'
                             }
                         }
                     })
