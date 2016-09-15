@@ -15,11 +15,12 @@ angular.module('NotePairApp')
 
 //--- Methode update pour modifier un Enseignant à partir de son id ---//
         $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
+        console.log("dans ens Ctrl")
 
         $scope.updateEnseignant=function(){
+            console.log("dans updateEnseignant")
             $scope.Enseignant.$update(function(){
-                //retourner à la liste d'Enseignants
-
+                console.log("dans la function update")
             });
         };
 
@@ -44,7 +45,7 @@ angular.module('NotePairApp')
             $state.go('admin.enseignants.add')
         };
 
-        $scope.goToUpdate=function () {
-            $state.go('admin.enseignants.update')
+        $scope.goToUpdate=function (_id) {
+            $state.go('admin.enseignants.update',{id:_id})
         };
     }]);
