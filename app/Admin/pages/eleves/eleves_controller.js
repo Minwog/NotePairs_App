@@ -20,7 +20,8 @@ var ok=false;
         'Nom':'',
         'Prenom':'',
         'email':'',
-        'username':''};
+        'username':''
+        };
 
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addEleve = function () {
@@ -33,10 +34,8 @@ var ok=false;
         $scope.Eleve = ElevesService.query({id: $stateParams.id});
 
         $scope.updateEleves = function () {
-            $scope.Eleve.$update(function () {
-                //retourner à la liste d'élèves
+
                 $state.go('admin.students');
-            });
         };
 
 
@@ -62,4 +61,8 @@ var ok=false;
         $scope.goToUpdate=function () {
             $state.go('admin.students.update')
         };
+
+        //----------- fonctions utiles de recherche ( démo/localstorage)
+
+
 }]);
