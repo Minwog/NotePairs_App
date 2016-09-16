@@ -1,4 +1,4 @@
-<div id="page-wrapper" >
+<div id="page-wrapper" ng-controller="CoursController">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Cours</h1>
@@ -80,7 +80,7 @@
 
                             <td>{{cours.intitule}}</td>
                             <td class="hidden-sm hidden-xs">{{cours.section}}</td>
-                            <td class="hidden-sm hidden-xs">{{cours.refernece}}</td>
+                            <td class="hidden-sm hidden-xs">{{cours.reference}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -100,7 +100,7 @@
                                 </button>
                             </td>
                         </tr>
-                        <tr ng-if="eleve.expanded" ng-repeat-end="">
+                        <tr ng-if="cours.expanded" ng-repeat-end="">
                             <td></td>
                             <td colspan="99">
                                 <p class=""><a href="">description: {{cours.description}}</a></p>
@@ -131,7 +131,7 @@
                         </ul>
                     </nav>
                     <!-- /.table-responsive -->
-                    <button class="btn btn-primary pull-right" ng-click="goToAdd()">Ajouter un étudiant</button>
+                    <button class="btn btn-primary pull-right" ng-click="goToAdd()">Ajouter un cours</button>
                 </div>
                 <!-- /.panel-body -->
             </div>

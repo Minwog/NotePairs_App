@@ -1,7 +1,8 @@
 'use strict';
 
 
-app.factory('httpq', function($http, $q){
+angular.module('NotePairApp')
+    .factory('httpq', function($http, $q){
     return {
         get: function() {
             var deferred = $q.defer();
