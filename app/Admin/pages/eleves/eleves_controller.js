@@ -12,6 +12,7 @@ angular.module('NotePairApp')
     }
 
     $scope.ElevesList=localStorage.getItem('ElevesList');
+        console.log($scope.ElevesList)
 
 
         $scope.newEleve={
