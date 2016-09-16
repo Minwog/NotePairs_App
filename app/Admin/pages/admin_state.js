@@ -5,6 +5,7 @@
             ['$stateProvider', function ($stateProvider) {
                 $stateProvider.state('admin', {
                     url:'/admin',
+                    controller:'adminController',
                     views:{
                         'layout':{
                             templateUrl:'app/Admin/pages/admin.html'
@@ -52,17 +53,47 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants.html',
-                                controller:'EnseignantController'
-                    }
-                }
+                                controller:'EnseignantsController'
+                             }
+                         }
                     })
-
+                    .state('admin.enseignants.add',{
+                        parent:'admin',
+                        url:'/enseignant/new',
+                        views:{
+                            'content':{
+                                templateUrl:'app/Admin/pages/enseignants/enseignants_add.html',
+                                controller:'EnseignantsController'
+                            }
+                        }
+                    })
+                    .state('admin.enseignants.update',{
+                        parent:'admin',
+                        url:'/enseignant/:id',
+                        views:{
+                            'content':{
+                                templateUrl:'app/Admin/pages/enseignants/enseignants_update.html',
+                                controller:'EnseignantsController'
+                            }
+                        }
+                    })
                     .state('admin.cours',{
                         parent:'admin',
                         url:'/cours',
                         views:{
                             'content':{
                                 templateUrl:"app/Admin/pages/cours/cours.html"
+                            }
+                        }
+                    })
+
+                    .state('admin.groupes',{
+                        parent:'admin',
+                        url:'/groupes',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/groupe/groupes.html",
+                                controller:'GroupesController'
                             }
                         }
                     })

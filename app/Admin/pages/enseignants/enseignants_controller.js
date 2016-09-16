@@ -1,5 +1,5 @@
 angular.module('NotePairApp')
-    .controller('EnseignantController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService', function ($scope,$state,$stateParams, alerteService, EnseignantsService) {
+    .controller('EnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService', function ($scope,$state,$stateParams, alerteService, EnseignantsService) {
 
         $scope.EnseignantsList = EnseignantsService.query();
 
@@ -15,11 +15,12 @@ angular.module('NotePairApp')
 
 //--- Methode update pour modifier un Enseignant à partir de son id ---//
         $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
+        console.log("dans ens Ctrl")
 
         $scope.updateEnseignant=function(){
+            console.log("dans updateEnseignant")
             $scope.Enseignant.$update(function(){
-                //retourner à la liste d'Enseignants
-
+                console.log("dans la function update")
             });
         };
 
@@ -30,7 +31,7 @@ angular.module('NotePairApp')
 //--- Methode get pour afficher un Enseignant à partir de son id ---//
         $scope.getAllEnseignants=function () {
             $scope.EnseignantsList= EnseignantsService.query();
-        }
+        };
 
 //--- Methode delete pour supprimer un Enseignant à partir de son id ---//
         $scope.deleteEnseignant=function() {
@@ -38,5 +39,13 @@ angular.module('NotePairApp')
             if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Enseignant ?')){
                 Enseignant.$delete();
             }
-        }
+        };
+
+        $scope.goToAdd=function () {
+            $state.go('admin.enseignants.add')
+        };
+
+        $scope.goToUpdate=function (_id) {
+            $state.go('admin.enseignants.update',{id:_id})
+        };
     }]);
