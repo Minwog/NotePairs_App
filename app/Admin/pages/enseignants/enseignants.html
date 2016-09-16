@@ -14,21 +14,70 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
+
+<!------------------ SearchBox ------------------>
+                    <div>
+                        <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
+                            <div class="input-group">
+                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+
+                                <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Prenom">
+                                <input ng-if="searchLabel === 'Pseudo'" type="text" class="form-control" aria-label="..." ng-model="searchBox.username">
+                                <input ng-if="searchLabel === 'email'" type="text" class="form-control" aria-label="..." ng-model="searchBox.email">
+                                <input ng-if="searchLabel === 'cours'" type="text" class="form-control" aria-label="..." ng-model="searchBox.cours">
+
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom' }}  <span class="caret"></span></button>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="" ng-click="searchLabel = 'Nom'; searchBox={}">Nom</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'Prenom'; searchBox={}">Prenom</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'Pseudo'; searchBox={}">Pseudo</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'email'; searchBox={}">email</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'cours'; searchBox={}">Cours</a></li>
+                                    </ul>
+                                </div><!-- /btn-group -->
+                            </div>
+                        </div>
+                    </div>
+<!------------------ End SearchBox ------------------>
+
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
-                        <tr>
-                            <th></th>
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th class="hidden-sm hidden-xs">Pseudo</th>
-                            <th class="hidden-md hidden-sm hidden-xs">Mail</th>
-                            <th class="hidden-sm hidden-xs">Cours</th>
-                            <th>Actions</th>
-                        </tr>
+                            <tr class="">
+                                <th></th>
+                                <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                    <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                    <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                        <span class="glyphicon glyphicon-triangle-top"></span>
+                                    </a>
+                                </th>
+                                <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                    <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                    <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                        <span class="glyphicon glyphicon-triangle-top"></span>
+                                    </a>
+                                </th>
+                                <th class="hidden-sm hidden-xs">Pseudo
+                                    <a ng-show="!usernameup" href="" ng-click="myOrderBy='username'; usernameup=true">
+                                        <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                    <a ng-show="usernameup" href="" ng-click="myOrderBy='-username'; usernameup=false">
+                                        <span class="glyphicon glyphicon-triangle-top"></span>
+                                    </a></th>
+                                <th class="hidden-md hidden-sm hidden-xs">Mail
+                                    <a ng-show="!emailup" href="" ng-click="myOrderBy='email'; emailup=true">
+                                        <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                    <a ng-show="emailup" href="" ng-click="myOrderBy='-email'; emailup=false">
+                                        <span class="glyphicon glyphicon-triangle-top"></span>
+                                    </a></th>
+                                <th class="hidden-sm hidden-xs">Cours </th>
+                                <th>Actions</th>
+                            </tr>
                         </thead>
                         <tbody>
 
-                        <tr class="infos" ng-repeat-start="enseignant in EnseignantsList | orderBy:'Nom'" ng-class-odd="'odd'" ng-class-even="'even'">
+                        <tr class="infos" ng-repeat-start="enseignant in EnseignantsList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>
                                 <button ng-if="enseignant.expanded" ng-click="enseignant.expanded = false">&Hat;</button>
                                 <button ng-if="!enseignant.expanded" ng-click="enseignant.expanded = true">+</button>
