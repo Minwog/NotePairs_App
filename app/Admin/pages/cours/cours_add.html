@@ -1,7 +1,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Nouvel Etudiant</h1>
+            <h1 class="page-header">Nouveau Cours</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -9,29 +9,29 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="form-group">
-                <label for="nom" class="col-sm-2 control-label">Nom</label>
+                <label for="intitule" class="col-sm-2 control-label">Intitulé</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="newEleve.Nom" class="form-control" id="nom" placeholder="Nom"/>
+                    <input type="text" ng-model="newCours.intitule" class="form-control" id="intitule" placeholder="intitule"/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="prenom" class="col-sm-2 control-label">Prenom</label>
+                <label for="section" class="col-sm-2 control-label">Section</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="newEleve.Prenom" class="form-control" id="prenom" placeholder="Prenom"/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="email" class="col-sm-2 control-label">Adresse Mail</label>
-                <div class="col-sm-10">
-                    <input type="text" ng-model="newEleve.email" class="form-control" id="email" placeholder="email"/>
+                    <input type="text" ng-model="newEleve.section" class="form-control" id="section" placeholder="section"/>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="username" class="col-sm-2 control-label">Username</label>
+                <label for="reference" class="col-sm-2 control-label">Référence</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="newEleve.username" class="form-control" id="username" placeholder="username"/>
+                    <input type="text" ng-model="newEleve.reference" class="form-control" id="reference" placeholder="reference"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Déscription</label>
+                <div class="col-sm-10">
+                    <textarea ng-model="newEleve.username" class="form-control" id="username" placeholder="description"/>
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" ng-click="addEleve()" class="btn btn-primary" value="Ajouter Elève"/>
+                    <input type="submit" ng-click="addCours()" class="btn btn-primary" value="Ajouter Cours"/>
                 </div>
             </div>
         </div>
