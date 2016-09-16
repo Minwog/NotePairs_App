@@ -1,106 +1,1261 @@
 [
   {
-    "eleves_id":1,
-    "user_id":4,
-    "Prenom": "Sophie",
-    "Nom": "Miramal",
-    "email":"sophie@sophie.com",
-    "role":"eleve",
-    "username":"Sophieakjfbsd",
-    "Groupes":[
-      "A45"
+    "eleves_id": 0,
+    "user_id": 0,
+    "Prenom": "Marianne",
+    "Nom": "Duran",
+    "username": "in",
+    "email": "marianneduran@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B20",
+      "A45",
+      "A41"
     ],
-    "cours":[
-      "Representation analytique des signaux et systemes",
-      "Elétronique analogique"
+    "cours": [
+      "Électronique radio-fréquence",
+      "Physique quantique",
+      "Composants à semiconducteurs",
+      "Representation analytique des signaux et systemes"
     ]
   },
-
   {
-    "eleves_id":2,
-    "user_id":3,
-    "Prenom": "Jeanne",
-    "username":"Jeanne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"eleve",
-    "Groupes":[
-      "A45"
+    "eleves_id": 1,
+    "user_id": 1,
+    "Prenom": "Lillian",
+    "Nom": "Ray",
+    "username": "esse",
+    "email": "lillianray@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37",
+      "A41",
+      "B22"
     ],
-    "cours":[
+    "cours": [
+      "Microéconomie",
+      "Composants à semiconducteurs",
+      "Droit de l’entreprise",
+      "Microéconomie"
+    ]
+  },
+  {
+    "eleves_id": 2,
+    "user_id": 2,
+    "Prenom": "Parrish",
+    "Nom": "Kelly",
+    "username": "nostrud",
+    "email": "parrishkelly@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28",
+      "C02"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Statistiques",
+      "Statistiques",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "eleves_id": 3,
+    "user_id": 3,
+    "Prenom": "Mckee",
+    "Nom": "Frederick",
+    "username": "sit",
+    "email": "mckeefrederick@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A39",
+      "C02",
+      "C02"
+    ],
+    "cours": [
+      "Microéconomie",
+      "Composants à semiconducteurs"
+    ]
+  },
+  {
+    "eleves_id": 4,
+    "user_id": 4,
+    "Prenom": "Delgado",
+    "Nom": "Ball",
+    "username": "nostrud",
+    "email": "delgadoball@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37",
+      "A41"
+    ],
+    "cours": [
+      "Physique des solides",
       "Enconomie d'entreprise",
-      "Representation analytique des signaux et systemes",
-      "Elétronique analogique"
+      "Statistiques",
+      "Champs et propagation",
+      "Champs et propagation"
     ]
   },
-
   {
-    "eleves_id":1,
-    "user_id":4,
-    "Prenom": "Sophie",
-    "Nom": "Miramal",
-    "email":"sophie@sophie.com",
-    "role":"eleve",
-    "username":"Sophieakjfbsd",
-    "Groupes":[
-      2
+    "eleves_id": 5,
+    "user_id": 5,
+    "Prenom": "Swanson",
+    "Nom": "Guerrero",
+    "username": "cupidatat",
+    "email": "swansonguerrero@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C01",
+      "B20"
     ],
-    "cours":[
-      "Representation analytique des signaux et systemes",
-      "Elétronique analogique"
+    "cours": [
+      "Électronique radio-fréquence",
+      "Physique quantique"
     ]
   },
-
   {
-    "eleves_id":2,
-    "user_id":3,
-    "Prenom": "Jeanne",
-    "username":"Jeanne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"eleve",
-    "Groupes":[
-      "A45"
+    "eleves_id": 6,
+    "user_id": 6,
+    "Prenom": "Dixon",
+    "Nom": "Huff",
+    "username": "nostrud",
+    "email": "dixonhuff@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B22",
+      "B28",
+      "C02"
     ],
-    "cours":[
+    "cours": [
+      "Statistiques",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "eleves_id": 7,
+    "user_id": 7,
+    "Prenom": "Armstrong",
+    "Nom": "Sweeney",
+    "username": "excepteur",
+    "email": "armstrongsweeney@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B20",
+      "A39",
+      "B28"
+    ],
+    "cours": [
+      "Representation analytique des signaux et systemes",
+      "Physique quantique",
+      "Génie Logiciel",
+      "Composants à semiconducteurs",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 8,
+    "user_id": 8,
+    "Prenom": "Ebony",
+    "Nom": "Morris",
+    "username": "do",
+    "email": "ebonymorris@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28",
+      "A37"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
       "Enconomie d'entreprise",
-      "Fondements de l'informatique",
-      "Elétronique analogique"
+      "Champs et propagation",
+      "Physique quantique",
+      "Architecture des systèmes informatiques"
     ]
   },
-
   {
-    "eleves_id":1,
-    "user_id":4,
-    "Prenom": "Sophie",
-    "Nom": "Miramal",
-    "email":"sophie@sophie.com",
-    "role":"eleve",
-    "username":"Sophieakjfbsd",
-    "Groupes":[
+    "eleves_id": 9,
+    "user_id": 9,
+    "Prenom": "Fulton",
+    "Nom": "Sellers",
+    "username": "mollit",
+    "email": "fultonsellers@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B22",
+      "B25"
+    ],
+    "cours": [
+      "Microéconomie",
+      "Génie Logiciel"
+    ]
+  },
+  {
+    "eleves_id": 10,
+    "user_id": 10,
+    "Prenom": "Montgomery",
+    "Nom": "Lynn",
+    "username": "eu",
+    "email": "montgomerylynn@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A39",
+      "C14",
+      "C10"
+    ],
+    "cours": [
+      "Physique des solides",
+      "Representation analytique des signaux et systemes",
+      "Champs et propagation"
+    ]
+  },
+  {
+    "eleves_id": 11,
+    "user_id": 11,
+    "Prenom": "Bolton",
+    "Nom": "Kirby",
+    "username": "pariatur",
+    "email": "boltonkirby@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A41",
+      "C14"
+    ],
+    "cours": [
+      "Enconomie d'entreprise",
+      "Droit de l’entreprise",
+      "Enconomie d'entreprise",
+      "Génie Logiciel"
+    ]
+  },
+  {
+    "eleves_id": 12,
+    "user_id": 12,
+    "Prenom": "Bartlett",
+    "Nom": "Jenkins",
+    "username": "eu",
+    "email": "bartlettjenkins@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C01",
+      "B22"
+    ],
+    "cours": [
+      "Architecture des systèmes informatiques",
+      "Enconomie d'entreprise",
+      "Enconomie d'entreprise",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 13,
+    "user_id": 13,
+    "Prenom": "Wall",
+    "Nom": "Hines",
+    "username": "mollit",
+    "email": "wallhines@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C01"
+    ],
+    "cours": [
+      "Physique des solides",
+      "Champs et propagation",
+      "Composants à semiconducteurs",
+      "Droit de l’entreprise",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 14,
+    "user_id": 14,
+    "Prenom": "Blanca",
+    "Nom": "Francis",
+    "username": "nostrud",
+    "email": "blancafrancis@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C14",
+      "B20",
+      "B25"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 15,
+    "user_id": 15,
+    "Prenom": "Mitchell",
+    "Nom": "Anderson",
+    "username": "consectetur",
+    "email": "mitchellanderson@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28"
+    ],
+    "cours": [
+      "Électronique radio-fréquence",
+      "Architecture des systèmes informatiques",
+      "Électronique radio-fréquence",
+      "Representation analytique des signaux et systemes",
+      "Physique quantique"
+    ]
+  },
+  {
+    "eleves_id": 16,
+    "user_id": 16,
+    "Prenom": "Padilla",
+    "Nom": "Santana",
+    "username": "mollit",
+    "email": "padillasantana@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A41"
+    ],
+    "cours": [
+      "Champs et propagation",
+      "Representation analytique des signaux et systemes",
+      "Droit de l’entreprise",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 17,
+    "user_id": 17,
+    "Prenom": "Harriett",
+    "Nom": "Knight",
+    "username": "tempor",
+    "email": "harriettknight@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C02",
+      "B20",
+      "B28"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Génie Logiciel",
+      "Électronique radio-fréquence",
+      "Statistiques",
+      "Champs et propagation"
+    ]
+  },
+  {
+    "eleves_id": 18,
+    "user_id": 18,
+    "Prenom": "Gibbs",
+    "Nom": "Carlson",
+    "username": "ad",
+    "email": "gibbscarlson@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A39",
+      "B20",
+      "C10"
+    ],
+    "cours": [
+      "Physique quantique",
+      "Representation analytique des signaux et systemes",
+      "Statistiques",
+      "Physique quantique",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 19,
+    "user_id": 19,
+    "Prenom": "Knox",
+    "Nom": "Roth",
+    "username": "magna",
+    "email": "knoxroth@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B25",
+      "B28",
+      "A37"
+    ],
+    "cours": [
+      "Électronique radio-fréquence",
+      "Physique des solides",
+      "Microéconomie",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "eleves_id": 20,
+    "user_id": 20,
+    "Prenom": "Antonia",
+    "Nom": "Holman",
+    "username": "esse",
+    "email": "antoniaholman@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A41",
+      "C14"
+    ],
+    "cours": [
+      "Physique des solides",
+      "Droit de l’entreprise",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 21,
+    "user_id": 21,
+    "Prenom": "Lou",
+    "Nom": "Hodge",
+    "username": "esse",
+    "email": "louhodge@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37"
+    ],
+    "cours": [
+      "Statistiques",
+      "Physique quantique",
+      "Génie Logiciel"
+    ]
+  },
+  {
+    "eleves_id": 22,
+    "user_id": 22,
+    "Prenom": "Laurie",
+    "Nom": "Brewer",
+    "username": "magna",
+    "email": "lauriebrewer@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B25",
+      "A41"
+    ],
+    "cours": [
+      "Elétronique analogique",
+      "Representation analytique des signaux et systemes",
+      "Representation analytique des signaux et systemes",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "eleves_id": 23,
+    "user_id": 23,
+    "Prenom": "Kari",
+    "Nom": "Hughes",
+    "username": "ea",
+    "email": "karihughes@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C14",
+      "A37",
       "A45"
     ],
-    "cours":[
+    "cours": [
+      "Champs et propagation",
+      "Physique quantique"
+    ]
+  },
+  {
+    "eleves_id": 24,
+    "user_id": 24,
+    "Prenom": "Nell",
+    "Nom": "Conley",
+    "username": "irure",
+    "email": "nellconley@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C01",
+      "C10",
+      "B25"
+    ],
+    "cours": [
+      "Droit de l’entreprise",
+      "Statistiques",
+      "Champs et propagation",
+      "Physique quantique",
+      "Composants à semiconducteurs"
+    ]
+  },
+  {
+    "eleves_id": 25,
+    "user_id": 25,
+    "Prenom": "Clements",
+    "Nom": "Perkins",
+    "username": "commodo",
+    "email": "clementsperkins@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B22"
+    ],
+    "cours": [
+      "Électronique radio-fréquence",
+      "Électronique radio-fréquence",
+      "Génie Logiciel"
+    ]
+  },
+  {
+    "eleves_id": 26,
+    "user_id": 26,
+    "Prenom": "Mable",
+    "Nom": "Spencer",
+    "username": "voluptate",
+    "email": "mablespencer@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A39"
+    ],
+    "cours": [
+      "Physique quantique",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 27,
+    "user_id": 27,
+    "Prenom": "Camacho",
+    "Nom": "Justice",
+    "username": "deserunt",
+    "email": "camachojustice@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28"
+    ],
+    "cours": [
+      "Enconomie d'entreprise",
+      "Statistiques"
+    ]
+  },
+  {
+    "eleves_id": 28,
+    "user_id": 28,
+    "Prenom": "House",
+    "Nom": "Garcia",
+    "username": "pariatur",
+    "email": "housegarcia@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C14",
+      "A39"
+    ],
+    "cours": [
+      "Representation analytique des signaux et systemes",
+      "Physique quantique",
+      "Elétronique analogique",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 29,
+    "user_id": 29,
+    "Prenom": "Shelley",
+    "Nom": "Mays",
+    "username": "deserunt",
+    "email": "shelleymays@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B20"
+    ],
+    "cours": [
+      "Physique quantique",
+      "Elétronique analogique",
+      "Génie Logiciel",
+      "Droit de l’entreprise",
+      "Physique des solides"
+    ]
+  },
+  {
+    "eleves_id": 30,
+    "user_id": 30,
+    "Prenom": "Helga",
+    "Nom": "Lindsey",
+    "username": "esse",
+    "email": "helgalindsey@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A39",
+      "C01"
+    ],
+    "cours": [
+      "Droit de l’entreprise",
+      "Representation analytique des signaux et systemes",
+      "Champs et propagation",
+      "Physique des solides"
+    ]
+  },
+  {
+    "eleves_id": 31,
+    "user_id": 31,
+    "Prenom": "Bauer",
+    "Nom": "Clements",
+    "username": "ullamco",
+    "email": "bauerclements@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B20"
+    ],
+    "cours": [
+      "Physique quantique",
+      "Champs et propagation",
+      "Architecture des systèmes informatiques",
+      "Génie Logiciel",
+      "Génie Logiciel"
+    ]
+  },
+  {
+    "eleves_id": 32,
+    "user_id": 32,
+    "Prenom": "Leanna",
+    "Nom": "Collier",
+    "username": "qui",
+    "email": "leannacollier@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A41"
+    ],
+    "cours": [
+      "Statistiques",
+      "Elétronique analogique",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "eleves_id": 33,
+    "user_id": 33,
+    "Prenom": "Angel",
+    "Nom": "Shelton",
+    "username": "ea",
+    "email": "angelshelton@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A45",
+      "A41",
+      "A39"
+    ],
+    "cours": [
+      "Champs et propagation",
+      "Statistiques",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 34,
+    "user_id": 34,
+    "Prenom": "Patrice",
+    "Nom": "Zimmerman",
+    "username": "consequat",
+    "email": "patricezimmerman@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28",
+      "C01",
+      "B25"
+    ],
+    "cours": [
+      "Elétronique analogique",
+      "Enconomie d'entreprise",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "eleves_id": 35,
+    "user_id": 35,
+    "Prenom": "Cline",
+    "Nom": "Mcguire",
+    "username": "dolor",
+    "email": "clinemcguire@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28",
+      "B28",
+      "B20"
+    ],
+    "cours": [
+      "Droit de l’entreprise",
+      "Champs et propagation"
+    ]
+  },
+  {
+    "eleves_id": 36,
+    "user_id": 36,
+    "Prenom": "Lydia",
+    "Nom": "Contreras",
+    "username": "amet",
+    "email": "lydiacontreras@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A45",
+      "B22",
+      "C02"
+    ],
+    "cours": [
+      "Elétronique analogique",
+      "Statistiques"
+    ]
+  },
+  {
+    "eleves_id": 37,
+    "user_id": 37,
+    "Prenom": "Natasha",
+    "Nom": "Pennington",
+    "username": "aliqua",
+    "email": "natashapennington@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37",
+      "C10",
+      "B20"
+    ],
+    "cours": [
+      "Microéconomie",
+      "Microéconomie",
+      "Physique quantique",
+      "Physique quantique",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 38,
+    "user_id": 38,
+    "Prenom": "Keri",
+    "Nom": "Delacruz",
+    "username": "laboris",
+    "email": "keridelacruz@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A45",
+      "C02",
+      "C02"
+    ],
+    "cours": [
+      "Representation analytique des signaux et systemes",
+      "Composants à semiconducteurs",
+      "Composants à semiconducteurs"
+    ]
+  },
+  {
+    "eleves_id": 39,
+    "user_id": 39,
+    "Prenom": "Ella",
+    "Nom": "Beasley",
+    "username": "nostrud",
+    "email": "ellabeasley@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B20",
+      "A39",
+      "B28"
+    ],
+    "cours": [
+      "Architecture des systèmes informatiques",
+      "Elétronique analogique",
+      "Representation analytique des signaux et systemes",
       "Representation analytique des signaux et systemes",
       "Elétronique analogique"
     ]
   },
-
   {
-    "eleves_id":2,
-    "user_id":3,
-    "Prenom": "Jeanne",
-    "username":"Jeanne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"eleve",
-    "Groupes":[
+    "eleves_id": 40,
+    "user_id": 40,
+    "Prenom": "Bobbie",
+    "Nom": "Love",
+    "username": "voluptate",
+    "email": "bobbielove@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C10",
       "A45"
     ],
-    "cours":[
-      "Enconomie d'entreprise",
-      "Fondements de l'informatique",
+    "cours": [
+      "Physique des solides",
+      "Droit de l’entreprise",
+      "Électronique radio-fréquence",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 41,
+    "user_id": 41,
+    "Prenom": "Ferguson",
+    "Nom": "Hodges",
+    "username": "voluptate",
+    "email": "fergusonhodges@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C02",
+      "A39"
+    ],
+    "cours": [
+      "Électronique radio-fréquence",
+      "Droit de l’entreprise",
+      "Representation analytique des signaux et systemes",
+      "Physique des solides",
       "Elétronique analogique"
+    ]
+  },
+  {
+    "eleves_id": 42,
+    "user_id": 42,
+    "Prenom": "Burt",
+    "Nom": "Pugh",
+    "username": "culpa",
+    "email": "burtpugh@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B22",
+      "B22",
+      "C02"
+    ],
+    "cours": [
+      "Droit de l’entreprise",
+      "Droit de l’entreprise",
+      "Physique quantique",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "eleves_id": 43,
+    "user_id": 43,
+    "Prenom": "Ericka",
+    "Nom": "Wagner",
+    "username": "ex",
+    "email": "erickawagner@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37",
+      "B28",
+      "B28"
+    ],
+    "cours": [
+      "Architecture des systèmes informatiques",
+      "Physique quantique",
+      "Droit de l’entreprise",
+      "Composants à semiconducteurs",
+      "Elétronique analogique"
+    ]
+  },
+  {
+    "eleves_id": 44,
+    "user_id": 44,
+    "Prenom": "Elinor",
+    "Nom": "Mitchell",
+    "username": "qui",
+    "email": "elinormitchell@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28",
+      "A41",
+      "C14"
+    ],
+    "cours": [
+      "Champs et propagation",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "eleves_id": 45,
+    "user_id": 45,
+    "Prenom": "Andrews",
+    "Nom": "Phelps",
+    "username": "dolor",
+    "email": "andrewsphelps@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C10",
+      "A45"
+    ],
+    "cours": [
+      "Droit de l’entreprise",
+      "Composants à semiconducteurs",
+      "Champs et propagation",
+      "Électronique radio-fréquence",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "eleves_id": 46,
+    "user_id": 46,
+    "Prenom": "Russell",
+    "Nom": "Reed",
+    "username": "labore",
+    "email": "russellreed@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37",
+      "B20",
+      "C10"
+    ],
+    "cours": [
+      "Statistiques",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "eleves_id": 47,
+    "user_id": 47,
+    "Prenom": "Lakisha",
+    "Nom": "Mccullough",
+    "username": "adipisicing",
+    "email": "lakishamccullough@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B28",
+      "B28",
+      "C14"
+    ],
+    "cours": [
+      "Statistiques",
+      "Champs et propagation",
+      "Architecture des systèmes informatiques",
+      "Architecture des systèmes informatiques",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 48,
+    "user_id": 48,
+    "Prenom": "Sarah",
+    "Nom": "Vazquez",
+    "username": "ullamco",
+    "email": "sarahvazquez@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C02",
+      "B25"
+    ],
+    "cours": [
+      "Microéconomie",
+      "Physique des solides",
+      "Microéconomie",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "eleves_id": 49,
+    "user_id": 49,
+    "Prenom": "Bruce",
+    "Nom": "Nixon",
+    "username": "exercitation",
+    "email": "brucenixon@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A37",
+      "C01",
+      "A45"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Champs et propagation",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 50,
+    "user_id": 50,
+    "Prenom": "Georgia",
+    "Nom": "Jarvis",
+    "username": "minim",
+    "email": "georgiajarvis@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A45",
+      "B28"
+    ],
+    "cours": [
+      "Microéconomie",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "eleves_id": 51,
+    "user_id": 51,
+    "Prenom": "Rodriguez",
+    "Nom": "Mcdonald",
+    "username": "qui",
+    "email": "rodriguezmcdonald@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A41",
+      "B22",
+      "C01"
+    ],
+    "cours": [
+      "Génie Logiciel",
+      "Statistiques",
+      "Génie Logiciel",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "eleves_id": 52,
+    "user_id": 52,
+    "Prenom": "Burton",
+    "Nom": "Gallegos",
+    "username": "enim",
+    "email": "burtongallegos@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B25"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Microéconomie"
+    ]
+  },
+  {
+    "eleves_id": 53,
+    "user_id": 53,
+    "Prenom": "Hoffman",
+    "Nom": "Jackson",
+    "username": "mollit",
+    "email": "hoffmanjackson@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C14",
+      "A41"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Droit de l’entreprise",
+      "Elétronique analogique",
+      "Statistiques",
+      "Physique des solides"
+    ]
+  },
+  {
+    "eleves_id": 54,
+    "user_id": 54,
+    "Prenom": "Mullen",
+    "Nom": "Bauer",
+    "username": "pariatur",
+    "email": "mullenbauer@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A39",
+      "A45",
+      "A41"
+    ],
+    "cours": [
+      "Droit de l’entreprise",
+      "Architecture des systèmes informatiques",
+      "Physique des solides"
+    ]
+  },
+  {
+    "eleves_id": 55,
+    "user_id": 55,
+    "Prenom": "Carpenter",
+    "Nom": "Crosby",
+    "username": "ullamco",
+    "email": "carpentercrosby@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C10",
+      "B28"
+    ],
+    "cours": [
+      "Champs et propagation",
+      "Enconomie d'entreprise",
+      "Enconomie d'entreprise",
+      "Composants à semiconducteurs",
+      "Physique des solides"
+    ]
+  },
+  {
+    "eleves_id": 56,
+    "user_id": 56,
+    "Prenom": "Wiggins",
+    "Nom": "Olsen",
+    "username": "duis",
+    "email": "wigginsolsen@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B22"
+    ],
+    "cours": [
+      "Elétronique analogique",
+      "Composants à semiconducteurs",
+      "Électronique radio-fréquence",
+      "Champs et propagation"
+    ]
+  },
+  {
+    "eleves_id": 57,
+    "user_id": 57,
+    "Prenom": "Estella",
+    "Nom": "Bean",
+    "username": "laborum",
+    "email": "estellabean@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B25"
+    ],
+    "cours": [
+      "Physique des solides",
+      "Génie Logiciel",
+      "Representation analytique des signaux et systemes",
+      "Droit de l’entreprise",
+      "Enconomie d'entreprise"
+    ]
+  },
+  {
+    "eleves_id": 58,
+    "user_id": 58,
+    "Prenom": "Whitehead",
+    "Nom": "Talley",
+    "username": "incididunt",
+    "email": "whiteheadtalley@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C14",
+      "C14"
+    ],
+    "cours": [
+      "Génie Logiciel",
+      "Génie Logiciel"
+    ]
+  },
+  {
+    "eleves_id": 59,
+    "user_id": 59,
+    "Prenom": "Jacqueline",
+    "Nom": "Brady",
+    "username": "do",
+    "email": "jacquelinebrady@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B25",
+      "B28",
+      "C02"
+    ],
+    "cours": [
+      "Elétronique analogique",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "eleves_id": 60,
+    "user_id": 60,
+    "Prenom": "Mclaughlin",
+    "Nom": "Poole",
+    "username": "sint",
+    "email": "mclaughlinpoole@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "A45",
+      "B28"
+    ],
+    "cours": [
+      "Génie Logiciel",
+      "Droit de l’entreprise",
+      "Électronique radio-fréquence",
+      "Génie Logiciel",
+      "Statistiques"
+    ]
+  },
+  {
+    "eleves_id": 61,
+    "user_id": 61,
+    "Prenom": "Ramos",
+    "Nom": "Chandler",
+    "username": "sit",
+    "email": "ramoschandler@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "B25"
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "eleves_id": 62,
+    "user_id": 62,
+    "Prenom": "Nikki",
+    "Nom": "Baxter",
+    "username": "aliquip",
+    "email": "nikkibaxter@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C02",
+      "B20"
+    ],
+    "cours": [
+      "Architecture des systèmes informatiques",
+      "Physique quantique"
+    ]
+  },
+  {
+    "eleves_id": 63,
+    "user_id": 63,
+    "Prenom": "Francesca",
+    "Nom": "Munoz",
+    "username": "dolore",
+    "email": "francescamunoz@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C02",
+      "B20"
+    ],
+    "cours": [
+      "Champs et propagation",
+      "Génie Logiciel",
+      "Composants à semiconducteurs"
+    ]
+  },
+  {
+    "eleves_id": 64,
+    "user_id": 64,
+    "Prenom": "Wade",
+    "Nom": "Morrison",
+    "username": "veniam",
+    "email": "wademorrison@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C01",
+      "C01",
+      "A45"
+    ],
+    "cours": [
+      "Microéconomie",
+      "Champs et propagation",
+      "Composants à semiconducteurs",
+      "Physique quantique",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "eleves_id": 65,
+    "user_id": 65,
+    "Prenom": "Frazier",
+    "Nom": "Middleton",
+    "username": "ullamco",
+    "email": "fraziermiddleton@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C14"
+    ],
+    "cours": [
+      "Enconomie d'entreprise",
+      "Composants à semiconducteurs"
+    ]
+  },
+  {
+    "eleves_id": 66,
+    "user_id": 66,
+    "Prenom": "Nadine",
+    "Nom": "Gordon",
+    "username": "occaecat",
+    "email": "nadinegordon@valreda.com",
+    "role": "eleve",
+    "Groupes": [
+      "C02",
+      "C14",
+      "B22"
+    ],
+    "cours": [
+      "Génie Logiciel",
+      "Génie Logiciel",
+      "Architecture des systèmes informatiques"
     ]
   }
 ]
