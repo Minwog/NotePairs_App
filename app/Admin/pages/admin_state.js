@@ -99,6 +99,17 @@
                         }
                     })
 
+                    .state('admin.cours.view',{
+                        parent:'admin',
+                        url:'/cours/view',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/cours/cours_view.html",
+                                controller:'CoursController'
+                            }
+                        }
+                    })
+
                     .state('admin.groupes',{
                         parent:'admin',
                         url:'/groupes',

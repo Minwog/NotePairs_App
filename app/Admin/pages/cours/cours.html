@@ -79,7 +79,9 @@
                                 <button ng-if="!cours.expanded" ng-click="cours.expanded = true">+</button>
                             </td>
 
-                            <td>{{cours.intitule}}</td>
+                            <td>
+                                <button type="button" class="btn btn-success btn-circle-micro" ng-click="goToView()"><i class="fa fa-eye"></i>
+                                </button> {{cours.intitule}}</td>
                             <td class="hidden-sm hidden-xs">{{cours.section}}</td>
                             <td class="hidden-sm hidden-xs">{{cours.reference}}</td>
                             <td class="hidden-sm hidden-xs">

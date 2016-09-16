@@ -17,6 +17,10 @@ angular.module('NotePairApp')
             $state.go('admin.cours.update',{id:id})
         };
 
+        $scope.goToView=function (id) {
+            $state.go('admin.cours.view',{id:id})
+        };
+
         //----------- fonctions utiles de recherche ( démo/localstorage)
 
 
