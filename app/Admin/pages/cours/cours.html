@@ -54,7 +54,7 @@
                                     <span class="glyphicon glyphicon-triangle-top"></span>
                                 </a>
                             </th>
-                            <th>Section <a ng-show="!sectionup" href="" ng-click="myOrderBy='section'; sectionup=true">
+                            <th class="hidden-sm hidden-xs">Section <a ng-show="!sectionup" href="" ng-click="myOrderBy='section'; sectionup=true">
                                 <span class="glyphicon glyphicon-triangle-bottom"></span></a>
                                 <a ng-show="sectionup" href="" ng-click="myOrderBy='-section'; sectionup=false">
                                     <span class="glyphicon glyphicon-triangle-top"></span>
@@ -81,7 +81,7 @@
                             <td>{{cours.intitule}}</td>
                             <td class="hidden-sm hidden-xs">{{cours.section}}</td>
                             <td class="hidden-sm hidden-xs">{{cours.reference}}</td>
-                            <td>
+                            <td class="hidden-sm hidden-xs">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <span class="hidden-md hidden-lg">Liste des enseignants</span>
