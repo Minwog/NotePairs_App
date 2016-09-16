@@ -42,7 +42,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/eleves/eleve_update.html',
-                                controller:'ElevesController'
+                                controller:'UpdateEleveController'
                             }
                         }
                     })
@@ -83,6 +83,18 @@
                         views:{
                             'content':{
                                 templateUrl:"app/Admin/pages/cours/cours.html"
+                                controller:'CoursController'
+                            }
+                        }
+                    })
+
+                    .state('admin.cours.add',{
+                        parent:'admin',
+                        url:'/cours/new',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/cours/cours_add.html",
+                                controller:'CoursController'
                             }
                         }
                     })

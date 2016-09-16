@@ -32,13 +32,7 @@ var ok=false;
             $state.go('admin.students')
         };
 
-//--- Methode update pour modifier un Eleve à partir de son id ---//
-        $scope.Eleve = ElevesService.query({id: $stateParams.id});
 
-        $scope.updateEleves = function () {
-            LocalElevesService.update($scope.Eleve);
-                $state.go('admin.students');
-        };
 
 
 //--- Methode get pour afficher un Eleve à partir de son id ---//

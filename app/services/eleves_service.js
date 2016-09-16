@@ -25,26 +25,37 @@ angular.module('NotePairApp')
     .factory('LocalElevesService',function () {
         var service={
             'save':save,
-            'update':update
+            'update':update,
+            'get':get
         }
 
         function save(data) {
 
             var List=JSON.parse(localStorage.getItem('ElevesList'));
+            console.log(List)
             List.push(data);
             localStorage.setItem('ElevesList',JSON.stringify(List));
 
         }
 
         function update(data){
-            var local=JSON.parse(localStorage.getItem('EleveList'));
-            var eleve=findById(data['eleve_id'],local);
-            local[eleve.index]=data;
-            localStorage.setItem('ElevesList',local);
+           var local=JSON.parse(localStorage.getItem('ElevesList'));
+            findById(data['eleve_id'],local,function(eleve){
+                local[eleve.index]=data;
+                localStorage.setItem(JSON.stringify('ElevesList'),local)
+            });
 
         }
 
-        function findById(id,List) {
+        function get(id){
+            findById(id,JSON.parse(localStorage.getItem('ElevesList')),function(eleve){
+                console.log(eleve['eleve'])
+                return eleve['eleve'];
+
+            })
+        }
+
+        function findById(id,List,callback) {
             var done=false;
             var eleve;
             var index;
@@ -56,7 +67,7 @@ angular.module('NotePairApp')
                 }
             }
             if(done){
-                return {'eleve':eleve,'index':index}
+                callback({'eleve':eleve,'index':index});
             }
         }
 
