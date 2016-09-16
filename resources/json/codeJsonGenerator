@@ -1,0 +1,47 @@
+[
+  '{{repeat(67)}}',
+  {
+    eleves_id: '{{index()}}',
+    user_id: '{{index()}}',
+    Prenom: '{{firstName()}}',
+    Nom: '{{surname()}}',
+    username: '{{lorem(1, "words")}}',
+    email: '{{email()}}',
+    role: 'eleve',
+    
+    
+    Groupes: [
+      '{{repeat(1, 3)}}',
+      
+        function (tags) { 
+      var fruits = ['A45', 'B20', 'C01','A39', 'B22', 'C10',
+                   'A41', 'B25', 'C02','A37', 'B28', 'C14'];
+      return fruits[tags.integer(0, fruits.length - 1)];
+      }
+      
+    ],
+    
+    
+    cours: [
+      '{{repeat(2, 5)}}',
+    
+    function (tags) {
+      var fruits = [
+        "Enconomie d'entreprise",
+        "Representation analytique des signaux et systemes",
+        "Elétronique analogique",
+        "Champs et propagation",
+        "Statistiques",
+        "Physique des solides",
+        "Physique quantique",
+        "Génie Logiciel",
+        "Architecture des systèmes informatiques",
+        "Composants à semiconducteurs",
+        "Électronique radio-fréquence",
+        "Droit de l’entreprise",
+        "Microéconomie"
+      ];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    }]
+  }
+]

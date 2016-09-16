@@ -1,8 +1,42 @@
 
 angular.module('NotePairApp')
     .controller('ElevesController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService', function ($scope,$state,$stateParams, alerteService, ElevesService) {
+var ok=false;
+    if(!localStorage.getItem('ElevesList')) {
+        ElevesService.query().$promise.then(function (data) {
+            localStorage.setItem('ElevesList', JSON.stringify(data));
+            console.log(data);
+            ok = true;
+        })
+    }else{(ok=true)};
 
-        $scope.ElevesList = ElevesService.query();
+
+   if(ok){
+       $scope.ElevesList = JSON.parse(localStorage.getItem('ElevesList'));
+       console.log($scope.ElevesList)
+    }
+
+        $scope.newEleve={
+        'Nom':'',
+        'Prenom':'',
+        'email':'',
+        'username':''
+        };
+
+//--- Methode add pour ajouter un Eleve à la liste ---//
+        $scope.addEleve = function () {
+            $scope.ElevesList.push($scope.newEleve);
+            localStorage.setItem('ElevesList',JSON.stringify($scope.ElevesList));
+            $state.go('admin.students')
+        };
+
+//--- Methode update pour modifier un Eleve à partir de son id ---//
+        $scope.Eleve = ElevesService.query({id: $stateParams.id});
+
+        $scope.updateEleves = function () {
+
+                $state.go('admin.students');
+        };
 
 
 //--- Methode get pour afficher un Eleve à partir de son id ---//
@@ -24,7 +58,11 @@ angular.module('NotePairApp')
             $state.go('admin.students.add')
         }
 
-        $scope.goToUpdate=function (_id) {
-            $state.go('admin.students.update',{id:_id})
-        }
+        $scope.goToUpdate=function () {
+            $state.go('admin.students.update')
+        };
+
+        //----------- fonctions utiles de recherche ( démo/localstorage)
+
+
 }]);

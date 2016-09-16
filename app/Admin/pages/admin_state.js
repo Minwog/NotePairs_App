@@ -32,7 +32,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/eleves/eleves_add.html',
-                                controller:'AddEleveController'
+                                controller:'ElevesController'
                             }
                         }
                     })
@@ -42,7 +42,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/eleves/eleve_update.html',
-                                controller:'UpdateEleveController'
+                                controller:'ElevesController'
                             }
                         }
                     })
