@@ -1,6 +1,6 @@
 
 angular.module('NotePairApp')
-    .controller('ElevesController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService', function ($scope,$state,$stateParams, alerteService, ElevesService) {
+    .controller('ElevesController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService','LocalElevesService', function ($scope,$state,$stateParams, alerteService, ElevesService,LocalElevesService) {
 var ok=false;
     if(!localStorage.getItem('ElevesList')) {
         ElevesService.query().$promise.then(function (data) {
@@ -25,8 +25,10 @@ var ok=false;
 
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addEleve = function () {
+
+            LocalElevesService.save($scope.newEleve,$scope.ElevesList);
             $scope.ElevesList.push($scope.newEleve);
-            localStorage.setItem('ElevesList',JSON.stringify($scope.ElevesList));
+
             $state.go('admin.students')
         };
 
@@ -34,7 +36,7 @@ var ok=false;
         $scope.Eleve = ElevesService.query({id: $stateParams.id});
 
         $scope.updateEleves = function () {
-
+            LocalElevesService.update($scope.Eleve);
                 $state.go('admin.students');
         };
 
@@ -58,8 +60,8 @@ var ok=false;
             $state.go('admin.students.add')
         }
 
-        $scope.goToUpdate=function () {
-            $state.go('admin.students.update')
+        $scope.goToUpdate=function (id) {
+            $state.go('admin.students.update',{id:id})
         };
 
         //----------- fonctions utiles de recherche ( démo/localstorage)
