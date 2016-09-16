@@ -1,10 +1,12 @@
 angular.module('NotePairApp')
     .controller('EnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService', function ($scope,$state,$stateParams, alerteService, EnseignantsService) {
-        //$scope.EnseignantsList=localStorage.getItem("EnseignantList");
-        $scope.EnseignantsList = JSON.parse(localStorage.getItem('ListeLocale'));
-        if (!localStorage['ListeLocale']){
-            localStorage.setItem('ListeLocale' , JSON.stringify($scope.EnseignantsList));
+        $scope.EnseignantsList=JSON.parse(localStorage.getItem("EnseignantsList"));
+        if (!localStorage['EnseignantsList']){
+            EnseignantsService.query().$promise.then(function (data) {
+                localStorage.setItem('EnseignantsList', JSON.stringify(data));
+            })
         }
+//        $scope.EnseignantsList = JSON.parse(localStorage.getItem('ListeLocale'));
         $scope.newEnseignant = {Nom:'',
             Prenom:'',
             email:'',
@@ -14,7 +16,7 @@ angular.module('NotePairApp')
         $scope.addEnseignant=function(){
             console.log($scope.newEnseignant);
             $scope.EnseignantsList.push($scope.newEnseignant);
-            localStorage.setItem("ListeLocale",JSON.stringify($scope.EnseignantsList));
+            localStorage.setItem("EnseignantsList",JSON.stringify($scope.EnseignantsList));
             $state.go('admin.enseignants')
         };
 
