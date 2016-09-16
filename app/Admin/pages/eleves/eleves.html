@@ -25,14 +25,20 @@
                                 <input ng-if="searchLabel === 'username'" type="text" class="form-control" aria-label="..." ng-model="searchBox.username">
                                 <input ng-if="searchLabel === 'email'" type="text" class="form-control" aria-label="..." ng-model="searchBox.email">
 
+                                <input ng-if="searchLabel === 'Groupes'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Groupes">
+                                <input ng-if="searchLabel === 'cours'" type="text" class="form-control" aria-label="..." ng-model="searchBox.cours">
+
+
                                 <div class="input-group-btn">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom' }}  <span class="caret"></span></button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li><a href="" ng-click="searchLabel = 'Nom'; searchBox={}">Nom</a></li>
                                         <li><a href="" ng-click="searchLabel = 'Prenom'; searchBox={}">Prenom</a></li>
-                                        <li><a href="" ng-click="searchLabel = 'username'; searchBox={}">username</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'username'; searchBox={}">pseudo</a></li>
                                         <li><a href="" ng-click="searchLabel = 'email'; searchBox={}">email</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'Groupes'; searchBox={}">Groupes</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'cours'; searchBox={}">Cours</a></li>
                                     </ul>
                                 </div><!-- /btn-group -->
                             </div><!-- /input-group -->
@@ -87,24 +93,24 @@
                             <td class="hidden-sm hidden-xs">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <span class="hidden-md">Liste des groupes</span>
-                                        <span class="hidden-xl hidden-lg">Liste</span>
+                                        <span class="hidden-md hidden-lg">Liste des groupes</span>
+                                        <span class="hidden-xl">Liste</span>
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                        <li ng-repeat="g in eleve.Groupes"><a href="">{{g}}</a></li>
+                                        <li ng-repeat="g in eleve.Groupes track by $index"><a href="">{{g}}</a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td class="hidden-sm hidden-xs">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <span class="hidden-md">Liste des cours</span>
-                                        <span class="hidden-xl hidden-lg">Liste</span>
+                                        <span class="hidden-md hidden-lg">Liste des cours</span>
+                                        <span class="hidden-xl">Liste</span>
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                        <li ng-repeat="c in eleve.cours"><a href="">{{c}}</a></li>
+                                        <li ng-repeat="c in eleve.cours track by $index"><a href="">{{c}}</a></li>
                                     </ul>
                                 </div>
                             </td>
