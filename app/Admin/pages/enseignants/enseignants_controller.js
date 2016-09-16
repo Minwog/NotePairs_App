@@ -1,15 +1,23 @@
 angular.module('NotePairApp')
     .controller('EnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService', function ($scope,$state,$stateParams, alerteService, EnseignantsService) {
-
-        $scope.EnseignantsList = EnseignantsService.query();
+        $scope.EnseignantsList=JSON.parse(localStorage.getItem("EnseignantsList"));
+        if (!localStorage['EnseignantsList']){
+            EnseignantsService.query().$promise.then(function (data) {
+                localStorage.setItem('EnseignantsList', JSON.stringify(data));
+            })
+        }
+//        $scope.EnseignantsList = JSON.parse(localStorage.getItem('ListeLocale'));
+        $scope.newEnseignant = {Nom:'',
+            Prenom:'',
+            email:'',
+            username:''};
 
 //--- Methode add pour ajouter un Enseignant à la liste ---//
         $scope.addEnseignant=function(){
-            $scope.Enseignant=new EnseignantsService();
-            $scope.Enseignant.$save(function(){
-                //retourner à la liste d'élèves
-
-            })
+            console.log($scope.newEnseignant);
+            $scope.EnseignantsList.push($scope.newEnseignant);
+            localStorage.setItem("EnseignantsList",JSON.stringify($scope.EnseignantsList));
+            $state.go('admin.enseignants')
         };
 
 
@@ -46,6 +54,8 @@ angular.module('NotePairApp')
         };
 
         $scope.goToUpdate=function (_id) {
-            $state.go('admin.enseignants.update',{id:_id})
+
+            $state.go('admin.enseignants.update',{id:_id});
+            $scope.Enseignant = EnseignantsService.query({id:_id})
         };
     }]);

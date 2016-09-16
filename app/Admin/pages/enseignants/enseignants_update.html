@@ -1,7 +1,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">{{Enseignant.Nom}}</h1>
+            <h1 class="page-header">Modifications</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -11,27 +11,27 @@
             <div class="form-group">
                 <label for="nom" class="col-sm-2 control-label">Nom</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="Enseignant.Nom" class="form-control" id="nom" value="{{Enseignant.Nom}}"/>
+                    <input type="text" ng-model="Enseignant.Nom" class="form-control" id="nom" ng-value="{{Enseignant.Nom}}"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="prenom" class="col-sm-2 control-label">Prenom</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="Enseignant.Prenom" class="form-control" id="prenom" value="{{Enseignant.Prenom}}"/>
+                    <input type="text" ng-model="Enseignant.Prenom" class="form-control" id="prenom" ng-value="{{Enseignant.Prenom}}"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="email" class="col-sm-2 control-label">AdresseMail</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="Enseignant.email" class="form-control" id="email" value="{{Enseignant.email}}"/>
+                    <input type="text" ng-model="Enseignant.email" class="form-control" id="email" ng-value="{{Enseignant.email}}"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="username" class="col-sm-2 control-label">Pseudo</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="Enseignant.username" class="form-control" id="username" value="{{Enseignant.username}}"/>
+                    <input type="text" ng-model="Enseignant.username" class="form-control" id="username" ng-value="{{Enseignant.username}}"/>
                 </div>
             </div>
 
