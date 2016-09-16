@@ -82,7 +82,7 @@
                         url:'/cours',
                         views:{
                             'content':{
-                                templateUrl:"app/Admin/pages/cours/cours.html"
+                                templateUrl:"app/Admin/pages/cours/cours.html",
                                 controller:'CoursController'
                             }
                         }
