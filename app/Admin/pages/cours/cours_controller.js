@@ -5,4 +5,19 @@ angular.module('NotePairApp')
                 $scope.coursList = data;
             });
 
+
+
+        //---- Control de la page
+
+        $scope.goToAdd=function () {
+            $state.go('admin.cours.add')
+        };
+
+        $scope.goToUpdate=function (id) {
+            $state.go('admin.cours.update',{id:id})
+        };
+
+        //----------- fonctions utiles de recherche ( démo/localstorage)
+
+
     }]);
