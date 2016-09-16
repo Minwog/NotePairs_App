@@ -1,13 +1,15 @@
 [
   {
     "_id":1,
-    "intitule":"Enconomie d'entreprise",
+    "intitule":"Economie d'entreprise",
     "section":"Economie",
     "reference": "A3455678",
     "description": "Donner une définition de l’entreprise est difficile. D’un point de vue substantiel il est possible de faire la liste des personnes morales ou physiques généralement considérées comme des entreprises. D’un point de vue conceptuel il existe des approches théoriques de l’entreprise mais leur diversité pose problème. Le plus simple est sans doute de respecter une démarche traditionnelle consistant à présenter l’entreprise à partir de ses fonctions économiques.",
     "ouvert":true,
     "enseignants":[
-      1,4
+      "Cox Rios",
+      "Myra Ashley",
+      "Kristine Rodgers"
     ],
     "eleves":[
       2
@@ -20,7 +22,7 @@
     "reference": "C3455678",
     "description":"Richmond Agitation-Sedation Scale is a medical scale used to measure the agitation or sedation level of a patient. It was developed with efforts of different practitioners, represented by physicians, nurses and pharmacists.",
     "enseignants":[
-      1,3
+      "Leann Carpenter"
     ],
     "eleves":[
       1
@@ -33,10 +35,11 @@
     "reference": "D3455678",
     "description":"Chef de projet - Mission de la Pédagogie et du Numérique pour l'Enseignement Supérieur",
     "enseignants":[
-      2,3
+      "Myra Ashley",
+      "Leann Carpenter"
     ],
     "eleves":[
-      1,2
+      "Myra Ashley",2
     ]
   },
   {
@@ -46,10 +49,12 @@
     "reference": "B3455678",
     "description":"Robert Vesoul",
     "enseignants":[
-      2,11,1
+      "Kristine Rodgers",
+      "Leann Carpenter",
+      "Cox Rios"
     ],
     "eleves":[
-      2
+      "Cox Rios"
     ]
   }
 ]
