@@ -1,20 +1,13 @@
 
 angular.module('NotePairApp')
     .controller('ElevesController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService','LocalElevesService', function ($scope,$state,$stateParams, alerteService, ElevesService,LocalElevesService) {
-var ok=false;
-    if(!localStorage.getItem('ElevesList')) {
-        ElevesService.query().$promise.then(function (data) {
-            localStorage.setItem('ElevesList', JSON.stringify(data));
-            console.log(data);
-            ok = true;
-        })
-    }else{(ok=true)};
+
+       LocalElevesService.query().then(function (data) {
+           $scope.ElevesList=data;
+
+       });
 
 
-   if(ok){
-       $scope.ElevesList = JSON.parse(localStorage.getItem('ElevesList'));
-       console.log($scope.ElevesList)
-    }
 
         $scope.newEleve={
         'Nom':'',
@@ -26,9 +19,7 @@ var ok=false;
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addEleve = function () {
 
-            LocalElevesService.save($scope.newEleve,$scope.ElevesList);
-            $scope.ElevesList.push($scope.newEleve);
-
+            LocalElevesService.save($scope.newEleve);
             $state.go('admin.students')
         };
 
@@ -41,10 +32,11 @@ var ok=false;
     };
 
 //--- Methode delete pour supprimer un Eleve à partir de son id ---//
-    $scope.deleteEleve=function() {
-        $scope.Eleve = ElevesService.query({id: $stateParams.id});
+    $scope.deleteEleve=function(id) {
         if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Eleve ?')){
-            Eleve.$delete();
+           LocalElevesService.delete(id);
+            $state.go('admin.students')
+
         }
     };
 

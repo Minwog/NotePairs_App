@@ -22,55 +22,85 @@ angular.module('NotePairApp')
 }])
 
     // le service pour aller chercher les données en mode démo dans le localstorage
-    .factory('LocalElevesService',function () {
-        var service={
-            'save':save,
-            'update':update,
-            'get':get
-        }
+    .factory('LocalElevesService',['$q','ElevesService',function ($q,ElevesService) {
+
+        var _value;
+
+        var service = {
+            'query': value,
+            'save': save,
+            'update': update,
+            'get': get,
+            'delete':delet
+        };
 
         function save(data) {
-
-            var List=JSON.parse(localStorage.getItem('ElevesList'));
-            console.log(List)
-            List.push(data);
-            localStorage.setItem('ElevesList',JSON.stringify(List));
-
+            _value.push(data);
         }
 
-        function update(data){
-           var local=JSON.parse(localStorage.getItem('ElevesList'));
-            findById(data['eleve_id'],local,function(eleve){
-                local[eleve.index]=data;
-                localStorage.setItem(JSON.stringify('ElevesList'),local)
+
+        function update(data) {
+
+            findById(data['eleves_id'], function (eleve) {
+                console.log(eleve);
+                _value[eleve.index] = data;
             });
 
         }
 
-        function get(id){
-            findById(id,JSON.parse(localStorage.getItem('ElevesList')),function(eleve){
-                console.log(eleve['eleve'])
-                return eleve['eleve'];
-
+        function delet(id) {
+            findById(id,function (eleve) {
+                console.log(eleve.index)
+                _value.splice(eleve.index,1)
             })
-        }
 
-        function findById(id,List,callback) {
-            var done=false;
-            var eleve;
-            var index;
-            for(var i=0;i<List.length;i++){
-                if (List[i]['eleve_id']===id){
-                    eleve=List[i];
-                    index=i;
-                    done=true;
+            }
+
+
+            function get(id) {
+                findById(id, function (eleve) {
+                    console.log(eleve);
+                })
+            };
+
+            function findById(id, callback) {
+                var done = false;
+                var eleve;
+                var index;
+                for (var i = 0; i < _value.length; i++) {
+                    if (_value[i]['eleves_id'] === id) {
+                        eleve = _value[i];
+                        index = i;
+                        done = true;
+                    }
+                }
+                if (done) {
+                    callback({'eleve': eleve, 'index': index});
                 }
             }
-            if(done){
-                callback({'eleve':eleve,'index':index});
-            }
-        }
 
-        return service
-    });
+            function value(){
+                var deferred = $q.defer();
+
+                // check and see if we have retrieved the  data.
+                // if we have, reuse it by immediately resolving
+                if (!_value) {
+                    ElevesService.query().$promise
+                        .then(function (data) {
+                                _value = data;
+                                deferred.resolve(data);
+                            console.log('wsh')
+                            }
+                        )
+                } else {
+                    deferred.resolve(_value)
+                    console.log('fzezfze')
+                }
+                return deferred.promise
+            }
+
+
+            return service
+
+    }]);
 
