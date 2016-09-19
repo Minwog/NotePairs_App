@@ -6,9 +6,9 @@
 
 
 //--- Methode update pour modifier un Eleve à partir de son id ---//
-    $scope.Eleve = LocalElevesService.get($stateParams.id);
 
-            console.log();
+    $scope.Eleve = LocalElevesService.get($stateParams.id);
+            console.log(LocalElevesService.get($stateParams.id));
 
     $scope.updateEleves = function () {
         LocalElevesService.update($scope.Eleve);

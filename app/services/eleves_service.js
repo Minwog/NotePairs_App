@@ -30,7 +30,7 @@ angular.module('NotePairApp')
             'query': value,
             'save': save,
             'update': update,
-            'get': get,
+            'get': trouver,
             'delete':delet
         };
 
@@ -41,7 +41,7 @@ angular.module('NotePairApp')
 
         function update(data) {
 
-            findById(data['eleves_id'], function (eleve) {
+            findById(data, function (eleve) {
                 console.log(eleve);
                 _value[eleve.index] = data;
             });
@@ -50,20 +50,22 @@ angular.module('NotePairApp')
 
         function delet(id) {
             findById(id,function (eleve) {
-                console.log(eleve.index)
+                console.log(eleve.index);
                 _value.splice(eleve.index,1)
             })
 
             }
 
-
-            function get(id) {
+        function trouver(id){
                 findById(id, function (eleve) {
-                    console.log(eleve);
-                })
+                    console.log(eleve)
+                   return eleve.eleve
+                });
+
             };
 
-            function findById(id, callback) {
+        function findById(id, callback) {
+                console.log('debut findById');
                 var done = false;
                 var eleve;
                 var index;
@@ -75,11 +77,12 @@ angular.module('NotePairApp')
                     }
                 }
                 if (done) {
+                    console.log('findById');
                     callback({'eleve': eleve, 'index': index});
                 }
             }
 
-            function value(){
+        function value(){
                 var deferred = $q.defer();
 
                 // check and see if we have retrieved the  data.

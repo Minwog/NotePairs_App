@@ -8,27 +8,11 @@ angular.module('NotePairApp')
        });
 
 
-
-        $scope.newEleve={
-        'Nom':'',
-        'Prenom':'',
-        'email':'',
-        'username':''
-        };
-
-//--- Methode add pour ajouter un Eleve à la liste ---//
-        $scope.addEleve = function () {
-
-            LocalElevesService.save($scope.newEleve);
-            $state.go('admin.students')
-        };
-
-
-
-
 //--- Methode get pour afficher un Eleve à partir de son id ---//
-    $scope.getEleve=function(){
-        $scope.Eleve=ElevesService.query({id:$stateParams.id});
+    $scope.getEleve=function(id){
+       LocalElevesService.get(id).then(function(data){
+           console.log(data)
+       })
     };
 
 //--- Methode delete pour supprimer un Eleve à partir de son id ---//

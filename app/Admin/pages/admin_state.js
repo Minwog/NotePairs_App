@@ -32,7 +32,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/eleves/eleves_add.html',
-                                controller:'ElevesController'
+                                controller:'ElevesAddController'
                             }
                         }
                     })
