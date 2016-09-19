@@ -36,15 +36,34 @@
 
             <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES cours -->
 
+            <label for="coursList" class="col-sm-2 control-label"> Cours Associés</label>
+            <div class="col-sm-10">
+
+                     <select multiple class="selectpicker" id="coursList">
+
+                        <option ng-repeat="cours in cours">{{cours.nom}}</option>
+                    </select>
+            </div>
+
+
             <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES groupes -->
 
+            <label for="groupesList" class="col-sm-2 control-label"> Groupes</label>
+            <div class="col-sm-10">
 
+                <select multiple class="selectpicker" id="groupesList">
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" ng-click="addEleve()" class="btn btn-primary" value="Ajouter Elève"/>
-                </div>
+                    <option ng-repeat="groupe in groupes">{{groupe}}</option>
+                </select>
             </div>
+
         </div>
+    </div>
+<div class="row">
+    <div class="form-group pull-right">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" ng-click="addEleve()" class="btn btn-primary" value="Ajouter Elève"/>
+        </div>
+    </div>
     </div>
 </div>
