@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pivot Demo</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- external libs from cdnjs -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- PivotTable.js libs from ../dist -->
+    <link rel="stylesheet" type="text/css" href="dist/pivot.css">
+    <script type="text/javascript" src="dist/pivot.js"></script>
+    <script type="text/javascript" src="dist/gchart_renderers.js"></script>
+    <style>
+        body {font-family: Verdana;}
+    </style>
+
+    <!-- optional: mobile support with jqueryui-touch-punch -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+    // This example adds Google Chart renderers.
+
+    google.load("visualization", "1", {packages:["corechart", "charteditor"]});
+    $(function(){
+        var derivers = $.pivotUtilities.derivers;
+        var renderers = $.extend($.pivotUtilities.renderers,
+                $.pivotUtilities.gchart_renderers);
+
+        $.getJSON("mps.json", function(mps) {
+            $("#output").pivotUI(mps, {
+                renderers: renderers,
+                derivedAttributes: {
+                    "Intervale Note": derivers.bin("Note", 5),
+                    "Moyenne": function (mp) {
+                        var s=0;
+                        for(var i; i<mp["Note"]; i++){
+                            s = s+ mp["Note"][i];
+                        }
+                        return s;
+                    }
+
+                },
+                cols: ["Question"], rows: ["Copie"],
+                rendererName: "Table"
+            });
+        });
+    });
+</script>
+
+
+<div id="output" style="margin: 30px;"></div>
+
+</body>
+</html>
