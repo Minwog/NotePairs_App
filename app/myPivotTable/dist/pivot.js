@@ -1373,13 +1373,22 @@
       colorScaleGenerator = opts != null ? (ref = opts.heatmap) != null ? ref.colorScaleGenerator : void 0 : void 0;
       if (colorScaleGenerator == null) {
         colorScaleGenerator = function(values) {
-          var max, min;
+          var max, min, aver=0;
           min = Math.min.apply(Math, values);
           max = Math.max.apply(Math, values);
+          for(var i=0; i<values.length; i++) {
+            aver = aver + values[i];
+          }
+          aver = aver/values.length;
           return function(x) {
             var nonRed;
-            nonRed = 255 - Math.round(255 * (x - min) / (max - min));
-            return "rgb("+nonRed+", 255," + nonRed + ")";
+            if(x<aver){
+              nonRed = 85 + Math.round(170 * (x - min) / (aver - min));
+              return "rgb(255, "+nonRed+"," + nonRed + ")";
+            } else {
+              nonRed = 85 + Math.round(170 * (x - max) / (aver - max));
+              return "rgb(255, "+nonRed+"," + nonRed + ")";
+            };
           };
         };
       }
