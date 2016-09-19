@@ -331,10 +331,10 @@
     };
     aggregators = (function(tpl) {
       return {
-        "Count": tpl.count(usFmtInt),
-        "Count Unique Values": tpl.countUnique(usFmtInt),
-        "List Unique Values": tpl.listUnique(", "),
-        "Average": tpl.average(usFmt),
+        "Effectifs totaux": tpl.count(usFmtInt),
+        "Effectifs Uniques": tpl.countUnique(usFmtInt),
+        "Liste des Valeurs": tpl.listUnique(", "),
+        "Moyenne": tpl.average(usFmt),
         "Minimum": tpl.min(usFmt),
         "Maximum": tpl.max(usFmt)
       };
@@ -343,16 +343,16 @@
       "Table": function(data, opts) {
         return pivotTableRenderer(data, opts);
       },
-      "Table Barchart": function(data, opts) {
+      "Diagrammes en Bâton": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).barchart();
       },
-      "Heatmap": function(data, opts) {
+      "Carte de Chaleur": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).heatmap("heatmap", opts);
       },
-      "Row Heatmap": function(data, opts) {
+      "Carte de Chaleur par ligne": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).heatmap("rowheatmap", opts);
       },
-      "Col Heatmap": function(data, opts) {
+      "Carte de Chaleur par colonne": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).heatmap("colheatmap", opts);
       }
     };
