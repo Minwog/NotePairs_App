@@ -25,10 +25,7 @@ table.pvtTable tbody tr td {
     text-align: right;
 }
 
-.pvtTotal, .pvtGrandTotal {
-    font-weight: bold;
-    padding: 10px;
-}
+.pvtTotal, .pvtGrandTotal { font-weight: bold; }
 
 .pvtVals { text-align: center;}
 .pvtAggregator { margin-bottom: 5px ;}
