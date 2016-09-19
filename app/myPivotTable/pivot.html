@@ -37,15 +37,17 @@
                     "Intervale Note": derivers.bin("Note", 5),
                     "Moyenne": function (mp) {
                         var s=0;
-                        for(var i; i<mp["Note"]; i++){
-                            s = s+ mp["Note"][i];
-                        }
+                        ;
                         return s;
                     }
 
                 },
                 cols: ["Question"], rows: ["Copie"],
-                rendererName: "Table"
+                rendererName: "Heatmap",
+                aggregatorName: "Average",
+                vals: [
+                    "Note"
+                ]
             });
         });
     });

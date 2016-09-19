@@ -334,20 +334,9 @@
         "Count": tpl.count(usFmtInt),
         "Count Unique Values": tpl.countUnique(usFmtInt),
         "List Unique Values": tpl.listUnique(", "),
-        "Sum": tpl.sum(usFmt),
-        "Integer Sum": tpl.sum(usFmtInt),
         "Average": tpl.average(usFmt),
         "Minimum": tpl.min(usFmt),
-        "Maximum": tpl.max(usFmt),
-        "Sum over Sum": tpl.sumOverSum(usFmt),
-        "80% Upper Bound": tpl.sumOverSumBound80(true, usFmt),
-        "80% Lower Bound": tpl.sumOverSumBound80(false, usFmt),
-        "Sum as Fraction of Total": tpl.fractionOf(tpl.sum(), "total", usFmtPct),
-        "Sum as Fraction of Rows": tpl.fractionOf(tpl.sum(), "row", usFmtPct),
-        "Sum as Fraction of Columns": tpl.fractionOf(tpl.sum(), "col", usFmtPct),
-        "Count as Fraction of Total": tpl.fractionOf(tpl.count(), "total", usFmtPct),
-        "Count as Fraction of Rows": tpl.fractionOf(tpl.count(), "row", usFmtPct),
-        "Count as Fraction of Columns": tpl.fractionOf(tpl.count(), "col", usFmtPct)
+        "Maximum": tpl.max(usFmt)
       };
     })(aggregatorTemplates);
     renderers = {
