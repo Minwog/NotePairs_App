@@ -1379,7 +1379,7 @@
           return function(x) {
             var nonRed;
             nonRed = 255 - Math.round(255 * (x - min) / (max - min));
-            return "rgb(255," + nonRed + "," + nonRed + ")";
+            return "rgb("+nonRed+", 255," + nonRed + ")";
           };
         };
       }
