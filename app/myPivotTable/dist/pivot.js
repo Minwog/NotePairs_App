@@ -343,7 +343,7 @@
       "Table": function(data, opts) {
         return pivotTableRenderer(data, opts);
       },
-      "Diagrammes en Bâton": function(data, opts) {
+      "Histogramme": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).barchart();
       },
       "Carte de Chaleur": function(data, opts) {

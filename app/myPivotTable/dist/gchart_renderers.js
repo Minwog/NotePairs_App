@@ -166,15 +166,14 @@
       };
     };
     return $.pivotUtilities.gchart_renderers = {
-      "Line Chart": makeGoogleChart("LineChart"),
-      "Bar Chart": makeGoogleChart("ColumnChart"),
-      "Stacked Bar Chart": makeGoogleChart("ColumnChart", {
+      "Graphique Ligne": makeGoogleChart("LineChart"),
+      "Graphique Baton": makeGoogleChart("ColumnChart"),
+      "Baton empiles": makeGoogleChart("ColumnChart", {
         isStacked: true
       }),
-      "Area Chart": makeGoogleChart("AreaChart", {
+      "Aires": makeGoogleChart("AreaChart", {
         isStacked: true
-      }),
-      "Scatter Chart": makeGoogleChart("ScatterChart")
+      })
     };
   });
 
