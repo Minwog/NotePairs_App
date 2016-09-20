@@ -5,7 +5,17 @@ angular.module('NotePairApp')
                 $scope.coursList = data;
             });
 
-        //---- Control de la page
+        httpq.get("resources/json/eleves.json")
+            .then(function(data) {
+                $scope.ElevesList = data;
+            });
+
+        httpq.get("resources/json/enseignants.json")
+            .then(function(data) {
+                $scope.EnseignantsList = data;
+            });
+
+        //---- Controle de la page
 
         $scope.goToAdd=function () {
             $state.go('admin.cours.add')
@@ -15,6 +25,13 @@ angular.module('NotePairApp')
             $state.go('admin.cours.update',{id:id})
         };
 
+        $scope.goToDelete=function(id){
+            $state.go('admin.cours.delete',{id:id})
+
+            // A faire
+
+        }
+
         $scope.goToView=function (id) {
             $state.go('admin.cours.view',{id:id})
         };
@@ -22,6 +39,26 @@ angular.module('NotePairApp')
         $scope.goToAddTeacher=function(id){ // id du cours
             $state.go('admin.cours.addTeacher', {id:id})
         };
+
+        $scope.goToDeleteTeacher=function(id, idEnseignant){
+
+            //A faire
+
+        }
+
+        $scope.goToAddEleve=function(id){
+            $state.go('admin.cours.addEleve', {id:id})
+
+            //A faire
+
+        }
+
+        $scope.goToDeleteEleve=function(id, idEleve){
+
+            //A faire
+
+        }
+
         //----------- fonctions utiles de recherche ( démo/localstorage)
 
         $scope.cours=  {
@@ -37,33 +74,39 @@ angular.module('NotePairApp')
                     "Prenom": "Rios",
                     "username": "CoxRios",
                     "email":"coxrios@coxrios.com",
-                    "id":"1"
+                    "enseignants_id":"1"
                 },
                 {
                     "Nom": "Myra",
                     "Prenom": "Ashley",
                     "username": "MyraAshley",
                     "email":"myraashley@coxrios.com",
-                    "id":"2"
+                    "enseignants_id":"2"
                 },
                 {
                     "Nom": "Love",
                     "Prenom": "Bobby",
                     "username": "bobbylove",
                     "email":"bobbylove@coxrios.com",
-                    "id":"3"
+                    "enseignants_id":"3"
                 }
             ],
             "eleves":[
-                2
+                {
+                    "Nom": "Cox",
+                    "Prenom": "Rios",
+                    "username": "CoxRios",
+                    "email": "coxrios@coxrios.com",
+                    "eleves_id": "1"
+                },
+                {
+                    "Nom": "Love",
+                    "Prenom": "Bobby",
+                    "username": "bobbylove",
+                    "email":"bobbylove@coxrios.com",
+                    "eleves_id":"3"
+                }
             ]
         };
-
-        $scope.EnseignantsList=JSON.parse(localStorage.getItem("EnseignantsList"));
-        if (!localStorage['EnseignantsList']){
-            EnseignantsService.query().$promise.then(function (data) {
-                localStorage.setItem('EnseignantsList', JSON.stringify(data));
-            })
-        }
 
     }]);

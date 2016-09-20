@@ -36,7 +36,7 @@
                                         <li><a href="" ng-click="searchLabel = 'intitule'; searchBox={}">Intitulé</a></li>
                                         <li><a href="" ng-click="searchLabel = 'section'; searchBox={}">Section</a></li>
                                         <li><a href="" ng-click="searchLabel = 'reference'; searchBox={}">Référence</a></li>
-                                        <li><a href="" ng-click="searchLabel = 'description'; searchBox={}">Déscription</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'description'; searchBox={}">Description</a></li>
                                         <li><a href="" ng-click="searchLabel = 'enseignants'; searchBox={}">Enseignants</a></li>
                                     </ul>
                                 </div><!-- /btn-group -->
@@ -97,11 +97,11 @@
                                 </div>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-circle-micro"><i class="fa fa-list"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-circle-micro"><i class="fa fa-times"></i>
-                                </button>
-                            </td>
+                            <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate()"><i class="fa fa-list"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDelete()"><i class="fa fa-times"></i>
+                            </button>
+                        </td>
                         </tr>
                         <tr ng-if="cours.expanded" ng-repeat-end="">
                             <td></td>

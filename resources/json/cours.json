@@ -12,21 +12,21 @@
         "Prenom": "Rios",
         "username": "CoxRios",
         "email":"coxrios@coxrios.com",
-        "id":"1"
+        "enseignants_id":"1"
       },
       {
         "Nom": "Myra",
         "Prenom": "Ashley",
         "username": "MyraAshley",
         "email":"myraashley@coxrios.com",
-        "id":"2"
+        "enseignants_id":"2"
       },
       {
       "Nom": "Love",
       "Prenom": "Bobby",
       "username": "bobbylove",
       "email":"bobbylove@coxrios.com",
-      "id":"3"
+      "enseignants_id":"3"
       }
     ],
     "eleves":[
