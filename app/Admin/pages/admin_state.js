@@ -73,7 +73,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants_update.html',
-                                controller:'EnseignantsController'
+                                controller:'AddEnseignantsController'
                             }
                         }
                     })

@@ -56,13 +56,14 @@ angular.module('NotePairApp')
 
             }
 
-        function trouver(id){
-                findById(id, function (eleve) {
-                    console.log(eleve)
-                   return eleve.eleve
-                });
-
-            };
+        function trouver(id) {
+            var deferred=$q.defer();
+            findById(id, function (eleve) {
+                console.log(eleve);
+                deferred.resolve(eleve.eleve)
+            })
+            return deferred.promise
+        };
 
         function findById(id, callback) {
                 console.log('debut findById');
@@ -70,15 +71,15 @@ angular.module('NotePairApp')
                 var eleve;
                 var index;
                 for (var i = 0; i < _value.length; i++) {
-                    if (_value[i]['eleves_id'] === id) {
+                    if (_value[i]['eleves_id'] == id) {
                         eleve = _value[i];
                         index = i;
                         done = true;
                     }
                 }
                 if (done) {
-                    console.log('findById');
-                    callback({'eleve': eleve, 'index': index});
+
+                     callback({'eleve': eleve, 'index': index});
                 }
             }
 

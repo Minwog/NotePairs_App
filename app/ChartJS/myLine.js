@@ -205,6 +205,7 @@ var chartjsData = [];
 for (var i = 0; i < json.length; i++) {
     chartjsData.push(json[i].note_attribuee);
 }
+
 var ctx = document.getElementById("myLine");
 var myLine = new Chart(ctx, {
     type: 'line',
@@ -212,8 +213,19 @@ var myLine = new Chart(ctx, {
         labels: ["0", "1", "2", "3", "4", "5", "6","7", "8", "9", "10", "11", "12", "13","14", "15", "16", "17", "18", "19", "20"],
         datasets: [
             {
+                label: "My Second dataset",
+                type: "bar",
+                yAxesGroup: "1",
+                fillColor: "rgba(151,187,205,0.5)",
+                strokeColor: "rgba(151,187,205,0.8)",
+                highlightFill: "rgba(151,187,205,0.75)",
+                highlightStroke: "rgba(151,187,205,1)",
+                data : [null,null,null,null,null,10,null,null,30,30,30,null,null,null,null,null,null,null,null]
+            },
+            {
                 label: "Notes attribuées par les correcteurs",
-
+                type: "line",
+                yAxesGroup: "2",
                 lineTension: 0.1,
                 backgroundColor: "rgba(75,192,192,0.4)",
                 borderColor: "rgba(75,192,192,1)",
@@ -233,7 +245,16 @@ var myLine = new Chart(ctx, {
                 data: chartjsData,
                 spanGaps: false
             }
-        ]
+        ],
+        yAxes: [{
+            name: "1",
+            scalePositionLeft: false,
+            scaleFontColor: "rgba(151,137,200,0.8)"
+        }, {
+            name: "2",
+            scalePositionLeft: true,
+            scaleFontColor: "rgba(151,187,205,0.8)"
+        }]
     },
     options: {
         multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>",
