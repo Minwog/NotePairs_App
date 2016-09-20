@@ -1,6 +1,191 @@
 [
   {
-    "_id":1,
-    "eleves":[1,2]
+    "groupes_id": "57e120080a6cfd6689b8bb50",
+    "numero": 17,
+    "eleves": [
+      {
+        "nom": "Cortez",
+        "prenom": "Cross",
+        "email": "crosscortez@enaut.com"
+      },
+      {
+        "nom": "Bender",
+        "prenom": "Petra",
+        "email": "petrabender@enaut.com"
+      }
+    ],
+    "cours": [
+      "Representation analytique des signaux et systemes",
+      "Physique quantique",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "groupes_id": "57e12008767391af7bff9b8a",
+    "numero": 19,
+    "eleves": [
+      {
+        "nom": "Villarreal",
+        "prenom": "Erin",
+        "email": "erinvillarreal@enaut.com"
+      },
+      {
+        "nom": "Lowery",
+        "prenom": "Jacklyn",
+        "email": "jacklynlowery@enaut.com"
+      }
+    ],
+    "cours": [
+      "Enconomie d'entreprise",
+      "Champs et propagation",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "groupes_id": "57e12008d98a0c1b035fb466",
+    "numero": 16,
+    "eleves": [
+      {
+        "nom": "Stuart",
+        "prenom": "Lacey",
+        "email": "laceystuart@enaut.com"
+      },
+      {
+        "nom": "Mays",
+        "prenom": "Obrien",
+        "email": "obrienmays@enaut.com"
+      },
+      {
+        "nom": "House",
+        "prenom": "Harris",
+        "email": "harrishouse@enaut.com"
+      },
+      {
+        "nom": "Gilbert",
+        "prenom": "Judy",
+        "email": "judygilbert@enaut.com"
+      }
+    ],
+    "cours": [
+      "Statistiques",
+      "Physique quantique",
+      "Representation analytique des signaux et systemes",
+      "Elétronique analogique",
+      "Microéconomie"
+    ]
+  },
+  {
+    "groupes_id": "57e12008aab454020f0e5308",
+    "numero": 2,
+    "eleves": [
+      {
+        "nom": "Justice",
+        "prenom": "Mclean",
+        "email": "mcleanjustice@enaut.com"
+      },
+      {
+        "nom": "Snider",
+        "prenom": "Rasmussen",
+        "email": "rasmussensnider@enaut.com"
+      }
+    ],
+    "cours": [
+      "Génie Logiciel",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "groupes_id": "57e12008b4612cdbd5a36c68",
+    "numero": 6,
+    "eleves": [
+      {
+        "nom": "Alexander",
+        "prenom": "Jimmie",
+        "email": "jimmiealexander@enaut.com"
+      },
+      {
+        "nom": "Turner",
+        "prenom": "Lucile",
+        "email": "lucileturner@enaut.com"
+      },
+      {
+        "nom": "Petty",
+        "prenom": "Enid",
+        "email": "enidpetty@enaut.com"
+      },
+      {
+        "nom": "Lyons",
+        "prenom": "Curry",
+        "email": "currylyons@enaut.com"
+      },
+      {
+        "nom": "Sweet",
+        "prenom": "Jackie",
+        "email": "jackiesweet@enaut.com"
+      }
+    ],
+    "cours": [
+      "Composants à semiconducteurs",
+      "Microéconomie",
+      "Électronique radio-fréquence",
+      "Elétronique analogique"
+    ]
+  },
+  {
+    "groupes_id": "57e12008e66e9a4084d1f780",
+    "numero": 18,
+    "eleves": [
+      {
+        "nom": "Singleton",
+        "prenom": "Staci",
+        "email": "stacisingleton@enaut.com"
+      },
+      {
+        "nom": "Lowe",
+        "prenom": "Dean",
+        "email": "deanlowe@enaut.com"
+      },
+      {
+        "nom": "Collins",
+        "prenom": "Patel",
+        "email": "patelcollins@enaut.com"
+      },
+      {
+        "nom": "Young",
+        "prenom": "Mann",
+        "email": "mannyoung@enaut.com"
+      },
+      {
+        "nom": "Higgins",
+        "prenom": "Maritza",
+        "email": "maritzahiggins@enaut.com"
+      }
+    ],
+    "cours": [
+      "Champs et propagation",
+      "Droit de l’entreprise",
+      "Champs et propagation",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "groupes_id": "57e12008b0ac397cceb282a9",
+    "numero": 17,
+    "eleves": [
+      {
+        "nom": "Murphy",
+        "prenom": "Hunter",
+        "email": "huntermurphy@enaut.com"
+      },
+      {
+        "nom": "Mccormick",
+        "prenom": "Tara",
+        "email": "taramccormick@enaut.com"
+      }
+    ],
+    "cours": [
+      "Elétronique analogique",
+      "Composants à semiconducteurs"
+    ]
   }
 ]

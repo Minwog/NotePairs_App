@@ -63,7 +63,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants_add.html',
-                                controller:'EnseignantsController'
+                                controller:'AddEnseignantsController'
                             }
                         }
                     })
@@ -73,7 +73,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants_update.html',
-                                controller:'EnseignantsController'
+                                controller:'UpdateEnseignantsController'
                             }
                         }
                     })
@@ -99,6 +99,17 @@
                         }
                     })
 
+                    .state('admin.cours.update', {
+                        parent:'admin',
+                        url:'/cours/update',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/cours/cours_update.html",
+                                controller: 'CoursController'
+                            }
+                        }
+                    })
+
                     .state('admin.cours.view',{
                         parent:'admin',
                         url:'/cours/view',
@@ -106,6 +117,28 @@
                             'content':{
                                 templateUrl:"app/Admin/pages/cours/cours_view.html",
                                 controller:'CoursController'
+                            }
+                        }
+                    })
+
+                    .state('admin.cours.addTeacher', {
+                        parent:'admin',
+                        url:'/cours/addTeacher',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/cours/cours_add_Teacher.html",
+                                controller: 'CoursController'
+                            }
+                        }
+                    })
+
+                    .state('admin.cours.addEleve', {
+                        parent:'admin',
+                        url:'/cours/addEleve',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/cours/cours_add_Eleve.html",
+                                controller: 'CoursController'
                             }
                         }
                     })
@@ -120,6 +153,31 @@
                             }
                         }
                     })
+
+                    .state('admin.groupes.add',{
+                        parent:'admin',
+                        url:'/groupes/new',
+                        views: {
+                            'content': {
+                                templateUrl: "app/Admin/pages/groupe/groupes_add.html",
+                                controller: 'AddGroupesController'
+                            }
+                        }
+
+                    })
+
+                    .state('admin.groupes.update',{
+                        parent:'admin',
+                        url:'/groupes/:id',
+                        views:{
+                            content:{
+                                templateUrl:'app/admin/pages/groupe/groupes_update.html',
+                                controller:'UpdateGroupesController'
+                            }
+                        }
+                    })
+
+
 
             }]);
 })();

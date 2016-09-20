@@ -1,7 +1,57 @@
-<div id="page-wrapper">
+<div id="page-wrapper" ng-controller="CoursController">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">{{cours.intitule}}</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Modifier le cours
+                </div>
+
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="intitule" class="col-sm-2 control-label">Intitulé</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="cours.intitule" class="form-control" id="intitule" value="{{cours.intitule}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="section" class="col-sm-2 control-label">Section</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="cours.section" class="form-control" id="section" value="{{cours.section}}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea ng-model="cours.description" class="form-control" id="description" vamue="{{cours.description}}"/>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES cours -->
+
+            <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES groupes -->
+
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" ng-click="addCours()" class="btn btn-primary" value="Modifier Cours"/>
+                    </div>
+                </div>
+                </br></br>
+
+            </div>
 
             <!---------------------Enseignants--------------------->
 
@@ -14,7 +64,7 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example1">
                                 <thead>
                                 <tr class="">
                                     <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
@@ -67,13 +117,13 @@
                                         </ul>
                                     </td>
                                 </tr>
-                                    <td></td>
+                                <td></td>
                                 </tr>
                                 </tbody>
 
+                            </table>
+                            <button class="btn btn-primary pull-right" ng-click="goToAddTeacher(cours.id)">Ajouter un professeur</button>
                         </table>
-                    <button class="btn btn-primary pull-right" ng-click="goToAddTeacher(cours.id)">Ajouter un professeur</button>
-                    </table>
 
                     </div>
                     <!-- /.table-responsive -->

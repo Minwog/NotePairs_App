@@ -1,92 +1,266 @@
 [
   {
-    "enseignants_id":1,
-    "user_id":4,
-    "Prenom": "Sophie",
-    "Nom": "Miramal",
-    "email":"sophie@sophie.com",
-    "role":"enseignants",
-    "username":"Sophieakjfbsd",
-    "cours":[
-      2,3
+    "enseignant_id": "57dfeaf1e8f757d807dcd035",
+    "user_id": "57dfeaf1ab1de26fd76523ba",
+    "prenom": "Mclean",
+    "nom": "Bonner",
+    "email": "mcleanbonner@quadeebo.com",
+    "cours": [
+      "Physique quantique",
+      "Representation analytique des signaux et systemes",
+      "Composants à semiconducteurs"
     ]
   },
-
   {
-    "enseignants_id":2,
-    "user_id":3,
-    "Prenom": "Jeanne",
-    "username":"Jeanne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"enseignants",
-    "cours":[
-      1,4,3
+    "enseignant_id": "57dfeaf134e02086d99513c8",
+    "user_id": "57dfeaf17ec9600f0dcf898a",
+    "prenom": "Nikki",
+    "nom": "Miles",
+    "email": "nikkimiles@quadeebo.com",
+    "cours": [
+      "Economie d'entreprise",
+      "Electronique analogique"
     ]
   },
-
   {
-    "enseignants_id":3,
-    "user_id":6,
-    "Prenom": "Jeannette",
-    "username":"Jeannezaet",
-    "email":"jeanne@jeasdfgnne.com",
-    "Nom": "Lagrosse",
-    "role":"enseignants",
-    "cours":[
-      1,4,3
+    "enseignant_id": "57dfeaf170480aa5f6edc9c3",
+    "user_id": "57dfeaf1d82ed44c5823cee2",
+    "prenom": "Leona",
+    "nom": "Bennett",
+    "email": "leonabennett@quadeebo.com",
+    "cours": [
+      "Electronique analogique",
+      "Statistiques",
+      "Statistiques"
     ]
   },
-
   {
-    "enseignants_id":4,
-    "user_id":7,
-    "Prenom": "Marie",
-    "username":"sdg",
-    "email":"Marie@sdf.com",
-    "Nom": "Blabla",
-    "role":"enseignants",
-    "cours":[
-      1,4,3
+    "enseignant_id": "57dfeaf12d81299984817fc8",
+    "user_id": "57dfeaf1f3db4e865b21db4f",
+    "prenom": "Mccarthy",
+    "nom": "Torres",
+    "email": "mccarthytorres@quadeebo.com",
+    "cours": [
+      "Physique des solides",
+      "Architecture des systèmes informatiques",
+      "Champs et propagation"
     ]
   },
-
   {
-    "enseignants_id":5,
-    "user_id":8,
-    "Prenom": "Jeassssssnne",
-    "username":"Jeaddddnne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"enseignants",
-    "cours":[
-      1,4,3
+    "enseignant_id": "57dfeaf1f08771e05e120f58",
+    "user_id": "57dfeaf1f4184e09ae64b74f",
+    "prenom": "Lynda",
+    "nom": "Salazar",
+    "email": "lyndasalazar@quadeebo.com",
+    "cours": [
+      "Champs et propagation",
+      "Electronique analogique"
     ]
   },
-
   {
-    "enseignants_id":6,
-    "user_id":9,
-    "Prenom": "Jeanne",
-    "username":"Jefsanne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"enseignants",
-    "cours":[
-      1,4,3
+    "enseignant_id": "57dfeaf1ee888eafbc6ca4d8",
+    "user_id": "57dfeaf149c9c141a1026590",
+    "prenom": "Pollard",
+    "nom": "Chavez",
+    "email": "pollardchavez@quadeebo.com",
+    "cours": [
+      "Composants à semiconducteurs",
+      "Électronique radio-fréquence",
+      "Physique des solides"
     ]
   },
-
   {
-    "enseignants_id":7,
-    "user_id":10,
-    "Prenom": "Jeanne",
-    "username":"Jeanne",
-    "email":"jeanne@jeanne.com",
-    "Nom": "Sobet",
-    "role":"enseignants",
-    "cours":[
-      1,4,3
+    "enseignant_id": "57dfeaf1d771b5b1b8868161",
+    "user_id": "57dfeaf16eb3c97adf90a5d7",
+    "prenom": "Mayra",
+    "nom": "Hampton",
+    "email": "mayrahampton@quadeebo.com",
+    "cours": [
+      "Génie Logiciel",
+      "Composants à semiconducteurs",
+      "Physique des solides"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1c47cd423abd25a7e",
+    "user_id": "57dfeaf164f22a63030f6486",
+    "prenom": "Logan",
+    "nom": "Holcomb",
+    "email": "loganholcomb@quadeebo.com",
+    "cours": [
+      "Architecture des systèmes informatiques",
+      "Composants à semiconducteurs",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf11dcb3a0c22c06d49",
+    "user_id": "57dfeaf1b0835a3181b4445f",
+    "prenom": "Candy",
+    "nom": "Frederick",
+    "email": "candyfrederick@quadeebo.com",
+    "cours": [
+      "Génie Logiciel",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1101a8e37b0c1c1e4",
+    "user_id": "57dfeaf116a177ad3f39011d",
+    "prenom": "Essie",
+    "nom": "Cochran",
+    "email": "essiecochran@quadeebo.com",
+    "cours": [
+      "Statistiques",
+      "Physique des solides"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1cbea9262d6f0f7ba",
+    "user_id": "57dfeaf1942445be605e2098",
+    "prenom": "Rodgers",
+    "nom": "Morton",
+    "email": "rodgersmorton@quadeebo.com",
+    "cours": [
+      "Electronique analogique",
+      "Champs et propagation",
+      "Physique des solides"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1fac94dca513017da",
+    "user_id": "57dfeaf1b443b971d6aaabd1",
+    "prenom": "Sheryl",
+    "nom": "Petersen",
+    "email": "sherylpetersen@quadeebo.com",
+    "cours": [
+      "Droit de l’entreprise",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf16310ffffd63b5bd7",
+    "user_id": "57dfeaf13e95a787bebc76e2",
+    "prenom": "Shelly",
+    "nom": "Griffith",
+    "email": "shellygriffith@quadeebo.com",
+    "cours": [
+      "Génie Logiciel",
+      "Architecture des systèmes informatiques",
+      "Architecture des systèmes informatiques"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1ad15d3fc1e079b56",
+    "user_id": "57dfeaf16d5b0e98861b7e65",
+    "prenom": "Lauren",
+    "nom": "Ortega",
+    "email": "laurenortega@quadeebo.com",
+    "cours": [
+      "Microéconomie",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1e9cf2714abc62fac",
+    "user_id": "57dfeaf1e114f23007a5f91f",
+    "prenom": "Fulton",
+    "nom": "Hays",
+    "email": "fultonhays@quadeebo.com",
+    "cours": [
+      "Microéconomie",
+      "Microéconomie"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf104834dd1641ae78e",
+    "user_id": "57dfeaf104e37fd8f9b07bf8",
+    "prenom": "Ray",
+    "nom": "Noble",
+    "email": "raynoble@quadeebo.com",
+    "cours": [
+      "Électronique radio-fréquence",
+      "Electronique analogique"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf18224bdc6a0bd9cf7",
+    "user_id": "57dfeaf14a331a5089dac490",
+    "prenom": "Townsend",
+    "nom": "Francis",
+    "email": "townsendfrancis@quadeebo.com",
+    "cours": [
+      "Champs et propagation",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1e25b2d58009f41a2",
+    "user_id": "57dfeaf1fdad6a4bc2fa48c8",
+    "prenom": "Webb",
+    "nom": "Moon",
+    "email": "webbmoon@quadeebo.com",
+    "cours": [
+      "Génie Logiciel",
+      "Physique des solides",
+      "Representation analytique des signaux et systemes"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf1f8520f6394caadcc",
+    "user_id": "57dfeaf1a7e2c2e1b6771518",
+    "prenom": "Marta",
+    "nom": "Brooks",
+    "email": "martabrooks@quadeebo.com",
+    "cours": [
+      "Champs et propagation",
+      "Representation analytique des signaux et systemes",
+      "Microéconomie"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf183cc8b209727924e",
+    "user_id": "57dfeaf13a2b329d15338096",
+    "prenom": "Leonor",
+    "nom": "Case",
+    "email": "leonorcase@quadeebo.com",
+    "cours": [
+      "Electronique analogique",
+      "Électronique radio-fréquence",
+      "Economie d'entreprise"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf10b77b004f18aaff0",
+    "user_id": "57dfeaf11e9f98bda05249b1",
+    "prenom": "Patty",
+    "nom": "Ball",
+    "email": "pattyball@quadeebo.com",
+    "cours": [
+      "Champs et propagation",
+      "Électronique radio-fréquence"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf161b85d6af5ea84f6",
+    "user_id": "57dfeaf137416ff42e3e55ab",
+    "prenom": "Lesa",
+    "nom": "Larsen",
+    "email": "lesalarsen@quadeebo.com",
+    "cours": [
+      "Génie Logiciel",
+      "Droit de l’entreprise"
+    ]
+  },
+  {
+    "enseignant_id": "57dfeaf172fe0bd74367aee9",
+    "user_id": "57dfeaf1f8fe2f60767e4d0c",
+    "prenom": "Donaldson",
+    "nom": "Rivas",
+    "email": "donaldsonrivas@quadeebo.com",
+    "cours": [
+      "Physique quantique",
+      "Architecture des systèmes informatiques"
     ]
   }
 ]
