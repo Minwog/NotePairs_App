@@ -1,4 +1,4 @@
-<div id="page-wrapper">
+<div id="page-wrapper" ng-controller="CoursController">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Nouveau Cours</h1>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="form-group">
-                <label for="description" class="col-sm-2 control-label">Déscription</label>
+                <label for="description" class="col-sm-2 control-label">Description</label>
                 <div class="col-sm-10">
                     <textarea ng-model="newCours.description" class="form-control" id="description" placeholder="description"/>
                 </div>

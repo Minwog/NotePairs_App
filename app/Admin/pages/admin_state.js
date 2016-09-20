@@ -110,6 +110,17 @@
                         }
                     })
 
+                    .state('admin.cours.addTeacher', {
+                        parent:'admin',
+                        url:'/cours/addTeacher',
+                        views:{
+                            'content':{
+                                templateUrl:"app/Admin/pages/cours/cours_addTeacher.html",
+                                controller: 'CoursController'
+                            }
+                        }
+                    })
+
                     .state('admin.groupes',{
                         parent:'admin',
                         url:'/groupes',
