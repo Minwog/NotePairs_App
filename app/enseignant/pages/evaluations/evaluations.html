@@ -1,0 +1,186 @@
+<style>
+    .panel_principal {
+        overflow:scroll;
+        max-height: 70%;
+    }
+    .panel_secondaire {
+        overflow:scroll;
+        max-height: 20%;
+    }
+</style>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+
+            console.log(ev.target.id)
+            document.getElementById('drop1').style.borderStyle = "dashed";
+
+    }
+
+    function drop(ev) {
+        console.log(ev.target.id);
+        if(ev.target.id == "drop1") {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            document.getElementById(data).getElementsByClassName("panel-body panel_secondaire")[0]
+                    .className="panel-body panel_principal";
+            ev.target.parentNode.appendChild(document.getElementById(data));
+            document.getElementById('drop1').style.borderStyle = "none";
+            document.getElementById('drop1').style.height = "0 px";
+        }
+    }
+
+
+</script>
+
+<div>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Statistiques</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <!-- modified -->
+            <div class="col-lg-12">
+                <div id="drop1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <br><br>
+                </div>
+
+                <div id="drag1" class="panel panel-info">
+                    <div class="panel-heading">
+                        Évaluation A386
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body panel_principal" >
+
+                        <div id="output"></div>
+
+                        <script type="text/javascript">
+                            $(function(){
+                                var derivers = $.pivotUtilities.derivers;
+                                var renderers = $.extend($.pivotUtilities.renderers,
+                                        $.pivotUtilities.gchart_renderers);
+
+                                $.getJSON("dist/mps.json", function(mps) {
+                                    $("#output").pivotUI(mps, {
+                                        renderers: renderers,
+                                        derivedAttributes: {
+                                            "Intervalle Note": derivers.bin("Note", 2.5)
+                                        },
+                                        cols: ["Question"], rows: ["Copie"],
+                                        rendererName: "Carte de Chaleur",
+                                        aggregatorName: "Moyenne",
+                                        vals: [
+                                            "Note"
+                                        ]
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                    <!-- /.panel-body -->
+                    <div class="panel-footer">
+                        120 évaluations
+                    </div>
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /modified -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="drag2" class="panel panel-success" draggable="true" ondragstart="drag(event)">
+                    <div class="panel-heading">
+                        Évaluation B174
+                    </div>
+                    <div class="panel-body panel_secondaire">
+
+
+                        <div id="output1"></div>
+
+                        <script type="text/javascript">
+                            $(function(){
+                                var derivers = $.pivotUtilities.derivers;
+                                var renderers = $.extend($.pivotUtilities.renderers,
+                                        $.pivotUtilities.gchart_renderers);
+
+                                $.getJSON("dist/mps.json", function(mps) {
+                                    $("#output1").pivotUI(mps, {
+                                        renderers: renderers,
+                                        derivedAttributes: {
+                                            "Intervalle Note": derivers.bin("Note", 2.5)
+                                        },
+                                        cols: ["Question"], rows: ["Copie"],
+                                        rendererName: "Carte de Chaleur",
+                                        aggregatorName: "Moyenne",
+                                        vals: [
+                                            "Note"
+                                        ]
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="panel-footer">
+                        200 évaluations
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <div id="drag3" class="panel panel-warning"  draggable="true" ondragstart="drag(event)">
+                    <div class="panel-heading">
+                        Évaluation B216
+                    </div>
+                    <div class="panel-body panel_secondaire">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    </div>
+                    <div class="panel-footer">
+                        150 évaluations
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <div id="drag4" class="panel panel-danger" draggable="true" ondragstart="drag(event)">
+                    <div class="panel-heading">
+                        Évaluation A402
+                    </div>
+                    <div class="panel-body panel_secondaire">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    </div>
+                    <div class="panel-footer">
+                        100 évaluations
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+
+
+

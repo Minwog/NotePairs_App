@@ -1,6 +1,9 @@
 <html ng-app='NotePairApp'>
 <head>
     <title> Moodok </title>
+
+
+
     <link rel="stylesheet" type="text/css" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
@@ -36,6 +39,7 @@
     <script src="app/app.js"></script>
     <script src="app/app_state.js"></script>
     <script src="app/Admin/pages/admin_state.js"></script>
+    <script src="app/enseignant/pages/enseignant_state.js"></script>
     <script src="app/navbar/navbar.directive.js"></script>
     <script src="app/services/eleves_service.js"></script>
     <script src="app/services/enseignants_service.js"></script>
@@ -49,6 +53,25 @@
     <script src="app/Admin/pages/cours/cours_controller.js"></script>
     <script src="app/Admin/pages/groupe/groupes_controller.js"></script>
 
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- external libs from cdnjs -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <!-- PivotTable.js libs from ../dist -->
+    <link rel="stylesheet" type="text/css" href="dist/pivot.css">
+    <script type="text/javascript" src="dist/pivot.js"></script>
+    <script type="text/javascript" src="dist/gchart_renderers.js"></script>
+
+
+    <!-- optional: mobile support with jqueryui-touch-punch -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+    <script>
+        google.load("visualization", "1", {packages:["corechart", "charteditor"]});
+
+    </script>
 
 </head>
 <body>
