@@ -22,11 +22,15 @@ angular.module('NotePairApp')
     }])
 
 
-    .controller('UpdateGroupesController',['$scope','$state','$stateParams', 'alerteService', 'LocalGroupeService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService) {
+    .controller('UpdateGroupesController',['$scope','$state','$stateParams', 'alerteService', 'LocalGroupeService', 'LocalElevesService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService, LocalElevesService) {
 
         LocalGroupeService.get($stateParams.id).then(function(data){
             console.log(data);
             $scope.Groupe=data;
+        });
+
+        LocalElevesService.query().then(function (data) {
+            $scope.ListEleves=data;
         });
 
         $scope.updateGroupe = function () {
@@ -39,7 +43,12 @@ angular.module('NotePairApp')
         });
     }])
 
-    .controller('AddGroupesController',['$scope','$state','$stateParams', 'alerteService', 'LocalGroupeService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService) {
+    .controller('AddGroupesController',['$scope','$state','$stateParams', 'alerteService', 'LocalGroupeService','LocalElevesService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService, LocalElevesService) {
+
+        LocalElevesService.query().$promise.then(function (data) {
+            $scope.ListEleves=data;
+        });
+
 
         $scope.newGroupe = {
             groupes_id: Math.floor((Math.random() * 100000)),
@@ -58,4 +67,5 @@ angular.module('NotePairApp')
         $(document).ready(function(){
             $('.selectpicker').selectpicker();
         });
+
     }]);

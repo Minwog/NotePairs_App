@@ -22,9 +22,9 @@
         <label for="elevesList" class="col-sm-2 control-label"> Eleves</label>
         <div class="col-sm-10">
 
-            <select multiple class="selectpicker" id="elevesList" ng-model="newGroupe.eleves">
+            <select multiple class="selectpicker" id="elevesList" ng-model="newGroupe.eleves" data-live-search="true">
 
-                <option ng-repeat="eleve in eleves">{{eleve.nom}} {{eleve.prenom}}</option>
+                <option ng-repeat="eleve in ListEleves">{{eleve.nom}} {{eleve.prenom}}</option>
             </select>
         </div>
 
