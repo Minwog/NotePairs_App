@@ -5,18 +5,6 @@ angular.module('NotePairApp')
             $scope.EnseignantsList=data;
         });
 
-
-//--- Methode update pour modifier un Enseignant à partir de son id ---//
-        $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
-        console.log("dans ens Ctrl")
-
-        $scope.updateEnseignant=function(){
-            console.log("dans updateEnseignant")
-            $scope.Enseignant.$update(function(){
-                console.log("dans la function update")
-            });
-        };
-
 //--- Methode get pour afficher un Enseignant à partir de son id ---//
         $scope.getEnseignant=function(){
             $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
