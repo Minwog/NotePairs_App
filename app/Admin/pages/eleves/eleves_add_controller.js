@@ -21,7 +21,10 @@ angular.module('NotePairApp')
             {nom:"RASS",section:'traitement du signal'},
             {nom:"Telecommunications",section:'traitement du signal'},
             {nom:"Architecture des ordibateurs",section:'informatique'},
-            {nom:"Systèmes et programmation réseau",section:'informatique'}];
+            {nom:"Signaux et systemes 1",section:'traitement du signal'},
+            {nom:"Droit",section:'économie'},
+            {nom:"Macroéconomie",section:'économie'},
+            {nom:"Conversion d'énergie",section:'énergie'}];
 
         $scope.groupes=['A33','B227','C423','D67'];
 
