@@ -168,9 +168,6 @@
     return $.pivotUtilities.gchart_renderers = {
       "Graphique Ligne": makeGoogleChart("LineChart"),
       "Graphique Baton": makeGoogleChart("ColumnChart"),
-      "Baton empiles": makeGoogleChart("ColumnChart", {
-        isStacked: true
-      }),
       "Aires": makeGoogleChart("AreaChart", {
         isStacked: true
       })
