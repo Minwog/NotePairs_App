@@ -26,7 +26,7 @@
                         </thead>
                         <tbody>
 
-                        <tr class="infos" ng-repeat-start="groupe in GroupeList | orderBy:'Nom'" ng-class-odd="'odd'" ng-class-even="'even'">
+                        <tr class="infos" ng-repeat-start="groupe in GroupeList | orderBy:'Nom' track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>
                                 <button ng-if="groupe.expanded" ng-click="groupe.expanded = false">&Hat;</button>
                                 <button ng-if="!groupe.expanded" ng-click="groupe.expanded = true">+</button>
@@ -40,7 +40,7 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                        <li ng-repeat="g in groupe.eleves"><a href="#">{{g}}</a></li>
+                                        <li ng-repeat="g in groupe.eleves track by $index"><a href="#">{{g}}</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -52,14 +52,14 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                        <li ng-repeat="c in groupe.cours"><a href="#">{{c}}</a></li>
+                                        <li ng-repeat="c in groupe.cours track by $index"><a href="#">{{c}}</a></li>
                                     </ul>
                                 </div>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-circle-micro"><i class="fa fa-list"></i>
+                                <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(groupe.groupes_id)"><i class="fa fa-list"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger btn-circle-micro"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteGroupe(groupe.groupes_id)"><i class="fa fa-times"></i>
                                 </button>
                             </td>
                         </tr>
@@ -67,7 +67,7 @@
                             <td></td>
                             <td colspan="99">
                                 <ul class="">
-                                    <li class=""><a href="#">groupe_id: {{groupe.groupe_id}</a></li>
+                                    <li class=""><a href="#">groupe_id: {{groupe.groupes_id}}</a></li>
                                 </ul>
                             </td>
                         </tr>
@@ -76,7 +76,7 @@
                         </tbody>
                     </table>
                     <!-- /.table-responsive -->
-                    <button class="btn btn-primary pull-right" ng-click="add()">Nouveau groupe</button>
+                    <button class="btn btn-primary pull-right" ng-click="goToAdd()"">Nouveau groupe</button>
                 </div>
                 <!-- /.panel-body -->
             </div>

@@ -1,7 +1,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Nouvel Etudiant</h1>
+            <h1 class="page-header">Nouveau Groupe</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -10,15 +10,23 @@
         <div class="col-lg-12">
 
 
+            <div class="form-group">
+                <label for="numero" class="col-sm-2 control-label">Numero</label>
+                <div class="col-sm-10">
+                    <input type="text" ng-model="newGroupe.numero" class="form-control" id="numero" placeholder="Numero"/>
+                </div>
+            </div>
 
-    <label for="elevesList" class="col-sm-2 control-label"> Eleves</label>
-    <div class="col-sm-10">
 
-        <select multiple class="selectpicker" id="elevesList">
 
-            <option ng-repeat="cours in cours">{{cours.nom}}</option>
-        </select>
-    </div>
+        <label for="elevesList" class="col-sm-2 control-label"> Eleves</label>
+        <div class="col-sm-10">
+
+            <select multiple class="selectpicker" id="elevesList" ng-model="newGroupe.eleves">
+
+                <option ng-repeat="eleve in eleves">{{eleve.nom}} {{eleve.prenom}}</option>
+            </select>
+        </div>
 
 
 <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES groupes -->
@@ -26,15 +34,15 @@
     <label for="coursList" class="col-sm-2 control-label"> Cours</label>
     <div class="col-sm-10">
 
-        <select multiple class="selectpicker" id="coursList">
+        <select multiple class="selectpicker" id="coursList" ng-model="newGroupe.cours">
 
-            <option ng-repeat="groupe in groupes">{{groupe}}</option>
+            <option ng-repeat="cours in cours">{{cours}}</option>
         </select>
     </div>
 
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <input type="submit" ng-click="addEnseignant()" class="btn btn-primary" value="Ajouter Enseignant"/>
+            <input type="submit" ng-click="addGroupe()" class="btn btn-primary" value="Ajouter Groupe"/>
         </div>
     </div>
             </div>

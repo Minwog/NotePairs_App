@@ -63,7 +63,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants_add.html',
-                                controller:'EnseignantsController'
+                                controller:'AddEnseignantsController'
                             }
                         }
                     })
@@ -73,7 +73,7 @@
                         views:{
                             'content':{
                                 templateUrl:'app/Admin/pages/enseignants/enseignants_update.html',
-                                controller:'AddEnseignantsController'
+                                controller:'UpdateEnseignantsController'
                             }
                         }
                     })
@@ -120,6 +120,31 @@
                             }
                         }
                     })
+
+                    .state('admin.groupes.add',{
+                        parent:'admin',
+                        url:'/groupes/new',
+                        views: {
+                            'content': {
+                                templateUrl: "app/Admin/pages/groupe/groupes_add.html",
+                                controller: 'AddGroupesController'
+                            }
+                        }
+
+                    })
+
+                    .state('admin.groupes.update',{
+                        parent:'admin',
+                        url:'/groupes/:id',
+                        views:{
+                            content:{
+                                templateUrl:'app/admin/pages/groupe/groupes_update.html',
+                                controller:'UpdateGroupesController'
+                            }
+                        }
+                    })
+
+
 
             }]);
 })();

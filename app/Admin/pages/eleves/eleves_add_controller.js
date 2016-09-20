@@ -3,6 +3,7 @@ angular.module('NotePairApp')
 
 
         $scope.newEleve={
+            'eleves_id':Math.floor((Math.random() * 100000)),
             'Nom':'',
             'Prenom':'',
             'email':'',
