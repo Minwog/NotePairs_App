@@ -10,5 +10,25 @@
     font-size: large;
 }
 
+.navbarEnseignantText{
+    font-size:15px;
+    font-family:'Verdana';
+}
+
+.navbarEnseignant{
+    background-color: #d9edf7;
+}
+
+a:hover{font-weight:bold;}
+a:active{color: #9acfea;}
+
+#panel, #flip {
+    width:50px;
+    height:200px;
+}
+
+#panel {
+    display: none;
+}
 
 /*---------------------------------------------------------------------*/
