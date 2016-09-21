@@ -1,0 +1,17 @@
+[
+  '{{repeat(440, 460)}}',
+  {
+    _id: '{{objectId()}}',
+    Question: function(tags){
+      return tags.integer(1, 5);},
+    Eleve: function (tags) {
+      var fruits = ["Nora Faulkner", "Marci Holder", "Stevenson Reese", "Hughes Cotton", "Banks Downs", "Christian David", "Deana Sanford", "Yates Frazier", "Flossie Nieves", "Delaney Townsend", "Bertha Morris", "Velasquez Kline", "Jodi Arnold", "Porter Lindsay", "Morales Herrera", "Neva Landry", "Tanner Humphrey", "Delia Preston", "Patricia Bowen", "Mabel Higgins", "Terri Barlow", "Cash Maynard", "Duffy Cochran", "Sabrina Lane", "Lenore Moody", "Denise Long", "Clara Briggs", "Patterson Blair", "Pena Rutledge", "Mcdaniel Brown", "Janine Wise", "Leah Cabrera", "Addie Dickson", "Pitts Rose", "Amparo Hickman", "Lynn Perez", "Elaine Pennington", "Austin Roberson", "Judy Paul", "Guthrie Horton", "Robles Slater", "Araceli Vang", "Bright Hayes", "Case Atkinson", "Rhoda Walsh", "Jones Garner", "Allie Mitchell", "Katy Fitzgerald", "Jeri Hensley", "Edna Thornton"];
+      return fruits[tags.integer(0, fruits.length - 1)];
+    },
+    Copie: function(tags){
+      return tags.integer(1, 10);},
+    Note: function(tags){
+      return tags.integer(0, 20);}
+  }
+]
+
