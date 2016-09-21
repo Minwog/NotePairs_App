@@ -7,30 +7,46 @@
         overflow:scroll;
         max-height: 20%;
     }
+    #listeval {
+        margin: 10px;
+    }
 </style>
 <script>
     function allowDrop(ev) {
         ev.preventDefault();
     }
-
+    var src = "";
+    var current = "drag1";
     function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-
-            console.log(ev.target.id)
-            document.getElementById('drop1').style.borderStyle = "dashed";
+        ev.dataTransfer.setData("text", ev.target.id);
+        src = ev.srcElement.parentNode.id;
+        document.getElementById('drop1').style.borderStyle = "dashed";
+        document.getElementById('drop1').style.borderColor = "#C0C0C0";
 
     }
 
     function drop(ev) {
-        console.log(ev.target.id);
-        if(ev.target.id == "drop1") {
+        console.log(ev.target.id)
+
+        document.getElementById('drop1').style.borderStyle = "none";
+
+        if(true) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
+
+            document.getElementById(current).getElementsByClassName("panel-body panel_principal")[0]
+                    .className="panel-body panel_secondaire";
+            document.getElementById(current).setAttribute("draggable","true");
+            document.getElementById(current).setAttribute("ondragstart","drag(event)");
+            document.getElementById(src).appendChild(document.getElementById(current));
+
             document.getElementById(data).getElementsByClassName("panel-body panel_secondaire")[0]
                     .className="panel-body panel_principal";
-            ev.target.parentNode.appendChild(document.getElementById(data));
-            document.getElementById('drop1').style.borderStyle = "none";
-            document.getElementById('drop1').style.height = "0 px";
+            document.getElementById(data).setAttribute("draggable","");
+            document.getElementById(data).setAttribute("ondragstart","");
+            document.getElementById("drop1").appendChild(document.getElementById(data));
+
+            current = data;
         }
     }
 
@@ -41,22 +57,34 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Statistiques</h1>
+                <h1 class="page-header">Statistiques {{mps}}</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
             <!-- modified -->
-            <div class="col-lg-12">
-                <div id="drop1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <br><br>
+            <div class="col-lg-12" id="drop1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="listeval" class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Sélectionner une évaluation
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="#">A375</a>
+                            </li>
+                            <li><a href="#">B229</a>
+                            </li>
+                            <li><a href="#">A120</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div id="drag1" class="panel panel-info">
+                <div id="drag1" class="panel panel-info" draggable="" ondragstart="">
                     <div class="panel-heading">
-                        Évaluation A386
-                    </div>
+                        Évaluation A386</div>
                     <!-- /.panel-heading -->
                     <div class="panel-body panel_principal" >
 
@@ -97,11 +125,9 @@
         <!-- /.row -->
 
         <div class="row">
-            <div class="col-lg-4">
+            <div id="divc2" class="col-lg-4">
                 <div id="drag2" class="panel panel-success" draggable="true" ondragstart="drag(event)">
-                    <div class="panel-heading">
-                        Évaluation B174
-                    </div>
+                    <div class="panel-heading">Évaluation B174</div>
                     <div class="panel-body panel_secondaire">
 
 
@@ -136,7 +162,7 @@
                 </div>
             </div>
             <!-- /.col-lg-4 -->
-            <div class="col-lg-4">
+            <div id="divc3" class="col-lg-4">
                 <div id="drag3" class="panel panel-warning"  draggable="true" ondragstart="drag(event)">
                     <div class="panel-heading">
                         Évaluation B216
@@ -154,7 +180,7 @@
                 </div>
             </div>
             <!-- /.col-lg-4 -->
-            <div class="col-lg-4">
+            <div id="divc4" class="col-lg-4">
                 <div id="drag4" class="panel panel-danger" draggable="true" ondragstart="drag(event)">
                     <div class="panel-heading">
                         Évaluation A402

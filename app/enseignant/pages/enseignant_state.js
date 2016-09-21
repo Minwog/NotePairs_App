@@ -10,7 +10,7 @@
                         'layout':{
                             templateUrl:'app/enseignant/pages/enseignant.html'
                         },
-                        'content@admin':{
+                        'content@enseignant':{
                             templateUrl:'app/enseignant/pages/main/main.html'
                         }
                     }
@@ -21,7 +21,8 @@
                         url:'/evaluations',
                         views:{
                             'content':{
-                                templateUrl:'app/enseignant/pages/evaluations/evaluations.html'
+                                templateUrl:'app/enseignant/pages/evaluations/evaluations.html',
+                                controller: 'EvaluationsController'
                             }
                         }
                     })
