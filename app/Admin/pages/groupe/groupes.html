@@ -19,7 +19,7 @@
                         <tr class="">
                             <th></th>
                             <th>Numéro </th>
-                            <th>Elèves </th>
+                            <th>Elèves</th>
                             <th class="hidden-sm hidden-xs">Cours</th>
                             <th>Actions</th>
                         </tr>
@@ -32,7 +32,7 @@
                                 <button ng-if="!groupe.expanded" ng-click="groupe.expanded = true">+</button>
                             </td>
                             <td>{{groupe.numero}}</td>
-                            <td class="hidden-sm hidden-xs">
+                            <td>
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <span class="hidden-md">Liste des élèves</span>
@@ -40,7 +40,7 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                        <li ng-repeat="g in groupe.eleves track by $index"><a href="#">{{g}}</a></li>
+                                        <li ng-repeat="g in groupe.eleves track by $index"><a href="#">{{g.nom}} {{g.prenom}}</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -68,6 +68,14 @@
                             <td colspan="99">
                                 <ul class="">
                                     <li class=""><a href="#">groupe_id: {{groupe.groupes_id}}</a></li>
+                                    <li class="hidden-xl hidden-lg"><a href="">cours:</a>
+                                        <ul>
+                                            <li ng-repeat="cours in groupe.cours track by $index">
+                                                {{cours}}
+                                            </li>
+
+                                        </ul>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -76,7 +84,7 @@
                         </tbody>
                     </table>
                     <!-- /.table-responsive -->
-                    <button class="btn btn-primary pull-right" ng-click="goToAdd()"">Nouveau groupe</button>
+                    <button class="btn btn-primary pull-right" ng-click="goToAdd()">Nouveau groupe</button>
                 </div>
                 <!-- /.panel-body -->
             </div>
