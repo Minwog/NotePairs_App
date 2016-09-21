@@ -1,7 +1,6 @@
 <div id="wrapper">
-
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" ng-controller="EnseignantController">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -221,41 +220,38 @@
             </li>
             <!-- /.dropdown -->
         </ul>
-        <!-- /.navbar-top-links -->
 
+
+
+        <!-- /.navbar-top-links -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
+
                 <ul class="nav" id="side-menu">
                     <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
+                        <img src="{{enseignantCo.avatar}}" class="img-rounded" alt="Robert" width="200" height="190">
+                        <h3>{{enseignantCo.nom}} {{enseignantCo.prenom}} </h3>
+                        <h5>{{enseignantCo.email}}</h5>
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a ui-sref="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a ui-sref="#"><i class="fa fa-table fa-fw"></i> Cours</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant.cours"><i class="fa fa-book fa-fw"></i> Cours</a>
                     </li>
                     <li>
-                        <a ui-sref="#"><i class="fa fa-table fa-fw"></i> Élèves</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant.mesEvaluations"><i class="fa fa-pencil fa-fw"></i> Évaluations</a>
                     </li>
                     <li>
-                        <a ui-sref="enseignant.evaluations"><i class="fa fa-table fa-fw"></i> Évaluations</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant.createEvaluation"><i class="fa fa-check-square fa-fw"></i> Créer une évaluation</a>
                     </li>
                     <li>
-                        <a ui-sref="#"><i class="fa fa-table fa-fw"></i> Groupes</a>
+                        <a class="navbarEnseignantText" href="forms.html"><i class="fa fa-cog fa-fw"></i> Paramètres</a>
                     </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-table fa-fw"></i> Paramètres</a>
-                    </li>
+                    </a>
                 </ul>
+                    </div>
             </div>
             <!-- /.sidebar-collapse -->
         </div>

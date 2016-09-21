@@ -27,6 +27,50 @@
                         }
                     })
 
+                        .state('enseignant.createEvaluation',{
+                            parent:'enseignant',
+                            url:'/evaluations_create',
+                            views:{
+                                'content':{
+                                    templateUrl:'app/enseignant/pages/evaluations/evaluations-create.html',
+                                    controller: 'EvaluationsController'
+                                }
+                            }
+                        })
+
+                    .state('enseignant.cours',{
+                        parent:'enseignant',
+                        url:'/cours',
+                        views:{
+                            'content':{
+                                templateUrl:'app/enseignant/pages/cours/cours.html',
+                                controller: 'CoursController'
+                            }
+                        }
+                    })
+
+                        .state('enseignant.mesCours',{
+                            parent:'enseignant',
+                            url:'/cours',
+                            views:{
+                                'content':{
+                                    templateUrl:'app/enseignant/pages/cours/mesCours.html',
+                                    controller: 'CoursController'
+                                }
+                            }
+                        })
+
+                        .state('enseignant.cours.view',{
+                            parent:'enseignant',
+                            url:'/cours/view',
+                            views:{
+                                'content':{
+                                    templateUrl:'app/enseignant/pages/cours/cours_view.html',
+                                    controller: 'CoursController'
+                                }
+                            }
+                        })
+
 
 
             }]);
