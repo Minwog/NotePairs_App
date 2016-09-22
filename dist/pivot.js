@@ -346,9 +346,6 @@
       "Histogramme": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).barchart();
       },
-      "Carte de Chaleur": function(data, opts) {
-        return $(pivotTableRenderer(data, opts)).heatmap("heatmap", opts);
-      },
       "Carte de Chaleur par ligne": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).heatmap("rowheatmap", opts);
       },
@@ -1368,28 +1365,53 @@
       if (scope == null) {
         scope = "heatmap";
       }
+      console.log();
       numRows = this.data("numrows");
       numCols = this.data("numcols");
       colorScaleGenerator = opts != null ? (ref = opts.heatmap) != null ? ref.colorScaleGenerator : void 0 : void 0;
       if (colorScaleGenerator == null) {
         colorScaleGenerator = function(values) {
+
           var max, min, aver=0;
           min = Math.min.apply(Math, values);
           max = Math.max.apply(Math, values);
-          for(var i=0; i<values.length; i++) {
-            aver = aver + values[i];
-          }
-          aver = Math.round(100*aver/values.length)/100;
-          return function(x) {
-            var nonRed;
-            if(x<aver){
-              nonRed = 85 + Math.round(170 * (x - min) / (aver - min));
-              return "rgb(255, "+nonRed+"," + nonRed + ")";
-            } else {
-              nonRed = 85 + Math.round(170 * (x - max) / (aver - max));
-              return "rgb(255, "+nonRed+"," + nonRed + ")";
+          aver = (min + max)/2;
+
+          if (min>=0 && max <=1) {
+            min = 0;
+            max = 1;
+            aver = (2*min + max)/3;
+            return function(x) {
+              var nonRed;
+              if(x<aver){
+                nonRed = 105 + Math.round(150 * (x - min) / (aver - min));
+                return "rgb("+ nonRed + ", "+ 255 +"," + nonRed + ")";
+              } else {
+                nonRed = 105 + Math.round(150 * (x - max) / (aver - max));
+                return "rgb("+ 255 + ", "+ nonRed +"," + nonRed + ")";
+              };
             };
+          } else {
+            return function(x) {
+              var nonRed;
+              nonRed = 105 + Math.round(150 * (x - min) / (max - min));
+              return "rgb("+ 255 + ", "+ nonRed +"," + nonRed + ")";
+            };
+          }
+
+
+
+          /*
+          var max, min;
+          min = Math.min.apply(Math, values);
+          max = Math.max.apply(Math, values);
+          return function(x) {
+            var nonRed, nonGreen;
+            nonRed = 255 - Math.round(255 * (x - min) / (max - min));
+            nonGreen = 255 - Math.round(255 * (x - max) / (min - max));
+            return "rgb("+ nonGreen +"," + nonRed + "," + 0 + ")";
           };
+          */
         };
       }
       heatmapper = (function(_this) {

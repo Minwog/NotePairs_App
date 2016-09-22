@@ -172,7 +172,7 @@
                         url:'/groupes/:id',
                         views:{
                             content:{
-                                templateUrl:'app/admin/pages/groupe/groupes_update.html',
+                                templateUrl:'app/Admin/pages/groupe/groupes_update.html',
                                 controller:'UpdateGroupesController'
                             }
                         }
