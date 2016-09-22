@@ -32,7 +32,7 @@
                             url:'/evaluations_create',
                             views:{
                                 'content':{
-                                    templateUrl:'app/enseignant/pages/evaluations/evaluations-create.html',
+                                    templateUrl:'app/HighCharts/demo.html',
                                     controller: 'EvaluationsController'
                                 }
                             }
