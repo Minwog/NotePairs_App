@@ -33,7 +33,7 @@
                             views:{
                                 'content':{
                                     templateUrl:'app/HighCharts/demo.html',
-                                    controller: 'EvaluationsController'
+                                    controller: 'HighChartsController'
                                 }
                             }
                         })
