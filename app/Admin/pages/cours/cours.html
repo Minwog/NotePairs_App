@@ -73,7 +73,7 @@
                         </thead>
                         <tbody>
 
-                        <tr class="infos" ng-repeat-start="cours in coursList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                        <tr class="infos" ng-repeat-start="cours in CoursList | filter:searchBox | orderBy:myOrderBy track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>
                                 <button ng-if="cours.expanded" ng-click="cours.expanded = false">&Hat;</button>
                                 <button ng-if="!cours.expanded" ng-click="cours.expanded = true">+</button>
@@ -97,9 +97,9 @@
                                 </div>
                             </td>
                             <td>
-                            <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate()"><i class="fa fa-list"></i>
+                            <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(cours._id)"><i class="fa fa-list"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDelete()"><i class="fa fa-times"></i>
+                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDelete(cours._id)"><i class="fa fa-times"></i>
                             </button>
                         </td>
                         </tr>

@@ -8,7 +8,8 @@ angular.module('NotePairApp')
                     url:'/eleve',
                     views:{
                         'layout':{
-                            templateUrl:'app/eleve/pages/eleve.html'
+                            templateUrl:'app/eleve/pages/eleve.html',
+                            controller:'EleveController'
                         },
                         'content@eleve':{
                             templateUrl:'app/eleve/pages/main/main.html'

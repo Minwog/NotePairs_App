@@ -42,7 +42,7 @@
     <div class="row">
 
         <label for="elevesList" class="col-sm-2 control-label"> Ajouter </label>
-            <select multiple class="selectpicker col-sm-10" id="elevesList" ng-model="addeleves" data-live-search="true" data-size="10">
+            <select multiple class="selectpicker col-sm-10" id="elevesList" ng-model="addeleves" data-live-search="true" data-size="10" data-selected-text-format="static">
 
                 <option ng-repeat="eleve in ListEleves">{{eleve.Nom}} {{eleve.Prenom}}</option>
 
@@ -75,7 +75,7 @@
 
             <select multiple class="selectpicker col-sm-10" id="coursList" ng-model="addcours">
 
-                <option ng-repeat="cours in cours">{{cours}}</option>
+                <option ng-repeat="cours in ListCours">{{cours}}</option>
             </select>
 
     </div>
