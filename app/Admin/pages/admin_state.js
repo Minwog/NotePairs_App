@@ -8,7 +8,8 @@
                     controller:'adminController',
                     views:{
                         'layout':{
-                            templateUrl:'app/Admin/pages/admin.html'
+                            templateUrl:'app/Admin/pages/admin.html',
+                            controller:'PaginationController'
                         },
                         'content@admin':{
                             templateUrl:'app/Admin/pages/main/main.html'

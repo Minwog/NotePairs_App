@@ -2,7 +2,9 @@
     var app=angular.module('NotePairApp',[
         'ui.router',
         'ngResource',
-        'pdf'
+        'pdf',
+        'ngResource'//,
+        //'ui.bootstrap'
     ]);
 
 })();
