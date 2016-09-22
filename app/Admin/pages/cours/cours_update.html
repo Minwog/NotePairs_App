@@ -1,7 +1,7 @@
-<div id="page-wrapper" ng-controller="CoursController">
+<div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">{{cours.intitule}}</h1>
+            <h1 class="page-header">{{Cours.intitule}}</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -20,33 +20,28 @@
                     <div class="form-group">
                         <label for="intitule" class="col-sm-2 control-label">Intitulé</label>
                         <div class="col-sm-10">
-                            <input type="text" ng-model="cours.intitule" class="form-control" id="intitule" value="{{cours.intitule}}"/>
+                            <input type="text" ng-model="Cours.intitule" class="form-control" id="intitule" value="{{Cours.intitule}}"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="section" class="col-sm-2 control-label">Section</label>
                         <div class="col-sm-10">
-                            <input type="text" ng-model="cours.section" class="form-control" id="section" value="{{cours.section}}"/>
+                            <input type="text" ng-model="Cours.section" class="form-control" id="section" value="{{Cours.section}}"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="description" class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
-                            <textarea ng-model="cours.description" class="form-control" id="description" vamue="{{cours.description}}"/>
+                            <textarea ng-model="Cours.description" class="form-control" id="description" value="{{Cours.description}}"/>
                         </div>
                     </div>
                 </div>
 
-            <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES cours -->
-
-            <!-- Ajouter Menu déroulant pour associer l'élève à un ou DES groupes -->
-
-
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <input type="submit" ng-click="addCours()" class="btn btn-primary" value="Modifier Cours"/>
+                        <input type="submit" ng-click="updateCours()" class="btn btn-primary" value="Modifier Cours"/>
                     </div>
                 </div>
                 </br></br>
@@ -96,13 +91,13 @@
                                 </thead>
                                 <tbody>
 
-                                <tr class="infos" ng-repeat-start="enseignant in cours.enseignants | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
-                                    <td>{{enseignant.Nom}}</td>
-                                    <td>{{enseignant.Prenom}}</td>
+                                <tr class="infos" ng-repeat-start="enseignant in Cours.enseignant| filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                    <td>{{enseignant.nom}}</td>
+                                    <td>{{enseignant.prenom}}</td>
                                     <td class="hidden-sm hidden-xs">{{enseignant.username}}</td>
                                     <td class="hidden-sm hidden-xs">{{enseignant.email}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDeleteTeacher(cours.id, enseignant.enseignants_id)"><i class="fa fa-times"></i>
+                                        <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDeleteTeacher(cours.id, enseignant.enseignant_id)"><i class="fa fa-times"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -112,7 +107,7 @@
                                         <ul class="">
                                             <li class="hidden-xl hidden-lg hidden-md"><a href="#">username: {{enseignant.username}}</a></li>
                                             <li class="hidden-xl hidden-lg"><a href="#">email: {{enseignant.email}}</a></li>
-                                            <li class=""><a href="#">enseignant_id: {{enseignant.enseignants_id}}</a></li>
+                                            <li class=""><a href="#">enseignant_id: {{enseignant.enseignant_id}}</a></li>
                                             <li class=""><a href="#">user_id: {{enseignant.user_id}}</a></li>
                                         </ul>
                                     </td>
@@ -179,7 +174,7 @@
                                 </thead>
                                 <tbody>
 
-                                <tr class="infos" ng-repeat-start="eleve in cours.eleves | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                <tr class="infos" ng-repeat-start="eleve in Cours.eleves| filter:searchBox | orderBy:myOrderBy " ng-class-odd="'odd'" ng-class-even="'even'">
                                     <td>{{eleve.Nom}}</td>
                                     <td>{{eleve.Prenom}}</td>
                                     <td class="hidden-sm hidden-xs">{{eleve.username}}</td>

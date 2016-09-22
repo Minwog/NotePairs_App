@@ -1,6 +1,3 @@
-/**
- * Created by aurore on 20/09/2016.
- */
 angular.module('NotePairApp')
     .factory('CoursService', ['$resource',function($resource) {
         return $resource('/resources/json/cours.json',{},{
@@ -27,44 +24,43 @@ angular.module('NotePairApp')
     // le service pour aller chercher les données en mode démo dans le localstorage
     .factory('LocalCoursService',['$q','CoursService',function ($q,CoursService) {
 
-        var _value;
+        var _Coursvalue;
 
         var service = {
             'query': value,
             'save': save,
             'update': update,
             'get': trouver,
-            'delete':delet,
-            'deleteTeacher':deleteTeacher
+            'delete':delet
         };
 
         function save(data) {
-            _value.push(data);
+            _Coursvalue.push(data);
         }
 
 
         function update(data) {
 
-            findById(data, function (cours) {
-                console.log(cours);
-                _value[cours.index] = data;
+            findById(data, function (Cours) {
+                console.log(Cours);
+                _Coursvalue[Cours.index] = data;
             });
 
         }
 
         function delet(id) {
-            findById(id,function (cours) {
-                console.log(cours.index);
-                _value.splice(cours.index,1)
+            findById(id,function (Cours) {
+                console.log(Cours.index);
+                _Coursvalue.splice(Cours.index,1)
             })
 
         }
 
         function trouver(id) {
             var deferred=$q.defer();
-            findById(id, function (cours) {
-                console.log(cours);
-                deferred.resolve(cours.cours)
+            findById(id, function (Cours) {
+                console.log(Cours);
+                deferred.resolve(Cours.Cours)
             })
             return deferred.promise
         };
@@ -72,18 +68,18 @@ angular.module('NotePairApp')
         function findById(id, callback) {
             console.log('debut findById');
             var done = false;
-            var cours;
+            var Cours;
             var index;
-            for (var i = 0; i < _value.length; i++) {
-                if (_value[i]['id'] == id) {
-                    cours = _value[i];
+            for (var i = 0; i < _Coursvalue.length; i++) {
+                if (_Coursvalue[i]['_id'] == id) {
+                    Cours = _Coursvalue[i];
                     index = i;
                     done = true;
                 }
             }
             if (done) {
 
-                callback({'cours': cours, 'index': index});
+                callback({'Cours': Cours, 'index': index});
             }
         }
 
@@ -92,23 +88,19 @@ angular.module('NotePairApp')
 
             // check and see if we have retrieved the  data.
             // if we have, reuse it by immediately resolving
-            if (!_value) {
+            if (!_Coursvalue) {
                 CoursService.query().$promise
                     .then(function (data) {
-                            _value = data;
+                            _Coursvalue = data;
                             deferred.resolve(data);
                             console.log('wsh')
                         }
                     )
             } else {
-                deferred.resolve(_value)
+                deferred.resolve(_Coursvalue)
                 console.log('fzezfze')
             }
             return deferred.promise
-        }
-
-        function deleteTeacher(id, idEnseignant){
-
         }
 
 

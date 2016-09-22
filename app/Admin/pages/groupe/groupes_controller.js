@@ -34,13 +34,36 @@ angular.module('NotePairApp')
         });
 
         $scope.updateGroupe = function () {
-            LocalGroupeService.update($scope.Groupe);
-            $state.go('admin.groupes');
-        }
+            var done1=false;
+            var done2=false;
+
+            for(var i=0;i<$scope.addcours.length;i++){
+                $scope.Groupe.cours.push($scope.addcours[i]);
+                if(i===$scope.addcours.length-1){
+                    done1=true
+                }
+            }
+            for(var i=0;i<$scope.addeleves.length;i++){
+                $scope.Groupe.eleves.push($scope.addeleves[i]);
+                if(i===$scope.addeleves.length-1){
+                    done2=true
+                }
+            }
+            if(done1&&done2) {
+                LocalGroupeService.update($scope.Groupe);
+                console.log($scope.Groupe);
+                $state.go('admin.groupes');
+            }
+        };
 
         $(document).ready(function(){
             $('.selectpicker').selectpicker();
         });
+
+        $scope.ListCours=[
+            'Electrotechniques'
+        ]
+
     }])
 
     .controller('AddGroupesController',['$scope','$state','$stateParams', 'alerteService', 'LocalGroupeService','LocalElevesService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService, LocalElevesService) {

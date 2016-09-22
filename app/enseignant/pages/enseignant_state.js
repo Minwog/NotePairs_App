@@ -43,8 +43,7 @@
                         url:'/cours',
                         views:{
                             'content':{
-                                templateUrl:'app/enseignant/pages/cours/cours.html',
-                                controller: 'CoursController'
+                                templateUrl:'app/enseignant/pages/cours/cours.html'
                             }
                         }
                     })
@@ -54,8 +53,7 @@
                             url:'/cours',
                             views:{
                                 'content':{
-                                    templateUrl:'app/enseignant/pages/cours/mesCours.html',
-                                    controller: 'CoursController'
+                                    templateUrl:'app/enseignant/pages/cours/mesCours.html'
                                 }
                             }
                         })
@@ -65,8 +63,7 @@
                             url:'/cours/view',
                             views:{
                                 'content':{
-                                    templateUrl:'app/enseignant/pages/cours/cours_view.html',
-                                    controller: 'CoursController'
+                                    templateUrl:'app/enseignant/pages/cours/cours_view.html'
                                 }
                             }
                         })
