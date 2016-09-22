@@ -94,29 +94,29 @@
                         views:{
                             'content':{
                                 templateUrl:"app/Admin/pages/cours/cours_add.html",
-                                controller:'CoursController'
+                                controller:'AddCoursController'
                             }
                         }
                     })
 
                     .state('admin.cours.update', {
                         parent:'admin',
-                        url:'/cours/update',
+                        url:'/cours/update/:id',
                         views:{
                             'content':{
                                 templateUrl:"app/Admin/pages/cours/cours_update.html",
-                                controller: 'CoursController'
+                                controller: 'UpdateCoursController'
                             }
                         }
                     })
 
                     .state('admin.cours.view',{
                         parent:'admin',
-                        url:'/cours/view',
+                        url:'/cours/view/:id',
                         views:{
                             'content':{
                                 templateUrl:"app/Admin/pages/cours/cours_view.html",
-                                controller:'CoursController'
+                                controller:'UpdateCoursController'
                             }
                         }
                     })
