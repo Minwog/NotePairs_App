@@ -1,0 +1,169 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Créer une évaluation</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+
+        <script>
+            $('input[type="checkbox"]').on('change', function() {
+                $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+            });
+        </script>
+
+    <!-- /.row -->
+    <div class="row">
+        <br><br>
+
+        <script>
+            $(".dropdown-menu li a").click(function(){
+                $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+            });
+        </script>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Mon évaluation
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div ng-repeat="section in evaluation.sections">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{section.nom}}
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <h4>Type de rendu : </h4>{{section.typeRendu}}, {{section.extension}}
+                            <br><br>
+                            <h4>Critères d'évaluation:</h4>
+                            <div ng-repeat="critere in section.criteres">
+                                <div> Type: {{critere.type}} </div>
+                                <div ng-show="critere.type=='condition'"> Condition: {{critere.condition}}</div>
+                                <div ng-show="critere.type=='condition'"> Nombre de points: {{critere.points}}</div>
+                                <div ng-show="critere.type=='jugement'"> Description: {{critere.description}} </div>
+                                <div  ng-show="critere.type=='jugement'"> Nombre de points: {{critere.points}}</div>
+                                <div ng-show="critere.type=='jugement'"> Précision: {{critere.precision}}</div>
+
+                                <br>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary center-block" data-toggle="modal" data-target="#modalCritere">Ajouter un critère d'évaluation</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal">Ajouter une section</button>
+        <!-- /.panel-body -->
+            </div>
+
+    </div>
+
+
+        <!-- Modal content-->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ajouter une section</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text"class="form-control" ng-model=section.nom id="nom" placeholder="Nom de la section"/>
+                        <br>
+                        <div class="btn-group">
+
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="hidden-xl">Type de rendu</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" ng-model="section.typeRendu" aria-labelledby="dropdownMenu1" role="menu">
+                                <li>
+                                    <a ng-click="setFile(false)" id="lien" href="">Lien</a>
+                                </li>
+                                <li>
+                                    <a ng-click="setFile(true)" id="file" >Fichier</a>
+                                </li>
+                                <li>
+                                    <a ng-click="setFile(false)" id="text" href="">Texte</a>
+                                </li>
+                            </ul>
+                        </div>
+                            </div>
+                        <br>
+                        <div ng-show="file" class="dropdown">
+                            <div class="btn-group">
+                            <button class="btn btn-default dropdown-toggle" id="dropdown-menu2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="hidden-xl">Extension de fichier</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <li>
+                                    <div ng-click="choisirExtension(false)" href="">Tous types de fichiers</div>
+                                </li>
+                                <li ng-repeat="e in extensions">
+                                    <div href="">{{e}}</div>
+                                </li>
+                                <li>
+                                    <div ng-click="choisirExtension(true)">Choisir une extension</div>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                        <br>
+                        <input ng-show="choixExtension" class="dropdown" type="texte" placeholder=".pdf">
+                        </input>
+                        <br>
+                        Nombre de points pour la section:
+                        <input type="number" step="0.1" min="0" ng-model="section.points"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" data-dismiss="modal">Ajouter</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="modalCritere" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ajouter un critère d'évaluation</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="hidden-xl">Type de critère</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" ng-model="section.critere.type" aria-labelledby="dropdownMenu1" role="menu">
+                            <li>
+                                <a  href="" id="commentaire" ng-click="setCritereType(1)">Commentaire</a>
+                            </li>
+                            <li>
+                                <a href="" id="condition" ng-click="setCritereType(2)">Condition</a>
+                            </li>
+                            <li>
+                                <a href="" id="jugement" ng-click="setCritereType(3)">Texte</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" ng-click="createCritere(section.id)" data-dismiss="modal">Ajouter</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+</div>
+<!-- /.row -->
+
+</div>
+<!-- /#page-wrapper -->

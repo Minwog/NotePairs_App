@@ -1,3 +1,121 @@
-<div>
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Créer une évaluation</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
 
-</div>
+            <!-- /.row -->
+            <div class="row">
+
+                <script>
+                    $('input[type="checkbox"]').on('change', function() {
+                        $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+                    });
+                </script>
+
+                <script>
+                $('.dropdown').on( 'click', '.dropdown-menu li a', function() {
+                var target = $(this).html();
+
+                //Adds active class to selected item
+                $(this).parents('.dropdown-menu').find('li').removeClass('active');
+                $(this).parent('li').addClass('active');
+
+                //Displays selected text on dropdown-toggle button
+                $(this).parents('.dropdown').find('.dropdown-toggle').html(target + ' <span class="caret"></span>');
+                });
+                </script>
+
+                <!-- modified -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Cours
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        <span class="hidden-xl">Liste des cours</span>
+                                        <span class="caret"></span>
+                                    </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li ng-repeat="c in enseignant.cours track by $index"><a href="">{{c}}</a></li>
+                                </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Mode d'évaluation
+                        </div>
+
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+
+                            <input type="checkbox" name="groupe">Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
+                            <input type="checkbox" name="groupe">Travail de groupe</input>
+                            <br><br>
+                                Date limite de rendu du devoir:
+                            <input type="date" name="renduDate" />
+                                <br> <br>
+                                Date limite de rendu d'évaluation:
+                            <input type="date" name="evaluationDate" />
+
+                            <br><br>
+
+                                Type de rendu:
+                            <input type="checkbox" name="rendu">A la volée&nbsp&nbsp </input>
+                            <input type="checkbox" name="rendu">Par étape </input>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Attribution des évaluations
+                    </div>
+
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+
+                        <div class="btn-group">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="hidden-xl">2 évaluations par élève</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" role="menu">
+                                <li ng-repeat="i in [2,3,4,5,6,7,8,9,10]"><a href="">{{i}} évaluations par élève</a></li>
+                            </ul>
+                        </div>
+                        </div>
+                        <br>
+                        Auto-évaluation:
+                        <input type="checkbox" name="auto">Non&nbsp </input>
+                        <input type="checkbox" name="auto">Facultative&nbsp </input>
+                        <input type="checkbox" name="auto">Obligatoire&nbsp </input>
+                        <br><br>
+                        <input type="checkbox" name="anonymatEleve">Anonymat de l'élève évalué&nbsp</input>
+                        <input type="checkbox" name="anonymatEvaluateur">Anonymat de l'élève évaluateur</input>
+
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary pull-right" ui-sref=".etape2" placeholder="Créer une évaluation" />
+                <!-- /.panel-body -->
+            </div>
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /#page-wrapper -->

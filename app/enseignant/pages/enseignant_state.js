@@ -32,11 +32,22 @@
                             url:'/evaluations_create',
                             views:{
                                 'content':{
-                                    templateUrl:'app/HighCharts/demo.html',
+                                    templateUrl:'app/enseignant/pages/evaluations/evaluation-create.html',
                                     controller: 'EvaluationsController'
                                 }
                             }
                         })
+
+                    .state('enseignant.createEvaluation.etape2',{
+                        parent:'enseignant',
+                        url:'/evaluations_create2',
+                        views:{
+                            'content':{
+                                templateUrl:'app/enseignant/pages/evaluations/evaluation-create2.html',
+                                controller: 'EvaluationsController'
+                            }
+                        }
+                    })
 
                     .state('enseignant.cours',{
                         parent:'enseignant',

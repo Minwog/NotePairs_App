@@ -1,5 +1,6 @@
 <div id="wrapper">
     <!-- Navigation -->
+
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" ng-controller="EnseignantController">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -221,19 +222,32 @@
             <!-- /.dropdown -->
         </ul>
 
+        <!--<script>
+            $('#window').mouseout(function (e) {
+                setTimeout(function()
+                {
+                    $('#window').addClass('hide1');
+                    $('#page').removeClass('push');
+                }, 5000);
+            });
+            $('#window').mouseover(function(e) {
+                setTimeout(function()
+                {
+                    $('#window').removeClass('hide1');
+                    $('#page').addClass('push');
+                }, 5000);
 
+            })
+        </script>-->
 
-        <!-- /.navbar-top-links -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
 
                 <ul class="nav" id="side-menu">
-                    <li class="sidebar-search">
                         <img src="{{enseignantCo.avatar}}" class="img-rounded" alt="Robert" width="200" height="190">
                         <h3>{{enseignantCo.nom}} {{enseignantCo.prenom}} </h3>
                         <h5>{{enseignantCo.email}}</h5>
                         <!-- /input-group -->
-                    </li>
                     <li>
                         <a class="navbarEnseignantText" ui-sref="enseignant"><i class="fa fa-dashboard fa-2x"></i> Dashboard</a>
                     </li>
@@ -249,18 +263,20 @@
                     <li>
                         <a class="navbarEnseignantText" href="forms.html"><i class="fa fa-cog fa-fw"></i> Paramètres</a>
                     </li>
-                    </a>
                 </ul>
-                    </div>
             </div>
-            <!-- /.sidebar-collapse -->
         </div>
-        <!-- /.navbar-static-side -->
     </nav>
+</div>
+
+<!-- /.sidebar-collapse -->
+
+<!-- /.navbar-static-side -->
 
 
 
-    <div ui-view="content"></div>
+
+<div ui-view="content"></div>-->
 
 
 
