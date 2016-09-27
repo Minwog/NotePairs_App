@@ -17,16 +17,6 @@ angular.module('NotePairApp')
                     }
                 })
 
-                .state('eleve.correction',{
-                    parent:'eleve',
-                    url:'/correction/:id',
-                    views:{
-                        'content':{
-                            templateUrl:'app/eleve/pages/correction/correction.html',
-                            controller:'CorrectionController'
-                        }
-                    }
-                })
 
                 .state('eleve.cours',{
                     parent:'eleve',
@@ -50,6 +40,17 @@ angular.module('NotePairApp')
                     }
                 })
 
+                .state('eleve.historique',{
+                    parent:'eleve',
+                    url:'/historique/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/evaluations/historique.html',
+                            controller:'EvaluationController'
+                        }
+                    }
+                })
+
                 .state('eleve.resultats',{
                     parent:'eleve',
                     url:'/resultats/:id',
@@ -57,6 +58,17 @@ angular.module('NotePairApp')
                         'content':{
                             templateUrl:'app/eleve/pages/resultats/resultats.html',
                             controller:'ResultatController'
+                        }
+                    }
+                })
+
+                .state('eleve.groupes',{
+                    parent:'eleve',
+                    url:'/groupes/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/groupes/groupes.html',
+                            controller:'GroupeController'
                         }
                     }
                 })
