@@ -22,4 +22,10 @@
 a:hover{font-weight:bold;}
 a:active{color: #9acfea;}
 
+.modal .modal-dialog.centered {
+    position: fixed;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
 /*---------------------------------------------------------------------*/

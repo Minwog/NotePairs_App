@@ -1,14 +1,77 @@
 
     <!-- import plugin script -->
 <div id="page-wrapper">
+    <title>Mode de calcul d'évaluation</title>
     <div class="row">
         <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Trapèze des notes
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
 
-            <div id="container" style="height: 400px"></div>
-            <div id="drag"></div>
-            <div id="drop"></div>
+                    <div id="container" style="height: 400px"></div>
+                    <div id="drag"></div>
+                    <div id="drop"></div>
+                </div>
+            </div>
 
+            <script>
+                $('input[type="checkbox"]').on('change', function() {
+                    $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+                });
+            </script>
 
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Devoir de calibration
+                </div>
+                <div class="panel-body">
+                    Ajouter un devoir de calibration (facultatif): <input type="file"/>
+                    <br>
+                    Objectif:
+                    <br>
+                    <input type="checkbox" name="calibration" id="information">&nbsp;Information&nbsp;&nbsp;</input>
+                    <input type="checkbox" name="calibration" id="calibrage">&nbsp;Calibrage&nbsp;&nbsp;</input>
+                    <input type="checkbox" name="calibration" id="entrainement">&nbsp;Entraînement&nbsp;&nbsp;</input>
+                    <br><br>
+                    <input type="checkbox" name="calibration" />&nbsp;Utilisation d'un devoir d'élève
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Mode de calcul de la note
+                </div>
+                <div class="panel-body">
+
+                    <input type="checkbox" name="calcul" id="moyenne">&nbsp;Moyenne des notes&nbsp;&nbsp;</input>
+                    <input type="checkbox" name="calcul" id="mediane">&nbsp;Médiane des notes&nbsp;&nbsp;</input>
+                    <input type="checkbox" name="calculPondere" id="ponderees">&nbsp;Evaluations pondérées&nbsp;&nbsp;</input>
+                    <input type="checkbox" name="calculCalibre" id="calibrees">&nbsp;Evaluations calibrées&nbsp;&nbsp;</input>
+                    <input type="checkbox" name="calculAuto" id="autoEval" ng-show="evaluation.autoEval!=0">&nbsp;Auto-évaluation prise en compte&nbsp;&nbsp;</input>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Mode de calcul de la fiabilité
+                </div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+
+            <div class="panel panel-default" ng-show="evaluation.attributionSupervisee">
+                <div class="panel-heading">
+                    Superviser l'attribution des copies
+                </div>
+                <div class="panel-body">
+                    <button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal">Choisir l'attribution des copies</button>
+                </div>
+            </div>
         </div>
     </div>
+    <input type="submit" class="btn btn-primary pull-right" ui-sref="enseignant.createEvaluation.etape5" placeholder="Créer l'évaluation" />
 </div>

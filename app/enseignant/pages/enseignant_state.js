@@ -49,6 +49,17 @@
                         }
                     })
 
+                    .state('enseignant.createEvaluation.etape3',{
+                        parent:'enseignant',
+                        url:'/evaluations_create3',
+                        views:{
+                            'content':{
+                                templateUrl:'app/HighCharts/demo.html',
+                                controller: 'HighChartsController'
+                            }
+                        }
+                    })
+
                     .state('enseignant.diagrammeFiabilite',{
                         parent:'enseignant',
                         url:'/diagramme_fiabilite',

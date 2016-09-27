@@ -9,24 +9,6 @@
             <!-- /.row -->
             <div class="row">
 
-                <script>
-                    $('input[type="checkbox"]').on('change', function() {
-                        $('input[name="' + this.name + '"]').not(this).prop('checked', false);
-                    });
-                </script>
-
-                <script>
-                $('.dropdown').on( 'click', '.dropdown-menu li a', function() {
-                var target = $(this).html();
-
-                //Adds active class to selected item
-                $(this).parents('.dropdown-menu').find('li').removeClass('active');
-                $(this).parent('li').addClass('active');
-
-                //Displays selected text on dropdown-toggle button
-                $(this).parents('.dropdown').find('.dropdown-toggle').html(target + ' <span class="caret"></span>');
-                });
-                </script>
 
                 <!-- modified -->
                 <div class="col-lg-6">
@@ -71,9 +53,18 @@
 
                             <br><br>
 
+                            <script type="text/javascript">
+                                $(document).ready(function(){
+                                    $('[data-toggle="popover"]').popover({
+                                        placement : 'top',
+                                        trigger : 'hover'
+                                    });
+                                });
+                            </script>
+
                                 Type de rendu:
-                            <input type="checkbox" name="rendu">A la volée&nbsp&nbsp </input>
-                            <input type="checkbox" name="rendu">Par étape </input>
+                            <input type="checkbox" name="rendu">A la volée <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="A la volée" data-content="L'élève peut corriger les copies des autres après avoir rendu la sienne."></span> &nbsp&nbsp </input>
+                            <input type="checkbox" name="rendu">Par étape <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Par étape" data-content="L'élève peut corriger les copies des autres uniquement après la date limite de rendu des copies."></span></input>
                             </div>
                         </div>
                         <!-- /.panel-body -->
@@ -89,7 +80,7 @@
                         <div class="btn-group">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                <span class="hidden-xl">2 évaluations par élève</span>
+                                <span class="hidden-xl">2 évaluations par copies</span>
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" role="menu">
@@ -97,7 +88,7 @@
                             </ul>
                         </div>
                         </div>
-                        <br>
+                        <br> <br>
                         Auto-évaluation:
                         <input type="checkbox" name="auto">Non&nbsp </input>
                         <input type="checkbox" name="auto">Facultative&nbsp </input>

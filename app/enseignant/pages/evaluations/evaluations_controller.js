@@ -1,5 +1,5 @@
 angular.module('NotePairApp')
-    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq',  function ($scope,$state,$stateParams,httpq) {
+    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService) {
 
         $scope.mps='dist/mps.json';
         $scope.file=false;
@@ -8,19 +8,38 @@ angular.module('NotePairApp')
         $scope.extensions=[".pdf", ".docx", ".java"];
         //$scope.evaluation.sections=localStorageService.get("sections");
 
+        $('input[type="checkbox"]').on('change', function() {
+            $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+        });
+
+        $('.dropdown').on( 'click', '.dropdown-menu li a', function() {
+            var target = $(this).html();
+
+            //Adds active class to selected item
+            $(this).parents('.dropdown-menu').find('li').removeClass('active');
+            $(this).parent('li').addClass('active');
+
+            //Displays selected text on dropdown-toggle button
+            $(this).parents('.dropdown').find('.dropdown-toggle').html(target + ' <span class="caret"></span>');
+        });
+
+
         $scope.evaluation={
             "sections":[
                 {
                     "id":1,
-                    "nom":"Section 1",
+                    "nom":"Ma première section",
                     "points":"5",
-                    "typeRendu":"file",
+                    "typeRendu":"fichier",
                     "extension":null,
                     "criteres":[
                         {
-                            "type":"commentaire"
+                            "position":1,
+                            "type":"commentaire",
+                            "description":"Commentez",
                         },
                         {
+                            "position":2,
                             "type":"jugement",
                             "description":"Jugez",
                             "points":2,
@@ -49,6 +68,6 @@ angular.module('NotePairApp')
         }
 
         $scope.createCritere=function(id){
-            //A faire
+
         }
     }]);
