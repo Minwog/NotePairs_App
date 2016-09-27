@@ -27,4 +27,15 @@ angular.module('NotePairApp')
                         }
                     }
                 })
+
+                .state('eleve.cours',{
+                    parent:'eleve',
+                    url:'/cours/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/cours/cours.html',
+                            controller:'CoursController'
+                        }
+                    }
+                })
         }])
