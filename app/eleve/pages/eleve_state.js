@@ -38,4 +38,26 @@ angular.module('NotePairApp')
                         }
                     }
                 })
+
+                .state('eleve.evaluations',{
+                    parent:'eleve',
+                    url:'/evaluations/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/evaluations/evaluations.html',
+                            controller:'EvaluationController'
+                        }
+                    }
+                })
+
+                .state('eleve.resultats',{
+                    parent:'eleve',
+                    url:'/resultats/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/resultats/resultats.html',
+                            controller:'ResultatController'
+                        }
+                    }
+                })
         }])
