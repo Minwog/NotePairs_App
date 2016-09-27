@@ -1,6 +1,3 @@
-/**
- * Created by aurore on 21/09/2016.
- */
 angular.module('NotePairApp')
     .controller('EnseignantController',['$scope','$state','$stateParams', 'httpq',  function ($scope,$state,$stateParams,httpq) {
 

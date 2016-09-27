@@ -13,7 +13,7 @@ angular.module('NotePairApp')
                 "Representation analytique des signaux et systemes",
                 "Composants à semiconducteurs"
             ],
-            "avatar":"../resources/images/fleur.jpg"
+            "avatar":"../resources/images/avatar.jpg"
         }
 
     }])
