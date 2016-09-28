@@ -1,5 +1,5 @@
 angular.module('NotePairApp')
-    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService) {
+    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,LocalEvaluationsService) {
 
         $scope.mps='dist/mps.json';
         $scope.file=false;
@@ -23,79 +23,108 @@ angular.module('NotePairApp')
             $(this).parents('.dropdown').find('.dropdown-toggle').html(target + ' <span class="caret"></span>');
         });
 
-
-        $scope.evaluation={
-            "sections":[
-                {
-                    "id":1,
-                    "position":1,
-                    "nom":"Ma première section",
-                    "points":"5",
-                    "typeRendu":"fichier pdf",
-                    "extension":null,
-                    "criteres":[
-                        {
-                            "position":1,
-                            "type":"commentaire",
-                            "description":"Commentez",
-                        },
-                        {
-                            "position":2,
-                            "type":"jugement",
-                            "description":"Jugez",
-                            "points":2,
-                            "precision":0.2
-                        }
-                    ]
-                },
-                {
-                    "id":2,
-                    "position":2,
-                    "nom":"Ma deuxième section",
-                    "points":"5",
-                    "typeRendu":"lien",
-                    "extension":null,
-                    "criteres":[
-                        {
-                            "position":1,
-                            "type":"commentaire",
-                            "description":"Commentez",
-                        },
-                        {
-                            "position":2,
-                            "type":"jugement",
-                            "description":"Jugez",
-                            "points":2,
-                            "precision":0.2
-                        }
-                    ]
-                },
-                {
-                    "id":3,
-                    "position":3,
-                    "nom":"Ma troisième section",
-                    "points":"5",
-                    "typeRendu":"fichier matlab",
-                    "extension":null,
-                    "criteres":[
-                        {
-                            "position":1,
-                            "type":"commentaire",
-                            "description":"Commentez",
-                        },
-                        {
-                            "position":2,
-                            "type":"jugement",
-                            "description":"Jugez",
-                            "points":2,
-                            "precision":0.2
-                        }
-                    ]
-                }
+        $scope.enseignant = {
+            "cours":[
+                "azdazca",
+                "zeafvfds"
             ]
         }
 
-        $scope.panelColor = ["panel-info", "panel-warning", "panel-success", "panel-danger" ]
+        /*
+        $scope.evaluation.sections = [
+        {
+            "id":1,
+            "ordre":1,
+            "nom":"Ma première section",
+            "points":"5",
+            "typeRendu":"fichier pdf",
+            "extension":null,
+            "criteres":[
+            {
+                "ordre":1,
+                "type":"commentaire",
+                "description":"Commentez",
+            },
+            {
+                "ordre":2,
+                "type":"jugement",
+                "description":"Jugez",
+                "points":2,
+                "precision":0.2
+            }
+        ]
+        },
+        {
+            "id":2,
+            "ordre":2,
+            "nom":"Ma deuxième section",
+            "points":"5",
+            "typeRendu":"lien",
+            "extension":null,
+            "criteres":[
+            {
+                "ordre":1,
+                "type":"commentaire",
+                "description":"Commentez",
+            },
+            {
+                "ordre":2,
+                "type":"jugement",
+                "description":"Jugez",
+                "points":2,
+                "precision":0.2
+            }
+        ]
+        },
+        {
+            "id":3,
+            "ordre":3,
+            "nom":"Ma troisième section",
+            "points":"5",
+            "typeRendu":"fichier matlab",
+            "extension":null,
+            "criteres":[
+            {
+                "ordre":1,
+                "type":"commentaire",
+                "description":"Commentez",
+            },
+            {
+                "ordre":2,
+                "type":"jugement",
+                "description":"Jugez",
+                "points":2,
+                "precision":0.2
+            }
+        ]
+        }
+        ]
+*/
+
+        LocalEvaluationsService.query().then(function (data) {
+            $scope.sectionList=data;
+            console.log($scope.EvaluationsList)
+        });
+
+        $scope.newSection={
+            'id':'',
+            'titre':'',
+            'description':'',
+            'enonce':'',
+            'ordre':'',
+            'points':'',
+            'type_rendu':'',
+            'evaluation_id':''
+        };
+
+//--- Methode add pour ajouter un Eleve à la liste ---//
+        $scope.addSection = function () {
+            $scope.newSection.ordre = $scope.sectionList.length;
+            console.log($scope.newSection)
+            LocalEvaluationsService.save($scope.newSection);
+        };
+
+        $scope.panelColor = ["panel-warning", "panel-info", "panel-success", "panel-danger" ]
 
         $scope.setFile=function(i){
             $scope.file=i;
@@ -120,22 +149,22 @@ angular.module('NotePairApp')
 
         $scope.sectionUp=function(pos, data){
             for(var i=data.length-1; i >= 0; i--){
-                if(data[i].position == pos && data[i].position > 1){
-                    data[i].position = data[i].position-1;
+                if(data[i].ordre == pos && data[i].ordre > 1){
+                    data[i].ordre = data[i].ordre-1;
                 }
-                else if(data[i].position == pos-1){
-                    data[i].position = data[i].position+1;
+                else if(data[i].ordre == pos-1){
+                    data[i].ordre = data[i].ordre+1;
                 }
             }
         }
 
         $scope.sectionDown=function(pos, data){
             for(var i=0; i < data.length; i++){
-                if(data[i].position == pos && data[i].position < data.length){
-                    data[i].position = data[i].position+1;
+                if(data[i].ordre == pos && data[i].ordre < data.length){
+                    data[i].ordre = data[i].ordre+1;
                 }
-                else if(data[i].position == pos+1){
-                    data[i].position = data[i].position-1;
+                else if(data[i].ordre == pos+1){
+                    data[i].ordre = data[i].ordre-1;
                 }
             }
         }

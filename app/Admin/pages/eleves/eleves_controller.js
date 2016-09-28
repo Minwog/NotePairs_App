@@ -4,7 +4,6 @@ angular.module('NotePairApp')
 
        LocalElevesService.query().then(function (data) {
            $scope.ElevesList=data;
-
        });
 
 

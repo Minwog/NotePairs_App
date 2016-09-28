@@ -1,0 +1,42 @@
+[
+    {
+      "id":1,
+      "ordre":1,
+      "nom":"Ma première section",
+      "points":"5",
+      "typeRendu":"fichier pdf",
+      "extension":null,
+      "criteres":[
+        {
+          "ordre":1,
+          "type":"commentaire",
+          "description":"Commentez"
+        },
+        {
+          "ordre":2,
+          "type":"jugement",
+          "description":"Jugez",
+          "points":2,
+          "precision":0.2
+        }
+      ]
+
+    },
+    {
+      "id":2,
+      "ordre":2,
+      "nom":"Ma deuxième section",
+      "points":"5",
+      "typeRendu":"lien",
+      "extension":null
+
+    },
+    {
+      "id":3,
+      "ordre":3,
+      "nom":"Ma troisième section",
+      "points":"5",
+      "typeRendu":"fichier matlab",
+      "extension":null
+    }
+]

@@ -17,8 +17,10 @@
     function allowDrop(ev) {
         ev.preventDefault();
     }
+
     var src = "";
     var current = "drag1";
+
     function drag(ev) {
         ev.dataTransfer.setData("text", ev.target.id);
         src = ev.srcElement.parentNode.id;
@@ -32,7 +34,7 @@
 
         document.getElementById('drop1').style.borderStyle = "none";
 
-        if(true) {
+
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
 
@@ -49,7 +51,7 @@
             document.getElementById("drop1").appendChild(document.getElementById(data));
 
             current = data;
-        }
+
     }
 
 

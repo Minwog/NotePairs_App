@@ -1,5 +1,3 @@
-
-
 angular.module('NotePairApp')
     .factory('EnseignantsService', ['$resource',function($resource) {
         return $resource('/resources/json/enseignants.json',{},{
