@@ -1,0 +1,58 @@
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Rendre une copie</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <!-- /.row -->
+    <div class="row">
+        <!-- modified -->
+        <div class="col-lg-12">
+            <div ng-repeat="section in copie.sections">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{section.titre}}:&nbsp;&nbsp;
+                        /{{section.points}}
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div>
+                            {{section.description}}
+                            <br>
+                            <a target="_blank" href="{{section.enonce}}">Enoncé</a>
+                        </div><br>
+                        <style>
+                            .ta-editor {
+                                height: auto;
+                                overflow: auto;
+                                font-family: inherit;
+                                font-size: 100%;
+                            }
+                        </style>
+                       <div ng-if="section.type_rendu=='texte'">
+                            <text-angular name="textBox" required></text-angular>
+
+                        </div>
+
+                        <div ng-if="section.type_rendu=='url'">
+                            Importez ici votre url.
+                            <input type="url" ng-model="eleveCo.section.rendu"/>
+                        </div>
+
+                        <div ng-if="section.type_rendu=='fichier'">
+                            Importez ici votre fichier.
+                            <input type="file" ng-model="eleveCo.section.rendu"/>
+                        </div>
+
+                    </div>
+                </div>
+                    <!-- /.panel-body -->
+            </div>
+            <input type="submit" class="btn btn-primary pull-right" />
+
+        </div>
+    </div>
+</div>
+<!-- /#page-wrapper -->

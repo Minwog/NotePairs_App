@@ -17,6 +17,28 @@ angular.module('NotePairApp')
                     }
                 })
 
+                .state('eleve.rendre_copie', {
+                    parent:'eleve',
+                    url:'/rendre_copie/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/copie.html',
+                            controller:'EleveController'
+                        },
+                    }
+                })
+
+                .state('eleve.evaluations.corriger', {
+                    parent:'eleve',
+                    url:'/evaluations/corriger/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/evaluations/correction.html',
+                            controller:'EleveController'
+                        },
+                    }
+                })
+
 
                 .state('eleve.cours',{
                     parent:'eleve',
