@@ -118,7 +118,7 @@ angular.module('NotePairApp')
 
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addSection = function () {
-            $scope.newSection.ordre = $scope.sectionList.length;
+            $scope.newSection.ordre = $scope.sectionList.length+1;
             console.log($scope.sectionList[1])
             LocalEvaluationsService.save($scope.newSection);
         };
@@ -143,6 +143,7 @@ angular.module('NotePairApp')
         $scope.addCritere=function (sec) {
             for(var i = 0; i < $scope.sectionList.length; i++){
                 if($scope.sectionList[i].id == sec.id){
+                    $scope.newCritere.ordre = $scope.sectionList[i].criteres.length+1;
                     $scope.sectionList[i].criteres.push($scope.newCritere)
                     //$scope.sectionList[i].criteres.push($scope.newCritere);
                     //LocalEvaluationsService.save($scope.sectionList);

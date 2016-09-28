@@ -45,7 +45,7 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="critere in section.criteres">
-                                        <td class="index">{{critere.position}}</td>
+                                        <td class="index">{{critere.ordre}}</td>
                                         <td>{{critere.type}}</td>
                                         <td>{{critere.description}}</td>
                                         <td>{{critere.points}}</td>
@@ -92,18 +92,19 @@
                                         <div class="dropdown">
                                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu"
                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <span class="hidden-xl">Type de critère</span>
+                                                <span ng-if="!newCritere.type" class="hidden-xl">Type de critère</span>
+                                                <span ng-if="newCritere.type" class="hidden-xl">{{newCritere.type}}</span>
                                                 <span class="caret"></span>
                                             </button>
-                                            <ul class="dropdown-menu" ng-model="newCritere.type" aria-labelledby="dropdownMenu1" role="menu">
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
                                                 <li>
-                                                    <a href="" id="commentaire" ng-click="setCritereType(1)">Commentaire</a>
+                                                    <a href="" id="commentaire" ng-click="setCritereType(1); newCritere.type='commentaire'">Commentaire</a>
                                                 </li>
                                                 <li>
-                                                    <a href="" id="condition" ng-click="setCritereType(2)">Condition</a>
+                                                    <a href="" id="condition" ng-click="setCritereType(2); newCritere.type='condition'">Condition</a>
                                                 </li>
                                                 <li>
-                                                    <a href="" id="jugement" ng-click="setCritereType(3)">Jugement</a>
+                                                    <a href="" id="jugement" ng-click="setCritereType(3); newCritere.type='jugement'">Jugement</a>
                                                 </li>
                                             </ul>
                                         </div>
