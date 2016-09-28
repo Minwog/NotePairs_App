@@ -98,13 +98,14 @@
                                 var renderers = $.extend($.pivotUtilities.renderers,
                                         $.pivotUtilities.gchart_renderers);
 
-                                $.getJSON("dist/mps2.json", function(mps) {
+                                $.getJSON("dist/mps1.json", function(mps) {
                                     $("#output").pivotUI(mps, {
                                         renderers: renderers,
                                         derivedAttributes: {
                                             "Intervalle Note": derivers.bin("Note", 2.5),
                                             "Écart": function(mp) {
-                                                return Math.abs(mp["Note"]-10)/10;                                            }
+                                                return mp["Note"]/20;
+                                            }
                                         },
                                         cols: ["Question"], rows: ["Copie"],
                                         rendererName: "Carte de Chaleur par ligne",
@@ -148,9 +149,7 @@
                                         renderers: renderers,
                                         derivedAttributes: {
                                             "Intervalle Note": derivers.bin("Note", 2.5),
-                                            "Écart": function(mp) {
-                                                return Math.abs(mp["Note"]-10)/10;
-                                            }
+
                                         },
                                         cols: ["Question"], rows: ["Copie"],
                                         rendererName: "Carte de Chaleur par ligne",

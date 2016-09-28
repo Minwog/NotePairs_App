@@ -4,49 +4,7 @@
             <h1 class="page-header">Créer une évaluation</h1>
         </div>
         <!-- /.col-lg-12 -->
-
-        <script>
-            function allowDrop(ev) {
-                ev.preventDefault();
-            }
-            var src = "";
-            var current = "drag1";
-            function drag(ev) {
-                ev.dataTransfer.setData("text", ev.target.id);
-                src = ev.srcElement.parentNode.id;
-                document.getElementById('drag1').style.borderStyle = "dashed";
-                document.getElementById('drag1').style.borderColor = "#C0C0C0";
-
-            }
-
-            function drop(ev) {
-                console.log(ev.target.id)
-
-                document.getElementById('drag1').style.borderStyle = "none";
-
-                if(true) {
-                    ev.preventDefault();
-                    var data = ev.dataTransfer.getData("text");
-
-                    document.getElementById(current).getElementsByClassName("panel-body panel_principal")[0]
-                            .className="panel-body panel_secondaire";
-                    document.getElementById(current).setAttribute("draggable","true");
-                    document.getElementById(current).setAttribute("ondragstart","drag(event)");
-                    document.getElementById(src).appendChild(document.getElementById(current));
-
-                    document.getElementById(data).getElementsByClassName("panel-body panel_secondaire")[0]
-                            .className="panel-body panel_principal";
-                    document.getElementById(data).setAttribute("draggable","");
-                    document.getElementById(data).setAttribute("ondragstart","");
-                    document.getElementById("drag1").appendChild(document.getElementById(data));
-
-                    current = data;
-                }
-            }
-
-
-        </script>
-
+    </div>
 
         <!-- /.row -->
     <div class="row">
@@ -58,15 +16,19 @@
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <div ng-repeat="section in evaluation.sections">
-                    <div class="panel panel-default" id="drag1" draggable="" ondragstart="" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div ng-repeat="section in evaluation.sections | orderBy : 'position'">
+
+                    <div class="panel {{panelColor[$id%4]}}">
                         <div class="panel-heading">
                             {{section.nom}}
                             <a class="btn btn-danger btn-circle-micro pull-right" data-toggle="modal" data-target="#modalDeleteSection"><i class="fa fa-times"></i>
                             </a>
                             <a class="btn btn-primary btn-circle-micro pull-right" href="javascript:$('#myModal .modal-body').load('remote.html',function(e){$('#myModal').modal('show');});"><i class="fa fa-list"></i>
                             </a>
-
+                            <a class="btn btn-success btn-circle-micro pull-right" ng-click="sectionUp(section.position, evaluation.sections)"><i class="fa fa-angle-up"></i>
+                            </a>
+                            <a class="btn btn-success btn-circle-micro pull-right" ng-click="sectionDown(section.position, evaluation.sections)"><i class="fa fa-angle-down"></i>
+                            </a>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

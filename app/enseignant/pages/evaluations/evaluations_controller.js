@@ -28,9 +28,54 @@ angular.module('NotePairApp')
             "sections":[
                 {
                     "id":1,
+                    "position":1,
                     "nom":"Ma première section",
                     "points":"5",
-                    "typeRendu":"fichier",
+                    "typeRendu":"fichier pdf",
+                    "extension":null,
+                    "criteres":[
+                        {
+                            "position":1,
+                            "type":"commentaire",
+                            "description":"Commentez",
+                        },
+                        {
+                            "position":2,
+                            "type":"jugement",
+                            "description":"Jugez",
+                            "points":2,
+                            "precision":0.2
+                        }
+                    ]
+                },
+                {
+                    "id":2,
+                    "position":2,
+                    "nom":"Ma deuxième section",
+                    "points":"5",
+                    "typeRendu":"lien",
+                    "extension":null,
+                    "criteres":[
+                        {
+                            "position":1,
+                            "type":"commentaire",
+                            "description":"Commentez",
+                        },
+                        {
+                            "position":2,
+                            "type":"jugement",
+                            "description":"Jugez",
+                            "points":2,
+                            "precision":0.2
+                        }
+                    ]
+                },
+                {
+                    "id":3,
+                    "position":3,
+                    "nom":"Ma troisième section",
+                    "points":"5",
+                    "typeRendu":"fichier matlab",
                     "extension":null,
                     "criteres":[
                         {
@@ -50,6 +95,8 @@ angular.module('NotePairApp')
             ]
         }
 
+        $scope.panelColor = ["panel-info", "panel-warning", "panel-success", "panel-danger" ]
+
         $scope.setFile=function(i){
             $scope.file=i;
         }
@@ -66,8 +113,30 @@ angular.module('NotePairApp')
             $scope.evaluation.sections.push(section);
            // localStorageService.set("sections", $scope.evaluation.sections);
         }
+        
+        $scope.createCritere=function (id) {
 
-        $scope.createCritere=function(id){
+        }
 
+        $scope.sectionUp=function(pos, data){
+            for(var i=data.length-1; i >= 0; i--){
+                if(data[i].position == pos && data[i].position > 1){
+                    data[i].position = data[i].position-1;
+                }
+                else if(data[i].position == pos-1){
+                    data[i].position = data[i].position+1;
+                }
+            }
+        }
+
+        $scope.sectionDown=function(pos, data){
+            for(var i=0; i < data.length; i++){
+                if(data[i].position == pos && data[i].position < data.length){
+                    data[i].position = data[i].position+1;
+                }
+                else if(data[i].position == pos+1){
+                    data[i].position = data[i].position-1;
+                }
+            }
         }
     }]);
