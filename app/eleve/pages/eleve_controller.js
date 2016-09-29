@@ -138,5 +138,8 @@ angular.module('NotePairApp')
             return ($scope.tab===i);
         }
 
+        $scope.panelColor = ["panel-warning", "panel-info", "panel-success", "panel-danger" ]
+
+
         $scope.selecritere = "";
     }])
