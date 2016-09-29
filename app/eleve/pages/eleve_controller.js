@@ -50,8 +50,8 @@ angular.module('NotePairApp')
                         },
                         {
                             "position":2,
-                            "type":"jugement",
-                            "description":"Jugez",
+                            "type":"condition",
+                            "description":"Conditionnez",
                             "points":2,
                             "precision":0.2,
                             "ordre":2,
@@ -113,7 +113,8 @@ angular.module('NotePairApp')
                             "type":"commentaire",
                             "description":"Commentez",
                             "ordre":1,
-                            "id":1
+                            "id":1,
+                            "points":3,
                         },
                         {
                             "position":2,
@@ -135,11 +136,19 @@ angular.module('NotePairApp')
         }
 
         $scope.isTab=function(i){
-            return ($scope.tab===i);
+            return ($scope.tab==i);
         }
 
         $scope.panelColor = ["panel-warning", "panel-info", "panel-success", "panel-danger" ]
 
+        $scope.slider = {
+            value:0,
+            options: {
+                floor: -1,
+                ceil: 6,
+                step: 0.1,
+                precision: 2
+            }
+        };
 
-        $scope.selecritere = "";
     }])

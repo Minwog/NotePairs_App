@@ -3,7 +3,8 @@
         'ui.router',
         'ngResource',
         'pdf',
-        'textAngular'
+        'textAngular',
+        'rzModule'
     ]);
 
 })();

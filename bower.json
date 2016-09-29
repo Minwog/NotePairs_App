@@ -24,10 +24,14 @@
     "bootstrap-select": "^1.11.2",
     "angular-pdf": "^1.3.0",
     "angular-ui-tinymce": "^0.0.17",
-    "textAngular": "^1.5.10"
+    "textAngular": "^1.5.10",
+    "seiyria-bootstrap-slider": "^9.2.0",
+    "angular-bootstrap-slider": "^0.1.28",
+    "angularjs-slider": "^5.5.1"
   },
   "resolutions": {
-    "angular": "~1.5.0"
+    "angular": "~1.5.0",
+    "seiyria-bootstrap-slider": ">= 5.2 < 7.0"
   },
   "devDependencies": {
     "angular-ui-tinymce": "^0.0.17"
