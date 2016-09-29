@@ -1,0 +1,674 @@
+[
+  {
+    "copie": 1,
+    "grader1": 1,
+    "grader2": 13,
+    "grader3": 29,
+    "grader4": 49
+  },
+  {
+    "copie": 2,
+    "grader1": 2,
+    "grader2": 14,
+    "grader3": 30,
+    "grader4": 50
+  },
+  {
+    "copie": 3,
+    "grader1": 3,
+    "grader2": 15,
+    "grader3": 31,
+    "grader4": 51
+  },
+  {
+    "copie": 4,
+    "grader1": 4,
+    "grader2": 16,
+    "grader3": 32,
+    "grader4": 52
+  },
+  {
+    "copie": 5,
+    "grader1": 5,
+    "grader2": 17,
+    "grader3": 33,
+    "grader4": 53
+  },
+  {
+    "copie": 6,
+    "grader1": 6,
+    "grader2": 18,
+    "grader3": 34,
+    "grader4": 54
+  },
+  {
+    "copie": 7,
+    "grader1": 7,
+    "grader2": 19,
+    "grader3": 35,
+    "grader4": 55
+  },
+  {
+    "copie": 8,
+    "grader1": 8,
+    "grader2": 20,
+    "grader3": 36,
+    "grader4": 56
+  },
+  {
+    "copie": 9,
+    "grader1": 9,
+    "grader2": 21,
+    "grader3": 37,
+    "grader4": 57
+  },
+  {
+    "copie": 10,
+    "grader1": 10,
+    "grader2": 22,
+    "grader3": 38,
+    "grader4": 58
+  },
+  {
+    "copie": 11,
+    "grader1": 11,
+    "grader2": 23,
+    "grader3": 39,
+    "grader4": 59
+  },
+  {
+    "copie": 12,
+    "grader1": 12,
+    "grader2": 24,
+    "grader3": 40,
+    "grader4": 60
+  },
+  {
+    "copie": 13,
+    "grader1": 13,
+    "grader2": 25,
+    "grader3": 41,
+    "grader4": 61
+  },
+  {
+    "copie": 14,
+    "grader1": 14,
+    "grader2": 26,
+    "grader3": 42,
+    "grader4": 62
+  },
+  {
+    "copie": 15,
+    "grader1": 15,
+    "grader2": 27,
+    "grader3": 43,
+    "grader4": 63
+  },
+  {
+    "copie": 16,
+    "grader1": 16,
+    "grader2": 28,
+    "grader3": 44,
+    "grader4": 64
+  },
+  {
+    "copie": 17,
+    "grader1": 17,
+    "grader2": 29,
+    "grader3": 45,
+    "grader4": 65
+  },
+  {
+    "copie": 18,
+    "grader1": 18,
+    "grader2": 30,
+    "grader3": 46,
+    "grader4": 66
+  },
+  {
+    "copie": 19,
+    "grader1": 19,
+    "grader2": 31,
+    "grader3": 47,
+    "grader4": 67
+  },
+  {
+    "copie": 20,
+    "grader1": 20,
+    "grader2": 32,
+    "grader3": 48,
+    "grader4": 68
+  },
+  {
+    "copie": 21,
+    "grader1": 21,
+    "grader2": 33,
+    "grader3": 49,
+    "grader4": 69
+  },
+  {
+    "copie": 22,
+    "grader1": 22,
+    "grader2": 34,
+    "grader3": 50,
+    "grader4": 70
+  },
+  {
+    "copie": 23,
+    "grader1": 23,
+    "grader2": 35,
+    "grader3": 51,
+    "grader4": 71
+  },
+  {
+    "copie": 24,
+    "grader1": 24,
+    "grader2": 36,
+    "grader3": 52,
+    "grader4": 72
+  },
+  {
+    "copie": 25,
+    "grader1": 25,
+    "grader2": 37,
+    "grader3": 53,
+    "grader4": 73
+  },
+  {
+    "copie": 26,
+    "grader1": 26,
+    "grader2": 38,
+    "grader3": 54,
+    "grader4": 74
+  },
+  {
+    "copie": 27,
+    "grader1": 27,
+    "grader2": 39,
+    "grader3": 55,
+    "grader4": 75
+  },
+  {
+    "copie": 28,
+    "grader1": 28,
+    "grader2": 40,
+    "grader3": 56,
+    "grader4": 76
+  },
+  {
+    "copie": 29,
+    "grader1": 29,
+    "grader2": 41,
+    "grader3": 57,
+    "grader4": 77
+  },
+  {
+    "copie": 30,
+    "grader1": 30,
+    "grader2": 42,
+    "grader3": 58,
+    "grader4": 78
+  },
+  {
+    "copie": 31,
+    "grader1": 31,
+    "grader2": 43,
+    "grader3": 59,
+    "grader4": 79
+  },
+  {
+    "copie": 32,
+    "grader1": 32,
+    "grader2": 44,
+    "grader3": 60,
+    "grader4": 80
+  },
+  {
+    "copie": 33,
+    "grader1": 33,
+    "grader2": 45,
+    "grader3": 61,
+    "grader4": 81
+  },
+  {
+    "copie": 34,
+    "grader1": 34,
+    "grader2": 46,
+    "grader3": 62,
+    "grader4": 82
+  },
+  {
+    "copie": 35,
+    "grader1": 35,
+    "grader2": 47,
+    "grader3": 63,
+    "grader4": 83
+  },
+  {
+    "copie": 36,
+    "grader1": 36,
+    "grader2": 48,
+    "grader3": 64,
+    "grader4": 84
+  },
+  {
+    "copie": 37,
+    "grader1": 37,
+    "grader2": 49,
+    "grader3": 65,
+    "grader4": 85
+  },
+  {
+    "copie": 38,
+    "grader1": 38,
+    "grader2": 50,
+    "grader3": 66,
+    "grader4": 86
+  },
+  {
+    "copie": 39,
+    "grader1": 39,
+    "grader2": 51,
+    "grader3": 67,
+    "grader4": 87
+  },
+  {
+    "copie": 40,
+    "grader1": 40,
+    "grader2": 52,
+    "grader3": 68,
+    "grader4": 88
+  },
+  {
+    "copie": 41,
+    "grader1": 41,
+    "grader2": 53,
+    "grader3": 69,
+    "grader4": 89
+  },
+  {
+    "copie": 42,
+    "grader1": 42,
+    "grader2": 54,
+    "grader3": 70,
+    "grader4": 90
+  },
+  {
+    "copie": 43,
+    "grader1": 43,
+    "grader2": 55,
+    "grader3": 71,
+    "grader4": 91
+  },
+  {
+    "copie": 44,
+    "grader1": 44,
+    "grader2": 56,
+    "grader3": 72,
+    "grader4": 92
+  },
+  {
+    "copie": 45,
+    "grader1": 45,
+    "grader2": 57,
+    "grader3": 73,
+    "grader4": 93
+  },
+  {
+    "copie": 46,
+    "grader1": 46,
+    "grader2": 58,
+    "grader3": 74,
+    "grader4": 94
+  },
+  {
+    "copie": 47,
+    "grader1": 47,
+    "grader2": 59,
+    "grader3": 75,
+    "grader4": 95
+  },
+  {
+    "copie": 48,
+    "grader1": 48,
+    "grader2": 60,
+    "grader3": 76,
+    "grader4": 96
+  },
+  {
+    "copie": 49,
+    "grader1": 49,
+    "grader2": 61,
+    "grader3": 77,
+    "grader4": 1
+  },
+  {
+    "copie": 50,
+    "grader1": 50,
+    "grader2": 62,
+    "grader3": 78,
+    "grader4": 2
+  },
+  {
+    "copie": 51,
+    "grader1": 51,
+    "grader2": 63,
+    "grader3": 79,
+    "grader4": 3
+  },
+  {
+    "copie": 52,
+    "grader1": 52,
+    "grader2": 64,
+    "grader3": 80,
+    "grader4": 4
+  },
+  {
+    "copie": 53,
+    "grader1": 53,
+    "grader2": 65,
+    "grader3": 81,
+    "grader4": 5
+  },
+  {
+    "copie": 54,
+    "grader1": 54,
+    "grader2": 66,
+    "grader3": 82,
+    "grader4": 6
+  },
+  {
+    "copie": 55,
+    "grader1": 55,
+    "grader2": 67,
+    "grader3": 83,
+    "grader4": 7
+  },
+  {
+    "copie": 56,
+    "grader1": 56,
+    "grader2": 68,
+    "grader3": 84,
+    "grader4": 8
+  },
+  {
+    "copie": 57,
+    "grader1": 57,
+    "grader2": 69,
+    "grader3": 85,
+    "grader4": 9
+  },
+  {
+    "copie": 58,
+    "grader1": 58,
+    "grader2": 70,
+    "grader3": 86,
+    "grader4": 10
+  },
+  {
+    "copie": 59,
+    "grader1": 59,
+    "grader2": 71,
+    "grader3": 87,
+    "grader4": 11
+  },
+  {
+    "copie": 60,
+    "grader1": 60,
+    "grader2": 72,
+    "grader3": 88,
+    "grader4": 12
+  },
+  {
+    "copie": 61,
+    "grader1": 61,
+    "grader2": 73,
+    "grader3": 89,
+    "grader4": 13
+  },
+  {
+    "copie": 62,
+    "grader1": 62,
+    "grader2": 74,
+    "grader3": 90,
+    "grader4": 14
+  },
+  {
+    "copie": 63,
+    "grader1": 63,
+    "grader2": 75,
+    "grader3": 91,
+    "grader4": 15
+  },
+  {
+    "copie": 64,
+    "grader1": 64,
+    "grader2": 76,
+    "grader3": 92,
+    "grader4": 16
+  },
+  {
+    "copie": 65,
+    "grader1": 65,
+    "grader2": 77,
+    "grader3": 93,
+    "grader4": 17
+  },
+  {
+    "copie": 66,
+    "grader1": 66,
+    "grader2": 78,
+    "grader3": 94,
+    "grader4": 18
+  },
+  {
+    "copie": 67,
+    "grader1": 67,
+    "grader2": 79,
+    "grader3": 95,
+    "grader4": 19
+  },
+  {
+    "copie": 68,
+    "grader1": 68,
+    "grader2": 80,
+    "grader3": 96,
+    "grader4": 20
+  },
+  {
+    "copie": 69,
+    "grader1": 69,
+    "grader2": 81,
+    "grader3": 1,
+    "grader4": 21
+  },
+  {
+    "copie": 70,
+    "grader1": 70,
+    "grader2": 82,
+    "grader3": 2,
+    "grader4": 22
+  },
+  {
+    "copie": 71,
+    "grader1": 71,
+    "grader2": 83,
+    "grader3": 3,
+    "grader4": 23
+  },
+  {
+    "copie": 72,
+    "grader1": 72,
+    "grader2": 84,
+    "grader3": 4,
+    "grader4": 24
+  },
+  {
+    "copie": 73,
+    "grader1": 73,
+    "grader2": 85,
+    "grader3": 5,
+    "grader4": 25
+  },
+  {
+    "copie": 74,
+    "grader1": 74,
+    "grader2": 86,
+    "grader3": 6,
+    "grader4": 26
+  },
+  {
+    "copie": 75,
+    "grader1": 75,
+    "grader2": 87,
+    "grader3": 7,
+    "grader4": 27
+  },
+  {
+    "copie": 76,
+    "grader1": 76,
+    "grader2": 88,
+    "grader3": 8,
+    "grader4": 28
+  },
+  {
+    "copie": 77,
+    "grader1": 77,
+    "grader2": 89,
+    "grader3": 9,
+    "grader4": 29
+  },
+  {
+    "copie": 78,
+    "grader1": 78,
+    "grader2": 90,
+    "grader3": 10,
+    "grader4": 30
+  },
+  {
+    "copie": 79,
+    "grader1": 79,
+    "grader2": 91,
+    "grader3": 11,
+    "grader4": 31
+  },
+  {
+    "copie": 80,
+    "grader1": 80,
+    "grader2": 92,
+    "grader3": 12,
+    "grader4": 32
+  },
+  {
+    "copie": 81,
+    "grader1": 81,
+    "grader2": 93,
+    "grader3": 13,
+    "grader4": 33
+  },
+  {
+    "copie": 82,
+    "grader1": 82,
+    "grader2": 94,
+    "grader3": 14,
+    "grader4": 34
+  },
+  {
+    "copie": 83,
+    "grader1": 83,
+    "grader2": 95,
+    "grader3": 15,
+    "grader4": 35
+  },
+  {
+    "copie": 84,
+    "grader1": 84,
+    "grader2": 96,
+    "grader3": 16,
+    "grader4": 36
+  },
+  {
+    "copie": 85,
+    "grader1": 85,
+    "grader2": 1,
+    "grader3": 17,
+    "grader4": 37
+  },
+  {
+    "copie": 86,
+    "grader1": 86,
+    "grader2": 2,
+    "grader3": 18,
+    "grader4": 38
+  },
+  {
+    "copie": 87,
+    "grader1": 87,
+    "grader2": 3,
+    "grader3": 19,
+    "grader4": 39
+  },
+  {
+    "copie": 88,
+    "grader1": 88,
+    "grader2": 4,
+    "grader3": 20,
+    "grader4": 40
+  },
+  {
+    "copie": 89,
+    "grader1": 89,
+    "grader2": 5,
+    "grader3": 21,
+    "grader4": 41
+  },
+  {
+    "copie": 90,
+    "grader1": 90,
+    "grader2": 6,
+    "grader3": 22,
+    "grader4": 42
+  },
+  {
+    "copie": 91,
+    "grader1": 91,
+    "grader2": 7,
+    "grader3": 23,
+    "grader4": 43
+  },
+  {
+    "copie": 92,
+    "grader1": 92,
+    "grader2": 8,
+    "grader3": 24,
+    "grader4": 44
+  },
+  {
+    "copie": 93,
+    "grader1": 93,
+    "grader2": 9,
+    "grader3": 25,
+    "grader4": 45
+  },
+  {
+    "copie": 94,
+    "grader1": 94,
+    "grader2": 10,
+    "grader3": 26,
+    "grader4": 46
+  },
+  {
+    "copie": 95,
+    "grader1": 95,
+    "grader2": 11,
+    "grader3": 27,
+    "grader4": 47
+  },
+  {
+    "copie": 96,
+    "grader1": 96,
+    "grader2": 12,
+    "grader3": 28,
+    "grader4": 48
+  }
+]

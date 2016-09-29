@@ -100,7 +100,7 @@
                                 var renderers = $.extend($.pivotUtilities.renderers,
                                         $.pivotUtilities.gchart_renderers);
 
-                                $.getJSON("dist/mps1.json", function(mps) {
+                                $.getJSON("dist/workbook.json", function(mps) {
                                     $("#output").pivotUI(mps, {
                                         renderers: renderers,
                                         derivedAttributes: {
