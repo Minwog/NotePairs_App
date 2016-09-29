@@ -2,17 +2,19 @@
     {
       "id":1,
       "ordre":1,
-      "nom":"Ma première section",
+      "titre":"Ma première section",
       "points":"5",
-      "typeRendu":"fichier pdf",
+      "type_rendu":"fichier pdf",
       "extension":null,
       "criteres":[
         {
+          "id":1,
           "ordre":1,
           "type":"commentaire",
           "description":"Commentez"
         },
         {
+          "id":2,
           "ordre":2,
           "type":"jugement",
           "description":"Jugez",
@@ -25,18 +27,50 @@
     {
       "id":2,
       "ordre":2,
-      "nom":"Ma deuxième section",
+      "titre":"Ma deuxième section",
       "points":"5",
-      "typeRendu":"lien",
-      "extension":null
+      "type_rendu":"lien",
+      "extension":null,
+      "criteres":[
+        {
+          "id":3,
+          "ordre":1,
+          "type":"commentaire",
+          "description":"Commentez"
+        },
+        {
+          "id":4,
+          "ordre":2,
+          "type":"jugement",
+          "description":"Jugez",
+          "points":2,
+          "precision":0.2
+        }
+      ]
 
     },
     {
       "id":3,
       "ordre":3,
-      "nom":"Ma troisième section",
+      "titre":"Ma troisième section",
       "points":"5",
-      "typeRendu":"fichier matlab",
-      "extension":null
+      "type_rendu":"fichier matlab",
+      "extension":null,
+      "criteres":[
+        {
+          "id":5,
+          "ordre":1,
+          "type":"commentaire",
+          "description":"Commentez"
+        },
+        {
+          "id":6,
+          "ordre":2,
+          "type":"jugement",
+          "description":"Jugez",
+          "points":2,
+          "precision":0.2
+        }
+      ]
     }
 ]

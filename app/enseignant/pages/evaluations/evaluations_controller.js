@@ -103,7 +103,6 @@ angular.module('NotePairApp')
 
         LocalEvaluationsService.query().then(function (data) {
             $scope.sectionList=data;
-            console.log($scope.EvaluationsList)
         });
 
         $scope.newSection={
@@ -119,8 +118,8 @@ angular.module('NotePairApp')
 
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addSection = function () {
-            $scope.newSection.ordre = $scope.sectionList.length;
-            console.log($scope.newSection)
+            $scope.newSection.ordre = $scope.sectionList.length+1;
+            console.log($scope.sectionList[1])
             LocalEvaluationsService.save($scope.newSection);
         };
 
@@ -138,12 +137,20 @@ angular.module('NotePairApp')
             $scope.critere=i;
         }
 
-        $scope.createSection=function(){
-            $scope.evaluation.sections.push(section);
-           // localStorageService.set("sections", $scope.evaluation.sections);
+        $scope.newCritere = {
+            "id":12
         }
-        
-        $scope.createCritere=function (id) {
+        $scope.addCritere=function (sec) {
+            for(var i = 0; i < $scope.sectionList.length; i++){
+                if($scope.sectionList[i].id == sec.id){
+                    $scope.newCritere.ordre = $scope.sectionList[i].criteres.length+1;
+                    $scope.sectionList[i].criteres.push($scope.newCritere)
+                    //$scope.sectionList[i].criteres.push($scope.newCritere);
+                    //LocalEvaluationsService.save($scope.sectionList);
+                    console.log($scope.sectionList[i])
+                    break;
+                }
+            }
 
         }
 
