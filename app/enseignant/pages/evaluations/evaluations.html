@@ -101,19 +101,32 @@
                                         $.pivotUtilities.gchart_renderers);
 
                                 $.getJSON("dist/workbook.json", function(mps) {
+                                    var tmp = [];
+                                    for(var i=0; i<mps.length; i++) {
+                                        if (tmp.indexOf(mps[i].copie+1000*mps[i].question) != -1) {
+                                            for(var j=i-1; j>=0; j--) {
+                                                if (mps[j].copie+1000*mps[j].question ==
+                                                        mps[i].copie+1000*mps[i].question) {
+                                                    mps[i].numero_grader = mps[j].numero_grader + 1;
+                                                    break
+                                                }
+                                            }
+                                        } else {
+                                            tmp.push(mps[i].copie+1000*mps[i].question);
+                                            mps[i].numero_grader = 1;
+                                        }
+                                    }
+
                                     $("#output").pivotUI(mps, {
                                         renderers: renderers,
                                         derivedAttributes: {
-                                            "Intervalle Note": derivers.bin("Note", 2.5),
-                                            "Écart": function(mp) {
-                                                return mp["Note"]/20;
-                                            }
+
                                         },
-                                        cols: ["Question"], rows: ["Copie"],
-                                        rendererName: "Carte de Chaleur par ligne",
+                                        cols: ["question","numero_grader"], rows: ["copie"],
+                                        rendererName: "Table",
                                         aggregatorName: "Moyenne",
                                         vals: [
-                                            "Écart"
+                                            "note"
                                         ]
                                     });
                                 });

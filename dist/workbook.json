@@ -1,674 +1,9218 @@
 [
   {
     "copie": 1,
-    "grader1": 1,
-    "grader2": 13,
-    "grader3": 29,
-    "grader4": 49
+    "grader": 13,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 2,
-    "grader1": 2,
-    "grader2": 14,
-    "grader3": 30,
-    "grader4": 50
+    "grader": 14,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 3,
-    "grader1": 3,
-    "grader2": 15,
-    "grader3": 31,
-    "grader4": 51
+    "grader": 15,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 4,
-    "grader1": 4,
-    "grader2": 16,
-    "grader3": 32,
-    "grader4": 52
+    "grader": 16,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 5,
-    "grader1": 5,
-    "grader2": 17,
-    "grader3": 33,
-    "grader4": 53
+    "grader": 17,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 6,
-    "grader1": 6,
-    "grader2": 18,
-    "grader3": 34,
-    "grader4": 54
+    "grader": 18,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 7,
-    "grader1": 7,
-    "grader2": 19,
-    "grader3": 35,
-    "grader4": 55
+    "grader": 19,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 8,
-    "grader1": 8,
-    "grader2": 20,
-    "grader3": 36,
-    "grader4": 56
+    "grader": 20,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 9,
-    "grader1": 9,
-    "grader2": 21,
-    "grader3": 37,
-    "grader4": 57
+    "grader": 21,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 10,
-    "grader1": 10,
-    "grader2": 22,
-    "grader3": 38,
-    "grader4": 58
+    "grader": 22,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 11,
-    "grader1": 11,
-    "grader2": 23,
-    "grader3": 39,
-    "grader4": 59
+    "grader": 23,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 12,
-    "grader1": 12,
-    "grader2": 24,
-    "grader3": 40,
-    "grader4": 60
+    "grader": 24,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 13,
-    "grader1": 13,
-    "grader2": 25,
-    "grader3": 41,
-    "grader4": 61
+    "grader": 25,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 14,
-    "grader1": 14,
-    "grader2": 26,
-    "grader3": 42,
-    "grader4": 62
+    "grader": 26,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 15,
-    "grader1": 15,
-    "grader2": 27,
-    "grader3": 43,
-    "grader4": 63
+    "grader": 27,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 16,
-    "grader1": 16,
-    "grader2": 28,
-    "grader3": 44,
-    "grader4": 64
+    "grader": 28,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 17,
-    "grader1": 17,
-    "grader2": 29,
-    "grader3": 45,
-    "grader4": 65
+    "grader": 29,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 18,
-    "grader1": 18,
-    "grader2": 30,
-    "grader3": 46,
-    "grader4": 66
+    "grader": 30,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 19,
-    "grader1": 19,
-    "grader2": 31,
-    "grader3": 47,
-    "grader4": 67
+    "grader": 31,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 20,
-    "grader1": 20,
-    "grader2": 32,
-    "grader3": 48,
-    "grader4": 68
+    "grader": 32,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 21,
-    "grader1": 21,
-    "grader2": 33,
-    "grader3": 49,
-    "grader4": 69
+    "grader": 33,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 22,
-    "grader1": 22,
-    "grader2": 34,
-    "grader3": 50,
-    "grader4": 70
+    "grader": 34,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 23,
-    "grader1": 23,
-    "grader2": 35,
-    "grader3": 51,
-    "grader4": 71
+    "grader": 35,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 24,
-    "grader1": 24,
-    "grader2": 36,
-    "grader3": 52,
-    "grader4": 72
+    "grader": 36,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 25,
-    "grader1": 25,
-    "grader2": 37,
-    "grader3": 53,
-    "grader4": 73
+    "grader": 37,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 26,
-    "grader1": 26,
-    "grader2": 38,
-    "grader3": 54,
-    "grader4": 74
+    "grader": 38,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 27,
-    "grader1": 27,
-    "grader2": 39,
-    "grader3": 55,
-    "grader4": 75
+    "grader": 39,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 28,
-    "grader1": 28,
-    "grader2": 40,
-    "grader3": 56,
-    "grader4": 76
+    "grader": 40,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 29,
-    "grader1": 29,
-    "grader2": 41,
-    "grader3": 57,
-    "grader4": 77
+    "grader": 41,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 30,
-    "grader1": 30,
-    "grader2": 42,
-    "grader3": 58,
-    "grader4": 78
+    "grader": 42,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 31,
-    "grader1": 31,
-    "grader2": 43,
-    "grader3": 59,
-    "grader4": 79
+    "grader": 43,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 32,
-    "grader1": 32,
-    "grader2": 44,
-    "grader3": 60,
-    "grader4": 80
+    "grader": 44,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 33,
-    "grader1": 33,
-    "grader2": 45,
-    "grader3": 61,
-    "grader4": 81
+    "grader": 45,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 34,
-    "grader1": 34,
-    "grader2": 46,
-    "grader3": 62,
-    "grader4": 82
+    "grader": 46,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 35,
-    "grader1": 35,
-    "grader2": 47,
-    "grader3": 63,
-    "grader4": 83
+    "grader": 47,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 36,
-    "grader1": 36,
-    "grader2": 48,
-    "grader3": 64,
-    "grader4": 84
+    "grader": 48,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 37,
-    "grader1": 37,
-    "grader2": 49,
-    "grader3": 65,
-    "grader4": 85
+    "grader": 49,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 38,
-    "grader1": 38,
-    "grader2": 50,
-    "grader3": 66,
-    "grader4": 86
+    "grader": 50,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 39,
-    "grader1": 39,
-    "grader2": 51,
-    "grader3": 67,
-    "grader4": 87
+    "grader": 51,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 40,
-    "grader1": 40,
-    "grader2": 52,
-    "grader3": 68,
-    "grader4": 88
+    "grader": 52,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 41,
-    "grader1": 41,
-    "grader2": 53,
-    "grader3": 69,
-    "grader4": 89
+    "grader": 53,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 42,
-    "grader1": 42,
-    "grader2": 54,
-    "grader3": 70,
-    "grader4": 90
+    "grader": 54,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 43,
-    "grader1": 43,
-    "grader2": 55,
-    "grader3": 71,
-    "grader4": 91
+    "grader": 55,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 44,
-    "grader1": 44,
-    "grader2": 56,
-    "grader3": 72,
-    "grader4": 92
+    "grader": 56,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 45,
-    "grader1": 45,
-    "grader2": 57,
-    "grader3": 73,
-    "grader4": 93
+    "grader": 57,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 46,
-    "grader1": 46,
-    "grader2": 58,
-    "grader3": 74,
-    "grader4": 94
+    "grader": 58,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 47,
-    "grader1": 47,
-    "grader2": 59,
-    "grader3": 75,
-    "grader4": 95
+    "grader": 59,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 48,
-    "grader1": 48,
-    "grader2": 60,
-    "grader3": 76,
-    "grader4": 96
+    "grader": 60,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 49,
-    "grader1": 49,
-    "grader2": 61,
-    "grader3": 77,
-    "grader4": 1
+    "grader": 61,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 50,
-    "grader1": 50,
-    "grader2": 62,
-    "grader3": 78,
-    "grader4": 2
+    "grader": 62,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 51,
-    "grader1": 51,
-    "grader2": 63,
-    "grader3": 79,
-    "grader4": 3
+    "grader": 63,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 52,
-    "grader1": 52,
-    "grader2": 64,
-    "grader3": 80,
-    "grader4": 4
+    "grader": 64,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 53,
-    "grader1": 53,
-    "grader2": 65,
-    "grader3": 81,
-    "grader4": 5
+    "grader": 65,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 54,
-    "grader1": 54,
-    "grader2": 66,
-    "grader3": 82,
-    "grader4": 6
+    "grader": 66,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 55,
-    "grader1": 55,
-    "grader2": 67,
-    "grader3": 83,
-    "grader4": 7
+    "grader": 67,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 56,
-    "grader1": 56,
-    "grader2": 68,
-    "grader3": 84,
-    "grader4": 8
+    "grader": 68,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 57,
-    "grader1": 57,
-    "grader2": 69,
-    "grader3": 85,
-    "grader4": 9
+    "grader": 69,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 58,
-    "grader1": 58,
-    "grader2": 70,
-    "grader3": 86,
-    "grader4": 10
+    "grader": 70,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 59,
-    "grader1": 59,
-    "grader2": 71,
-    "grader3": 87,
-    "grader4": 11
+    "grader": 71,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 60,
-    "grader1": 60,
-    "grader2": 72,
-    "grader3": 88,
-    "grader4": 12
+    "grader": 72,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 61,
-    "grader1": 61,
-    "grader2": 73,
-    "grader3": 89,
-    "grader4": 13
+    "grader": 73,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 62,
-    "grader1": 62,
-    "grader2": 74,
-    "grader3": 90,
-    "grader4": 14
+    "grader": 74,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 63,
-    "grader1": 63,
-    "grader2": 75,
-    "grader3": 91,
-    "grader4": 15
+    "grader": 75,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 64,
-    "grader1": 64,
-    "grader2": 76,
-    "grader3": 92,
-    "grader4": 16
+    "grader": 76,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 65,
-    "grader1": 65,
-    "grader2": 77,
-    "grader3": 93,
-    "grader4": 17
+    "grader": 77,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 66,
-    "grader1": 66,
-    "grader2": 78,
-    "grader3": 94,
-    "grader4": 18
+    "grader": 78,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 67,
-    "grader1": 67,
-    "grader2": 79,
-    "grader3": 95,
-    "grader4": 19
+    "grader": 79,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 68,
-    "grader1": 68,
-    "grader2": 80,
-    "grader3": 96,
-    "grader4": 20
+    "grader": 80,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 69,
-    "grader1": 69,
-    "grader2": 81,
-    "grader3": 1,
-    "grader4": 21
+    "grader": 81,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 70,
-    "grader1": 70,
-    "grader2": 82,
-    "grader3": 2,
-    "grader4": 22
+    "grader": 82,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 71,
-    "grader1": 71,
-    "grader2": 83,
-    "grader3": 3,
-    "grader4": 23
+    "grader": 83,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 72,
-    "grader1": 72,
-    "grader2": 84,
-    "grader3": 4,
-    "grader4": 24
+    "grader": 84,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 73,
-    "grader1": 73,
-    "grader2": 85,
-    "grader3": 5,
-    "grader4": 25
+    "grader": 85,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 74,
-    "grader1": 74,
-    "grader2": 86,
-    "grader3": 6,
-    "grader4": 26
+    "grader": 86,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 75,
-    "grader1": 75,
-    "grader2": 87,
-    "grader3": 7,
-    "grader4": 27
+    "grader": 87,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 76,
-    "grader1": 76,
-    "grader2": 88,
-    "grader3": 8,
-    "grader4": 28
+    "grader": 88,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 77,
-    "grader1": 77,
-    "grader2": 89,
-    "grader3": 9,
-    "grader4": 29
+    "grader": 89,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 78,
-    "grader1": 78,
-    "grader2": 90,
-    "grader3": 10,
-    "grader4": 30
+    "grader": 90,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 79,
-    "grader1": 79,
-    "grader2": 91,
-    "grader3": 11,
-    "grader4": 31
+    "grader": 91,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 80,
-    "grader1": 80,
-    "grader2": 92,
-    "grader3": 12,
-    "grader4": 32
+    "grader": 92,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 81,
-    "grader1": 81,
-    "grader2": 93,
-    "grader3": 13,
-    "grader4": 33
+    "grader": 93,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 82,
-    "grader1": 82,
-    "grader2": 94,
-    "grader3": 14,
-    "grader4": 34
+    "grader": 94,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 83,
-    "grader1": 83,
-    "grader2": 95,
-    "grader3": 15,
-    "grader4": 35
+    "grader": 95,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 84,
-    "grader1": 84,
-    "grader2": 96,
-    "grader3": 16,
-    "grader4": 36
+    "grader": 96,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 85,
-    "grader1": 85,
-    "grader2": 1,
-    "grader3": 17,
-    "grader4": 37
+    "grader": 1,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 86,
-    "grader1": 86,
-    "grader2": 2,
-    "grader3": 18,
-    "grader4": 38
+    "grader": 2,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 87,
-    "grader1": 87,
-    "grader2": 3,
-    "grader3": 19,
-    "grader4": 39
+    "grader": 3,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 88,
-    "grader1": 88,
-    "grader2": 4,
-    "grader3": 20,
-    "grader4": 40
+    "grader": 4,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 89,
-    "grader1": 89,
-    "grader2": 5,
-    "grader3": 21,
-    "grader4": 41
+    "grader": 5,
+    "note": 7,
+    "question": 1
   },
   {
     "copie": 90,
-    "grader1": 90,
-    "grader2": 6,
-    "grader3": 22,
-    "grader4": 42
+    "grader": 6,
+    "note": 4,
+    "question": 1
   },
   {
     "copie": 91,
-    "grader1": 91,
-    "grader2": 7,
-    "grader3": 23,
-    "grader4": 43
+    "grader": 7,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 92,
-    "grader1": 92,
-    "grader2": 8,
-    "grader3": 24,
-    "grader4": 44
+    "grader": 8,
+    "note": 5,
+    "question": 1
   },
   {
     "copie": 93,
-    "grader1": 93,
-    "grader2": 9,
-    "grader3": 25,
-    "grader4": 45
+    "grader": 9,
+    "note": 6,
+    "question": 1
   },
   {
     "copie": 94,
-    "grader1": 94,
-    "grader2": 10,
-    "grader3": 26,
-    "grader4": 46
+    "grader": 10,
+    "note": 2,
+    "question": 1
   },
   {
     "copie": 95,
-    "grader1": 95,
-    "grader2": 11,
-    "grader3": 27,
-    "grader4": 47
+    "grader": 11,
+    "note": 3,
+    "question": 1
   },
   {
     "copie": 96,
-    "grader1": 96,
-    "grader2": 12,
-    "grader3": 28,
-    "grader4": 48
+    "grader": 12,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 1,
+    "grader": 29,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 2,
+    "grader": 30,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 3,
+    "grader": 31,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 4,
+    "grader": 32,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 5,
+    "grader": 33,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 6,
+    "grader": 34,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 7,
+    "grader": 35,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 8,
+    "grader": 36,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 9,
+    "grader": 37,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 10,
+    "grader": 38,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 11,
+    "grader": 39,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 12,
+    "grader": 40,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 13,
+    "grader": 41,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 14,
+    "grader": 42,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 15,
+    "grader": 43,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 16,
+    "grader": 44,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 17,
+    "grader": 45,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 18,
+    "grader": 46,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 19,
+    "grader": 47,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 20,
+    "grader": 48,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 21,
+    "grader": 49,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 22,
+    "grader": 50,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 23,
+    "grader": 51,
+    "note": 1,
+    "question": 1
+  },
+  {
+    "copie": 24,
+    "grader": 52,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 25,
+    "grader": 53,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 26,
+    "grader": 54,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 27,
+    "grader": 55,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 28,
+    "grader": 56,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 29,
+    "grader": 57,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 30,
+    "grader": 58,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 31,
+    "grader": 59,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 32,
+    "grader": 60,
+    "note": 1,
+    "question": 1
+  },
+  {
+    "copie": 33,
+    "grader": 61,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 34,
+    "grader": 62,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 35,
+    "grader": 63,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 36,
+    "grader": 64,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 37,
+    "grader": 65,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 38,
+    "grader": 66,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 39,
+    "grader": 67,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 40,
+    "grader": 68,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 41,
+    "grader": 69,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 42,
+    "grader": 70,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 43,
+    "grader": 71,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 44,
+    "grader": 72,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 45,
+    "grader": 73,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 46,
+    "grader": 74,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 47,
+    "grader": 75,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 48,
+    "grader": 76,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 49,
+    "grader": 77,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 50,
+    "grader": 78,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 51,
+    "grader": 79,
+    "note": 1,
+    "question": 1
+  },
+  {
+    "copie": 52,
+    "grader": 80,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 53,
+    "grader": 81,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 54,
+    "grader": 82,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 55,
+    "grader": 83,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 56,
+    "grader": 84,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 57,
+    "grader": 85,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 58,
+    "grader": 86,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 59,
+    "grader": 87,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 60,
+    "grader": 88,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 61,
+    "grader": 89,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 62,
+    "grader": 90,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 63,
+    "grader": 91,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 64,
+    "grader": 92,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 65,
+    "grader": 93,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 66,
+    "grader": 94,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 67,
+    "grader": 95,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 68,
+    "grader": 96,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 69,
+    "grader": 1,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 70,
+    "grader": 2,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 71,
+    "grader": 3,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 72,
+    "grader": 4,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 73,
+    "grader": 5,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 74,
+    "grader": 6,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 75,
+    "grader": 7,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 76,
+    "grader": 8,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 77,
+    "grader": 9,
+    "note": 8,
+    "question": 1
+  },
+  {
+    "copie": 78,
+    "grader": 10,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 79,
+    "grader": 11,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 80,
+    "grader": 12,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 81,
+    "grader": 13,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 82,
+    "grader": 14,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 83,
+    "grader": 15,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 84,
+    "grader": 16,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 85,
+    "grader": 17,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 86,
+    "grader": 18,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 87,
+    "grader": 19,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 88,
+    "grader": 20,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 89,
+    "grader": 21,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 90,
+    "grader": 22,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 91,
+    "grader": 23,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 92,
+    "grader": 24,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 93,
+    "grader": 25,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 94,
+    "grader": 26,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 95,
+    "grader": 27,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 96,
+    "grader": 28,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 1,
+    "grader": 49,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 2,
+    "grader": 50,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 3,
+    "grader": 51,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 4,
+    "grader": 52,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 5,
+    "grader": 53,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 6,
+    "grader": 54,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 7,
+    "grader": 55,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 8,
+    "grader": 56,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 9,
+    "grader": 57,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 10,
+    "grader": 58,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 11,
+    "grader": 59,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 12,
+    "grader": 60,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 13,
+    "grader": 61,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 14,
+    "grader": 62,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 15,
+    "grader": 63,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 16,
+    "grader": 64,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 17,
+    "grader": 65,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 18,
+    "grader": 66,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 19,
+    "grader": 67,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 20,
+    "grader": 68,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 21,
+    "grader": 69,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 22,
+    "grader": 70,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 23,
+    "grader": 71,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 24,
+    "grader": 72,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 25,
+    "grader": 73,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 26,
+    "grader": 74,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 27,
+    "grader": 75,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 28,
+    "grader": 76,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 29,
+    "grader": 77,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 30,
+    "grader": 78,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 31,
+    "grader": 79,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 32,
+    "grader": 80,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 33,
+    "grader": 81,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 34,
+    "grader": 82,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 35,
+    "grader": 83,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 36,
+    "grader": 84,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 37,
+    "grader": 85,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 38,
+    "grader": 86,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 39,
+    "grader": 87,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 40,
+    "grader": 88,
+    "note": 1,
+    "question": 1
+  },
+  {
+    "copie": 41,
+    "grader": 89,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 42,
+    "grader": 90,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 43,
+    "grader": 91,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 44,
+    "grader": 92,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 45,
+    "grader": 93,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 46,
+    "grader": 94,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 47,
+    "grader": 95,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 48,
+    "grader": 96,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 49,
+    "grader": 1,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 50,
+    "grader": 2,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 51,
+    "grader": 3,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 52,
+    "grader": 4,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 53,
+    "grader": 5,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 54,
+    "grader": 6,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 55,
+    "grader": 7,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 56,
+    "grader": 8,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 57,
+    "grader": 9,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 58,
+    "grader": 10,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 59,
+    "grader": 11,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 60,
+    "grader": 12,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 61,
+    "grader": 13,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 62,
+    "grader": 14,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 63,
+    "grader": 15,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 64,
+    "grader": 16,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 65,
+    "grader": 17,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 66,
+    "grader": 18,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 67,
+    "grader": 19,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 68,
+    "grader": 20,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 69,
+    "grader": 21,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 70,
+    "grader": 22,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 71,
+    "grader": 23,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 72,
+    "grader": 24,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 73,
+    "grader": 25,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 74,
+    "grader": 26,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 75,
+    "grader": 27,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 76,
+    "grader": 28,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 77,
+    "grader": 29,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 78,
+    "grader": 30,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 79,
+    "grader": 31,
+    "note": 1,
+    "question": 1
+  },
+  {
+    "copie": 80,
+    "grader": 32,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 81,
+    "grader": 33,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 82,
+    "grader": 34,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 83,
+    "grader": 35,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 84,
+    "grader": 36,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 85,
+    "grader": 37,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 86,
+    "grader": 38,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 87,
+    "grader": 39,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 88,
+    "grader": 40,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 89,
+    "grader": 41,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 90,
+    "grader": 42,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 91,
+    "grader": 43,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 92,
+    "grader": 44,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 93,
+    "grader": 45,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 94,
+    "grader": 46,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 95,
+    "grader": 47,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 96,
+    "grader": 48,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 1,
+    "grader": 72,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 2,
+    "grader": 73,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 3,
+    "grader": 74,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 4,
+    "grader": 75,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 5,
+    "grader": 76,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 6,
+    "grader": 77,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 7,
+    "grader": 78,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 8,
+    "grader": 79,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 9,
+    "grader": 80,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 10,
+    "grader": 81,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 11,
+    "grader": 82,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 12,
+    "grader": 83,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 13,
+    "grader": 84,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 14,
+    "grader": 85,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 15,
+    "grader": 86,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 16,
+    "grader": 87,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 17,
+    "grader": 88,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 18,
+    "grader": 89,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 19,
+    "grader": 90,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 20,
+    "grader": 91,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 21,
+    "grader": 92,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 22,
+    "grader": 93,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 23,
+    "grader": 94,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 24,
+    "grader": 95,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 25,
+    "grader": 96,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 26,
+    "grader": 1,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 27,
+    "grader": 2,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 28,
+    "grader": 3,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 29,
+    "grader": 4,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 30,
+    "grader": 5,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 31,
+    "grader": 6,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 32,
+    "grader": 7,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 33,
+    "grader": 8,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 34,
+    "grader": 9,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 35,
+    "grader": 10,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 36,
+    "grader": 11,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 37,
+    "grader": 12,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 38,
+    "grader": 13,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 39,
+    "grader": 14,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 40,
+    "grader": 15,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 41,
+    "grader": 16,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 42,
+    "grader": 17,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 43,
+    "grader": 18,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 44,
+    "grader": 19,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 45,
+    "grader": 20,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 46,
+    "grader": 21,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 47,
+    "grader": 22,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 48,
+    "grader": 23,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 49,
+    "grader": 24,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 50,
+    "grader": 25,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 51,
+    "grader": 26,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 52,
+    "grader": 27,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 53,
+    "grader": 28,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 54,
+    "grader": 29,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 55,
+    "grader": 30,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 56,
+    "grader": 31,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 57,
+    "grader": 32,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 58,
+    "grader": 33,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 59,
+    "grader": 34,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 60,
+    "grader": 35,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 61,
+    "grader": 36,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 62,
+    "grader": 37,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 63,
+    "grader": 38,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 64,
+    "grader": 39,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 65,
+    "grader": 40,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 66,
+    "grader": 41,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 67,
+    "grader": 42,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 68,
+    "grader": 43,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 69,
+    "grader": 44,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 70,
+    "grader": 45,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 71,
+    "grader": 46,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 72,
+    "grader": 47,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 73,
+    "grader": 48,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 74,
+    "grader": 49,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 75,
+    "grader": 50,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 76,
+    "grader": 51,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 77,
+    "grader": 52,
+    "note": 8,
+    "question": 1
+  },
+  {
+    "copie": 78,
+    "grader": 53,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 79,
+    "grader": 54,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 80,
+    "grader": 55,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 81,
+    "grader": 56,
+    "note": 2,
+    "question": 1
+  },
+  {
+    "copie": 82,
+    "grader": 57,
+    "note": 7,
+    "question": 1
+  },
+  {
+    "copie": 83,
+    "grader": 58,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 84,
+    "grader": 59,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 85,
+    "grader": 60,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 86,
+    "grader": 61,
+    "note": 3,
+    "question": 1
+  },
+  {
+    "copie": 87,
+    "grader": 62,
+    "note": 5,
+    "question": 1
+  },
+  {
+    "copie": 88,
+    "grader": 63,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 89,
+    "grader": 64,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 90,
+    "grader": 65,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 91,
+    "grader": 66,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 92,
+    "grader": 67,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 93,
+    "grader": 68,
+    "note": 6,
+    "question": 1
+  },
+  {
+    "copie": 94,
+    "grader": 69,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 95,
+    "grader": 70,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 96,
+    "grader": 71,
+    "note": 4,
+    "question": 1
+  },
+  {
+    "copie": 1,
+    "grader": 13,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 2,
+    "grader": 14,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 3,
+    "grader": 15,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 4,
+    "grader": 16,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 5,
+    "grader": 17,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 6,
+    "grader": 18,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 7,
+    "grader": 19,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 8,
+    "grader": 20,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 9,
+    "grader": 21,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 10,
+    "grader": 22,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 11,
+    "grader": 23,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 12,
+    "grader": 24,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 13,
+    "grader": 25,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 14,
+    "grader": 26,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 15,
+    "grader": 27,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 16,
+    "grader": 28,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 17,
+    "grader": 29,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 18,
+    "grader": 30,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 19,
+    "grader": 31,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 20,
+    "grader": 32,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 21,
+    "grader": 33,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 22,
+    "grader": 34,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 23,
+    "grader": 35,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 24,
+    "grader": 36,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 25,
+    "grader": 37,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 26,
+    "grader": 38,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 27,
+    "grader": 39,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 28,
+    "grader": 40,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 29,
+    "grader": 41,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 30,
+    "grader": 42,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 31,
+    "grader": 43,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 32,
+    "grader": 44,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 33,
+    "grader": 45,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 34,
+    "grader": 46,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 35,
+    "grader": 47,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 36,
+    "grader": 48,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 37,
+    "grader": 49,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 38,
+    "grader": 50,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 39,
+    "grader": 51,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 40,
+    "grader": 52,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 41,
+    "grader": 53,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 42,
+    "grader": 54,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 43,
+    "grader": 55,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 44,
+    "grader": 56,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 45,
+    "grader": 57,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 46,
+    "grader": 58,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 47,
+    "grader": 59,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 48,
+    "grader": 60,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 49,
+    "grader": 61,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 50,
+    "grader": 62,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 51,
+    "grader": 63,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 52,
+    "grader": 64,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 53,
+    "grader": 65,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 54,
+    "grader": 66,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 55,
+    "grader": 67,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 56,
+    "grader": 68,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 57,
+    "grader": 69,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 58,
+    "grader": 70,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 59,
+    "grader": 71,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 60,
+    "grader": 72,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 61,
+    "grader": 73,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 62,
+    "grader": 74,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 63,
+    "grader": 75,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 64,
+    "grader": 76,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 65,
+    "grader": 77,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 66,
+    "grader": 78,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 67,
+    "grader": 79,
+    "note": 0.25,
+    "question": 3
+  },
+  {
+    "copie": 68,
+    "grader": 80,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 69,
+    "grader": 81,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 70,
+    "grader": 82,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 71,
+    "grader": 83,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 72,
+    "grader": 84,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 73,
+    "grader": 85,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 74,
+    "grader": 86,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 75,
+    "grader": 87,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 76,
+    "grader": 88,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 77,
+    "grader": 89,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 78,
+    "grader": 90,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 79,
+    "grader": 91,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 80,
+    "grader": 92,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 81,
+    "grader": 93,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 82,
+    "grader": 94,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 83,
+    "grader": 95,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 84,
+    "grader": 96,
+    "note": 0.25,
+    "question": 3
+  },
+  {
+    "copie": 85,
+    "grader": 1,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 86,
+    "grader": 2,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 87,
+    "grader": 3,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 88,
+    "grader": 4,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 89,
+    "grader": 5,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 90,
+    "grader": 6,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 91,
+    "grader": 7,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 92,
+    "grader": 8,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 93,
+    "grader": 9,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 94,
+    "grader": 10,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 95,
+    "grader": 11,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 96,
+    "grader": 12,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 1,
+    "grader": 29,
+    "note": 0.5,
+    "question": 3
+  },
+  {
+    "copie": 2,
+    "grader": 30,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 3,
+    "grader": 31,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 4,
+    "grader": 32,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 5,
+    "grader": 33,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 6,
+    "grader": 34,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 7,
+    "grader": 35,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 8,
+    "grader": 36,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 9,
+    "grader": 37,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 10,
+    "grader": 38,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 11,
+    "grader": 39,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 12,
+    "grader": 40,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 13,
+    "grader": 41,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 14,
+    "grader": 42,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 15,
+    "grader": 43,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 16,
+    "grader": 44,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 17,
+    "grader": 45,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 18,
+    "grader": 46,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 19,
+    "grader": 47,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 20,
+    "grader": 48,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 21,
+    "grader": 49,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 22,
+    "grader": 50,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 23,
+    "grader": 51,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 24,
+    "grader": 52,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 25,
+    "grader": 53,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 26,
+    "grader": 54,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 27,
+    "grader": 55,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 28,
+    "grader": 56,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 29,
+    "grader": 57,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 30,
+    "grader": 58,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 31,
+    "grader": 59,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 32,
+    "grader": 60,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 33,
+    "grader": 61,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 34,
+    "grader": 62,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 35,
+    "grader": 63,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 36,
+    "grader": 64,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 37,
+    "grader": 65,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 38,
+    "grader": 66,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 39,
+    "grader": 67,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 40,
+    "grader": 68,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 41,
+    "grader": 69,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 42,
+    "grader": 70,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 43,
+    "grader": 71,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 44,
+    "grader": 72,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 45,
+    "grader": 73,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 46,
+    "grader": 74,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 47,
+    "grader": 75,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 48,
+    "grader": 76,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 49,
+    "grader": 77,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 50,
+    "grader": 78,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 51,
+    "grader": 79,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 52,
+    "grader": 80,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 53,
+    "grader": 81,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 54,
+    "grader": 82,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 55,
+    "grader": 83,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 56,
+    "grader": 84,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 57,
+    "grader": 85,
+    "note": 4,
+    "question": 3
+  },
+  {
+    "copie": 58,
+    "grader": 86,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 59,
+    "grader": 87,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 60,
+    "grader": 88,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 61,
+    "grader": 89,
+    "note": 0.25,
+    "question": 3
+  },
+  {
+    "copie": 62,
+    "grader": 90,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 63,
+    "grader": 91,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 64,
+    "grader": 92,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 65,
+    "grader": 93,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 66,
+    "grader": 94,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 67,
+    "grader": 95,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 68,
+    "grader": 96,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 69,
+    "grader": 1,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 70,
+    "grader": 2,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 71,
+    "grader": 3,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 72,
+    "grader": 4,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 73,
+    "grader": 5,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 74,
+    "grader": 6,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 75,
+    "grader": 7,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 76,
+    "grader": 8,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 77,
+    "grader": 9,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 78,
+    "grader": 10,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 79,
+    "grader": 11,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 80,
+    "grader": 12,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 81,
+    "grader": 13,
+    "note": 4,
+    "question": 3
+  },
+  {
+    "copie": 82,
+    "grader": 14,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 83,
+    "grader": 15,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 84,
+    "grader": 16,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 85,
+    "grader": 17,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 86,
+    "grader": 18,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 87,
+    "grader": 19,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 88,
+    "grader": 20,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 89,
+    "grader": 21,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 90,
+    "grader": 22,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 91,
+    "grader": 23,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 92,
+    "grader": 24,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 93,
+    "grader": 25,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 94,
+    "grader": 26,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 95,
+    "grader": 27,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 96,
+    "grader": 28,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 1,
+    "grader": 49,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 2,
+    "grader": 50,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 3,
+    "grader": 51,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 4,
+    "grader": 52,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 5,
+    "grader": 53,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 6,
+    "grader": 54,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 7,
+    "grader": 55,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 8,
+    "grader": 56,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 9,
+    "grader": 57,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 10,
+    "grader": 58,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 11,
+    "grader": 59,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 12,
+    "grader": 60,
+    "note": 0.5,
+    "question": 3
+  },
+  {
+    "copie": 13,
+    "grader": 61,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 14,
+    "grader": 62,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 15,
+    "grader": 63,
+    "note": 0.5,
+    "question": 3
+  },
+  {
+    "copie": 16,
+    "grader": 64,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 17,
+    "grader": 65,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 18,
+    "grader": 66,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 19,
+    "grader": 67,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 20,
+    "grader": 68,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 21,
+    "grader": 69,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 22,
+    "grader": 70,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 23,
+    "grader": 71,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 24,
+    "grader": 72,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 25,
+    "grader": 73,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 26,
+    "grader": 74,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 27,
+    "grader": 75,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 28,
+    "grader": 76,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 29,
+    "grader": 77,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 30,
+    "grader": 78,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 31,
+    "grader": 79,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 32,
+    "grader": 80,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 33,
+    "grader": 81,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 34,
+    "grader": 82,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 35,
+    "grader": 83,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 36,
+    "grader": 84,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 37,
+    "grader": 85,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 38,
+    "grader": 86,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 39,
+    "grader": 87,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 40,
+    "grader": 88,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 41,
+    "grader": 89,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 42,
+    "grader": 90,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 43,
+    "grader": 91,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 44,
+    "grader": 92,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 45,
+    "grader": 93,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 46,
+    "grader": 94,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 47,
+    "grader": 95,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 48,
+    "grader": 96,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 49,
+    "grader": 1,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 50,
+    "grader": 2,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 51,
+    "grader": 3,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 52,
+    "grader": 4,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 53,
+    "grader": 5,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 54,
+    "grader": 6,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 55,
+    "grader": 7,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 56,
+    "grader": 8,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 57,
+    "grader": 9,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 58,
+    "grader": 10,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 59,
+    "grader": 11,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 60,
+    "grader": 12,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 61,
+    "grader": 13,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 62,
+    "grader": 14,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 63,
+    "grader": 15,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 64,
+    "grader": 16,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 65,
+    "grader": 17,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 66,
+    "grader": 18,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 67,
+    "grader": 19,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 68,
+    "grader": 20,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 69,
+    "grader": 21,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 70,
+    "grader": 22,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 71,
+    "grader": 23,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 72,
+    "grader": 24,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 73,
+    "grader": 25,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 74,
+    "grader": 26,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 75,
+    "grader": 27,
+    "note": 0.25,
+    "question": 3
+  },
+  {
+    "copie": 76,
+    "grader": 28,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 77,
+    "grader": 29,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 78,
+    "grader": 30,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 79,
+    "grader": 31,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 80,
+    "grader": 32,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 81,
+    "grader": 33,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 82,
+    "grader": 34,
+    "note": 4,
+    "question": 3
+  },
+  {
+    "copie": 83,
+    "grader": 35,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 84,
+    "grader": 36,
+    "note": 0.5,
+    "question": 3
+  },
+  {
+    "copie": 85,
+    "grader": 37,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 86,
+    "grader": 38,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 87,
+    "grader": 39,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 88,
+    "grader": 40,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 89,
+    "grader": 41,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 90,
+    "grader": 42,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 91,
+    "grader": 43,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 92,
+    "grader": 44,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 93,
+    "grader": 45,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 94,
+    "grader": 46,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 95,
+    "grader": 47,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 96,
+    "grader": 48,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 1,
+    "grader": 72,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 2,
+    "grader": 73,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 3,
+    "grader": 74,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 4,
+    "grader": 75,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 5,
+    "grader": 76,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 6,
+    "grader": 77,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 7,
+    "grader": 78,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 8,
+    "grader": 79,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 9,
+    "grader": 80,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 10,
+    "grader": 81,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 11,
+    "grader": 82,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 12,
+    "grader": 83,
+    "note": 0.5,
+    "question": 3
+  },
+  {
+    "copie": 13,
+    "grader": 84,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 14,
+    "grader": 85,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 15,
+    "grader": 86,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 16,
+    "grader": 87,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 17,
+    "grader": 88,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 18,
+    "grader": 89,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 19,
+    "grader": 90,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 20,
+    "grader": 91,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 21,
+    "grader": 92,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 22,
+    "grader": 93,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 23,
+    "grader": 94,
+    "note": 4,
+    "question": 3
+  },
+  {
+    "copie": 24,
+    "grader": 95,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 25,
+    "grader": 96,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 26,
+    "grader": 1,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 27,
+    "grader": 2,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 28,
+    "grader": 3,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 29,
+    "grader": 4,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 30,
+    "grader": 5,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 31,
+    "grader": 6,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 32,
+    "grader": 7,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 33,
+    "grader": 8,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 34,
+    "grader": 9,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 35,
+    "grader": 10,
+    "note": 4,
+    "question": 3
+  },
+  {
+    "copie": 36,
+    "grader": 11,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 37,
+    "grader": 12,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 38,
+    "grader": 13,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 39,
+    "grader": 14,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 40,
+    "grader": 15,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 41,
+    "grader": 16,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 42,
+    "grader": 17,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 43,
+    "grader": 18,
+    "note": 0.75,
+    "question": 3
+  },
+  {
+    "copie": 44,
+    "grader": 19,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 45,
+    "grader": 20,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 46,
+    "grader": 21,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 47,
+    "grader": 22,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 48,
+    "grader": 23,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 49,
+    "grader": 24,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 50,
+    "grader": 25,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 51,
+    "grader": 26,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 52,
+    "grader": 27,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 53,
+    "grader": 28,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 54,
+    "grader": 29,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 55,
+    "grader": 30,
+    "note": 3.5,
+    "question": 3
+  },
+  {
+    "copie": 56,
+    "grader": 31,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 57,
+    "grader": 32,
+    "note": 4,
+    "question": 3
+  },
+  {
+    "copie": 58,
+    "grader": 33,
+    "note": 1,
+    "question": 3
+  },
+  {
+    "copie": 59,
+    "grader": 34,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 60,
+    "grader": 35,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 61,
+    "grader": 36,
+    "note": 0.5,
+    "question": 3
+  },
+  {
+    "copie": 62,
+    "grader": 37,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 63,
+    "grader": 38,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 64,
+    "grader": 39,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 65,
+    "grader": 40,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 66,
+    "grader": 41,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 67,
+    "grader": 42,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 68,
+    "grader": 43,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 69,
+    "grader": 44,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 70,
+    "grader": 45,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 71,
+    "grader": 46,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 72,
+    "grader": 47,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 73,
+    "grader": 48,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 74,
+    "grader": 49,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 75,
+    "grader": 50,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 76,
+    "grader": 51,
+    "note": 1.5,
+    "question": 3
+  },
+  {
+    "copie": 77,
+    "grader": 52,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 78,
+    "grader": 53,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 79,
+    "grader": 54,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 80,
+    "grader": 55,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 81,
+    "grader": 56,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 82,
+    "grader": 57,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 83,
+    "grader": 58,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 84,
+    "grader": 59,
+    "note": 2.25,
+    "question": 3
+  },
+  {
+    "copie": 85,
+    "grader": 60,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 86,
+    "grader": 61,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 87,
+    "grader": 62,
+    "note": 1.25,
+    "question": 3
+  },
+  {
+    "copie": 88,
+    "grader": 63,
+    "note": 2.5,
+    "question": 3
+  },
+  {
+    "copie": 89,
+    "grader": 64,
+    "note": 1.75,
+    "question": 3
+  },
+  {
+    "copie": 90,
+    "grader": 65,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 91,
+    "grader": 66,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 92,
+    "grader": 67,
+    "note": 3,
+    "question": 3
+  },
+  {
+    "copie": 93,
+    "grader": 68,
+    "note": 3.75,
+    "question": 3
+  },
+  {
+    "copie": 94,
+    "grader": 69,
+    "note": 2,
+    "question": 3
+  },
+  {
+    "copie": 95,
+    "grader": 70,
+    "note": 3.25,
+    "question": 3
+  },
+  {
+    "copie": 96,
+    "grader": 71,
+    "note": 2.75,
+    "question": 3
+  },
+  {
+    "copie": 1,
+    "grader": 13,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 2,
+    "grader": 14,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 3,
+    "grader": 15,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 4,
+    "grader": 16,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 5,
+    "grader": 17,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 6,
+    "grader": 18,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 7,
+    "grader": 19,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 8,
+    "grader": 20,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 9,
+    "grader": 21,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 10,
+    "grader": 22,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 11,
+    "grader": 23,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 12,
+    "grader": 24,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 13,
+    "grader": 25,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 14,
+    "grader": 26,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 15,
+    "grader": 27,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 16,
+    "grader": 28,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 17,
+    "grader": 29,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 18,
+    "grader": 30,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 19,
+    "grader": 31,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 20,
+    "grader": 32,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 21,
+    "grader": 33,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 22,
+    "grader": 34,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 23,
+    "grader": 35,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 24,
+    "grader": 36,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 25,
+    "grader": 37,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 26,
+    "grader": 38,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 27,
+    "grader": 39,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 28,
+    "grader": 40,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 29,
+    "grader": 41,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 30,
+    "grader": 42,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 31,
+    "grader": 43,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 32,
+    "grader": 44,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 33,
+    "grader": 45,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 34,
+    "grader": 46,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 35,
+    "grader": 47,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 36,
+    "grader": 48,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 37,
+    "grader": 49,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 38,
+    "grader": 50,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 39,
+    "grader": 51,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 40,
+    "grader": 52,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 41,
+    "grader": 53,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 42,
+    "grader": 54,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 43,
+    "grader": 55,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 44,
+    "grader": 56,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 45,
+    "grader": 57,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 46,
+    "grader": 58,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 47,
+    "grader": 59,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 48,
+    "grader": 60,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 49,
+    "grader": 61,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 50,
+    "grader": 62,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 51,
+    "grader": 63,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 52,
+    "grader": 64,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 53,
+    "grader": 65,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 54,
+    "grader": 66,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 55,
+    "grader": 67,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 56,
+    "grader": 68,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 57,
+    "grader": 69,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 58,
+    "grader": 70,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 59,
+    "grader": 71,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 60,
+    "grader": 72,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 61,
+    "grader": 73,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 62,
+    "grader": 74,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 63,
+    "grader": 75,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 64,
+    "grader": 76,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 65,
+    "grader": 77,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 66,
+    "grader": 78,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 67,
+    "grader": 79,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 68,
+    "grader": 80,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 69,
+    "grader": 81,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 70,
+    "grader": 82,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 71,
+    "grader": 83,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 72,
+    "grader": 84,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 73,
+    "grader": 85,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 74,
+    "grader": 86,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 75,
+    "grader": 87,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 76,
+    "grader": 88,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 77,
+    "grader": 89,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 78,
+    "grader": 90,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 79,
+    "grader": 91,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 80,
+    "grader": 92,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 81,
+    "grader": 93,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 82,
+    "grader": 94,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 83,
+    "grader": 95,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 84,
+    "grader": 96,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 85,
+    "grader": 1,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 86,
+    "grader": 2,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 87,
+    "grader": 3,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 88,
+    "grader": 4,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 89,
+    "grader": 5,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 90,
+    "grader": 6,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 91,
+    "grader": 7,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 92,
+    "grader": 8,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 93,
+    "grader": 9,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 94,
+    "grader": 10,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 95,
+    "grader": 11,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 96,
+    "grader": 12,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 1,
+    "grader": 29,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 2,
+    "grader": 30,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 3,
+    "grader": 31,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 4,
+    "grader": 32,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 5,
+    "grader": 33,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 6,
+    "grader": 34,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 7,
+    "grader": 35,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 8,
+    "grader": 36,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 9,
+    "grader": 37,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 10,
+    "grader": 38,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 11,
+    "grader": 39,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 12,
+    "grader": 40,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 13,
+    "grader": 41,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 14,
+    "grader": 42,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 15,
+    "grader": 43,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 16,
+    "grader": 44,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 17,
+    "grader": 45,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 18,
+    "grader": 46,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 19,
+    "grader": 47,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 20,
+    "grader": 48,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 21,
+    "grader": 49,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 22,
+    "grader": 50,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 23,
+    "grader": 51,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 24,
+    "grader": 52,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 25,
+    "grader": 53,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 26,
+    "grader": 54,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 27,
+    "grader": 55,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 28,
+    "grader": 56,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 29,
+    "grader": 57,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 30,
+    "grader": 58,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 31,
+    "grader": 59,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 32,
+    "grader": 60,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 33,
+    "grader": 61,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 34,
+    "grader": 62,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 35,
+    "grader": 63,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 36,
+    "grader": 64,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 37,
+    "grader": 65,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 38,
+    "grader": 66,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 39,
+    "grader": 67,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 40,
+    "grader": 68,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 41,
+    "grader": 69,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 42,
+    "grader": 70,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 43,
+    "grader": 71,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 44,
+    "grader": 72,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 45,
+    "grader": 73,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 46,
+    "grader": 74,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 47,
+    "grader": 75,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 48,
+    "grader": 76,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 49,
+    "grader": 77,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 50,
+    "grader": 78,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 51,
+    "grader": 79,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 52,
+    "grader": 80,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 53,
+    "grader": 81,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 54,
+    "grader": 82,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 55,
+    "grader": 83,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 56,
+    "grader": 84,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 57,
+    "grader": 85,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 58,
+    "grader": 86,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 59,
+    "grader": 87,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 60,
+    "grader": 88,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 61,
+    "grader": 89,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 62,
+    "grader": 90,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 63,
+    "grader": 91,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 64,
+    "grader": 92,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 65,
+    "grader": 93,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 66,
+    "grader": 94,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 67,
+    "grader": 95,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 68,
+    "grader": 96,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 69,
+    "grader": 1,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 70,
+    "grader": 2,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 71,
+    "grader": 3,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 72,
+    "grader": 4,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 73,
+    "grader": 5,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 74,
+    "grader": 6,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 75,
+    "grader": 7,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 76,
+    "grader": 8,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 77,
+    "grader": 9,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 78,
+    "grader": 10,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 79,
+    "grader": 11,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 80,
+    "grader": 12,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 81,
+    "grader": 13,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 82,
+    "grader": 14,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 83,
+    "grader": 15,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 84,
+    "grader": 16,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 85,
+    "grader": 17,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 86,
+    "grader": 18,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 87,
+    "grader": 19,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 88,
+    "grader": 20,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 89,
+    "grader": 21,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 90,
+    "grader": 22,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 91,
+    "grader": 23,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 92,
+    "grader": 24,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 93,
+    "grader": 25,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 94,
+    "grader": 26,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 95,
+    "grader": 27,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 96,
+    "grader": 28,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 1,
+    "grader": 49,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 2,
+    "grader": 50,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 3,
+    "grader": 51,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 4,
+    "grader": 52,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 5,
+    "grader": 53,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 6,
+    "grader": 54,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 7,
+    "grader": 55,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 8,
+    "grader": 56,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 9,
+    "grader": 57,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 10,
+    "grader": 58,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 11,
+    "grader": 59,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 12,
+    "grader": 60,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 13,
+    "grader": 61,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 14,
+    "grader": 62,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 15,
+    "grader": 63,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 16,
+    "grader": 64,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 17,
+    "grader": 65,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 18,
+    "grader": 66,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 19,
+    "grader": 67,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 20,
+    "grader": 68,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 21,
+    "grader": 69,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 22,
+    "grader": 70,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 23,
+    "grader": 71,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 24,
+    "grader": 72,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 25,
+    "grader": 73,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 26,
+    "grader": 74,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 27,
+    "grader": 75,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 28,
+    "grader": 76,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 29,
+    "grader": 77,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 30,
+    "grader": 78,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 31,
+    "grader": 79,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 32,
+    "grader": 80,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 33,
+    "grader": 81,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 34,
+    "grader": 82,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 35,
+    "grader": 83,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 36,
+    "grader": 84,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 37,
+    "grader": 85,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 38,
+    "grader": 86,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 39,
+    "grader": 87,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 40,
+    "grader": 88,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 41,
+    "grader": 89,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 42,
+    "grader": 90,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 43,
+    "grader": 91,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 44,
+    "grader": 92,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 45,
+    "grader": 93,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 46,
+    "grader": 94,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 47,
+    "grader": 95,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 48,
+    "grader": 96,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 49,
+    "grader": 1,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 50,
+    "grader": 2,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 51,
+    "grader": 3,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 52,
+    "grader": 4,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 53,
+    "grader": 5,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 54,
+    "grader": 6,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 55,
+    "grader": 7,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 56,
+    "grader": 8,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 57,
+    "grader": 9,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 58,
+    "grader": 10,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 59,
+    "grader": 11,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 60,
+    "grader": 12,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 61,
+    "grader": 13,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 62,
+    "grader": 14,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 63,
+    "grader": 15,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 64,
+    "grader": 16,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 65,
+    "grader": 17,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 66,
+    "grader": 18,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 67,
+    "grader": 19,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 68,
+    "grader": 20,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 69,
+    "grader": 21,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 70,
+    "grader": 22,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 71,
+    "grader": 23,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 72,
+    "grader": 24,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 73,
+    "grader": 25,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 74,
+    "grader": 26,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 75,
+    "grader": 27,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 76,
+    "grader": 28,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 77,
+    "grader": 29,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 78,
+    "grader": 30,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 79,
+    "grader": 31,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 80,
+    "grader": 32,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 81,
+    "grader": 33,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 82,
+    "grader": 34,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 83,
+    "grader": 35,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 84,
+    "grader": 36,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 85,
+    "grader": 37,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 86,
+    "grader": 38,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 87,
+    "grader": 39,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 88,
+    "grader": 40,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 89,
+    "grader": 41,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 90,
+    "grader": 42,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 91,
+    "grader": 43,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 92,
+    "grader": 44,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 93,
+    "grader": 45,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 94,
+    "grader": 46,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 95,
+    "grader": 47,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 96,
+    "grader": 48,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 1,
+    "grader": 72,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 2,
+    "grader": 73,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 3,
+    "grader": 74,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 4,
+    "grader": 75,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 5,
+    "grader": 76,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 6,
+    "grader": 77,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 7,
+    "grader": 78,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 8,
+    "grader": 79,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 9,
+    "grader": 80,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 10,
+    "grader": 81,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 11,
+    "grader": 82,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 12,
+    "grader": 83,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 13,
+    "grader": 84,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 14,
+    "grader": 85,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 15,
+    "grader": 86,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 16,
+    "grader": 87,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 17,
+    "grader": 88,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 18,
+    "grader": 89,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 19,
+    "grader": 90,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 20,
+    "grader": 91,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 21,
+    "grader": 92,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 22,
+    "grader": 93,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 23,
+    "grader": 94,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 24,
+    "grader": 95,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 25,
+    "grader": 96,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 26,
+    "grader": 1,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 27,
+    "grader": 2,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 28,
+    "grader": 3,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 29,
+    "grader": 4,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 30,
+    "grader": 5,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 31,
+    "grader": 6,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 32,
+    "grader": 7,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 33,
+    "grader": 8,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 34,
+    "grader": 9,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 35,
+    "grader": 10,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 36,
+    "grader": 11,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 37,
+    "grader": 12,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 38,
+    "grader": 13,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 39,
+    "grader": 14,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 40,
+    "grader": 15,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 41,
+    "grader": 16,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 42,
+    "grader": 17,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 43,
+    "grader": 18,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 44,
+    "grader": 19,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 45,
+    "grader": 20,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 46,
+    "grader": 21,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 47,
+    "grader": 22,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 48,
+    "grader": 23,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 49,
+    "grader": 24,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 50,
+    "grader": 25,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 51,
+    "grader": 26,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 52,
+    "grader": 27,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 53,
+    "grader": 28,
+    "note": 1,
+    "question": 2
+  },
+  {
+    "copie": 54,
+    "grader": 29,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 55,
+    "grader": 30,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 56,
+    "grader": 31,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 57,
+    "grader": 32,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 58,
+    "grader": 33,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 59,
+    "grader": 34,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 60,
+    "grader": 35,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 61,
+    "grader": 36,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 62,
+    "grader": 37,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 63,
+    "grader": 38,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 64,
+    "grader": 39,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 65,
+    "grader": 40,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 66,
+    "grader": 41,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 67,
+    "grader": 42,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 68,
+    "grader": 43,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 69,
+    "grader": 44,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 70,
+    "grader": 45,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 71,
+    "grader": 46,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 72,
+    "grader": 47,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 73,
+    "grader": 48,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 74,
+    "grader": 49,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 75,
+    "grader": 50,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 76,
+    "grader": 51,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 77,
+    "grader": 52,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 78,
+    "grader": 53,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 79,
+    "grader": 54,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 80,
+    "grader": 55,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 81,
+    "grader": 56,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 82,
+    "grader": 57,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 83,
+    "grader": 58,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 84,
+    "grader": 59,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 85,
+    "grader": 60,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 86,
+    "grader": 61,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 87,
+    "grader": 62,
+    "note": 2,
+    "question": 2
+  },
+  {
+    "copie": 88,
+    "grader": 63,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 89,
+    "grader": 64,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 90,
+    "grader": 65,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 91,
+    "grader": 66,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 92,
+    "grader": 67,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 93,
+    "grader": 68,
+    "note": 5,
+    "question": 2
+  },
+  {
+    "copie": 94,
+    "grader": 69,
+    "note": 4,
+    "question": 2
+  },
+  {
+    "copie": 95,
+    "grader": 70,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 96,
+    "grader": 71,
+    "note": 3,
+    "question": 2
+  },
+  {
+    "copie": 1,
+    "grader": 13,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 2,
+    "grader": 14,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 3,
+    "grader": 15,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 4,
+    "grader": 16,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 5,
+    "grader": 17,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 6,
+    "grader": 18,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 7,
+    "grader": 19,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 8,
+    "grader": 20,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 9,
+    "grader": 21,
+    "note": 0,
+    "question": 4
+  },
+  {
+    "copie": 10,
+    "grader": 22,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 11,
+    "grader": 23,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 12,
+    "grader": 24,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 13,
+    "grader": 25,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 14,
+    "grader": 26,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 15,
+    "grader": 27,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 16,
+    "grader": 28,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 17,
+    "grader": 29,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 18,
+    "grader": 30,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 19,
+    "grader": 31,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 20,
+    "grader": 32,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 21,
+    "grader": 33,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 22,
+    "grader": 34,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 23,
+    "grader": 35,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 24,
+    "grader": 36,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 25,
+    "grader": 37,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 26,
+    "grader": 38,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 27,
+    "grader": 39,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 28,
+    "grader": 40,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 29,
+    "grader": 41,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 30,
+    "grader": 42,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 31,
+    "grader": 43,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 32,
+    "grader": 44,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 33,
+    "grader": 45,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 34,
+    "grader": 46,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 35,
+    "grader": 47,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 36,
+    "grader": 48,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 37,
+    "grader": 49,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 38,
+    "grader": 50,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 39,
+    "grader": 51,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 40,
+    "grader": 52,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 41,
+    "grader": 53,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 42,
+    "grader": 54,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 43,
+    "grader": 55,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 44,
+    "grader": 56,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 45,
+    "grader": 57,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 46,
+    "grader": 58,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 47,
+    "grader": 59,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 48,
+    "grader": 60,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 49,
+    "grader": 61,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 50,
+    "grader": 62,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 51,
+    "grader": 63,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 52,
+    "grader": 64,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 53,
+    "grader": 65,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 54,
+    "grader": 66,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 55,
+    "grader": 67,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 56,
+    "grader": 68,
+    "note": 3,
+    "question": 4
+  },
+  {
+    "copie": 57,
+    "grader": 69,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 58,
+    "grader": 70,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 59,
+    "grader": 71,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 60,
+    "grader": 72,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 61,
+    "grader": 73,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 62,
+    "grader": 74,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 63,
+    "grader": 75,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 64,
+    "grader": 76,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 65,
+    "grader": 77,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 66,
+    "grader": 78,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 67,
+    "grader": 79,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 68,
+    "grader": 80,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 69,
+    "grader": 81,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 70,
+    "grader": 82,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 71,
+    "grader": 83,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 72,
+    "grader": 84,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 73,
+    "grader": 85,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 74,
+    "grader": 86,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 75,
+    "grader": 87,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 76,
+    "grader": 88,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 77,
+    "grader": 89,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 78,
+    "grader": 90,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 79,
+    "grader": 91,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 80,
+    "grader": 92,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 81,
+    "grader": 93,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 82,
+    "grader": 94,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 83,
+    "grader": 95,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 84,
+    "grader": 96,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 85,
+    "grader": 1,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 86,
+    "grader": 2,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 87,
+    "grader": 3,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 88,
+    "grader": 4,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 89,
+    "grader": 5,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 90,
+    "grader": 6,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 91,
+    "grader": 7,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 92,
+    "grader": 8,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 93,
+    "grader": 9,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 94,
+    "grader": 10,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 95,
+    "grader": 11,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 96,
+    "grader": 12,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 1,
+    "grader": 29,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 2,
+    "grader": 30,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 3,
+    "grader": 31,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 4,
+    "grader": 32,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 5,
+    "grader": 33,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 6,
+    "grader": 34,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 7,
+    "grader": 35,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 8,
+    "grader": 36,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 9,
+    "grader": 37,
+    "note": 3,
+    "question": 4
+  },
+  {
+    "copie": 10,
+    "grader": 38,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 11,
+    "grader": 39,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 12,
+    "grader": 40,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 13,
+    "grader": 41,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 14,
+    "grader": 42,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 15,
+    "grader": 43,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 16,
+    "grader": 44,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 17,
+    "grader": 45,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 18,
+    "grader": 46,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 19,
+    "grader": 47,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 20,
+    "grader": 48,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 21,
+    "grader": 49,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 22,
+    "grader": 50,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 23,
+    "grader": 51,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 24,
+    "grader": 52,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 25,
+    "grader": 53,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 26,
+    "grader": 54,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 27,
+    "grader": 55,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 28,
+    "grader": 56,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 29,
+    "grader": 57,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 30,
+    "grader": 58,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 31,
+    "grader": 59,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 32,
+    "grader": 60,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 33,
+    "grader": 61,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 34,
+    "grader": 62,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 35,
+    "grader": 63,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 36,
+    "grader": 64,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 37,
+    "grader": 65,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 38,
+    "grader": 66,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 39,
+    "grader": 67,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 40,
+    "grader": 68,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 41,
+    "grader": 69,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 42,
+    "grader": 70,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 43,
+    "grader": 71,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 44,
+    "grader": 72,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 45,
+    "grader": 73,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 46,
+    "grader": 74,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 47,
+    "grader": 75,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 48,
+    "grader": 76,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 49,
+    "grader": 77,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 50,
+    "grader": 78,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 51,
+    "grader": 79,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 52,
+    "grader": 80,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 53,
+    "grader": 81,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 54,
+    "grader": 82,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 55,
+    "grader": 83,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 56,
+    "grader": 84,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 57,
+    "grader": 85,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 58,
+    "grader": 86,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 59,
+    "grader": 87,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 60,
+    "grader": 88,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 61,
+    "grader": 89,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 62,
+    "grader": 90,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 63,
+    "grader": 91,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 64,
+    "grader": 92,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 65,
+    "grader": 93,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 66,
+    "grader": 94,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 67,
+    "grader": 95,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 68,
+    "grader": 96,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 69,
+    "grader": 1,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 70,
+    "grader": 2,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 71,
+    "grader": 3,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 72,
+    "grader": 4,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 73,
+    "grader": 5,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 74,
+    "grader": 6,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 75,
+    "grader": 7,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 76,
+    "grader": 8,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 77,
+    "grader": 9,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 78,
+    "grader": 10,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 79,
+    "grader": 11,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 80,
+    "grader": 12,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 81,
+    "grader": 13,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 82,
+    "grader": 14,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 83,
+    "grader": 15,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 84,
+    "grader": 16,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 85,
+    "grader": 17,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 86,
+    "grader": 18,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 87,
+    "grader": 19,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 88,
+    "grader": 20,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 89,
+    "grader": 21,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 90,
+    "grader": 22,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 91,
+    "grader": 23,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 92,
+    "grader": 24,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 93,
+    "grader": 25,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 94,
+    "grader": 26,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 95,
+    "grader": 27,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 96,
+    "grader": 28,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 1,
+    "grader": 49,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 2,
+    "grader": 50,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 3,
+    "grader": 51,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 4,
+    "grader": 52,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 5,
+    "grader": 53,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 6,
+    "grader": 54,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 7,
+    "grader": 55,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 8,
+    "grader": 56,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 9,
+    "grader": 57,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 10,
+    "grader": 58,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 11,
+    "grader": 59,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 12,
+    "grader": 60,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 13,
+    "grader": 61,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 14,
+    "grader": 62,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 15,
+    "grader": 63,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 16,
+    "grader": 64,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 17,
+    "grader": 65,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 18,
+    "grader": 66,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 19,
+    "grader": 67,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 20,
+    "grader": 68,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 21,
+    "grader": 69,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 22,
+    "grader": 70,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 23,
+    "grader": 71,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 24,
+    "grader": 72,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 25,
+    "grader": 73,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 26,
+    "grader": 74,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 27,
+    "grader": 75,
+    "note": 3,
+    "question": 4
+  },
+  {
+    "copie": 28,
+    "grader": 76,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 29,
+    "grader": 77,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 30,
+    "grader": 78,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 31,
+    "grader": 79,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 32,
+    "grader": 80,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 33,
+    "grader": 81,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 34,
+    "grader": 82,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 35,
+    "grader": 83,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 36,
+    "grader": 84,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 37,
+    "grader": 85,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 38,
+    "grader": 86,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 39,
+    "grader": 87,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 40,
+    "grader": 88,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 41,
+    "grader": 89,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 42,
+    "grader": 90,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 43,
+    "grader": 91,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 44,
+    "grader": 92,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 45,
+    "grader": 93,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 46,
+    "grader": 94,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 47,
+    "grader": 95,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 48,
+    "grader": 96,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 49,
+    "grader": 1,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 50,
+    "grader": 2,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 51,
+    "grader": 3,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 52,
+    "grader": 4,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 53,
+    "grader": 5,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 54,
+    "grader": 6,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 55,
+    "grader": 7,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 56,
+    "grader": 8,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 57,
+    "grader": 9,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 58,
+    "grader": 10,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 59,
+    "grader": 11,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 60,
+    "grader": 12,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 61,
+    "grader": 13,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 62,
+    "grader": 14,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 63,
+    "grader": 15,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 64,
+    "grader": 16,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 65,
+    "grader": 17,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 66,
+    "grader": 18,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 67,
+    "grader": 19,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 68,
+    "grader": 20,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 69,
+    "grader": 21,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 70,
+    "grader": 22,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 71,
+    "grader": 23,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 72,
+    "grader": 24,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 73,
+    "grader": 25,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 74,
+    "grader": 26,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 75,
+    "grader": 27,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 76,
+    "grader": 28,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 77,
+    "grader": 29,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 78,
+    "grader": 30,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 79,
+    "grader": 31,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 80,
+    "grader": 32,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 81,
+    "grader": 33,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 82,
+    "grader": 34,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 83,
+    "grader": 35,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 84,
+    "grader": 36,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 85,
+    "grader": 37,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 86,
+    "grader": 38,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 87,
+    "grader": 39,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 88,
+    "grader": 40,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 89,
+    "grader": 41,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 90,
+    "grader": 42,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 91,
+    "grader": 43,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 92,
+    "grader": 44,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 93,
+    "grader": 45,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 94,
+    "grader": 46,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 95,
+    "grader": 47,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 96,
+    "grader": 48,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 1,
+    "grader": 72,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 2,
+    "grader": 73,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 3,
+    "grader": 74,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 4,
+    "grader": 75,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 5,
+    "grader": 76,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 6,
+    "grader": 77,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 7,
+    "grader": 78,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 8,
+    "grader": 79,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 9,
+    "grader": 80,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 10,
+    "grader": 81,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 11,
+    "grader": 82,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 12,
+    "grader": 83,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 13,
+    "grader": 84,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 14,
+    "grader": 85,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 15,
+    "grader": 86,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 16,
+    "grader": 87,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 17,
+    "grader": 88,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 18,
+    "grader": 89,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 19,
+    "grader": 90,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 20,
+    "grader": 91,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 21,
+    "grader": 92,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 22,
+    "grader": 93,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 23,
+    "grader": 94,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 24,
+    "grader": 95,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 25,
+    "grader": 96,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 26,
+    "grader": 1,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 27,
+    "grader": 2,
+    "note": 3,
+    "question": 4
+  },
+  {
+    "copie": 28,
+    "grader": 3,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 29,
+    "grader": 4,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 30,
+    "grader": 5,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 31,
+    "grader": 6,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 32,
+    "grader": 7,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 33,
+    "grader": 8,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 34,
+    "grader": 9,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 35,
+    "grader": 10,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 36,
+    "grader": 11,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 37,
+    "grader": 12,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 38,
+    "grader": 13,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 39,
+    "grader": 14,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 40,
+    "grader": 15,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 41,
+    "grader": 16,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 42,
+    "grader": 17,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 43,
+    "grader": 18,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 44,
+    "grader": 19,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 45,
+    "grader": 20,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 46,
+    "grader": 21,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 47,
+    "grader": 22,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 48,
+    "grader": 23,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 49,
+    "grader": 24,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 50,
+    "grader": 25,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 51,
+    "grader": 26,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 52,
+    "grader": 27,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 53,
+    "grader": 28,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 54,
+    "grader": 29,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 55,
+    "grader": 30,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 56,
+    "grader": 31,
+    "note": 3,
+    "question": 4
+  },
+  {
+    "copie": 57,
+    "grader": 32,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 58,
+    "grader": 33,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 59,
+    "grader": 34,
+    "note": 3,
+    "question": 4
+  },
+  {
+    "copie": 60,
+    "grader": 35,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 61,
+    "grader": 36,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 62,
+    "grader": 37,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 63,
+    "grader": 38,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 64,
+    "grader": 39,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 65,
+    "grader": 40,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 66,
+    "grader": 41,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 67,
+    "grader": 42,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 68,
+    "grader": 43,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 69,
+    "grader": 44,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 70,
+    "grader": 45,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 71,
+    "grader": 46,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 72,
+    "grader": 47,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 73,
+    "grader": 48,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 74,
+    "grader": 49,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 75,
+    "grader": 50,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 76,
+    "grader": 51,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 77,
+    "grader": 52,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 78,
+    "grader": 53,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 79,
+    "grader": 54,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 80,
+    "grader": 55,
+    "note": 0.5,
+    "question": 4
+  },
+  {
+    "copie": 81,
+    "grader": 56,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 82,
+    "grader": 57,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 83,
+    "grader": 58,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 84,
+    "grader": 59,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 85,
+    "grader": 60,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 86,
+    "grader": 61,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 87,
+    "grader": 62,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 88,
+    "grader": 63,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 89,
+    "grader": 64,
+    "note": 2.5,
+    "question": 4
+  },
+  {
+    "copie": 90,
+    "grader": 65,
+    "note": 1.5,
+    "question": 4
+  },
+  {
+    "copie": 91,
+    "grader": 66,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 92,
+    "grader": 67,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 93,
+    "grader": 68,
+    "note": 1,
+    "question": 4
+  },
+  {
+    "copie": 94,
+    "grader": 69,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 95,
+    "grader": 70,
+    "note": 2,
+    "question": 4
+  },
+  {
+    "copie": 96,
+    "grader": 71,
+    "note": 0.5,
+    "question": 4
   }
 ]
