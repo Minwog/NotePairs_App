@@ -38,28 +38,6 @@
                             }
                         })
 
-                    .state('enseignant.createEvaluation.etape2',{
-                        parent:'enseignant',
-                        url:'/evaluations_create2',
-                        views:{
-                            'content':{
-                                templateUrl:'app/enseignant/pages/evaluations/evaluation-create2.html',
-                                controller: 'EvaluationsController'
-                            }
-                        }
-                    })
-
-                    .state('enseignant.createEvaluation.etape3',{
-                        parent:'enseignant',
-                        url:'/evaluations_create3',
-                        views:{
-                            'content':{
-                                templateUrl:'app/HighCharts/demo.html',
-                                controller: 'HighChartsController'
-                            }
-                        }
-                    })
-
                     .state('enseignant.diagrammeFiabilite',{
                         parent:'enseignant',
                         url:'/diagramme_fiabilite',
@@ -71,32 +49,22 @@
                         }
                     })
 
-                    .state('enseignant.cours',{
+                    .state('enseignant.mesCours',{
                         parent:'enseignant',
-                        url:'/cours',
+                        url:'/mes_cours',
                         views:{
                             'content':{
-                                templateUrl:'app/enseignant/pages/cours/cours.html'
+                                templateUrl:'app/enseignant/pages/cours/cours_view.html'
                             }
                         }
                     })
 
-                        .state('enseignant.mesCours',{
+                        .state('enseignant.cours',{
                             parent:'enseignant',
-                            url:'/cours',
+                            url:'/cours/',
                             views:{
                                 'content':{
-                                    templateUrl:'app/enseignant/pages/cours/mesCours.html'
-                                }
-                            }
-                        })
-
-                        .state('enseignant.cours.view',{
-                            parent:'enseignant',
-                            url:'/cours/view',
-                            views:{
-                                'content':{
-                                    templateUrl:'app/enseignant/pages/cours/cours_view.html'
+                                    templateUrl:'app/enseignant/pages/cours/cours.html'
                                 }
                             }
                         })
