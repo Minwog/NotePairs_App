@@ -1,6 +1,6 @@
 angular.module('NotePairApp')
     .factory('CoursService', ['$resource',function($resource) {
-        return $resource('/resources/json/cours.json',{},{
+        return $resource('http://localhost:8000/api/cours/:id',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
