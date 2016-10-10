@@ -3,29 +3,24 @@ angular.module('NotePairApp')
 
 
         $scope.newEleve={
-            'eleves_id':Math.floor((Math.random() * 100000)),
             'Nom':'',
             'Prenom':'',
             'email':'',
-            'username':''
+            'username':'',
+            'role_id':2
         };
 
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addEleve = function () {
 
-            LocalElevesService.save($scope.newEleve);
+            ElevesService.save($scope.newEleve);
             $state.go('admin.students')
         };
+
+
 // appel des cours pour menu deroulant
 
-        $scope.cours=[{nom:"Economie d'entreprise",section:'économie'},
-            {nom:"RASS",section:'traitement du signal'},
-            {nom:"Telecommunications",section:'traitement du signal'},
-            {nom:"Architecture des ordibateurs",section:'informatique'},
-            {nom:"Signaux et systemes 1",section:'traitement du signal'},
-            {nom:"Droit",section:'économie'},
-            {nom:"Macroéconomie",section:'économie'},
-            {nom:"Conversion d'énergie",section:'énergie'}];
+        $scope.cours=[];
 
         $scope.groupes=['A33','B227','C423','D67'];
 

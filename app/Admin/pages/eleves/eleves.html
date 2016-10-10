@@ -1,4 +1,4 @@
-<div id="page-wrapper" ng-controller="ElevesController">
+<div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Élèves</h1>
@@ -17,26 +17,26 @@
                     <div>
                         <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
                             <div class="input-group">
-                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
 
-                                <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
-                                <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Prenom">
+                                <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
+                                <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.prenom">
                                 <input ng-if="searchLabel === 'username'" type="text" class="form-control" aria-label="..." ng-model="searchBox.username">
                                 <input ng-if="searchLabel === 'email'" type="text" class="form-control" aria-label="..." ng-model="searchBox.email">
 
-                                <input ng-if="searchLabel === 'Groupes'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Groupes">
+                                <input ng-if="searchLabel === 'Groupes'" type="text" class="form-control" aria-label="..." ng-model="searchBox.groupes">
                                 <input ng-if="searchLabel === 'cours'" type="text" class="form-control" aria-label="..." ng-model="searchBox.cours">
 
 
                                 <div class="input-group-btn">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom' }}  <span class="caret"></span></button>
+                                            aria-haspopup="true" aria-expanded="false">{{searchLabel || 'nom' }}  <span class="caret"></span></button>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="" ng-click="searchLabel = 'Nom'; searchBox={}">Nom</a></li>
-                                        <li><a href="" ng-click="searchLabel = 'Prenom'; searchBox={}">Prenom</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'nom'; searchBox={}">Nom</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'prenom'; searchBox={}">Prenom</a></li>
                                         <li><a href="" ng-click="searchLabel = 'username'; searchBox={}">pseudo</a></li>
                                         <li><a href="" ng-click="searchLabel = 'email'; searchBox={}">email</a></li>
-                                        <li><a href="" ng-click="searchLabel = 'Groupes'; searchBox={}">Groupes</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'groupes'; searchBox={}">Groupes</a></li>
                                         <li><a href="" ng-click="searchLabel = 'cours'; searchBox={}">Cours</a></li>
                                     </ul>
                                 </div><!-- /btn-group -->
@@ -49,15 +49,15 @@
                         <thead>
                             <tr class="">
                                 <th></th>
-                                <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='nom'; nomup=true">
                                     <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                    <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                    <a ng-show="nomup" href="" ng-click="myOrderBy='-nom'; nomup=false">
                                     <span class="glyphicon glyphicon-triangle-top"></span>
                                     </a>
                                 </th>
-                                <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='prenom'; prenomup=true">
                                     <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                    <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                    <a ng-show="prenomup" href="" ng-click="myOrderBy='-prenom'; prenomup=false">
                                         <span class="glyphicon glyphicon-triangle-top"></span>
                                     </a>
                                 </th>
@@ -86,8 +86,8 @@
                                 <button ng-if="!eleve.expanded" ng-click="eleve.expanded = true">+</button>
                             </td>
 
-                            <td>{{eleve.Nom}}</td>
-                            <td>{{eleve.Prenom}}</td>
+                            <td>{{eleve.nom}}</td>
+                            <td>{{eleve.prenom}}</td>
                             <td class="hidden-sm hidden-xs">{{eleve.username}}</td>
                             <td class="hidden-md hidden-sm hidden-xs">{{eleve.email}}</td>
                             <td class="hidden-sm hidden-xs">
@@ -111,16 +111,18 @@
                                         <span class="hidden-xl">Liste</span>
                                         <span class="caret"></span>
                                     </button>
+                                    <div ng-init="AfficheCoursEleve(eleve.id)"></div>
                                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                        <li ng-repeat="c in eleve.cours track by $index"><a href="">{{c}}</a></li>
+                                        <li ng-repeat="c in cours"><a href="">Bonjour {{c.nom}}</a></li>
+
                                     </ul>
                                 </div>
                             </td>
                             <td>
                                 <button type="button" class="btn btn-primary btn-circle-micro"
-                                        ng-click="goToUpdate(eleve['eleves_id'])"><i class="fa fa-list"></i>
+                                        ng-click="goToUpdate(eleve['id'])"><i class="fa fa-list"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteEleve(eleve['eleves_id'])"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteEleve(eleve['id'])"><i class="fa fa-times"></i>
                                 </button>
                             </td>
                         </tr>
@@ -129,8 +131,7 @@
                             <td colspan="99">
                                     <p class="hidden-xl hidden-lg hidden-md"><a href="">username: {{eleve.username}}</a></p>
                                     <p class="hidden-xl hidden-lg"><a href="">email: {{eleve.email}}</a></p>
-                                    <p class=""><a href="">eleve_id: {{eleve.eleves_id}}</a></p>
-                                    <p class=""><a href="">user_id: {{eleve.user_id}}</a></p>
+                                    <p class=""><a href="">eleve_id: {{eleve.id}}</a></p>
 
                             </td>
                         </tr>
