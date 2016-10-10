@@ -30,32 +30,47 @@
                         </div>
                         <br>
                         <h4>Correction</h4>
-                        <div class="container" data-target="#{{section.id}}">
-                            <ul class="nav nav-pills">
+                            <ul class="nav nav-pills nav-stacked nav_dty nav-tabs-justified">
                                 <li ng-repeat="critere in section.criteres">
                                     <a ng-click="setTab(critere.id)" data-target="#{{section.id*100+critere.id}}" data-toggle="tab">
                                         Critère n°{{critere.ordre}}
                                     </a>
-                                    <div id="{{section.id*100+critere.id}}" class="tab-pane fade" ng-show="isTab(critere.id)">
-                                        <div ng-if="critere.type=='commentaire'">
-                                            <h5>Commentez: </h5>
-                                            <textarea placeholder="Commentaire"/>
-                                        </div>
+                                        <div id="{{section.id*100+critere.id}}" class="tab-content" ng-show="isTab(critere.id)">
 
-                                        <div ng-if="critere.type=='condition'">
-                                            <h5>Note: </h5>
-                                            <textarea placeholder="Commentaire"/>
-                                        </div>
+                                            <!--get corrige_critere dont le critere_id correspond à critere-->
 
-                                        <div ng-if="critere.type=='jugement'">
-                                            <h5>Note: </h5><input type="number" step="0.5" min="0"/>
-                                            <h5>Commentez: </h5>
-                                            <textarea placeholder="Commentaire"/>
-                                        </div>
+                                            {{critere.description}}
+                                            <br>
+                                            <div ng-if="critere.type=='commentaire'">
+                                                <br>
+                                                <textarea placeholder="Commentaire" ng-model="corrige_critere.commentaire" rows="5" cols="50"/>
+                                            </div>
 
-                                    </div>
-                                </li>
-                            </ul>
+                                            <div ng-if="critere.type=='condition'">
+
+                                                <script>
+                                                    $('input[type="checkbox"]').on('change', function() {
+                                                        $('input[name="' + this.name + '"]').not(this).prop('checked', false);
+                                                    });
+                                                </script>
+
+                                                <br>
+                                                <input type="checkbox" name="corrige_critere.note" ng-model="corrige_critere.noteOui"/>&nbsp;Oui&nbsp;&nbsp;
+                                                <input type="checkbox" name="corrige_critere.note" ng-model="corrige_critere.noteNon">&nbsp;Non&nbsp;&nbsp;</input>
+                                                <br><br>
+                                                <textarea placeholder="Commentaire" ng-model="corrige_critere.commentaire" rows="5" cols="50"/>
+                                            </div>
+
+                                            <div ng-if="critere.type=='jugement'">
+                                                <br>
+                                                <rzslider rz-slider-model="corrige_critere.note" rz-slider-options="slider.options"></rzslider>
+                                                <br><br>
+                                                <textarea ng-model="corrige_critere.commentaire" placeholder="Commentaire" rows="5" cols="50"/>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

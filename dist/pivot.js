@@ -237,6 +237,109 @@
           };
         };
       },
+      ecart_average: function(formatter) {
+        if (formatter == null) {
+          formatter = usFmt;
+        }
+        return function(arg) {
+          var attr;
+          attr = arg[0];
+          return function(data, rowKey, colKey) {
+            return {
+              sum: 0,
+              note: 0,
+              len: 0,
+              r: 0,
+              push: function(record) {
+                if (!isNaN(parseFloat(record[attr]))) {
+                  this.sum += parseFloat(record[attr]);
+                  this.note = parseFloat(record[attr]);
+                  return this.len++;
+                }
+              },
+              value: function() {
+                if(rowKey.length && colKey.length) {
+                  return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+
+                }
+
+                //
+              },
+              format: formatter,
+              numInputs: attr != null ? 0 : 1
+            };
+          };
+        };
+      },
+      fiabilite: function(formatter, B, A) {
+        if (formatter == null) {
+          formatter = usFmt;
+        }
+        var somme = 0;
+        return function(arg) {
+          var attr;
+          attr = arg[0];
+          return function(data, rowKey, colKey) {
+            return {
+              sum: 0,
+              note: 0,
+              len: 0,
+              push: function(record) {
+                if (!isNaN(parseFloat(record[attr]))) {
+                  this.sum += parseFloat(record[attr]);
+                  this.note = parseFloat(record[attr]);
+                  return this.len++;
+                }
+              },
+              value: function() {
+                console.log(somme)
+                if(rowKey.length && colKey.length) {
+                  somme += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                  console.log(somme)
+                  return Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+
+                  //return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+                } else if (rowKey.length) {
+                  var tmp = somme;
+                  somme = 0;
+                  return tmp/data.rowTotals[rowKey].len
+                }
+
+              },
+              format: formatter,
+              numInputs: attr != null ? 0 : 1
+            };
+          };
+        };
+      },
+      stdev: function(formatter) {
+        if (formatter == null) {
+          formatter = usFmt;
+        }
+        return function(arg) {
+          var attr;
+          attr = arg[0];
+          return function(data, rowKey, colKey) {
+            return {
+              sum: 0,
+              sumsquare: 0,
+              len: 0,
+              push: function(record) {
+                if (!isNaN(parseFloat(record[attr]))) {
+                  this.sum += parseFloat(record[attr]);
+                  this.sumsquare += (parseFloat(record[attr]) * parseFloat(record[attr]));
+                  return this.len++;
+                }
+              },
+              value: function() {
+                return Math.sqrt((this.sumsquare / this.len) - ((this.sum / this.len)*(this.sum / this.len)));
+              },
+              format: formatter,
+              numInputs: attr != null ? 0 : 1
+            };
+          };
+        };
+      },
       sumOverSum: function(formatter) {
         if (formatter == null) {
           formatter = usFmt;
@@ -335,6 +438,9 @@
         "Effectifs Uniques": tpl.countUnique(usFmtInt),
         "Liste des Valeurs": tpl.listUnique(", "),
         "Moyenne": tpl.average(usFmt),
+        "Écart-type": tpl.stdev(usFmt),
+        "Écart%moyenne(lignes)": tpl.ecart_average(usFmt),
+        "Fiabilité(lignes)": tpl.fiabilite(usFmt,2,1),
         "Minimum": tpl.min(usFmt),
         "Maximum": tpl.max(usFmt)
       };
@@ -380,6 +486,11 @@
       bin: function(col, binWidth) {
         return function(record) {
           return record[col] - record[col] % binWidth;
+        };
+      },
+      bin2: function(col, binWidth) {
+        return function(record) {
+          return (record[col]-1) - (record[col]-1) % binWidth;
         };
       },
       dateFormat: function(col, formatString, utcOutput, mthNames, dayNames) {
@@ -1376,7 +1487,7 @@
           min = Math.min.apply(Math, values);
           max = Math.max.apply(Math, values);
           aver = (min + max)/2;
-
+          /*
           if (min>=0 && max <=1) {
             min = 0;
             max = 1;
@@ -1392,12 +1503,19 @@
               };
             };
           } else {
-            return function(x) {
-              var nonRed;
-              nonRed = 105 + Math.round(150 * (x - min) / (max - min));
-              return "rgb("+ 255 + ", "+ nonRed +"," + nonRed + ")";
-            };
-          }
+           return function(x) {
+           var nonRed;
+           nonRed = 105 + Math.round(150 * (x - min) / (max - min));
+           return "rgb("+ 255 + ", "+ nonRed +"," + nonRed + ")";
+           };
+
+          }*/
+
+          return function(x) {
+            var nonRed;
+            nonRed = 255 - Math.round(105 * (x - min) / (max - min));
+            return "rgb("+ 255 + ", "+ nonRed +"," + nonRed + ")";
+          };
 
 
 
