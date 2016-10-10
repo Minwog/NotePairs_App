@@ -2,20 +2,19 @@
 
     angular.module('NotePairApp')
 
-        .controller('UpdateEleveController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService','LocalElevesService',function($scope,$state,$stateParams, alerteService, ElevesService,LocalElevesService){
+        .controller('UpdateEleveController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService',function($scope,$state,$stateParams, alerteService, ElevesService){
 
-            LocalElevesService.query();
 
 //--- Methode update pour modifier un Eleve à partir de son id ---//
 
-            LocalElevesService.get($stateParams.id).then(function(data){
+            ElevesService.get({id:$stateParams.id}).$promise.then(function(data){
                 console.log(data);
                 $scope.Eleve=data;
             });
 
     $scope.updateEleves = function () {
-        LocalElevesService.update($scope.Eleve);
-        $state.go('admin.students');
+        ElevesService.update($scope.Eleve);
+        $state.go('admin.students',{reload:true});
     }
 
             $(document).ready(function(){
