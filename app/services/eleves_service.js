@@ -1,71 +1,114 @@
 angular.module('NotePairApp')
-    .factory('ElevesService', ['$resource',function($resource) {
-    return $resource('/resources/json/eleves.json',{},{
-        'query': {method: 'GET', isArray: true},
-        'get': {
-            method: 'GET',
-            transformResponse: function (data) {
-                if (data) {
-                    data = angular.fromJson(data);
+        .factory('ElevesService', ['$resource', '$http', '$stateParams','$q', function ($resource, $http, $stateParams,$q) {
+
+            var resource = $resource('http://localhost:8000/api/users/:id', {}, {
+
+                'query': {
+                    method: 'GET', isArray: true
+                },
+                'get': {
+                    method: 'GET',
+                    transformResponse: function (data) {
+                        if (data) {
+                            data = angular.fromJson(data);
+                        }
+                        return data;
+                    }
+                },
+                'update': {
+                    method: 'POST'
                 }
-                return data;
-            }
-        },
-        'update': {method: 'PUT'}
-    });
-    }])
-
-    .service('alerteService',['$window',function ($window) {
-    this.showPopup = function (message) {
-        return $window.confirm(message);
-    }
-}])
-
-    // le service pour aller chercher les données en mode démo dans le localstorage
-    .factory('LocalElevesService',['$q','ElevesService',function ($q,ElevesService) {
-
-        var _value;
-
-        var service = {
-            'query': value,
-            'save': save,
-            'update': update,
-            'get': trouver,
-            'delete':delet
-        };
-
-        function save(data) {
-            _value.push(data);
-        }
-
-
-        function update(data) {
-
-            findById(data, function (eleve) {
-                console.log(eleve);
-                _value[eleve.index] = data;
             });
 
-        }
+            function ByRole(id) {
+                var deferred=$q.defer();
+                $http.get('http://localhost:8000/api/userbyrole/' + id).success(
+                    function(data) {
+                        deferred.resolve(data);
+                        console.log(data);
+                    }
+                );
+                return deferred.promise;
 
-        function delet(id) {
-            findById(id,function (eleve) {
-                console.log(eleve.index);
-                _value.splice(eleve.index,1)
-            })
+
+            };
+
+            function getCours(id){
+                var deferred=$q.defer();
+                $http.get('http://localhost:8000/api/users/'+id+'/cours/all').success(
+                    function (data) {
+                        deferred.resolve(data);
+                        console.log(data);
+                    }
+                )
+
+                return deferred.promise
+            }
+
+
+            return {
+                'query': resource.query,
+                'save': resource.save,
+                'update': resource.update,
+                'get': resource.get,
+                'delete': resource.delete,
+                'getByRole': ByRole,
+                'getCours':getCours
+            };
+
+        }])
+
+        .service('alerteService', ['$window', function ($window) {
+            this.showPopup = function (message) {
+                return $window.confirm(message);
+            }
+        }])
+
+        // le service pour aller chercher les données en mode démo dans le localstorage
+        .factory('LocalElevesService', ['$q', 'ElevesService', function ($q, ElevesService) {
+
+            var _value;
+
+            var service = {
+                'query': value,
+                'save': save,
+                'update': update,
+                'get': trouver,
+                'delete': delet
+            };
+
+            function save(data) {
+                _value.push(data);
+            }
+
+
+            function update(data) {
+
+                findById(data, function (eleve) {
+                    console.log(eleve);
+                    _value[eleve.index] = data;
+                });
 
             }
 
-        function trouver(id) {
-            var deferred=$q.defer();
-            findById(id, function (eleve) {
-                console.log(eleve);
-                deferred.resolve(eleve.eleve)
-            })
-            return deferred.promise
-        };
+            function delet(id) {
+                findById(id, function (eleve) {
+                    console.log(eleve.index);
+                    _value.splice(eleve.index, 1)
+                })
 
-        function findById(id, callback) {
+            }
+
+            function trouver(id) {
+                var deferred = $q.defer();
+                findById(id, function (eleve) {
+                    console.log(eleve);
+                    deferred.resolve(eleve.eleve)
+                })
+                return deferred.promise
+            };
+
+            function findById(id, callback) {
                 console.log('debut findById');
                 var done = false;
                 var eleve;
@@ -79,11 +122,11 @@ angular.module('NotePairApp')
                 }
                 if (done) {
 
-                     callback({'eleve': eleve, 'index': index});
+                    callback({'eleve': eleve, 'index': index});
                 }
             }
 
-        function value(){
+            function value() {
                 var deferred = $q.defer();
 
                 // check and see if we have retrieved the  data.
@@ -93,7 +136,7 @@ angular.module('NotePairApp')
                         .then(function (data) {
                                 _value = data;
                                 deferred.resolve(data);
-                            console.log('wsh')
+                                console.log('wsh')
                             }
                         )
                 } else {
@@ -106,5 +149,6 @@ angular.module('NotePairApp')
 
             return service
 
-    }]);
+        }]);
+
 
