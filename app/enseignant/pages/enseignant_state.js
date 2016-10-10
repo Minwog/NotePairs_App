@@ -27,16 +27,27 @@
                         }
                     })
 
-                        .state('enseignant.createEvaluation',{
-                            parent:'enseignant',
-                            url:'/evaluations_create',
-                            views:{
-                                'content':{
-                                    templateUrl:'app/enseignant/pages/evaluations/evaluation-create.html',
-                                    controller: 'EvaluationsController'
-                                }
+                    .state('enseignant.createEvaluation',{
+                        parent:'enseignant',
+                        url:'/evaluations_create',
+                        views:{
+                            'content':{
+                                templateUrl:'app/enseignant/pages/evaluations/evaluation-create.html',
+                                controller: 'EvaluationsController'
                             }
-                        })
+                        }
+                    })
+
+                    .state('enseignant.voirEvaluation($id)',{
+                        parent:'enseignant',
+                        url:'/voir_evaluation/:id',
+                        views:{
+                            'content':{
+                                templateUrl:'app/enseignant/pages/evaluations/voir.html',
+                                controller: 'EvaluationsController'
+                            }
+                        }
+                    })
 
                     .state('enseignant.diagrammeFiabilite',{
                         parent:'enseignant',

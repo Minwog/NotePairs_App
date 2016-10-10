@@ -43,6 +43,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            <br>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -56,9 +57,18 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
-                            <input type="checkbox" name="groupe">&nbsp;Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
-                            <input type="checkbox" name="groupe">&nbsp;Travail de groupe</input>
-                            <br><br>
+                            <input type="checkbox" name="groupe" ng-click="mode_groupe=1">&nbsp;Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
+                            <input type="checkbox" name="groupe" ng-click="mode_groupe=2">&nbsp;Travail de groupe&nbsp&nbsp&nbsp&nbsp</input>
+                            <span ng-if="mode_groupe==2" >
+                                <input type="checkbox" ng-click="correction_groupe=true">&nbsp;Correction en groupe</input>
+                            </span>
+                            <p>
+                                <p>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalEleves" ng-if="mode_groupe==1">Choisir une liste d'élèves</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalGroupes" ng-if="mode_groupe==2">Choisir une liste de groupes</button>
+
+                                </p>
+                            </p>
                             Date limite de rendu du devoir:
                             <input type="date" name="renduDate" />
                             <br> <br>
@@ -91,6 +101,11 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
+                            <p>
+                                <button class="btn" data-toggle="modal" ng-if="!correction_groupe" data-target="#modalAttributionIndividuelle"> Voir l'attribution des copies </button>
+                                <button class="btn" data-toggle="modal" ng-if="correction_groupe" data-target="#modalAttributionGroupe"> Voir l'attribution des copies groupe</button>
+                            </p>
+
                             <div class="btn-group">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -112,17 +127,425 @@
                             <input type="checkbox" name="anonymatEvaluateur">&nbsp;Anonymat de l'élève évaluateur</input>
 
                         </div>
-                    </div>
+                    </div><!-- /.panel-body -->
                     <input type="submit" class="btn btn-primary pull-right" ui-sref=".etape2" />
-                    <!-- /.panel-body -->
+                    <br>
                 </div>
 
-            </div>
+                <div id="modalAttributionIndividuelle" class="modal fade" role="dialog">
+                    <div class="modal-dialog centered">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Voir l'attribution des copies</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Élèves
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div>
+                                        <div class="col-lg-12" style="margin-bottom: 10px">
+                                            <div class="input-group">
+                                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                                <input ng-if="searchLabel === 'Nom de l\'evaluateur'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                                <input ng-if="searchLabel === 'Prenom de l\'evaluateur'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Prenom">
+                                                <input ng-if="searchLabel === 'Nom de l\'eleve a corriger'" type="text" class="form-control" aria-label="..." ng-model="searchBox.ElevesACorriger.Nom">
+                                                <input ng-if="searchLabel === 'Prenom de l\'eleve a corriger'" type="text" class="form-control" aria-label="..." ng-model="searchBox.ElevesACorriger.Prenom">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom de l\'evaluateur' }}  <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a href="" ng-click="searchLabel = 'Nom de l\'evaluateur'; searchBox={}">Nom de l'évaluateur</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Prenom de l\'evaluateur'; searchBox={}">Prenom de l'évaluateur</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Nom de l\'eleve a corriger'; searchBox={}">Nom de l'élève évalué</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Prenom de l\'eleve a corriger'; searchBox={}">Prenom de l'élève évalué</a></li>
+                                                    </ul>
+                                                </div><!-- /btn-group -->
+                                            </div><!-- /input-group -->
+                                        </div><!-- /.col-lg-6 -->
+                                    </div><!-- /.row -->
+                                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example4">
+                                        <thead>
+                                        <tr class="">
+                                            <th></th>
+                                            <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                                    <span class="glyphicon glyphicon-triangle-top"></span>
+                                                </a>
+                                            </th>
+                                            <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                                    <span class="glyphicon glyphicon-triangle-top"></span>
+                                                </a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="infos" ng-repeat-start="eleve in ElevesList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                            <td>
+                                                <button ng-if="eleve.expanded" ng-click="eleve.expanded = false" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-up"></i></button>
+                                                <button ng-if="!eleve.expanded" ng-click="eleve.expanded = true" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-down"></i></button>
+                                            </td>
+                                            <td>
+                                                {{eleve.Nom}}
+                                            </td>
+                                            <td>
+                                                {{eleve.Prenom}}
+                                            </td>
+                                        </tr>
+                                        <tr ng-if="eleve.expanded" ng-repeat-end="">
+                                            <td colspan="99">
+                                                Copies à corriger :
+                                                <button type="button" class="btn btn-primary btn-circle-micro pull-right" data-toggle="modal" data-target="#{{eleve.id}}"><i class="fa fa-plus"></i>
+                                                </button>
+                                                <br>
+                                                <div ng-repeat="eleve2 in eleve.ElevesACorriger">
+                                                    <button type="button" class="btn btn-danger btn-circle-micro" ng-click="eleve.supprimer(eleve2)"><i class="fa fa-times"></i>
+                                                    </button>
+                                                    {{eleve2.Nom}}&nbsp;{{eleve2.Prenom}}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default btn-primary" data-dismiss="modal">Choisir l'attribution des copies </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modalAttributionGroupe" class="modal fade" role="dialog">
+                    <div class="modal-dialog centered">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Voir l'attribution des copies</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Élèves
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div>
+                                        <div class="col-lg-12" style="margin-bottom: 10px">
+                                            <div class="input-group">
+                                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                                <input ng-if="searchLabel === 'Nom du groupe evaluateur'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                                <input ng-if="searchLabel === 'Nom d\'un eleve du groupe evaluateur'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                                <input ng-if="searchLabel === 'Prenom d\'un eleve du groupe evaluateur'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Prenom">
+                                                <input ng-if="searchLabel === 'Nom du groupe a corriger'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                                <input ng-if="searchLabel === 'Nom d\'un eleve du groupe a corriger'" type="text" class="form-control" aria-label="..." ng-model="searchBox.ElevesACorriger.Nom">
+                                                <input ng-if="searchLabel === 'Prenom d\'un eleve du groupe a corriger'" type="text" class="form-control" aria-label="..." ng-model="searchBox.ElevesACorriger.Prenom">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom de l\'evaluateur' }}  <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-right">
+                                                        <li><a href="" ng-click="searchLabel = 'Nom du groupe evaluateur'; searchBox={}">Nom du groupe évaluateur</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Nom d\'un eleve du groupe evaluateur'; searchBox={}">Nom d'un eleve du groupe évaluateur</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Prenom d\'un eleve du groupe evaluateur'; searchBox={}">Prenom d'un eleve du groupe évaluateur</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Nom du groupe a corriger'; searchBox={}">Nom d'un eleve du groupe évaluateur</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Nom d\'un eleve du groupe a corriger'; searchBox={}">Nom d'un eleve du groupe évalué</a></li>
+                                                        <li><a href="" ng-click="searchLabel = 'Prenom d\'un eleve du groupe a corriger'; searchBox={}">Prenom d'un eleve du groupe évalué</a></li>
+                                                    </ul>
+                                                </div><!-- /btn-group -->
+                                            </div><!-- /input-group -->
+                                        </div><!-- /.col-lg-6 -->
+                                    </div><!-- /.row -->
+                                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example6">
+                                        <thead>
+                                        <tr class="">
+                                            <th></th>
+                                            <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                                    <span class="glyphicon glyphicon-triangle-top"></span>
+                                                </a>
+                                            </th>
+                                            <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                                    <span class="glyphicon glyphicon-triangle-top"></span>
+                                                </a>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="infos" ng-repeat-start="groupe in GroupesList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                            <td>
+                                                <button ng-if="groupe.expanded" ng-click="groupe.expanded = false" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-up"></i></button>
+                                                <button ng-if="!groupe.expanded" ng-click="groupe.expanded = true" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-down"></i></button>
+                                                &nbsp;{{groupe.nom}}
+                                            </td>
+                                            <td><input type="checkbox"></td>
+
+                                        </tr>
+
+                                        <tr ng-if="groupe.expanded" ng-repeat-end="">
+                                            <td colspan="99">
+                                                Élèves:
+                                                <br>
+                                                <div ng-repeat="eleve in groupe.eleves">
+                                                    {{eleve.Nom}}&nbsp;{{eleve.Prenom}}
+                                                </div>
+                                                Copies à corriger:
+                                                <br>
+                                                <div ng-repeat="groupe2 in groupe.GroupesACorriger">
+                                                    {{groupe.nom}}(
+                                                    <span ng-repeat="eleve2 in groupe2.eleves">
+                                                            {{eleve2.nom}}&nbsp;{{eleve2.prenom}},$nbsp;
+                                                    </span>
+                                                    )
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr ng-if="eleve.expanded" ng-repeat-end="">
+                                            <td colspan="99">
+                                                Copies à corriger :
+                                                <button type="button" class="btn btn-primary btn-circle-micro pull-right" data-toggle="modal" data-target="#{{eleve.id}}"><i class="fa fa-plus"></i>
+                                                </button>
+                                                <br>
+                                                <div ng-repeat="eleve2 in eleve.ElevesACorriger">
+                                                    <button type="button" class="btn btn-danger btn-circle-micro" ng-click="eleve.supprimer(eleve2)"><i class="fa fa-times"></i>
+                                                    </button>
+                                                    {{eleve2.Nom}}&nbsp;{{eleve2.Prenom}}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default btn-primary" data-dismiss="modal">Choisir l'attribution des copies </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="{{eleve.id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog centered">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Ajouter des élèves à corriger pour {{eleve.Nom}}&nbsp;{{eleve.Prenom}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Élèves
+                                </div>
+                                        <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
+                                        <div class="input-group">
+                                            <input ng-show="!searchLabel2" type="text" class="form-control" aria-label="..." ng-model="searchBox2.Nom">
+
+                                            <input ng-if="searchLabel2 === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox2.Nom">
+                                            <input ng-if="searchLabel2 === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox2.Prenom">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">{{searchLabel2 || 'Nom' }}  <span class="caret"></span></button>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="" ng-click="searchLabel2 = 'Nom'; searchBox2={}">Nom</a></li>
+                                                    <li><a href="" ng-click="searchLabel2 = 'Prenom'; searchBox2={}">Prenom</a></li>
+                                                </ul>
+                                            </div><!-- /btn-group -->
+                                        </div><!-- /input-group -->
+                                    </div><!-- /.col-lg-6 -->
+                                </div><!-- /.row -->
+
+
+                                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example5">
+                                    <thead>
+                                    <tr class="">
+                                        <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                            <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                            </a>
+                                        </th>
+                                        <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                            <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                            <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                            </a>
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="infos" ng-repeat="eleve2 in ElevesList | filter:searchBox2 | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                        <td>{{eleve2.Nom}}</td>
+                                        <td>{{eleve2.Prenom}}</td>
+                                        <td><input type="checkbox" ng-click="ElevesAAjouter.push(eleve2)"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default btn-primary" ng-click="eleve.ajouter(ElevesAAjouter)" data-dismiss="modal">Ajouter des élèves pour {{eleve.nom}}&nbsp;{{eleve.Prenom}}</button>
+                        </div>
+                    </div>
+
+                </div>
         <!-- /.row -->
+
+
+                <div id="modalEleves" class="modal fade" role="dialog">
+                    <div class="modal-dialog centered">
+
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Choisir les élèves pour l'évaluation</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Élèves
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
+                                        <div class="input-group">
+                                            <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox2.Nom">
+                                            <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox2.Nom">
+                                            <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox2.Prenom">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom' }}  <span class="caret"></span></button>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="" ng-click="searchLabel = 'Nom'; searchBox2={}">Nom</a></li>
+                                                    <li><a href="" ng-click="searchLabel = 'Prenom'; searchBox2={}">Prenom</a></li>
+                                                </ul>
+                                            </div><!-- /btn-group -->
+                                        </div><!-- /input-group -->
+                                    </div>
+
+                                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                        <tr class="">
+                                            <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                                    <span class="glyphicon glyphicon-triangle-top"></span>
+                                                </a>
+                                            </th>
+                                            <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                                    <span class="glyphicon glyphicon-triangle-top"></span>
+                                                </a>
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="infos" ng-repeat="eleve in ElevesList | filter:searchBox2 | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                            <td>{{eleve.Nom}}</td>
+                                            <td>{{eleve.Prenom}}</td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default btn-primary" data-dismiss="modal">Choisir les élèves </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modalGroupes" class="modal fade" role="dialog">
+                    <div class="modal-dialog centered">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Choisir les groupes pour l'évaluation</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    Groupes
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
+                                        <div class="input-group">
+                                            <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                            <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.eleves.Nom">
+                                            <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.eleves.Prenom">
+                                            <input ng-if="searchLabel === 'Groupe'" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom' }}  <span class="caret"></span></button>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="" ng-click="searchLabel = 'Nom'; searchBox={}">Nom d'élève</a></li>
+                                                    <li><a href="" ng-click="searchLabel = 'Prenom'; searchBox={}">Prénom d'élève</a></li>
+                                                    <li><a href="" ng-click="searchLabel = 'Groupe'; searchBox={}">Groupe</a></li>
+                                                </ul>
+                                            </div><!-- /btn-group -->
+                                        </div><!-- /input-group -->
+                                    </div><!-- /.col-lg-6 -->
+
+                                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example2">
+                                        <thead>
+                                        <tr class="">
+                                            <th>Groupe <a ng-show="!groupeup" href="" ng-click="myOrderBy='Groupe'; groupeup=true">
+                                                <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                                <a ng-show="groupeup" href="" ng-click="myOrderBy='-Groupe'; groupeup=false">
+                                                   <span class="glyphicon glyphicon-triangle-top"></span>
+                                               </a>
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="infos" ng-repeat-start="groupe in GroupesList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                                <td>
+                                                    <button ng-if="groupe.expanded" ng-click="groupe.expanded = false" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-up"></i></button>
+                                                    <button ng-if="!groupe.expanded" ng-click="groupe.expanded = true" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-down"></i></button>
+                                                    &nbsp;{{groupe.nom}}
+                                                </td>
+                                                <td><input type="checkbox"></td>
+
+                                            </tr>
+
+                                            <tr ng-if="groupe.expanded" ng-repeat-end="">
+                                                <td colspan="99">
+                                                    Élèves:
+                                                    <br>
+                                                    <div ng-repeat="eleve in groupe.eleves">
+                                                        {{eleve.Nom}}&nbsp;{{eleve.Prenom}}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        <!-- /.panel-body -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default btn-primary" data-dismiss="modal">Choisir les groupes </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
-
 
 
         <div id="menu02" class="tab-pane fade">
@@ -139,7 +562,7 @@
                     <div class="panel-body">
                         <div ng-repeat="section in sectionList | orderBy : 'ordre'">
 
-                            <div class="panel {{panelColor[($id)%4]}}">
+
                                 <div class="panel-heading">
                                     {{section.ordre+"- "+section.titre}}
                                     <a class="btn btn-danger btn-circle-micro pull-right" data-toggle="modal" data-target="#modalDeleteSection"><i class="fa fa-times"></i>
@@ -205,6 +628,7 @@
                                     </div>
                                     <br><br>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#{{section.id}}">Ajouter un critère d'évaluation</button>
+                                    </div>
 
 
 
@@ -270,19 +694,19 @@
                         </div>
                         <button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal">Ajouter une section</button>
                         <!-- /.panel-body -->
+
+                    <button type="submit" class="btn btn-primary pull-right" ng-click="create_eval()">Créer l'évaluation</button>
                     </div>
 
                 </div>
-                <button type="submit" class="btn btn-primary pull-right" ng-click="create_eval()">Créer l'évaluation</button>
-
                 <!-- Modal content-->
                 <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog centered">
 
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title" ng-show="newSection.titre==null">Ajouter une section</h4>
-                            <h4 class="modal-title" ng-hide="newSection.titre==''">{{newSection.titre}}</h4>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" ng-show="newSection.titre==null">Ajouter une section</h4>
+                        <h4 class="modal-title" ng-hide="newSection.titre==''">{{newSection.titre}}</h4>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
@@ -372,8 +796,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
         <div id="menu03" class="tab-pane fade">
@@ -412,13 +834,74 @@
                             Superviser l'attribution des copies
                         </div>
                         <div class="panel-body">
-                            <button class="btn btn-primary center-block" data-toggle="modal" data-target="#modalSuperviser">Choisir l'attribution des copies</button>
+                            <button class="btn btn-primary center-block" data-toggle="modal" data-target="#modalSuperviserEleves">Choisir l'attribution des copies</button>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-primary pull-right" placeholder="Créer l'évaluation" />
                 </div>
             </div>
 
+            <div id="modalSuperviserEleves" class="modal fade" role="dialog">
+                <div class="modal-dialog centered">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Attribuer les évaluations aux élèves</h4>
+                    <div class="modal-body">
+                            <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
+                                <div class="input-group">
+                                    <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+
+                                    <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                    <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Prenom">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Nom' }}  <span class="caret"></span></button>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="" ng-click="searchLabel = 'Nom'; searchBox={}">Nom</a></li>
+                                            <li><a href="" ng-click="searchLabel = 'Prenom'; searchBox={}">Prenom</a></li>
+                                        </ul>
+                                    </div><!-- /btn-group -->
+                                </div><!-- /input-group -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+
+
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example3">
+                            <thead>
+                            <tr class="">
+                                <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                                    <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                    <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                        <span class="glyphicon glyphicon-triangle-top"></span>
+                                    </a>
+                                </th>
+                                <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                                    <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                    <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                        <span class="glyphicon glyphicon-triangle-top"></span>
+                                    </a>
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="infos" ng-repeat="eleve in ElevesList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                                <td>{{eleve.Nom}}</td>
+                                <td>{{eleve.Prenom}}</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" data-dismiss="modal" ng-click="addSection()">Ajouter</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
 </div>

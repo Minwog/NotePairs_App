@@ -6,7 +6,8 @@ angular.module('NotePairApp')
         $scope.choixExtension=false;
         $scope.critere=0;
         $scope.extensions=[".pdf", ".docx", ".java"];
-        //$scope.evaluation.sections=localStorageService.get("sections");
+        $scope.correction_groupe=false;
+
 
         $('input[type="checkbox"]').on('change', function() {
             $('input[name="' + this.name + '"]').not(this).prop('checked', false);
@@ -30,80 +31,163 @@ angular.module('NotePairApp')
             ]
         }
 
-        /*
-        $scope.evaluation.sections = [
-        {
-            "id":1,
-            "ordre":1,
-            "nom":"Ma première section",
-            "points":"5",
-            "typeRendu":"fichier pdf",
-            "extension":null,
-            "criteres":[
-            {
-                "ordre":1,
-                "type":"commentaire",
-                "description":"Commentez",
-            },
-            {
-                "ordre":2,
-                "type":"jugement",
-                "description":"Jugez",
-                "points":2,
-                "precision":0.2
-            }
-        ]
-        },
-        {
-            "id":2,
-            "ordre":2,
-            "nom":"Ma deuxième section",
-            "points":"5",
-            "typeRendu":"lien",
-            "extension":null,
-            "criteres":[
-            {
-                "ordre":1,
-                "type":"commentaire",
-                "description":"Commentez",
-            },
-            {
-                "ordre":2,
-                "type":"jugement",
-                "description":"Jugez",
-                "points":2,
-                "precision":0.2
-            }
-        ]
-        },
-        {
-            "id":3,
-            "ordre":3,
-            "nom":"Ma troisième section",
-            "points":"5",
-            "typeRendu":"fichier matlab",
-            "extension":null,
-            "criteres":[
-            {
-                "ordre":1,
-                "type":"commentaire",
-                "description":"Commentez",
-            },
-            {
-                "ordre":2,
-                "type":"jugement",
-                "description":"Jugez",
-                "points":2,
-                "precision":0.2
-            }
-        ]
-        }
-        ]
-*/
+        $scope.evaluationsEnCours=
+            [
+                {
+                    "nom":"eval1",
+                    "id":1,
+                    "date_rendu":"25/12/2016",
+                    "date_fin_correction":"26/12/2016",
+                    "note":0,
+                    "user_id":3,
+                    "fichier":"../resources/cvAurorev3.pdf",
+                    "cours":
+                    {
+                        "nom":"Introduction à Bootstrap",
+                        "image":"../resources/images/robert.jpg"
+                    },
+                    "copies": [
+                        {
+                            id: "1"
+                        },
+                        {
+                            id: "2"
+                        },
+                        {
+                            id: "3"
+                        },
+                    ]
+                },
+                {
+                    "nom":"eval2",
+                    "id": 2,
+                    "date_rendu": "25/12/2016",
+                    "date_fin_correction": "27/12/2016",
+                    "note": 0,
+                    "user_id": 2,
+                    "fichier": "../resources/cvAurorev3.pdf",
+                    "cours": {
+                        "nom": "Introduction à Bootstrap 2",
+                        "image": "../resources/images/robert.jpg"
+                    },
+                    "copies": {
+                        "id": 1
+                    }
+                }
+            ];
 
         LocalEvaluationsService.query().then(function (data) {
             $scope.sectionList=data;
         });
+
+        $scope.ElevesList=[
+            {
+                "Nom":"Palmier",
+                "Prenom":"Marie",
+                "ElevesACorriger":[
+                    {
+                        "Nom":"Toupi",
+                        "Prenom":"Julien"
+                    }
+                ]
+            },
+            {
+                "Nom":"Toupi",
+                "Prenom":"Julien",
+                "ElevesACorriger":[
+                    {
+                        "Nom":"Palmier",
+                        "Prenom":"Marie"
+                    }
+                ]
+            },
+            {
+                "Nom":"Nectar",
+                "Prenom":"Amandine",
+                "ElevesACorriger":[
+                    {
+                        "Nom":"Toupi",
+                        "Prenom":"Julien"
+                    }
+                ]
+            },
+            {
+                "Nom":"Ramou",
+                "Prenom":"Gauthier",
+                "ElevesACorriger":[
+                    {
+                        "Nom":"Nectar",
+                        "Prenom":"Amandine",
+                    }
+                ]
+            }
+
+        ]
+
+        $scope.GroupesList=[
+            {
+                "nom": "Groupe n°1",
+                "eleves": [
+                    {
+                        "Nom": "Palmier",
+                        "Prenom": "Marie"
+                    },
+                    {
+                        "Nom": "Toupi",
+                        "Prenom": "Julien"
+                    }
+                ],
+                "GroupesACorriger":[
+                    {
+                        "nom": "Groupe n°2",
+                        "eleves": [
+                            {
+                                "Nom": "Palmier",
+                                "Prenom": "Marie"
+                            },
+                            {
+                                "Nom": "Toupi",
+                                "Prenom": "Julien"
+                            },
+                            {
+                                "Nom":"Nectar",
+                                "Prenom":"Amandine"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "nom": "Groupe n°2",
+                "eleves": [
+                    {
+                        "Nom": "Palmier",
+                        "Prenom": "Marie"
+                    },
+                    {
+                        "Nom": "Toupi",
+                        "Prenom": "Julien"
+                    },
+                    {
+                        "Nom":"Nectar",
+                        "Prenom":"Amandine"
+                    }
+                ]
+            },
+            {
+                "nom": "Groupe n°3",
+                "eleves": [
+                    {
+                        "Nom":"Nectar",
+                        "Prenom":"Amandine"
+                    },
+                    {
+                        "Nom":"Ramou",
+                        "Prenom":"Gauthier"
+                    }
+                ]
+            }
+        ]
 
         $scope.newSection={
             'id':'',
@@ -140,6 +224,7 @@ angular.module('NotePairApp')
         $scope.newCritere = {
             "id":12
         }
+
         $scope.addCritere=function (sec) {
             for(var i = 0; i < $scope.sectionList.length; i++){
                 if($scope.sectionList[i].id == sec.id){
@@ -151,7 +236,6 @@ angular.module('NotePairApp')
                     break;
                 }
             }
-
         }
 
         $scope.sectionUp=function(pos, data){
@@ -175,4 +259,7 @@ angular.module('NotePairApp')
                 }
             }
         }
+
+
+
     }]);
