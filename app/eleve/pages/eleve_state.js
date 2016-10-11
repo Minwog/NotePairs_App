@@ -46,7 +46,18 @@ angular.module('NotePairApp')
                     views:{
                         'content':{
                             templateUrl:'app/eleve/pages/cours/cours.html',
-                            controller:'CoursController'
+                            controller:'CoursEleveController'
+                        }
+                    }
+                })
+
+                .state('eleve.coursDetaille',{
+                    parent:'eleve',
+                    url:'/coursDetaille/:id',
+                    views:{
+                        'content':{
+                            templateUrl:'app/eleve/pages/cours/coursDetaille.html',
+                            controller:'CoursDetailleEleveController'
                         }
                     }
                 })

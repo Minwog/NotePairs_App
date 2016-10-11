@@ -1,20 +1,31 @@
-angular.module('NotePairApp')
+(function() {
+    angular.module('NotePairApp')
 
-    .controller('AddEnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService','LocalEnseignantService', function ($scope,$state,$stateParams, alerteService, EnseignantsService,LocalEnseignantService) {
+        .controller('AddEnseignantsController', ['$scope', '$state', '$stateParams', 'alerteService', 'UserService', function ($scope, $state, $stateParams, alerteService, UserService) {
 
-        $scope.newEnseignant = {
-            enseignant_id: Math.floor((Math.random() * 100000)),
-            Nom: '',
-            Prenom: '',
-            email: '',
-            username: '',
-            cours:[]
-        };
+            $scope.newEnseignant = {
+                Nom: '',
+                Prenom: '',
+                email: '',
+                username: '',
+                cours:[],
+                role_id: 3
+            };
 
 //--- Methode add pour ajouter un Enseignant à la liste ---//
-        $scope.addEnseignant = function () {
+            $scope.addEnseignant = function () {
 
-            LocalEnseignantService.save($scope.newEnseignant);
-            $state.go('admin.enseignants')
-        };
-    }]);
+                UserService.save($scope.newEnseignant);
+                $state.go('admin.enseignants',{reload:true})
+            };
+
+
+
+            $(document).ready(function(){
+                $('.selectpicker').selectpicker();
+
+            });
+
+
+        }]);
+})();

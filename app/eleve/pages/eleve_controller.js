@@ -1,93 +1,17 @@
 angular.module('NotePairApp')
-    .controller('EleveController',['$scope','$state','$stateParams', 'httpq', 'textAngularManager', function ($scope,$state,$stateParams,httpq,textAngularManager) {
+    .controller('EleveController',['$scope','$state','$stateParams', 'httpq', 'textAngularManager','ElevesService', function ($scope,$state,$stateParams,httpq,textAngularManager,ElevesService) {
 
         $scope.version = textAngularManager.getVersion();
         $scope.versionNumber = $scope.version.substring(1);
         $scope.disabled = false;
         $scope.tab=0;
 
-        $scope.eleveCo =
-        {
-            "role_id":"eleve",
-            "user_id": "57dfeaf1ab1de26fd76523ba",
-            "prenom": "Cross",
-            "nom": "Cazier",
-            "email": "cross@test.com",
-            "cours": [
-                "Physique quantique",
-                "Representation analytique des signaux et systemes",
-                "Composants à semiconducteurs"
-            ],
-            "avatar":"../resources/images/avatar.jpg",
-            "devoirsARendre": [
-                {
-                    "id":1,
-                    "date_rendu":"25/12/2016",
-                    "user_id":1,
-                    "cours":
-                        {
-                            "nom":"Physique quantique esxdrcgvbhgv fcdxesrd tcfygubhi",
-                            "image":"../resources/images/robert.jpg"
-                        }
-                },
-                {
-                    "id":2,
-                    "date_rendu":"26/12/2016",
-                    "note":0,
-                    "user_id":1,
-                    "cours":
-                        {
-                            "nom":"Introduction à Bootstrap",
-                            "image":"../resources/images/robert.jpg"
-                        }
-                }
-            ],
-            "evalsAFaire":[
-                {
-                    "id":1,
-                    "date_rendu":"25/12/2016",
-                    "date_fin_correction":"26/12/2016",
-                    "note":0,
-                    "user_id":3,
-                    "fichier":"../resources/cvAurorev3.pdf",
-                    "cours":
-                    {
-                        "nom":"Introduction à Bootstrap",
-                        "image":"../resources/images/robert.jpg"
-                    },
-                    "copies": [
-                        {
-                            id: "1"
-                        },
-                        {
-                            id: "2"
-                        },
-                        {
-                            id: "3"
-                        },
-                    ]
-                },
-                {
-                    "id":2,
-                    "date_rendu":"25/12/2016",
-                    "date_fin_correction":"27/12/2016",
-                    "note":0,
-                    "user_id":2,
-                    "fichier":"../resources/cvAurorev3.pdf",
-                    "cours":
-                    {
-                        "nom":"Introduction à Bootstrap 2",
-                        "image":"../resources/images/robert.jpg"
-                    },
-                    "copies":
-                    {
-                        "id":1
-                    }
-                }
+        $scope.eleveCo = ElevesService.get({id:1});
 
-            ]
-        }
-
+        ElevesService.getCours(1).then(function(data){
+            $scope.MesCours=data;
+        });
+/*
         $scope.copie=
         {
             "id":1,
@@ -146,7 +70,7 @@ angular.module('NotePairApp')
                         {
                             "position":1,
                             "type":"condition",
-                            "description":"Turbulentos salus dilato in cibo eum eum acueret praedicto et. Lorem ipsum.",
+                            "description":"Commentez",
                             "points":2,
                             "ordre":1,
                             "id":1
@@ -154,7 +78,7 @@ angular.module('NotePairApp')
                         {
                             "position":2,
                             "type":"jugement",
-                            "description":"Turbulentos salus dilato in cibo eum eum acueret praedicto et.",
+                            "description":"Jugez",
                             "points":2,
                             "precision":0.2,
                             "ordre":2,
@@ -166,7 +90,7 @@ angular.module('NotePairApp')
                 {
                     "id":3,
                     "titre":"Ma troisième section",
-                    "description":"Numquam si bene ideo paeniteat exoptatus tamquam tamquam bona mentiri multa sic observantem nunc observantem.",
+                    "description":"Ceci est ma troisième section",
                     "enonce":"contenu",
                     "ordre":"3",
                     "points":"5",
@@ -184,7 +108,7 @@ angular.module('NotePairApp')
                         {
                             "position":2,
                             "type":"jugement",
-                            "description":"Igitur pro praevenirent flexuosas arbitrabantur verticosi fluvii cum adposita transgressi summitates ut cum alti motus.",
+                            "description":"Jugez",
                             "points":2,
                             "precision":0.2,
                             "ordre":2,
@@ -195,7 +119,7 @@ angular.module('NotePairApp')
                 },
             ]
         }
-
+*/
         $scope.setTab=function(i){
             $scope.tab=i;
         }
@@ -203,6 +127,8 @@ angular.module('NotePairApp')
         $scope.isTab=function(i){
             return ($scope.tab==i);
         }
+
+        $scope.panelColor = ["panel-warning", "panel-info", "panel-success", "panel-danger" ]
 
         $scope.slider = {
             value:0,
@@ -213,6 +139,5 @@ angular.module('NotePairApp')
                 precision: 2
             }
         };
-
 
     }])
