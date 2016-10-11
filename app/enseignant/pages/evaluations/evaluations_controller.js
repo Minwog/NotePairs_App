@@ -202,6 +202,24 @@ angular.module('NotePairApp')
             'evaluation_id':''
         };
 
+        $scope.newEval={
+            'id':'',
+            'enseignant_id':'',
+            'cours_id':'',
+            'mode_calcul':'',
+            'nom':'',
+            'date_rendu':'',
+            'date_fin_correction':'',
+            'nombreEval':'',
+            'isCalibration':'',
+            'isCalculBiais':'',
+            'autoevaluation':'',
+            'mode_eval':'',
+            'mode_attribution':'',
+            'travail_individuel':'',
+            'correction_individuelle':'',
+        };
+
 //--- Methode add pour ajouter un Eleve à la liste ---//
         $scope.addSection = function () {
             $scope.newSection.ordre = $scope.sectionList.length+1;
@@ -262,6 +280,10 @@ angular.module('NotePairApp')
             }
         }
 
+        $scope.createEval=function(){
+            EvaluationsService.save($scope.newEval);
+            $state.go('enseignant.evaluations', {reload:true})
+        }
 
 
     }]);

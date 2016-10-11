@@ -57,23 +57,22 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
-                            <input type="checkbox" name="groupe" ng-click="mode_groupe=1">&nbsp;Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
-                            <input type="checkbox" name="groupe" ng-click="mode_groupe=2">&nbsp;Travail de groupe&nbsp&nbsp&nbsp&nbsp</input>
-                            <span ng-if="mode_groupe==2" >
-                                <input type="checkbox" ng-click="correction_groupe=true">&nbsp;Correction en groupe</input>
+                            <input type="checkbox" name="groupe" ng-click="newEval.travail_individuel=true">&nbsp;Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
+                            <input type="checkbox" name="groupe" ng-click="newEval.travail_individuel=false">&nbsp;Travail de groupe&nbsp&nbsp&nbsp&nbsp</input>
+                            <span ng-if="newEval.travail_individuel==false" >
+                                <input type="checkbox" ng-click="newEval.correction_individuelle=false">&nbsp;Correction en groupe</input>
                             </span>
                             <p>
                                 <p>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalEleves" ng-if="mode_groupe==1">Choisir une liste d'élèves</button>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalGroupes" ng-if="mode_groupe==2">Choisir une liste de groupes</button>
-
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalEleves" ng-if="newEval.travail_individuel==true">Choisir une liste d'élèves</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalGroupes" ng-if="newEval.travail_individuel==false">Choisir une liste de groupes</button>
                                 </p>
                             </p>
                             Date limite de rendu du devoir:
-                            <input type="date" name="renduDate" />
+                            <input type="date" ng-model="newEval.date_rendu" />
                             <br> <br>
                             Date limite de rendu d'évaluation:
-                            <input type="date" name="evaluationDate" />
+                            <input type="date" name="newEval.date_fin_correction" />
 
                             <br><br>
 
@@ -87,8 +86,8 @@
                             </script>
 
                             Type de rendu:
-                            <input type="checkbox" name="rendu">&nbsp;A la volée <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="A la volée" data-content="L'élève peut corriger les copies des autres après avoir rendu la sienne."></span> &nbsp&nbsp </input>
-                            <input type="checkbox" name="rendu">&nbsp;Par étape <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Par étape" data-content="L'élève peut corriger les copies des autres uniquement après la date limite de rendu des copies."></span></input>
+                            <input type="checkbox" name="rendu" ng-click="newEval.mode_eval='VOLEE'">&nbsp;A la volée <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="A la volée" data-content="L'élève peut corriger les copies des autres après avoir rendu la sienne."></span> &nbsp&nbsp </input>
+                            <input type="checkbox" name="rendu"ng-click="newEval.mode_eval='ETAPE'">&nbsp;Par étape <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Par étape" data-content="L'élève peut corriger les copies des autres uniquement après la date limite de rendu des copies."></span></input>
                         </div>
                     </div>
                     <!-- /.panel-body -->
@@ -102,8 +101,8 @@
                         <div class="panel-body">
 
                             <p>
-                                <button class="btn" data-toggle="modal" ng-if="!correction_groupe" data-target="#modalAttributionIndividuelle"> Voir l'attribution des copies </button>
-                                <button class="btn" data-toggle="modal" ng-if="correction_groupe" data-target="#modalAttributionGroupe"> Voir l'attribution des copies groupe</button>
+                                <button class="btn" data-toggle="modal" ng-if="newEval.correction_individuelle==true" data-target="#modalAttributionIndividuelle"> Voir l'attribution des copies </button>
+                                <button class="btn" data-toggle="modal" ng-if="newEval.correction_individuelle==false" data-target="#modalAttributionGroupe"> Voir l'attribution des copies groupe</button>
                             </p>
 
                             <div class="btn-group">
@@ -119,16 +118,17 @@
                             </div>
                             <br> <br>
                             Auto-évaluation:
-                            <input type="checkbox" name="auto">&nbsp;Non&nbsp;</input>
-                            <input type="checkbox" name="auto">&nbsp;Facultative&nbsp;</input>
-                            <input type="checkbox" name="auto">&nbsp;Obligatoire&nbsp;</input>
+                            <input type="checkbox" name="auto" ng-click="newEval.autoevaluation=='NO'">&nbsp;Non&nbsp;</input>
+                            <input type="checkbox" name="auto" ng-click="newEval.autoevaluation=='CHOICE'">&nbsp;Facultative&nbsp;</input>
+                            <input type="checkbox" name="auto" ng-click="newEval.autoevaluation=='YES'">&nbsp;Obligatoire&nbsp;</input>
                             <br><br>
-                            <input type="checkbox" name="anonymatEleve">&nbsp;Anonymat de l'élève évalué&nbsp</input>
-                            <input type="checkbox" name="anonymatEvaluateur">&nbsp;Anonymat de l'élève évaluateur</input>
+                            <input type="checkbox" ng-click="newEval.anonymat==true">&nbsp;Anonymat de l'élève évalué&nbsp</input>
+                            <input type="checkbox" ng-click=""newEval.>&nbsp;Anonymat de l'élève évaluateur</input>
 
                         </div>
                     </div><!-- /.panel-body -->
-                    <input type="submit" class="btn btn-primary pull-right" ui-sref=".etape2" />
+                    <button id="menu2Button" type="submit" class="btn btn-primary pull-right" data-toggle="tab" data-target="#menu02">Etape suivante</button>
+                </div>
                     <br>
                 </div>
 
@@ -545,7 +545,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
 
         <div id="menu02" class="tab-pane fade">
@@ -695,7 +694,7 @@
                         <button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal">Ajouter une section</button>
                         <!-- /.panel-body -->
 
-                    <button type="submit" class="btn btn-primary pull-right" ng-click="create_eval()">Créer l'évaluation</button>
+                    <button type="submit" class="btn btn-primary pull-right" data-toggle="tab" data-target="#menu03">Etape suivante</button>
                     </div>
 
                 </div>
@@ -837,7 +836,8 @@
                             <button class="btn btn-primary center-block" data-toggle="modal" data-target="#modalSuperviserEleves">Choisir l'attribution des copies</button>
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-primary pull-right" placeholder="Créer l'évaluation" />
+                    <button type="submit" class="btn btn-primary pull-right" ng-click="createEval()">Créer l'évaluation</button>
+                </div>
                 </div>
             </div>
 

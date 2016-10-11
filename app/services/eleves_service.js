@@ -30,7 +30,6 @@ angular.module('NotePairApp')
                 );
                 return deferred.promise;
 
-
             };
 
             function getCours(id){

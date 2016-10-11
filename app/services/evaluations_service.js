@@ -1,6 +1,6 @@
 angular.module('NotePairApp')
     .factory('EvaluationsService', ['$resource',function($resource) {
-        return $resource('/resources/json/sections2.json',{},{
+        return $resource('/http://localhost:8000/api/evaluations/:id',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
@@ -13,6 +13,134 @@ angular.module('NotePairApp')
             },
             'update': {method: 'PUT'}
         });
+
+        function getSections(id) {
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/evaluations/'+id+'/sections').success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function getCriteres(id) {
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/sections/'+id+'/criteres').success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function createSection(id, section){
+            var deferred=$q.defer();
+            $http.post('http://localhost:8000/api/evaluations/'+id+'/sections', section).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function createCritere(id, critere){
+            var deferred=$q.defer();
+            $http.post('http://localhost:8000/api/sections/'+id+'/add_critere', critere).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function updateSection(id){
+            var deferred=$q.defer();
+            $http.put('http://localhost:8000/api/sections/'+id, section).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function updateCritere(id){
+            var deferred=$q.defer();
+            $http.put('http://localhost:8000/api/criteres/'+id, critere).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function deleteSection(id){
+            var deferred=$q.defer();
+            $http.delete('http://localhost:8000/api/sections/'+id).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function deleteCritere(id){
+            var deferred=$q.defer();
+            $http.delete('http://localhost:8000/api/criteres/'+id).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function updateOrdreSection(id, ordre){
+            var deferred=$q.defer();
+            $http.delete('http://localhost:8000/api/sections/'+id+'/update_ordre'+ordre).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function updateOrdreCritere(id, ordre){
+            var deferred=$q.defer();
+            $http.delete('http://localhost:8000/api/criteres/'+id+'/update_ordre'+ordre).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        return {
+            'query': resource.query,
+            'save': resource.save,
+            'update': resource.update,
+            'get': resource.get,
+            'delete': resource.delete,
+            'getSections':getSections,
+            'getCriteres':getCriteres,
+            'createSection':createSection,
+            'createCritere':createCritere,
+            'updateSection':updateSection,
+            'updateCritere':updateCritere,
+            'deleteSection':deleteSection,
+            'deleteCritere':deleteCritere,
+            'updateOrdreSection':updateOrdreSection,
+            'updateOrdreCritere':updateOrdreCritere
+        };
     }])
 
     .service('alerteService',['$window',function ($window) {
@@ -78,7 +206,6 @@ angular.module('NotePairApp')
                     )
             } else {
                 deferred.resolve(_Evaluationsvalue)
-                console.log('fzezfze')
             }
             return deferred.promise
         }
