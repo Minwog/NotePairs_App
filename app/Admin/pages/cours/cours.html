@@ -19,11 +19,10 @@
 
                         <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
                             <div class="input-group">
-                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.intitule">
+                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
 
-                                <input ng-if="searchLabel === 'intitule'" type="text" class="form-control" aria-label="..." ng-model="searchBox.intitule">
-                                <input ng-if="searchLabel === 'section'" type="text" class="form-control" aria-label="..." ng-model="searchBox.section">
-                                <input ng-if="searchLabel === 'reference'" type="text" class="form-control" aria-label="..." ng-model="searchBox.reference">
+                                <input ng-if="searchLabel === 'nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
+                                <input ng-if="searchLabel === 'categorie'" type="text" class="form-control" aria-label="..." ng-model="searchBox.categorie.nom">
                                 <input ng-if="searchLabel === 'description'" type="text" class="form-control" aria-label="..." ng-model="searchBox.description">
 
                                 <input ng-if="searchLabel === 'enseignants'" type="text" class="form-control" aria-label="..." ng-model="searchBox.enseignants">
@@ -33,9 +32,8 @@
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                             aria-haspopup="true" aria-expanded="false">{{searchLabel || 'Intitulé' }}  <span class="caret"></span></button>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="" ng-click="searchLabel = 'intitule'; searchBox={}">Intitulé</a></li>
-                                        <li><a href="" ng-click="searchLabel = 'section'; searchBox={}">Section</a></li>
-                                        <li><a href="" ng-click="searchLabel = 'reference'; searchBox={}">Référence</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'nom'; searchBox={}">Intitulé</a></li>
+                                        <li><a href="" ng-click="searchLabel = 'categorie'; searchBox={}">Catégorie</a></li>
                                         <li><a href="" ng-click="searchLabel = 'description'; searchBox={}">Description</a></li>
                                         <li><a href="" ng-click="searchLabel = 'enseignants'; searchBox={}">Enseignants</a></li>
                                     </ul>
@@ -49,24 +47,18 @@
                         <thead>
                         <tr class="">
                             <th></th>
-                            <th>Intitulé <a ng-show="!intituleup" href="" ng-click="myOrderBy='intitule'; intituleup=true">
+                            <th>Intitulé <a ng-show="!nomup" href="" ng-click="myOrderBy='nom'; nomup=true">
                                 <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                <a ng-show="intituleup" href="" ng-click="myOrderBy='-intitule'; intituleup=false">
+                                <a ng-show="nomup" href="" ng-click="myOrderBy='-nom'; nomup=false">
                                     <span class="glyphicon glyphicon-triangle-top"></span>
                                 </a>
                             </th>
-                            <th class="hidden-sm hidden-xs">Section <a ng-show="!sectionup" href="" ng-click="myOrderBy='section'; sectionup=true">
+                            <th class="hidden-sm hidden-xs">categorie <a ng-show="!categorieup" href="" ng-click="myOrderBy='categorie'; categorieup=true">
                                 <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                <a ng-show="sectionup" href="" ng-click="myOrderBy='-section'; sectionup=false">
+                                <a ng-show="categorieup" href="" ng-click="myOrderBy='-categorie'; categorieup=false">
                                     <span class="glyphicon glyphicon-triangle-top"></span>
                                 </a>
                             </th>
-                            <th class="hidden-sm hidden-xs">Référence
-                                <a ng-show="!referenceup" href="" ng-click="myOrderBy='reference'; referenceup=true">
-                                    <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                <a ng-show="referenceup" href="" ng-click="myOrderBy='-reference'; referenceup=false">
-                                    <span class="glyphicon glyphicon-triangle-top"></span>
-                                </a></th>
                             <th class="hidden-sm hidden-xs">Enseignants </th>
                             <th>Actions</th>
                         </tr>
@@ -81,9 +73,8 @@
 
                             <td>
                                 <button type="button" class="btn btn-success btn-circle-micro" ng-click="goToView()"><i class="fa fa-eye"></i>
-                                </button> {{cours.intitule}}</td>
-                            <td class="hidden-sm hidden-xs">{{cours.section}}</td>
-                            <td class="hidden-sm hidden-xs">{{cours.reference}}</td>
+                                </button> {{cours.nom}}</td>
+                            <td class="hidden-sm hidden-xs">{{cours.categorie.nom}}</td>
                             <td class="hidden-sm hidden-xs">
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -97,9 +88,9 @@
                                 </div>
                             </td>
                             <td>
-                            <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(cours._id)"><i class="fa fa-list"></i>
+                            <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(cours.id)"><i class="fa fa-list"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDelete(cours._id)"><i class="fa fa-times"></i>
+                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDelete(cours.id)"><i class="fa fa-times"></i>
                             </button>
                         </td>
                         </tr>
@@ -107,7 +98,7 @@
                             <td></td>
                             <td colspan="99">
                                 <p class="">description: {{cours.description}}</p>
-                                <p class="hidden-xl hidden-lg hidden-md"><a href="">Section: {{cours.section}}</a></p>
+                                <p class="hidden-xl hidden-lg hidden-md"><a href="">categorie: {{cours.categorie}}</a></p>
                                 <p class="hidden-xl hidden-lg hidden-md"><a href="">Référence: {{cours.reference}}</a></p>
 
                             </td>

@@ -15,7 +15,7 @@ angular.module('NotePairApp')
 
 //--- Methode delete pour supprimer un Eleve à partir de son id ---//
         $scope.deleteEnseignant = function (id) {
-            if (alerteService.showPopup('Voulez-vous vraiment supprimer cet Eleve ?')) {
+            if (alerteService.showPopup('Voulez-vous vraiment supprimer cet Enseignant?')) {
                 UserService.delete({id:id});
                 $scope.EnseignantsList.splice($scope.EnseignantsList.map(function(e) { return e.id}).indexOf('id'),1);
 
@@ -35,10 +35,9 @@ angular.module('NotePairApp')
             $state.go('admin.enseignants.add')
         };
 
-        $scope.goToUpdate=function (_id) {
+        $scope.goToUpdate=function (id) {
 
-            $state.go('admin.enseignants.update',{id:_id});
-            $scope.Enseignant = UserService.query({id:_id})
+            $state.go('admin.enseignants.update',{id:id});
         };
 
         $(document).ready(function(){

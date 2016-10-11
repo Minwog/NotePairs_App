@@ -1,84 +1,89 @@
-angular.module('NotePairApp')
-    .controller('CoursController',['$scope','$state','$stateParams', 'alerteService', 'LocalCoursService',function ($scope,$state,$stateParams, alerteService, LocalCoursService) {
+(function() {
+    angular.module('NotePairApp')
+        .controller('CoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', function ($scope, $state, $stateParams, alerteService, CoursService) {
 
-        LocalCoursService.query().then(function (data) {
-            $scope.CoursList=data;
-        });
+            CoursService.query().$promise.then(function (data) {
+                $scope.CoursList = data;
+            });
 
-        $scope.deleteCours=function (id) {
-            if(alerteService.showPopup('Voulez-vous vraiment supprimer ce groupe ?')){
-                LocalCoursService.delete(id);
+            $scope.deleteCours = function (id) {
+                if (alerteService.showPopup('Voulez-vous vraiment supprimer ce groupe ?')) {
+                    CoursService.delete({id:id});
+                }
+                $state.go('admin.cours')
+            };
+
+            $scope.goToAdd = function () {
+                $state.go('admin.cours.add');
             }
-            $state.go('admin.cours')
-        };
 
-        $scope.goToAdd=function () {
-            $state.go('admin.cours.add');
-        }
-
-        $scope.goToUpdate=function (id) {
-            $state.go('admin.cours.update',{id:id})
-        }
-    }])
+            $scope.goToUpdate = function (id) {
+                $state.go('admin.cours.update', {id: id})
+            }
+        }])
 
 
-    .controller('UpdateCoursController',['$scope','$state','$stateParams', 'alerteService', 'LocalCoursService', 'LocalElevesService', 'LocalGroupeService', 'LocalEnseignantService', function ($scope,$state,$stateParams, alerteService, LocalCoursService, LocalElevesService, LocalGroupeService,LocalEnseignantService) {
+        .controller('UpdateCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', 'LocalGroupeService', 'UserService', function ($scope, $state, $stateParams, alerteService, CoursService, UserService, LocalGroupeService, UserService) {
 
 
-        LocalCoursService.get($stateParams.id).then(function(data){
-            console.log(data);
-            $scope.Cours=data;
-        });
+            CoursService.get($stateParams.id).then(function (data) {
+                console.log(data);
+                $scope.Cours = data;
+            });
 
-        LocalElevesService.query().then(function (data) {
-            $scope.ListEleves=data;
-        });
+            UserService.getByRole(2).then(function (data) {
+                $scope.ListEleves = data;
+            });
 
-        LocalEnseignantService.query().then(function (data) {
-            $scope.ListEnseignant=data
-        });
+            UserService.getByRole(3).then(function (data) {
+                $scope.ListEnseignant = data
+            });
 
-        $scope.updateCours = function () {
+            $scope.updateCours = function () {
 
                 LocalGroupeService.update($scope.Cours);
                 console.log($scope.Cours);
                 $state.go('admin.cours');
-        };
+            };
 
-        $(document).ready(function(){
-            $('.selectpicker').selectpicker();
-        });
-
-
-    }])
-
-    .controller('AddCoursController',['$scope','$state','$stateParams', 'alerteService', 'LocalCoursService','LocalElevesService','LocalEnseignantService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService, LocalElevesService, LocalEnseignantService) {
-
-        LocalElevesService.query().$promise.then(function (data) {
-            $scope.ListEleves=data;
-        });
-
-        LocalEnseignantService.query().$promise.then(function (data) {
-            $scope.ListEnseignant=data;
-        })
+            $(document).ready(function () {
+                $('.selectpicker').selectpicker();
+            });
 
 
-        $scope.newCours = {
-            groupes_id: Math.floor((Math.random() * 100000)),
-            numero:'',
-            cours:[],
-            eleves:[]
-        };
+        }])
+
+        .controller('AddCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', 'UserService', function ($scope, $state, $stateParams, alerteService, LocalGroupeService, UserService, UserService) {
+
+            UserService.getByRole(2).then(function (data) {
+                $scope.ListEleves = data;
+            });
+
+            UserService.getByRole(3).then(function (data) {
+                $scope.ListEnseignant = data;
+            });
+
+
+            $scope.newCours = {
+                numero: '',
+                cours: [],
+                eleves: [],
+                groupes: [],
+                categorie:'',
+                image:''
+            };
 
 //--- Methode add pour ajouter un Groupe à la liste ---//
-        $scope.addCours = function () {
+            $scope.addCours = function () {
 
-            LocalCoursService.save($scope.newCours);
-            $state.go('admin.cours')
-        };
+                CoursService.save($scope.newCours);
+                $state.go('admin.cours')
+            };
 
-        $(document).ready(function(){
-            $('.selectpicker').selectpicker();
-        });
+            $(document).ready(function () {
+                $('.selectpicker').selectpicker();
+            });
 
-    }]);
+        }]);
+
+})();
