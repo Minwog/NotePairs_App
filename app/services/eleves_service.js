@@ -16,7 +16,7 @@ angular.module('NotePairApp')
                     }
                 },
                 'update': {
-                    method: 'POST'
+                    method: 'PUT'
                 }
             });
 
