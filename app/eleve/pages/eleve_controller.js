@@ -204,8 +204,6 @@ angular.module('NotePairApp')
             return ($scope.tab==i);
         }
 
-        $scope.panelColor = ["panel-warning", "panel-info", "panel-success", "panel-danger" ]
-
         $scope.slider = {
             value:0,
             options: {

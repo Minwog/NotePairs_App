@@ -78,7 +78,7 @@
                             </div>
                         </div>
                     </div>-->
-                    <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
+                    <div class="col-lg-12" style="margin-bottom: 10px">
                         <div class="input-group">
                             <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
                             <input ng-if="searchLabel === 'nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
@@ -120,23 +120,65 @@
                                 <button ng-if="!cours.expanded" ng-click="cours.expanded = true" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-down"></i></button>
                             </td>
                             <td>{{cours.nom}}</td>
-                            <td>{{cours.section}}</td>
+                            <td>{{cours.categorie}}</td>
                         </tr>
 
                         <tr ng-if="cours.expanded" ng-repeat-end="">
                             <td colspan="99">
-                                Évaluations:
-                                <br>
-                                <div ng-repeat="eval in cours.eval | orderBy:'dateRendu'" ng-class-odd="'odd'" ng-class-even="'even'">
-                                    {{eleve.Nom}}&nbsp;{{eleve.Prenom}}
-                                </div>
+                                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example6">
+                                    <thead>
+                                            <tr class="">
+                                                <th>
+                                                    Nom
+                                                </th>
+                                                <th>
+                                                    Date de rendu
+                                                </th>
+                                                <th>
+                                                    Date de fin de correction
+                                                </th>
+                                                <th>
+                                                    Moyenne
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="infos" ng-repeat="eval in cours.evaluations | orderBy:'date_rendu'" ng-class-odd="'odd'" ng-class-even="'even'">
+
+                                            <script type="text/javascript">
+                                                $(document).ready(function(){
+                                                    $('[data-toggle="popover"]').popover({
+                                                        placement : 'top',
+                                                        trigger : 'hover'
+                                                    });
+                                                });
+                                            </script>
+
+                                            <td>
+                                                <span data-toggle="popover" title="{{eval.nom}}" data-content="{{eval.description}}">
+                                                    {{eval.nom}}&nbsp;
+                                                </span>
+                                            </td>
+                                            <td>{{eval.date_rendu}}</td>
+                                            <td>{{eval.date_fin_correction}}</td>
+                                            <td>{{eval.note_moyenne}}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary btn-circle-micro" ui-sref="enseignant.voirEvaluation">
+                                                    <i class="fa fa-list"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </td>
                         </tr>
 
                         </tbody>
                     </table>
+                    </div>
                 </div>
-            </div>
             <!-- /.panel -->
         </div>
     </div>

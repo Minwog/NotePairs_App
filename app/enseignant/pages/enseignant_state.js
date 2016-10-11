@@ -38,12 +38,12 @@
                         }
                     })
 
-                    .state('enseignant.voirEvaluation($id)',{
+                    .state('enseignant.voirEvaluation',{
                         parent:'enseignant',
                         url:'/voir_evaluation/:id',
                         views:{
                             'content':{
-                                templateUrl:'app/enseignant/pages/evaluations/voir.html',
+                                templateUrl:'app/enseignant/pages/evaluations/voir_evaluation.html',
                                 controller: 'EvaluationsController'
                             }
                         }

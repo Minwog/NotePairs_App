@@ -39,6 +39,7 @@ angular.module('NotePairApp')
                     "date_rendu":"25/12/2016",
                     "date_fin_correction":"26/12/2016",
                     "note":0,
+                    "description":"Lorem ipsum blablabla",
                     "user_id":3,
                     "fichier":"../resources/cvAurorev3.pdf",
                     "cours":
@@ -61,10 +62,11 @@ angular.module('NotePairApp')
                 {
                     "nom":"eval2",
                     "id": 2,
-                    "date_rendu": "25/12/2016",
-                    "date_fin_correction": "27/12/2016",
+                    "date_rendu": "27/12/2016",
+                    "date_fin_correction": "30/12/2016",
                     "note": 0,
                     "user_id": 2,
+                    "description":"Lorem ipsum blablabla",
                     "fichier": "../resources/cvAurorev3.pdf",
                     "cours": {
                         "nom": "Introduction à Bootstrap 2",
