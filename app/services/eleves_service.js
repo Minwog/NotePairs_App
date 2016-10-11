@@ -1,5 +1,5 @@
 angular.module('NotePairApp')
-        .factory('ElevesService', ['$resource', '$http', '$stateParams','$q', function ($resource, $http, $stateParams,$q) {
+        .factory('UserService', ['$resource', '$http', '$stateParams','$q', function ($resource, $http, $stateParams,$q) {
 
             var resource = $resource('http://localhost:8000/api/users/:id', {}, {
 

@@ -1,6 +1,6 @@
 (function(){
     angular.module('NotePairApp')
-        .controller('ElevesAddController',['$scope','$state','$stateParams', 'alerteService', 'ElevesService','CoursService', function ($scope,$state,$stateParams, alerteService, ElevesService,CoursService) {
+        .controller('ElevesAddController',['$scope','$state','$stateParams', 'alerteService', 'UserService','CoursService', function ($scope,$state,$stateParams, alerteService, UserService, CoursService) {
 
 
             $scope.newEleve={
@@ -14,7 +14,7 @@
 //--- Methode add pour ajouter un Eleve à la liste ---//
             $scope.addEleve = function () {
 
-                ElevesService.save($scope.newEleve);
+                UserService.save($scope.newEleve);
                 $state.go('admin.students', {reload:true})
             };
 
