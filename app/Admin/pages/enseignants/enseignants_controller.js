@@ -1,26 +1,35 @@
 angular.module('NotePairApp')
-    .controller('EnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'EnseignantsService','LocalEnseignantService', function ($scope,$state,$stateParams, alerteService, EnseignantsService,LocalEnseignantService) {
+    .controller('EnseignantsController',['$scope','$state','$stateParams', 'alerteService', 'UserService', function ($scope,$state,$stateParams, alerteService, UserService) {
 
-        LocalEnseignantService.query().then(function (data) {
+        UserService.getByRole(3).then(function(data){
             $scope.EnseignantsList=data;
         });
 
-//--- Methode get pour afficher un Enseignant à partir de son id ---//
-        $scope.getEnseignant=function(){
-            $scope.Enseignant=EnseignantsService.query({id:$stateParams.id});
-        };
-//--- Methode get pour afficher un Enseignant à partir de son id ---//
-        $scope.getAllEnseignants=function () {
-            $scope.EnseignantsList= EnseignantsService.query();
+
+//--- Methode get pour afficher un Eleve à partir de son id ---//
+        $scope.getEnseignant = function (id) {
+            UserService.get(id).then(function (data) {
+                console.log(data)
+            })
         };
 
-//--- Methode delete pour supprimer un Enseignant à partir de son id ---//
-        $scope.deleteEnseignant=function(id) {
-            if(alerteService.showPopup('Voulez-vous vraiment supprimer cet Enseignant ?')){
-                LocalEnseignantService.delete(id);
+//--- Methode delete pour supprimer un Eleve à partir de son id ---//
+        $scope.deleteEnseignant = function (id) {
+            if (alerteService.showPopup('Voulez-vous vraiment supprimer cet Eleve ?')) {
+                UserService.delete({id:id});
+                $scope.EnseignantsList.splice($scope.EnseignantsList.map(function(e) { return e.id}).indexOf('id'),1);
+
+
             }
-            $state.go('admin.enseignants')
         };
+
+        $scope.getCours=function(id) {
+
+            UserService.getCours(id).then(function (data) {
+                console.log(data);
+                return data
+            });
+        }
 
         $scope.goToAdd=function () {
             $state.go('admin.enseignants.add')
@@ -29,7 +38,7 @@ angular.module('NotePairApp')
         $scope.goToUpdate=function (_id) {
 
             $state.go('admin.enseignants.update',{id:_id});
-            $scope.Enseignant = EnseignantsService.query({id:_id})
+            $scope.Enseignant = UserService.query({id:_id})
         };
 
         $(document).ready(function(){
