@@ -203,6 +203,10 @@ angular.module('NotePairApp')
             'sectionList':[]
         };
 
+        $scope.getEval=function(){
+
+        }
+
         $scope.createEval=function(){
             console.log($scope.newEval);
             EvaluationsService.save($scope.newEval)
