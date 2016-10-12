@@ -31,7 +31,7 @@
                                 <button ng-if="groupe.expanded" ng-click="groupe.expanded = false">&Hat;</button>
                                 <button ng-if="!groupe.expanded" ng-click="groupe.expanded = true">+</button>
                             </td>
-                            <td>{{groupe.numero}}</td>
+                            <td>{{groupe.nom}}</td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -57,9 +57,9 @@
                                 </div>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(groupe.groupes_id)"><i class="fa fa-list"></i>
+                                <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(groupe.id)"><i class="fa fa-list"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteGroupe(groupe.groupes_id)"><i class="fa fa-times"></i>
+                                <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteGroupe(groupe.id)"><i class="fa fa-times"></i>
                                 </button>
                             </td>
                         </tr>
@@ -67,7 +67,7 @@
                             <td></td>
                             <td colspan="99">
                                 <ul class="">
-                                    <li class=""><a href="#">groupe_id: {{groupe.groupes_id}}</a></li>
+                                    <li class=""><a href="#">groupe_id: {{groupe.id}}</a></li>
                                     <li class="hidden-xl hidden-lg"><a href="">cours:</a>
                                         <ul>
                                             <li ng-repeat="cours in groupe.cours track by $index">

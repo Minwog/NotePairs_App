@@ -1,7 +1,7 @@
 angular.module('NotePairApp')
-    .controller('GroupesController',['$scope','$state','$stateParams', 'alerteService', 'LocalGroupeService',function ($scope,$state,$stateParams, alerteService, LocalGroupeService) {
+    .controller('GroupesController',['$scope','$state','$stateParams', 'alerteService', 'GroupesService',function ($scope,$state,$stateParams, alerteService, GroupesService) {
 
-        LocalGroupeService.query().then(function (data) {
+        GroupesService.query().$promise.then(function (data) {
             $scope.GroupeList=data;
         });
 
