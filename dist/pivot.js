@@ -439,6 +439,7 @@
                 if (!isNaN(parseFloat(record[attr]))) {
                   //this.sum += parseFloat(record[attr]);
 
+
                   //-------------A MODIFIER--------------
                   //somme coeff_fiabilite_question = 1
                   switch(record.question) {
@@ -1327,6 +1328,10 @@
     Pivot Table UI: calls Pivot Table core above with options set by user
      */
     $.fn.pivotUI = function(input, inputOpts, overwrite, locale) {
+      /*
+      console.log(input);
+      console.log(inputOpts)
+      */
       var a, aggregator, attrLength, axisValues, c, colList, defaults, e, error, existingOpts, fn, i, initialRender, k, l, len1, len2, len3, len4, n, o, opts, pivotTable, q, ref, ref1, ref2, ref3, ref4, refresh, refreshDelayed, renderer, rendererControl, shownAttributes, tblCols, tr1, tr2, uiTable, unusedAttrsVerticalAutoCutoff, unusedAttrsVerticalAutoOverride, x;
       if (overwrite == null) {
         overwrite = false;

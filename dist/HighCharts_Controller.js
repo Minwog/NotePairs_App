@@ -64,6 +64,8 @@ angular.module('NotePairApp')
                 pointstmp[2 * ((2 * pasnote - minnote) / pasnote + Math.round((m + B) / pasnote))] = 0;
                 pointstmp[pointstmp.length - 1] = 0;
 
+
+                /*
                 console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m - B) / pasnote)))
                 console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m - A) / pasnote)))
                 console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m + A) / pasnote)))
@@ -73,6 +75,7 @@ angular.module('NotePairApp')
                 console.log(notestmp)
                 console.log(categoriestmp)
                 console.log(pointstmp)
+                */
 
 
                 $('#container').highcharts({
@@ -105,18 +108,20 @@ angular.module('NotePairApp')
                             borderWidth: 0.3,
                             point: {
                                 events: {
-
                                     drag: function (e) {
                                         // Returning false stops the drag and drops. Example:
+
+
+                                        //console.log(this)
                                         /*
-                                         console.log(e)
-                                         if (e.newY > 13) {
-                                         this.y = 300;
-                                         return false;
-                                         }
-                                         */
+                                        if(e.target.index == 0 || e.target.index == categoriestmp.length-1) {
+                                            return false;
+                                        }
 
-
+                                        if (e.x < 0 || e.x > categoriestmp[categoriestmp-1]) {
+                                            return false;
+                                        }
+                                        */
                                     },
                                     drop: function () {
                                         $('#drop').html(
@@ -150,6 +155,8 @@ angular.module('NotePairApp')
                             data: pointstmp,
                             name: "Jauge de fiabilité",
                             draggableX: true,
+                            dragMinX: 0,
+                            dragMaxX: pointstmp.length-1,
                             dragPrecisionX: 2
                         }]
                 });
