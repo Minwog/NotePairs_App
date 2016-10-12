@@ -1,37 +1,31 @@
 angular.module('NotePairApp')
-    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,LocalEvaluationsService) {
-
+    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', 'UserService', 'EvaluationsService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,LocalEvaluationsService,UserService,EvaluationsService) {
         $scope.mps='dist/mps.json';
         $scope.file=false;
-        $scope.choixExtension=false;
         $scope.critere=0;
-        $scope.extensions=[".pdf", ".docx", ".java"];
-        $scope.correction_groupe=false;
+        $scope.enseignant = {
+            "cours":[
+                "azdazca",
+                "zeafvfds"
+            ],
+            "id":1
+        }
+
+        EvaluationsService.queryTypeRendu()
+            .then(function(data){
+            console.log(data);
+            $scope.extensions=data;
+        });
+
+
+        $scope.coursList=UserService.getCours($scope.enseignant.id);
 
 
         $('input[type="checkbox"]').on('change', function() {
             $('input[name="' + this.name + '"]').not(this).prop('checked', false);
         });
 
-        $('.dropdown').on( 'click', '.dropdown-menu li a', function() {
-            var target = $(this).html();
-
-            //Adds active class to selected item
-            $(this).parents('.dropdown-menu').find('li').removeClass('active');
-            $(this).parent('li').addClass('active');
-
-            //Displays selected text on dropdown-toggle button
-            $(this).parents('.dropdown').find('.dropdown-toggle').html(target + ' <span class="caret"></span>');
-        });
-
-        $scope.enseignant = {
-            "cours":[
-                "azdazca",
-                "zeafvfds"
-            ]
-        }
-
-        $scope.evaluationsEnCours=
+        /*$scope.evaluationsEnCours=
             [
                 {
                     "nom":"eval1",
@@ -77,10 +71,6 @@ angular.module('NotePairApp')
                     }
                 }
             ];
-
-        LocalEvaluationsService.query().then(function (data) {
-            $scope.sectionList=data;
-        });
 
         $scope.ElevesList=[
             {
@@ -189,7 +179,7 @@ angular.module('NotePairApp')
                     }
                 ]
             }
-        ]
+        ]*/
 
         $scope.newSection={
             'id':'',
@@ -203,59 +193,100 @@ angular.module('NotePairApp')
         };
 
         $scope.newEval={
-            'id':'',
-            'enseignant_id':'',
-            'cours_id':'',
-            'mode_calcul':'',
-            'nom':'',
+            'enseignant_id':1,
+            'cours_id':1,
+            'mode_calcul':1,
+            'nom':'aa',
             'date_rendu':'',
             'date_fin_correction':'',
             'nombreEval':'',
-            'isCalibration':'',
-            'isCalculBiais':'',
-            'autoevaluation':'',
-            'mode_eval':'',
-            'mode_attribution':'',
-            'travail_individuel':'',
-            'correction_individuelle':'',
+            'sectionList':[]
         };
 
-//--- Methode add pour ajouter un Eleve à la liste ---//
-        $scope.addSection = function () {
-            $scope.newSection.ordre = $scope.sectionList.length+1;
-            console.log($scope.sectionList[1])
-            LocalEvaluationsService.save($scope.newSection);
-        };
-
-        $scope.panelColor = ["panel-warning", "panel-info", "panel-success", "panel-danger" ]
-
-        $scope.setFile=function(i){
-            $scope.file=i;
+        $scope.createEval=function(){
+            console.log($scope.newEval);
+            EvaluationsService.save($scope.newEval)
+                .$promise.then(function(data) {
+                $scope.newEval=data;
+                console.log(data);
+                $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
+            });
         }
 
-        $scope.choisirExtension=function(i){
-            $scope.choixExtension=i;
+        $scope.getSections=function(id){
+            EvaluationsService.getSections(id)
+                .then(function (data) {
+                    $scope.newEval.sectionList=data;
+                    console.log($scope.newEval.sectionList);
+                });
         }
 
-        $scope.setCritereType=function(i){
-            $scope.critere=i;
-        }
-
-        $scope.newCritere = {
-            "id":12
-        }
-
-        $scope.addCritere=function (sec) {
-            for(var i = 0; i < $scope.sectionList.length; i++){
-                if($scope.sectionList[i].id == sec.id){
-                    $scope.newCritere.ordre = $scope.sectionList[i].criteres.length+1;
-                    $scope.sectionList[i].criteres.push($scope.newCritere)
-                    //$scope.sectionList[i].criteres.push($scope.newCritere);
-                    //LocalEvaluationsService.save($scope.sectionList);
-                    console.log($scope.sectionList[i])
-                    break;
-                }
+        $scope.addSection = function (section) {
+            $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
+            if($scope.newEval.sectionList!=null){
+                section.ordre=$scope.newEval.sectionList.length+1;
+            } else {
+                section.ordre=1;
             }
+            EvaluationsService.createSection($scope.newEval.id, section)
+                .then(function(data) {
+                    newEval.sectionList=$scope.getSections($scope.newEval.id);
+                });
+        }
+
+        $scope.deleteSection=function(id){
+            EvaluationsService.deleteSection(id)
+                .then(function (data) {
+                    console.log($scope.newEval.sectionList);
+                });
+        }
+
+        $scope.getTypeRendu=function(e){
+            EvaluationsService.getTypeRendu(e)
+                .then(function(data){
+                    console.log(data);
+                    $scope.newSection.type_rendu=data.extension;
+                });
+        }
+
+        $scope.createTypeRendu=function(e){
+            EvaluationsService.setTypeRendu(e)
+                .then(function(data){
+                console.log(data);
+                $scope.newSection.type_rendu=data;
+            });
+        }
+
+        $scope.getCriteres=function(section){
+            EvaluationsService.getCriteres(section.id)
+                .then(function (data) {
+                    section.critereList=data;
+                    console.log(section.critereList);
+                });
+        }
+
+        $scope.addCritere=function(section, critere) {
+            console.log(section.id);
+            section.critereList = $scope.getCriteres(section);
+            if ($scope.critereList != null) {
+                critere.ordre = section.critereList.length + 1;
+            } else {
+                critere.ordre = 1;
+            }
+            EvaluationsService.createCritere(section.id, critere)
+                .then(function(data) {
+                    section.critereList=$scope.getCriteres(section);
+                    console.log(section.critereList);
+                });
+        }
+
+        $scope.deleteCritere=function(section){
+            EvaluationsService.deleteCritere(section.id)
+                .then(function(data) {
+                    $scope.newCritere=data;
+                    console.log(data);
+                    section.critereList=$scope.getCriteres(section);
+            });
         }
 
         $scope.sectionUp=function(pos, data){
@@ -280,10 +311,6 @@ angular.module('NotePairApp')
             }
         }
 
-        $scope.createEval=function(){
-            EvaluationsService.save($scope.newEval);
-            $state.go('enseignant.evaluations', {reload:true})
-        }
 
 
     }]);

@@ -1,6 +1,6 @@
 angular.module('NotePairApp')
-    .factory('EvaluationsService', ['$resource',function($resource) {
-        return $resource('/http://localhost:8000/api/evaluations/:id',{},{
+    .factory('EvaluationsService', ['$resource', '$q', '$http',function($resource, $q, $http) {
+        var resource= $resource('http://localhost:8000/api/evaluations/:id',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
@@ -11,7 +11,9 @@ angular.module('NotePairApp')
                     return data;
                 }
             },
-            'update': {method: 'PUT'}
+            'update': {method: 'PUT'},
+            'save' : {method: 'POST'},
+            'delete': {method : 'DELETE'}
         });
 
         function getSections(id) {
@@ -49,7 +51,7 @@ angular.module('NotePairApp')
 
         function createCritere(id, critere){
             var deferred=$q.defer();
-            $http.post('http://localhost:8000/api/sections/'+id+'/add_critere', critere).success(
+            $http.post('http://localhost:8000/api/sections/'+id+'/criteres', critere).success(
                 function (data) {
                     deferred.resolve(data);
                     console.log(data);
@@ -124,6 +126,36 @@ angular.module('NotePairApp')
             return deferred.promise
         }
 
+        function getTypeRendu(e){
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/type_rendu/'+e).success(
+                function (data) {
+                    deferred.resolve(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function queryTypeRendu(){
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/type_rendu').success(
+                function (data) {
+                    deferred.resolve(data);
+                }
+            )
+            return deferred.promise
+        }
+
+        function setTypeRendu(e){
+            var deferred=$q.defer();
+            $http.post('http://localhost:8000/api/type_rendu/'+e).success(
+                function (data) {
+                    deferred.resolve(data);
+                }
+            )
+            return deferred.promise
+        }
+
         return {
             'query': resource.query,
             'save': resource.save,
@@ -139,7 +171,10 @@ angular.module('NotePairApp')
             'deleteSection':deleteSection,
             'deleteCritere':deleteCritere,
             'updateOrdreSection':updateOrdreSection,
-            'updateOrdreCritere':updateOrdreCritere
+            'updateOrdreCritere':updateOrdreCritere,
+            'getTypeRendu':getTypeRendu,
+            'queryTypeRendu':queryTypeRendu,
+            'setTypeRendu':setTypeRendu
         };
     }])
 
@@ -206,6 +241,125 @@ angular.module('NotePairApp')
                     )
             } else {
                 deferred.resolve(_Evaluationsvalue)
+            }
+            return deferred.promise
+        }
+
+
+        return service
+
+    }])
+
+    .factory('LocalEvaluationsService',['$q','EvaluationsService',function ($q,EvaluationsService) {
+
+        var _Evaluationsvalue;
+
+        var service = {
+            'query': value,
+            'save': save,
+            'update': update,
+            'get': trouver,
+            'delete':delet,
+            'querySection': valueSection,
+            'saveSection': saveSection,
+            'updateSection': updateSection,
+            'getSection': trouverSection,
+            'deleteSection':deletSection
+        };
+
+        function save(data) {
+            _Evaluationsvalue.push(data);
+        }
+
+
+        function update(data) {
+
+            findById(data, function (eval) {
+                console.log(eval);
+                _Evaluationsvalue[eval.index] = data;
+            });
+
+        }
+
+        function trouver(id) {
+            var deferred=$q.defer();
+            findById(id, function (eval) {
+                console.log(eval);
+                deferred.resolve(eval.evaluation)
+            })
+            return deferred.promise
+        }
+
+        function delet(id) {
+            findById(id,function (eval) {
+                console.log(eval.index);
+                _Evaluationsvalue.splice(eval.index,1)
+            })
+
+        }
+
+        function value(){
+            var deferred = $q.defer();
+
+            // check and see if we have retrieved the  data.
+            // if we have, reuse it by immediately resolving
+            if (!_Evaluationsvalue) {
+                EvaluationsService.query().$promise
+                    .then(function (data) {
+                            _Evaluationsvalue = data;
+                            deferred.resolve(data);
+                        }
+                    )
+            } else {
+                deferred.resolve(_Evaluationsvalue)
+            }
+            return deferred.promise
+        }
+        function saveSection(data) {
+            _Sectionsvalue.push(data);
+        }
+
+
+        function updateSection(data) {
+
+            findById(data, function (section) {
+                console.log(section);
+                _Sectionsvalue[section.index] = data;
+            });
+
+        }
+
+        function trouverSection(id) {
+            var deferred=$q.defer();
+            findById(id, function (eval) {
+                console.log(eval);
+                deferred.resolve(eval.evaluation)
+            })
+            return deferred.promise
+        }
+
+        function deletSection(id) {
+            findById(id,function (section) {
+                console.log(section.index);
+                _Sectionsvalue.splice(section.index,1)
+            })
+
+        }
+
+        function valueSection(id){
+            var deferred = $q.defer();
+
+            // check and see if we have retrieved the  data.
+            // if we have, reuse it by immediately resolving
+            if (id!=null) {
+                EvaluationsService.getSections(id).$promise
+                    .then(function (data) {
+                            _Sectionsvalue = data;
+                            deferred.resolve(data);
+                        }
+                    )
+            } else {
+                deferred.resolve(_Sectionsvalue)
             }
             return deferred.promise
         }

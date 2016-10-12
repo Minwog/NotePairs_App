@@ -28,26 +28,24 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Cours
+                            Créer une évaluation
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div>
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <span class="hidden-xl">Liste des cours</span>
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li ng-repeat="c in enseignant.cours track by $index"><a href="">{{c}}</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <br>
+                            <input type="text" ng-model="newEval.nom" placeholder="Nom de l'évaluation">
+                            <br><br>
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="hidden-xl">Liste des cours</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li ng-repeat="c in coursList.$$state.value track by $index" ng-click="newEval.cours_id=c.id"><a href="">{{c.nom}}</a></li>
+                            </ul>
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
+
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -57,22 +55,22 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
-                            <input type="checkbox" name="groupe" ng-click="newEval.travail_individuel=true">&nbsp;Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
-                            <input type="checkbox" name="groupe" ng-click="newEval.travail_individuel=false">&nbsp;Travail de groupe&nbsp&nbsp&nbsp&nbsp</input>
-                            <span ng-if="newEval.travail_individuel==false" >
-                                <input type="checkbox" ng-click="newEval.correction_individuelle=false">&nbsp;Correction en groupe</input>
+                            <input type="checkbox" name="groupe" ng-click="newEval.travail_individuel=1">&nbsp;Travail individuel&nbsp&nbsp&nbsp&nbsp</input>
+                            <input type="checkbox" name="groupe" ng-click="newEval.travail_individuel=0">&nbsp;Travail de groupe&nbsp&nbsp&nbsp&nbsp</input>
+                            <span ng-if="newEval.travail_individuel==0" >
+                                <input type="checkbox" ng-click="newEval.correction_individuelle=0">&nbsp;Correction en groupe</input>
                             </span>
                             <p>
                                 <p>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalEleves" ng-if="newEval.travail_individuel==true">Choisir une liste d'élèves</button>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalGroupes" ng-if="newEval.travail_individuel==false">Choisir une liste de groupes</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalEleves" ng-if="newEval.travail_individuel==1">Choisir une liste d'élèves</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalGroupes" ng-if="newEval.travail_individuel==0">Choisir une liste de groupes</button>
                                 </p>
                             </p>
                             Date limite de rendu du devoir:
                             <input type="date" ng-model="newEval.date_rendu" />
                             <br> <br>
                             Date limite de rendu d'évaluation:
-                            <input type="date" name="newEval.date_fin_correction" />
+                            <input type="date" ng-model="newEval.date_fin_correction" />
 
                             <br><br>
 
@@ -100,9 +98,13 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
+                            Mode d'attribution des copies
+                            <input type="checkbox" name="auto" ng-click="newEval.mode_attribution=='RAND'">&nbsp;Aléatoire&nbsp;</input>
+                            <input type="checkbox" name="auto" ng-click="newEval.mode_attribution=='SUPERVISEE'">&nbsp;Supervisée&nbsp;</input>
+
                             <p>
-                                <button class="btn" data-toggle="modal" ng-if="newEval.correction_individuelle==true" data-target="#modalAttributionIndividuelle"> Voir l'attribution des copies </button>
-                                <button class="btn" data-toggle="modal" ng-if="newEval.correction_individuelle==false" data-target="#modalAttributionGroupe"> Voir l'attribution des copies groupe</button>
+                                <button class="btn" data-toggle="modal" ng-if="newEval.correction_individuelle==1" data-target="#modalAttributionIndividuelle"> Voir l'attribution des copies </button>
+                                <button class="btn" data-toggle="modal" ng-if="newEval.correction_individuelle==0" data-target="#modalAttributionGroupe"> Voir l'attribution des copies groupe</button>
                             </p>
 
                             <div class="btn-group">
@@ -112,7 +114,9 @@
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2" role="menu">
-                                        <li ng-repeat="i in [2,3,4,5,6,7,8,9,10]"><a href="">{{i}} évaluations par élève</a></li>
+                                        <li ng-repeat="i in [2,3,4,5,6,7,8,9,10]">
+                                            <a href="" ng-click="newEval.nombreEval=i">{{i}} évaluations par élève</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -122,12 +126,12 @@
                             <input type="checkbox" name="auto" ng-click="newEval.autoevaluation=='CHOICE'">&nbsp;Facultative&nbsp;</input>
                             <input type="checkbox" name="auto" ng-click="newEval.autoevaluation=='YES'">&nbsp;Obligatoire&nbsp;</input>
                             <br><br>
-                            <input type="checkbox" ng-click="newEval.anonymat==true">&nbsp;Anonymat de l'élève évalué&nbsp</input>
-                            <input type="checkbox" ng-click=""newEval.>&nbsp;Anonymat de l'élève évaluateur</input>
+                            <input type="checkbox" ng-click="newEval.anonymat==1">&nbsp;Anonymat de l'élève évalué&nbsp</input>
+                            <!--<input type="checkbox">&nbsp;Anonymat de l'élève évaluateur</input>-->
 
                         </div>
                     </div><!-- /.panel-body -->
-                    <button id="menu2Button" type="submit" class="btn btn-primary pull-right" data-toggle="tab" data-target="#menu02">Etape suivante</button>
+                    <button id="menu2Button" type="submit" class="btn btn-primary pull-right" data-toggle="tab" ng-click="createEval()" data-target="#menu02">Etape suivante</button>
                 </div>
                     <br>
                 </div>
@@ -547,24 +551,24 @@
             </div>
 
 
-        <div id="menu02" class="tab-pane fade">
+            <div id="menu02" class="tab-pane fade">
 
 
-            <div class="row">
-                <br><br>
+                <div class="row">
+                    <br><br>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Mon évaluation
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div ng-repeat="section in sectionList | orderBy : 'ordre'">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Mon évaluation
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div ng-repeat="section in newEval.sectionList | orderBy : 'ordre'">
 
-
+                                <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    {{section.ordre+"- "+section.titre}}
-                                    <a class="btn btn-danger btn-circle-micro pull-right" data-toggle="modal" data-target="#modalDeleteSection"><i class="fa fa-times"></i>
+                                    {{section.ordre+"- "+section.titre}}&nbsp;/{{section.points}}
+                                    <a class="btn btn-danger btn-circle-micro pull-right" data-toggle="modal" data-target="#modalDeleteSection" ng-click="deleteSection(section)"><i class="fa fa-times"></i>
                                     </a>
                                     <a class="btn btn-primary btn-circle-micro pull-right" href="javascript:$('#myModal .modal-body').load('remote.html',function(e){$('#myModal').modal('show');});"><i class="fa fa-list"></i>
                                     </a>
@@ -587,7 +591,7 @@
                                             <tr><th></th><th>Critère</th><th></th></tr>
                                             </thead>
                                             <tbody>
-                                            <tr ng-repeat-start="critere in section.criteres | orderBy : 'ordre'">
+                                            <tr ng-repeat-start="critere in section.critereList | orderBy : 'ordre'">
                                                 <td>
                                                     <button class="btn btn-primary btn-circle-micro" ng-if="critere.expanded" ng-click="critere.expanded = false"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
                                                     <button class="btn btn-primary btn-circle-micro" ng-if="!critere.expanded" ng-click="critere.expanded = true"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
@@ -627,11 +631,10 @@
                                     </div>
                                     <br><br>
                                     <button class="btn btn-primary" data-toggle="modal" data-target="#{{section.id}}">Ajouter un critère d'évaluation</button>
-                                    </div>
+                                </div>
+                                </div>
 
-
-
-                                    <div id="{{section.id}}" class="modal fade" role="dialog">
+                                <div id="{{section.id}}" class="modal fade" role="dialog">
                                         <div class="modal-dialog centered">
                                             <div class="modal-header">
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -646,33 +649,33 @@
                                                         <span ng-if="newCritere.type" class="hidden-xl">{{newCritere.type}}</span>
                                                         <span class="caret"></span>
                                                     </button>
-                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" role="menu">
+                                                    <ul class="dropdown-menu" role="menu">
                                                         <li>
-                                                            <a href="" id="commentaire" ng-click="setCritereType(1); newCritere.type='commentaire'">Commentaire</a>
+                                                            <a href="" id="commentaire" ng-click="newCritere.type=1">Commentaire</a>
                                                         </li>
                                                         <li>
-                                                            <a href="" id="condition" ng-click="setCritereType(2); newCritere.type='condition'">Condition</a>
+                                                            <a href="" id="condition" ng-click="newCritere.type=2">Condition</a>
                                                         </li>
                                                         <li>
-                                                            <a href="" id="jugement" ng-click="setCritereType(3); newCritere.type='jugement'">Jugement</a>
+                                                            <a href="" id="jugement" ng-click="newCritere.type=3">Jugement</a>
                                                         </li>
                                                     </ul>
                                                 </div>
 
-                                                <div ng-show="critere==1">
+                                                <div ng-show="newCritere.type==1">
                                                     <br>
                                                     Condition : <textarea ng-model=newCritere.description type="text" placeholder="Condition" />
                                                     <br><br>
                                                 </div>
 
-                                                <div ng-show="critere==2">
+                                                <div ng-show="newCritere.type==2">
                                                     <br>
                                                     Condition : <textarea ng-model=newCritere.description type="text" placeholder="Condition" />
                                                     <br><br>
                                                     Nombre de points: <input type="number" ng-model=newCritere.points_max step="0.1" min="0" max="{{section.points}}"/>
                                                 </div>
 
-                                                <div ng-show="critere==3">
+                                                <div ng-show="newCritere.type==3">
                                                     <br>
                                                     Description : <textarea ng-model=newCritere.description placeholder="Description" />
                                                     <br><br>
@@ -683,21 +686,20 @@
 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="submit" class="btn btn-default" ng-click="addCritere(section)" data-dismiss="modal">Ajouter</button>
+                                                <button type="submit" class="btn btn-default" ng-click="addCritere(section, newCritere)" data-dismiss="modal">Ajouter</button>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal">Ajouter une section</button>
-                        <!-- /.panel-body -->
-
-                    <button type="submit" class="btn btn-primary pull-right" data-toggle="tab" data-target="#menu03">Etape suivante</button>
                     </div>
-
                 </div>
+
+                <button class="btn btn-primary center-block" data-toggle="modal" data-target="#myModal">Ajouter une section</button>
+
+                <button type="submit" class="btn btn-primary pull-right" data-toggle="tab" data-target="#menu03">Etape suivante</button>
+
                 <!-- Modal content-->
                 <div id="myModal" class="modal fade" role="dialog">
                     <div class="modal-dialog centered">
@@ -712,86 +714,66 @@
                                 <input type="text"class="form-control" ng-model=newSection.titre id="titre" placeholder="Titre de la section"/>
                                 <br>
                                 <div class="btn-group">
-
                                     <div class="dropdown">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdown-menu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <span class="hidden-xl">Type de rendu</span>
+                                            <span ng-if="newSection.typeRendu==null">Type de rendu</span>
+                                            <span ng-if="newSection.typeRendu!=null">{{newSection.typeRendu}}</span>
                                             <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu" ng-model="newSection.type_rendu" aria-labelledby="dropdownMenu1" role="menu">
-                                            <li>
-                                                <a ng-click="setFile(false)" id="lien" href="">Lien</a>
-                                            </li>
-                                            <li>
-                                                <a ng-click="setFile(true)" id="file" >Fichier</a>
-                                            </li>
-                                            <li>
-                                                <a ng-click="setFile(false)" id="text" href="">Texte</a>
-                                            </li>
-                                        </ul>
+                                            <ul class="dropdown-menu" id="typeRenduButton"role="menu">
+                                                <li>
+                                                    <div ng-click="newSection.typeRendu='Tous types de fichiers';choixExtension=false" href="">Tous types de fichiers</div>
+                                                </li>
+                                                <li ng-repeat="e in extensions">
+                                                    <div ng-click="newSection.typeRendu=e.extension;choixExtension=false">{{e.extension}}</div>
+                                                </li>
+                                                <li>
+                                                    <div ng-click="newSection.typeRendu='Choisir une extension';choixExtension=true">Choisir une extension</div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                                <br>
-                                <div ng-show="file" class="dropdown">
-                                    <div class="btn-group">
-                                        <button class="btn btn-default dropdown-toggle" id="dropdown-menu2" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            <span class="hidden-xl">Extension de fichier</span>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                                            <li>
-                                                <div ng-click="choisirExtension(false)" href="">Tous types de fichiers</div>
-                                            </li>
-                                            <li ng-repeat="e in extensions">
-                                                <div href="">{{e}}</div>
-                                            </li>
-                                            <li>
-                                                <div ng-click="choisirExtension(true)">Choisir une extension</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <br>
-                                <input ng-show="choixExtension" class="dropdown" type="texte" placeholder=".pdf">
-                                </input>
-                                <br>
-                                Nombre de points pour la section:
-                                <input type="number" step="0.1" min="0" ng-model="newSection.points"/>
-                                <br><br>
-                                Contenu de l'évaluation :
-                                <input type="file" ng-model="newSection.enonce"/>
-                            </div>
-                            <br>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Mode de calcul de la note
-                                </div>
-                                <div class="panel-body">
-
-                                    <input type="checkbox" name="calcul" id="moyenne">&nbsp;Moyenne des notes&nbsp;&nbsp;</input>
                                     <br>
-                                    <input type="checkbox" name="calcul" id="mediane">&nbsp;Médiane des notes&nbsp;&nbsp;</input>
+                                    <input ng-show="choixExtension" ng-model='e' ng-submit="createTypeRendu(e)" class="dropdown" type="texte" placeholder="pdf">
+                                    </input>
                                     <br><br>
-                                    <input type="checkbox" name="calculPondere" id="ponderees">
-                                    Evaluations pondérées
-                                    <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Evaluations pondérées" data-content="Poids selon la fiabilité de chaque évaluation."></span>&nbsp;&nbsp;&nbsp;
-                                    </input>
-                                    <br>
-                                    <input type="checkbox" name="calculCalibre" id="calibrees">
-                                    Evaluations calibrées
-                                    <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Evaluations calibrées" data-content="Modulées selon le biais estimé de l’évaluateur (sa « note de jugement » sur des devoirs précédents)."></span>&nbsp;&nbsp;</input>
-                                    <br>
-                                    <input type="checkbox" name="calculAuto" id="autoEval" ng-show="evaluation.autoEval!=0">
-                                    Auto-évaluation prise en compte&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </input>
+                                    Nombre de points pour la section:
+                                    <input type="number" step="0.1" min="0" ng-model="newSection.points"/>
+                                    <br><br>
+                                    Contenu de l'évaluation :
+                                    <input type="file" ng-model="newSection.enonce"/>
+                                </div>
+                                <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Mode de calcul de la note
+                                    </div>
+                                    <div class="panel-body">
 
+                                        <input type="checkbox" name="calcul" id="moyenne">&nbsp;Moyenne des notes&nbsp;&nbsp;</input>
+                                        <br>
+                                        <input type="checkbox" name="calcul" id="mediane">&nbsp;Médiane des notes&nbsp;&nbsp;</input>
+                                        <br><br>
+                                        <input type="checkbox" name="calculPondere" id="ponderees">
+                                        Evaluations pondérées
+                                        <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Evaluations pondérées" data-content="Poids selon la fiabilité de chaque évaluation."></span>&nbsp;&nbsp;&nbsp;
+                                        </input>
+                                        <br>
+                                        <input type="checkbox" name="calculCalibre" id="calibrees">
+                                        Evaluations calibrées
+                                        <span class="glyphicon glyphicon-info-sign" data-toggle="popover" title="Evaluations calibrées" data-content="Modulées selon le biais estimé de l’évaluateur (sa « note de jugement » sur des devoirs précédents)."></span>&nbsp;&nbsp;</input>
+                                        <br>
+                                        <input type="checkbox" name="calculAuto" id="autoEval" ng-show="evaluation.autoEval!=0">
+                                        Auto-évaluation prise en compte&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </input>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-default" data-dismiss="modal" ng-click="addSection()">Ajouter</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-default" data-dismiss="modal" ng-click="addSection(newSection)">Ajouter</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -828,15 +810,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default" ng-show="evaluation.mode_attribution=='supervise'">
-                        <div class="panel-heading">
-                            Superviser l'attribution des copies
-                        </div>
-                        <div class="panel-body">
-                            <button class="btn btn-primary center-block" data-toggle="modal" data-target="#modalSuperviserEleves">Choisir l'attribution des copies</button>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary pull-right" ng-click="createEval()">Créer l'évaluation</button>
+                    <button type="submit" class="btn btn-primary pull-right">Créer l'évaluation</button>
                 </div>
                 </div>
             </div>
@@ -896,7 +870,7 @@
                     </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-default" data-dismiss="modal" ng-click="addSection()">Ajouter</button>
+                        <button type="submit" class="btn btn-default" data-dismiss="modal">Ajouter</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                     </div>
                 </div>

@@ -6,19 +6,6 @@
         <!-- /.col-lg-12 -->
     </div>
 
-    <script type="text/javascript">
-        (function() {
-            $(function() {
-                $('.thumbnail').matchHeight({
-                    byRow: true,
-                    property: 'height',
-                    target: null,
-                    remove: false
-                });
-            });
-        })();
-    </script>
-
     <style>
         .thumbnail{
             height:410px;
@@ -45,7 +32,7 @@
                                     <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{eval.nom}}">{{eval.nom}}</h3>
                                     <h4>{{eval.cours.nom}}</h4>
                                     <p>A rendre avant le {{eval.date_rendu}}</p>
-                                    <button class="btn btn-primary center-block" ui-sref="enseignant.voirEvaluation({{eval.id}}">
+                                    <button class="btn btn-primary center-block" ui-sref="enseignant.voirEvaluation/{{eval.id}}">
                                         Voir l'évaluation
                                     </button>
                                 </div>
