@@ -67,8 +67,8 @@
 
                         <tr class="infos" ng-repeat-start="cours in CoursList | filter:searchBox | orderBy:myOrderBy track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>
-                                <button ng-if="cours.expanded" ng-click="cours.expanded = false">&Hat;</button>
-                                <button ng-if="!cours.expanded" ng-click="cours.expanded = true">+</button>
+                                <button ng-if="cours.expanded" ng-click="cours.expanded = false" class="btn btn-success btn-circle-micro pull-right"><i class="fa fa-angle-up"></i></button>
+                                <button ng-if="!cours.expanded" ng-click="cours.expanded = true" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-down"></i></button>
                             </td>
 
                             <td>

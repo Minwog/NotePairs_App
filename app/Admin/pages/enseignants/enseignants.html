@@ -79,8 +79,8 @@
 
                         <tr class="infos" ng-repeat-start="enseignant in EnseignantsList | filter:searchBox | orderBy:myOrderBy track by $index" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>
-                                <button ng-if="enseignant.expanded" ng-click="enseignant.expanded = false">&Hat;</button>
-                                <button ng-if="!enseignant.expanded" ng-click="enseignant.expanded = true">+</button>
+                                <button ng-if="enseignant.expanded" ng-click="enseignant.expanded = false" class="btn btn-success btn-circle-micro pull-right"><i class="fa fa-angle-up"></i></button>
+                                <button ng-if="!enseignant.expanded" ng-click="enseignant.expanded = true" class="btn btn-success btn-circle-micro pull-right"><i class="fa fa-angle-down"></i></button>
                             </td>
                             <td>{{enseignant.nom}}</td>
                             <td>{{enseignant.prenom}}</td>
