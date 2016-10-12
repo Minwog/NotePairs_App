@@ -707,7 +707,7 @@
         "Écart-type": tpl.stdev(usFmt),
         "Écart%moyenne(lignes)": tpl.ecart_average(usFmt),
         "Fiabilité": tpl.fiabilite(usFmt),
-        "Nombre_Fiabilité(lignes)": tpl.nb_fiabilite(usFmt),
+        "Nombre_Fiabilité": tpl.nb_fiabilite(usFmt),
         "Moyenne pondérée(lignes)": tpl.weighted_average(usFmt),
         "Biais": tpl.biais(usFmt),
         "Minimum": tpl.min(usFmt),
@@ -720,6 +720,9 @@
       },
       "Histogramme": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).barchart();
+      },
+      "Carte de Chaleur": function(data, opts) {
+        return $(pivotTableRenderer(data, opts)).heatmap("heatmap", opts);
       },
       "Carte de Chaleur par ligne": function(data, opts) {
         return $(pivotTableRenderer(data, opts)).heatmap("rowheatmap", opts);

@@ -111,17 +111,6 @@ angular.module('NotePairApp')
                                     drag: function (e) {
                                         // Returning false stops the drag and drops. Example:
 
-
-                                        //console.log(this)
-                                        /*
-                                        if(e.target.index == 0 || e.target.index == categoriestmp.length-1) {
-                                            return false;
-                                        }
-
-                                        if (e.x < 0 || e.x > categoriestmp[categoriestmp-1]) {
-                                            return false;
-                                        }
-                                        */
                                     },
                                     drop: function () {
                                         $('#drop').html(
