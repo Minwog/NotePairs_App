@@ -27,7 +27,8 @@
     "textAngular": "^1.5.10",
     "seiyria-bootstrap-slider": "^9.2.0",
     "angular-bootstrap-slider": "^0.1.28",
-    "angularjs-slider": "^5.5.1"
+    "angularjs-slider": "^5.5.1",
+    "checklist-model": "^0.10.0"
   },
   "resolutions": {
     "angular": "~1.5.0",

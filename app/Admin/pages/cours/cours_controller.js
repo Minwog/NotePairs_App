@@ -7,10 +7,13 @@
             });
 
             $scope.deleteCours = function (id) {
-                if (alerteService.showPopup('Voulez-vous vraiment supprimer ce groupe ?')) {
+                if (alerteService.showPopup('Voulez-vous vraiment supprimer ce Cours ?')) {
                     CoursService.delete({id: id});
+                    $scope.CoursList.splice($scope.CoursList.map(function (e) {
+                        return e.id
+                    }).indexOf(id), 1)
+
                 }
-                $state.go('admin.cours')
             };
 
             $scope.goToAdd = function () {
@@ -26,20 +29,18 @@
 (function () {
     angular.module('NotePairApp')
 
-        .controller('UpdateCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', function ($scope, $state, $stateParams, alerteService, CoursService, UserService) {
+        .controller('UpdateCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService','CategorieService', function ($scope, $state, $stateParams, alerteService, CoursService, UserService, CategorieService) {
 
 
         CoursService.get({id: $stateParams.id}).$promise.then(function (data) {
             $scope.Cours = data;
         });
 
-        UserService.getByRole(2).then(function (data) {
-            $scope.ListEleves = data;
-        });
+        CategorieService.query().$promise.then(function (data) {
+            $scope.categorie=data;
+        })
 
-        UserService.getByRole(3).then(function (data) {
-            $scope.ListEnseignant = data
-        });
+
 
         $scope.updateCours = function () {
 
@@ -49,7 +50,6 @@
         };
 
         CoursService.getEnseignant($stateParams.id).then(function (data) {
-            console.log(data);
             $scope.UsersList = data;
         });
 
@@ -57,16 +57,26 @@
             $('.selectpicker').selectpicker();
         });
 
-        $scope.deleteUser = function (coursid, userid) {
-            CoursService.deleteUser(coursid, userid);
-            $scope.UsersList.splice($scope.UsersList.map(function (e) {
-                return e.id
-            }).indexOf('userid'), 1)
-        }
+        $scope.deleteUser = function(userid) {
+            CoursService.deleteUser($stateParams.id, userid);
+                $scope.UsersList.splice($scope.UsersList.map(function (e) {
+                    return e.id
+                }).indexOf(userid), 1)
+        };
 
         $scope.goToAddUser = function (role) {
             $state.go('admin.cours.addUser', {id: $scope.Cours.id, role: role})
         }
+
+            $(document).ready(function () {
+                $('.selectpicker').selectpicker();
+            });
+
+         $scope.annuler=function () {
+             $state.go('admin.cours');
+         }
+
+
 
 
     }])
@@ -107,6 +117,10 @@
                 $('.selectpicker').selectpicker();
             });
 
+            $scope.annuler=function () {
+                $state.go('admin.cours');
+            }
+
         }])
 
 })();
@@ -114,18 +128,31 @@
 (function () {
     angular.module('NotePairApp')
 
-    .controller('AddUserCoursController',['$stateParams','UserService','CoursService',function($stateParams,UserService,CoursService){
-        var vm=this;
-        vm.roleid=$stateParams.role;
-        vm.coursid=$stateParams.id;
+    .controller('AddUserCoursController',['$scope','$stateParams','UserService','CoursService','$state',function($scope,$stateParams,UserService,CoursService,$state){
 
-        UserService.getByRole(vm.roleid).then(function (data) {
-            console.log(data);
-            console.log(vm.roleid)
-            vm.UsersList=data;
+        UserService.getByRole($stateParams.role).then(function (data) {
+            $scope.UsersList=data;
         });
 
-        vm.UserOfCours=CoursService.getEnseignant(vm.coursid)
+
+        CoursService.getEnseignant($stateParams.id).then(function (data) {
+               $scope.UserOfCours = data;
+            });
+
+
+        $scope.NewUsers=[];
+
+
+
+       $scope.Ajouter=function(){
+           CoursService.addUser($stateParams.id,$scope.NewUsers).then(function(data){
+               return data;
+
+           })
+
+           $state.go('admin.cours.update',{id:$stateParams.id, reload:true})
+       }
+
 
     }])
 

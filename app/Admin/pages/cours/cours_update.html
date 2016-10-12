@@ -24,10 +24,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="section" class="col-sm-2 control-label">Section</label>
-                        <div class="col-sm-10">
-                            <input type="text" ng-model="Cours.categorie" class="form-control" id="section" value="{{Cours.categorie.nom}}"/>
-                        </div>
+                        <label for="categorie" class="col-sm-2 control-label">Section</label>
+                        <select class="selectpicker col-sm-10" id="categorie" data-live-search="true" ng-model="Cours.categorie">
+                            <option ng-repeat="cat in categorie" value="cat">{{cat.nom}}</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -37,14 +37,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <input type="submit" ng-click="updateCours()" class="btn btn-primary" value="Modifier Cours"/>
-                    </div>
-                </div>
-                </br></br>
 
             </div>
 
@@ -97,7 +89,7 @@
                                     <td class="hidden-sm hidden-xs">{{enseignant.username}}</td>
                                     <td class="hidden-sm hidden-xs">{{enseignant.email}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteUser(Cours.id,enseignant.id)"><i class="fa fa-times"></i>
+                                        <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteUser(enseignant.id)"><i class="fa fa-times"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -178,7 +170,7 @@
                                     <td class="hidden-sm hidden-xs">{{eleve.username}}</td>
                                     <td class="hidden-sm hidden-xs">{{eleve.email}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteUser(Cours.id,eleve.id)"><i class="fa fa-times"></i>
+                                        <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteUser(eleve.id)"><i class="fa fa-times"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -208,5 +200,20 @@
         </div>
         <!-- /.col-lg-6 -->
     </div>
-    <!-- /.row -->
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+<div class="row">
+    <div class="form-group">
+        <div class="col-sm-6">
+            <input type="submit" ng-click="updateCours()" class="btn btn-primary" value="Modifier Cours"/>
+        </div>
+
+        <div class="col-sm-6">
+            <input type="submit" ng-click="annuler()" class="btn btn-secondary pull-right" value="Annuler">
+        </div>
+    </div>
+    </div>
+        </div>
+        </div>
 </div>

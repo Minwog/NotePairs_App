@@ -11,7 +11,7 @@ angular.module('NotePairApp')
                     return data;
                 }
             },
-            'update': {method: 'POST'}
+            'update': {method: 'PUT'}
         });
 
         function getEnseignant(id){
@@ -19,7 +19,6 @@ angular.module('NotePairApp')
             $http.get('http://localhost:8000/api/cours/'+id+'/users/all').success(
                 function (data) {
                     deferred.resolve(data);
-                    console.log(data);
                 }
             );
             return deferred.promise;
@@ -30,7 +29,6 @@ angular.module('NotePairApp')
             $http.get('http://localhost:8000/api/evaluationsbycours/'+id).success(
                 function (data) {
                     deferred.resolve(data);
-                    console.log(data);
                 }
             )
             return deferred.promise;
@@ -41,7 +39,6 @@ angular.module('NotePairApp')
             $http.delete('http://localhost:8000/api/cours/'+coursId+'/users/'+userId).success(
                 function (data) {
                     deferred.resolve(data);
-                    console.log(data);
                 }
             );
             return deferred.promise;
@@ -52,7 +49,6 @@ angular.module('NotePairApp')
             $http.post('http://localhost:8000/api/cours/'+coursId+'/users/add',users).success(
                 function (data) {
                     deferred.resolve(data);
-                    console.log(data);
                 }
             );
             return deferred.promise;
@@ -105,7 +101,6 @@ angular.module('NotePairApp')
         function update(data) {
 
             findById(data, function (Cours) {
-                console.log(Cours);
                 _Coursvalue[Cours.index] = data;
             });
 

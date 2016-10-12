@@ -72,7 +72,6 @@
                             </td>
 
                             <td>
-                                <button type="button" class="btn btn-success btn-circle-micro" ng-click="goToView()"><i class="fa fa-eye"></i>
                                 </button> {{cours.nom}}</td>
                             <td class="hidden-sm hidden-xs">{{cours.categorie.nom}}</td>
                             <td class="hidden-sm hidden-xs">
@@ -90,7 +89,7 @@
                             <td>
                             <button type="button" class="btn btn-primary btn-circle-micro" ng-click="goToUpdate(cours.id)"><i class="fa fa-list"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="goToDelete(cours.id)"><i class="fa fa-times"></i>
+                            <button type="button" class="btn btn-danger btn-circle-micro" ng-click="deleteCours(cours.id)"><i class="fa fa-times"></i>
                             </button>
                         </td>
                         </tr>
