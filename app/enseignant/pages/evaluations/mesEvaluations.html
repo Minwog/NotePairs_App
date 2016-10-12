@@ -1,0 +1,62 @@
+<div>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Dashboard</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <script type="text/javascript">
+            (function() {
+                $(function() {
+                    $('.thumbnail').matchHeight({
+                        byRow: true,
+                        property: 'height',
+                        target: null,
+                        remove: false
+                    });
+                });
+            })();
+        </script>
+
+        <style>
+            .thumbnail{
+                height:420px;
+                width:250px;
+            }
+        </style>
+
+        <!-- /.row -->
+        <div class="row" ng-repeat="eval in evaluations">
+
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Evaluations en cours
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 hero-feature">
+                                <div class="thumbnail">
+                                    <img data-holder-rendered="true" src="{{eval.cours.image}}"
+                                         style="height: 200px; width: 90%; display: block;" alt="{{eval.cours.nom}}">
+                                    <div class="caption">
+                                        <h3>Evaluation : {{eval.nom}}</h3>
+                                        <p>Devoir à rendre avant le {{eval.date_rendu}}</p>
+                                        <p>
+                                            <button class="btn btn-primary" ng-click="setCurrentEval(eval);" ui-sref="enseignant.voirEvaluation">
+                                                Modifier l'évaluation
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

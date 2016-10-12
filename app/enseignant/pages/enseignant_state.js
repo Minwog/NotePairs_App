@@ -49,6 +49,17 @@
                         }
                     })
 
+                    .state('enseignant.mesEvaluations',{
+                        parent:'enseignant',
+                        url:'/voir_mes_evaluations/',
+                        views:{
+                            'content':{
+                                templateUrl:'app/enseignant/pages/evaluations/mesEvaluations.html',
+                                controller: 'EvaluationsController'
+                            }
+                        }
+                    })
+
                     .state('enseignant.pivot',{
                         parent:'enseignant',
                         url:'/pivot',

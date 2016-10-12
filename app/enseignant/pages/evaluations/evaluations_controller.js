@@ -17,6 +17,11 @@ angular.module('NotePairApp')
             $scope.extensions=data;
         });
 
+        EvaluationsService.getMesEvaluations($scope.enseignant.id)
+            .then(function (data) {
+                $scope.evaluations=data;
+            })
+
 
         $scope.coursList=UserService.getCours($scope.enseignant.id);
 
@@ -202,10 +207,6 @@ angular.module('NotePairApp')
             'nombreEval':'',
             'sectionList':[]
         };
-
-        $scope.getEval=function(){
-
-        }
 
         $scope.createEval=function(){
             console.log($scope.newEval);

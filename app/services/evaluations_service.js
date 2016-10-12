@@ -16,6 +16,19 @@ angular.module('NotePairApp')
             'delete': {method : 'DELETE'}
         });
 
+
+        function getMesEvaluations(id_user) {
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/user/'+id_user+'/evaluations').success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise
+        }
+
+
         function getSections(id) {
             var deferred=$q.defer();
             $http.get('http://localhost:8000/api/evaluations/'+id+'/sections').success(
@@ -174,7 +187,8 @@ angular.module('NotePairApp')
             'updateOrdreCritere':updateOrdreCritere,
             'getTypeRendu':getTypeRendu,
             'queryTypeRendu':queryTypeRendu,
-            'setTypeRendu':setTypeRendu
+            'setTypeRendu':setTypeRendu,
+            'getMesEvaluations':getMesEvaluations
         };
     }])
 
