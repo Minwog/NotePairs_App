@@ -6,7 +6,6 @@
     text-decoration-color: white;
     padding-top:10px;
     padding-bottom: 10px;
-    font-family: 'Asap', sans-serif;
     font-size: large;
 }
 
@@ -28,6 +27,18 @@ a:active{color: #9acfea;}
     right: 50%;
     transform: translate(50%, 50%);
 }
+
+.panel-body.tableau{
+    padding:0;
+    font-weight: lighter;
+}
+
+.panel-body > .table{margin-bottom:0px;}
+
+.light-primary{
+    background-color: #B0C4DE;
+}
+
 
 
 /*---------------------------------------------------------------------*/

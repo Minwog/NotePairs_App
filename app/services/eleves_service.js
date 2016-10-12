@@ -21,15 +21,15 @@ angular.module('NotePairApp')
             });
 
             function ByRole(id) {
-                var deferred=$q.defer();
+                var deferred = $q.defer();
                 $http.get('http://localhost:8000/api/userbyrole/' + id).success(
-                    function(data) {
+                    function (data) {
                         deferred.resolve(data);
                         console.log(data);
                     }
                 );
                 return deferred.promise;
-            };
+            }
 
             function getCours(id){
                 var deferred=$q.defer();

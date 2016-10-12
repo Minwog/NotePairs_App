@@ -27,35 +27,24 @@
                         }
                     })
 
-                        .state('enseignant.createEvaluation',{
-                            parent:'enseignant',
-                            url:'/evaluations_create',
-                            views:{
-                                'content':{
-                                    templateUrl:'app/enseignant/pages/evaluations/evaluation-create.html',
-                                    controller: 'EvaluationsController'
-                                }
-                            }
-                        })
-
-                    .state('enseignant.createEvaluation.etape2',{
+                    .state('enseignant.createEvaluation',{
                         parent:'enseignant',
-                        url:'/evaluations_create2',
+                        url:'/evaluations_create',
                         views:{
                             'content':{
-                                templateUrl:'app/enseignant/pages/evaluations/evaluation-create2.html',
+                                templateUrl:'app/enseignant/pages/evaluations/evaluation-create.html',
                                 controller: 'EvaluationsController'
                             }
                         }
                     })
 
-                    .state('enseignant.createEvaluation.etape3',{
+                    .state('enseignant.voirEvaluation',{
                         parent:'enseignant',
-                        url:'/evaluations_create3',
+                        url:'/voir_evaluation/:id',
                         views:{
                             'content':{
-                                templateUrl:'app/HighCharts/demo.html',
-                                controller: 'HighChartsController'
+                                templateUrl:'app/enseignant/pages/evaluations/voir_evaluation.html',
+                                controller: 'EvaluationsController'
                             }
                         }
                     })
@@ -82,32 +71,22 @@
                         }
                     })
 
-                    .state('enseignant.cours',{
+                    .state('enseignant.mesCours',{
                         parent:'enseignant',
-                        url:'/cours',
+                        url:'/mes_cours',
                         views:{
                             'content':{
-                                templateUrl:'app/enseignant/pages/cours/cours.html'
+                                templateUrl:'app/enseignant/pages/cours/cours_view.html'
                             }
                         }
                     })
 
-                        .state('enseignant.mesCours',{
+                        .state('enseignant.cours',{
                             parent:'enseignant',
-                            url:'/cours',
+                            url:'/cours/',
                             views:{
                                 'content':{
-                                    templateUrl:'app/enseignant/pages/cours/mesCours.html'
-                                }
-                            }
-                        })
-
-                        .state('enseignant.cours.view',{
-                            parent:'enseignant',
-                            url:'/cours/view',
-                            views:{
-                                'content':{
-                                    templateUrl:'app/enseignant/pages/cours/cours_view.html'
+                                    templateUrl:'app/enseignant/pages/cours/cours.html'
                                 }
                             }
                         })

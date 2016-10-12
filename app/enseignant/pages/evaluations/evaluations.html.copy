@@ -1,0 +1,242 @@
+<style>
+    .panel_principal {
+        overflow:scroll;
+        min-height: 70%;
+        max-height: 70%;
+    }
+    .panel_secondaire {
+        overflow:scroll;
+        min-height: 20%;
+        max-height: 20%;
+    }
+    #listeval {
+        margin: 10px;
+    }
+</style>
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    var src = "";
+    var current = "drag1";
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+        src = ev.srcElement.parentNode.id;
+        document.getElementById('drop1').style.borderStyle = "dashed";
+        document.getElementById('drop1').style.borderColor = "#C0C0C0";
+
+    }
+
+    function drop(ev) {
+        console.log(ev.target.id)
+
+        document.getElementById('drop1').style.borderStyle = "none";
+
+
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+
+            document.getElementById(current).getElementsByClassName("panel-body panel_principal")[0]
+                    .className="panel-body panel_secondaire";
+            document.getElementById(current).setAttribute("draggable","true");
+            document.getElementById(current).setAttribute("ondragstart","drag(event)");
+            document.getElementById(src).appendChild(document.getElementById(current));
+
+            document.getElementById(data).getElementsByClassName("panel-body panel_secondaire")[0]
+                    .className="panel-body panel_principal";
+            document.getElementById(data).setAttribute("draggable","");
+            document.getElementById(data).setAttribute("ondragstart","");
+            document.getElementById("drop1").appendChild(document.getElementById(data));
+
+            current = data;
+
+    }
+
+
+</script>
+
+<div>
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Statistiques</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <!-- modified -->
+            <div class="col-lg-12" id="drop1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="listeval" class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            Sélectionner une évaluation
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="">A375</a>
+                            </li>
+                            <li><a href="">B229</a>
+                            </li>
+                            <li><a href="">A120</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="drag1" class="panel panel-info" draggable="" ondragstart="">
+                    <div class="panel-heading">
+                        Évaluation A386</div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body panel_principal" >
+
+                        <div id="output"></div>
+
+                        <script type="text/javascript">
+                            $(function(){
+                                var derivers = $.pivotUtilities.derivers;
+                                var renderers = $.extend($.pivotUtilities.renderers,
+                                        $.pivotUtilities.gchart_renderers);
+
+                                $.getJSON("dist/workbook.json", function(mps) {
+                                    var tmp = [];
+                                    for(var i=0; i<mps.length; i++) {
+                                        if (tmp.indexOf(mps[i].copie+1000*mps[i].question) != -1) {
+                                            for(var j=i-1; j>=0; j--) {
+                                                if (mps[j].copie+1000*mps[j].question ==
+                                                        mps[i].copie+1000*mps[i].question) {
+                                                    mps[i].numero_grader = mps[j].numero_grader + 1;
+                                                    break
+                                                }
+                                            }
+                                        } else {
+                                            tmp.push(mps[i].copie+1000*mps[i].question);
+                                            mps[i].numero_grader = 1;
+                                            //
+                                        }
+                                    }
+
+                                    $("#output").pivotUI(mps, {
+                                        renderers: renderers,
+                                        derivedAttributes: {
+
+                                        },
+                                        cols: ["question","numero_grader"], rows: ["copie"],
+                                        rendererName: "Table",
+                                        aggregatorName: "Moyenne",
+                                        vals: [
+                                            "note"
+                                        ]
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                    <!-- /.panel-body -->
+                    <div class="panel-footer">
+                        120 évaluations
+                    </div>
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /modified -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div id="divc2" class="col-lg-4">
+                <div id="drag2" class="panel panel-success" draggable="true" ondragstart="drag(event)">
+                    <div class="panel-heading">Évaluation B174</div>
+                    <div class="panel-body panel_secondaire">
+
+
+                        <div id="output1"></div>
+
+                        <script type="text/javascript">
+                            $(function(){
+                                var derivers = $.pivotUtilities.derivers;
+                                var renderers = $.extend($.pivotUtilities.renderers,
+                                        $.pivotUtilities.gchart_renderers);
+
+                                $.getJSON("dist/mps.json", function(mps) {
+                                    $("#output1").pivotUI(mps, {
+                                        renderers: renderers,
+                                        derivedAttributes: {
+                                            "Intervalle Note": derivers.bin("Note", 2.5),
+
+                                        },
+                                        cols: ["Question"], rows: ["Copie"],
+                                        rendererName: "Carte de Chaleur par ligne",
+                                        aggregatorName: "Moyenne",
+                                        vals: [
+                                            "Note"
+                                        ]
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="panel-footer">
+                        200 évaluations
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div id="divc3" class="col-lg-4">
+                <div id="drag3" class="panel panel-warning"  draggable="true" ondragstart="drag(event)">
+                    <div class="panel-heading">
+                        Évaluation B216
+                    </div>
+                    <div class="panel-body panel_secondaire">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Anim quis qui in cillum fugiat aute exercitation. Eiusmod do dolor officia ullamco pariatur cupidatat qui incididunt exercitation laboris nisi cupidatat eiusmod nulla. Sunt adipisicing
+                            enim consectetur sit ipsum adipisicing mollit. Eu aliquip enim reprehenderit nulla in consectetur ipsum eu sunt nisi reprehenderit incididunt. Ea laboris aute ullamco eiusmod voluptate
+                            occaecat. Cupidatat nulla anim eu nostrud exercitation laboris nisi velit. Sunt ea irure sunt do velit consectetur pariatur dolor cupidatat. Anim pariatur veniam esse anim sint
+                            consectetur et. Nulla ad qui consequat et pariatur cillum mollit nostrud culpa. Ut labore proident cupidatat anim eu. ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                            tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        </div>
+                    <div class="panel-footer">
+                        150 évaluations
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div id="divc4" class="col-lg-4">
+                <div id="drag4" class="panel panel-danger" draggable="true" ondragstart="drag(event)">
+                    <div class="panel-heading">
+                        Évaluation A402
+                    </div>
+                    <div class="panel-body panel_secondaire">
+                        <p>Anim quis qui in cillum fugiat aute exercitation. Eiusmod do dolor officia ullamco pariatur cupidatat qui incididunt exercitation laboris nisi cupidatat eiusmod nulla. Sunt adipisicing
+                            enim consectetur sit ipsum adipisicing mollit. Eu aliquip enim reprehenderit nulla in consectetur ipsum eu sunt nisi reprehenderit incididunt. Ea laboris aute ullamco eiusmod voluptate
+                            occaecat. Cupidatat nulla anim eu nostrud exercitation laboris nisi velit. Sunt ea irure sunt do velit consectetur pariatur dolor cupidatat. Anim pariatur veniam esse anim sint consectetur
+                            et. Nulla ad qui consequat et pariatur cillum mollit nostrud culpa. Ut labore proident cupidatat anim eu. consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan.
+                            Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Anim quis qui in cillum fugiat aute exercitation. Eiusmod do dolor officia ullamco pariatur cupidatat qui incididunt exercitation laboris nisi cupidatat eiusmod nulla. Sunt adipisicing enim consectetur sit ipsum adipisicing mollit. Eu aliquip enim reprehenderit nulla in consectetur ipsum eu sunt nisi reprehenderit incididunt. Ea laboris aute ullamco eiusmod voluptate occaecat. Cupidatat nulla anim eu nostrud exercitation laboris nisi velit. Sunt ea irure sunt do velit consectetur pariatur dolor cupidatat. Anim pariatur veniam esse anim sint consectetur et. Nulla ad qui consequat et pariatur cillum mollit nostrud culpa. Ut labore proident cupidatat anim eu.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    </div>
+                    <div class="panel-footer">
+                        100 évaluations
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+
+
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+
+
+
