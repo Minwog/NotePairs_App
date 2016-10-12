@@ -237,6 +237,68 @@
           };
         };
       },
+      biais: function(formatter) {
+        if (formatter == null) {
+          formatter = usFmt;
+        }
+        return function(arg) {
+          var attr;
+          attr = arg[0];
+          return function(data, rowKey, colKey) {
+            return {
+              coeff_fiabilite_question: 0,
+              sum: 0,
+              coeff: 0,
+              note: 0,
+              len: 0,
+              moy_copie: 0,
+              push: function(record) {
+                if (!isNaN(parseFloat(record[attr]))) {
+
+                  //-------------A MODIFIER--------------
+                  //somme coeff_fiabilite_question = 1
+                  switch(record.question) {
+                    case 1:
+                      this.coeff_fiabilite_question = 0.25;
+                      break;
+                    case 2:
+                      this.coeff_fiabilite_question = 0.25;
+                      break;
+                    case 3:
+                      this.coeff_fiabilite_question = 0.25;
+                      break;
+                    case 4:
+                      this.coeff_fiabilite_question = 0.25;
+                      break;
+                    default:
+                      this.coeff_fiabilite_question = 0.25;
+                  }
+                  //-------------------------------------
+
+                  this.note = parseFloat(record[attr]);
+                  this.moy_copie = parseFloat(record.moy_copie);
+                  this.coeff += this.coeff_fiabilite_question;
+                  this.sum += -this.coeff_fiabilite_question*(this.moy_copie - this.note);
+                  return this.len++;
+                }
+              },
+              value: function() {
+                //console.log(data)
+                //return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+                //console.log(this.moy_copie+ "-" + this.sum + "/" + this.len + "=" + (this.moy_copie-this.sum/this.len));
+
+                //return this.sum/this.len;
+                return this.sum;
+
+
+
+              },
+              format: formatter,
+              numInputs: attr != null ? 0 : 1
+            };
+          };
+        };
+      },
       ecart_average: function(formatter) {
         if (formatter == null) {
           formatter = usFmt;
@@ -249,19 +311,21 @@
               sum: 0,
               note: 0,
               len: 0,
+              moy_copie: 0,
               r: 0,
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
-                  this.sum += parseFloat(record[attr]);
                   this.note = parseFloat(record[attr]);
+                  this.moy_copie = parseFloat(record.moy_copie);
+                  this.sum += this.moy_copie-this.note;
                   return this.len++;
                 }
               },
               value: function() {
-                if(rowKey.length && colKey.length) {
-                  return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+                  //console.log(data)
+                  //return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+                  return this.sum/this.len;
 
-                }
 
                 //
               },
@@ -271,7 +335,178 @@
           };
         };
       },
-      fiabilite: function(formatter, B, A) {
+      weighted_average: function(formatter) {
+        if (formatter == null) {
+          formatter = usFmt;
+        }
+        var somme = 0;
+        var somme_coeff = 0;
+        return function(arg) {
+          var attr;
+          attr = arg[0];
+          return function(data, rowKey, colKey) {
+            return {
+              sum: 0,
+              coeff: 0,
+              note: 0,
+              len: 0,
+              B: 0,
+              A: 0,
+              push: function(record) {
+                if (!isNaN(parseFloat(record[attr]))) {
+
+                  //-------------A MODIFIER--------------
+                  //somme coeff_fiabilite_question = 1
+                  switch(record.question) {
+                    case 1:
+                      this.B = 2;
+                      this.A = 1;
+                      this.seuil = 0.75;
+                      break;
+                    case 2:
+                      this.B = 2;
+                      this.A = 0.5;
+                      this.seuil = 0.75;
+                      break;
+                    case 3:
+                      this.B = 1;
+                      this.A = 0.25;
+                      this.seuil = 0.75;
+                      break;
+                    case 4:
+                      this.B = 0.75;
+                      this.A = 0.25;
+                      this.seuil = 0.75;
+                      break;
+                    default:
+
+                  }
+                  //-------------------------------------
+
+
+                  this.note = parseFloat(record[attr]);
+                  this.moy_copie = parseFloat(record.moy_copie);
+                  this.coeff += Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
+                  this.sum += this.note*this.coeff;
+                  //return this.note*Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
+                  return this.len++;
+                }
+              },
+              value: function() {
+                if(rowKey.length) {
+                  //somme_coeff += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                  //somme += this.note*Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                  //return this.note*Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                  //return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+                  return this.sum/this.coeff;
+                /*
+                } else if (rowKey.length) {
+                  var tmp = somme;
+                  var tmp_coeff = somme_coeff;
+                  somme = 0;
+                  somme_coeff = 0;
+                  if(tmp_coeff == 0) {
+                    return 0;
+                  } else {
+                    return (tmp/tmp_coeff);
+                  }*/
+                }
+              },
+              format: formatter,
+              numInputs: attr != null ? 0 : 1
+            };
+          };
+        };
+      },
+      fiabilite: function(formatter) {
+        if (formatter == null) {
+          formatter = usFmt;
+        }
+        var somme = 0;
+        return function(arg) {
+          var attr;
+          attr = arg[0];
+          return function(data, rowKey, colKey) {
+            return {
+              coeff_fiabilite_question: 0,
+              sum: 0,
+              coeff: 0,
+              note: 0,
+              len: 0,
+              B: 0,
+              A: 0,
+              push: function(record) {
+                if (!isNaN(parseFloat(record[attr]))) {
+                  //this.sum += parseFloat(record[attr]);
+
+                  //-------------A MODIFIER--------------
+                  //somme coeff_fiabilite_question = 1
+                  switch(record.question) {
+                    case 1:
+                      this.B = 2;
+                      this.A = 1;
+                      this.seuil = 0.75;
+                      this.coeff_fiabilite_question = 0.5;
+                      break;
+                    case 2:
+                      this.B = 2;
+                      this.A = 0.5;
+                      this.seuil = 0.75;
+                      this.coeff_fiabilite_question = 0.2;
+                      break;
+                    case 3:
+                      this.B = 1;
+                      this.A = 0.25;
+                      this.seuil = 0.75;
+                      this.coeff_fiabilite_question = 0.2;
+                      break;
+                    case 4:
+                      this.B = 0.75;
+                      this.A = 0.25;
+                      this.seuil = 0.75;
+                      this.coeff_fiabilite_question = 0.1;
+                      break;
+                    default:
+                      this.B = 2;
+                      this.A = 1;
+                      this.seuil = 0.75;
+                      this.coeff_fiabilite_question = 0.25;
+                  }
+                  //-------------------------------------
+
+                  this.note = parseFloat(record[attr]);
+                  this.moy_copie = parseFloat(record.moy_copie);
+                  //somme += Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
+                  this.coeff += this.coeff_fiabilite_question;
+                  this.sum += this.coeff_fiabilite_question*Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
+
+                  return this.len++;
+                }
+              },
+              value: function() {
+                if(rowKey.length) {
+                  /*
+                  somme += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                  return Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                  */
+                  //return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
+
+                  //return Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
+                  return this.sum/this.coeff;
+/*
+                } else if (rowKey.length) {
+                  var tmp = somme;
+                  somme = 0;
+                  return tmp/data.rowTotals[rowKey].len;*/
+                }
+              },
+              format: formatter,
+              numInputs: attr != null ? 0 : 1
+            };
+          };
+        };
+      },
+      nb_fiabilite: function(formatter) {
         if (formatter == null) {
           formatter = usFmt;
         }
@@ -284,25 +519,55 @@
               sum: 0,
               note: 0,
               len: 0,
+              B: 0,
+              A: 0,
+              seuil: 0,
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
-                  this.sum += parseFloat(record[attr]);
+
+                  //-------------A MODIFIER--------------
+                  switch(record.question) {
+                    case 1:
+                      this.B = 2;
+                      this.A = 1;
+                      this.seuil = 0.75;
+                      break;
+                    case 2:
+                      this.B = 2;
+                      this.A = 0.5;
+                      this.seuil = 0.75;
+                      break;
+                    case 3:
+                      this.B = 1;
+                      this.A = 0.25;
+                      this.seuil = 0.75;
+                      break;
+                    case 4:
+                      this.B = 0.75;
+                      this.A = 0.25;
+                      this.seuil = 0.75;
+                      break;
+                    default:
+
+                  }
+                  //-------------------------------------
+
+
                   this.note = parseFloat(record[attr]);
+                  this.moy_copie = parseFloat(record.moy_copie);
+                  this.sum += Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0)>this.seuil;
+                  //return Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0)>this.seuil;
                   return this.len++;
                 }
               },
               value: function() {
-                console.log(somme)
-                if(rowKey.length && colKey.length) {
-                  somme += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
-                  console.log(somme)
-                  return Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
+                if(rowKey.length) {
+                  //somme += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0)>0.75;
+                  //return Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0)>0.75;
 
                   //return data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note;
-                } else if (rowKey.length) {
-                  var tmp = somme;
-                  somme = 0;
-                  return tmp/data.rowTotals[rowKey].len
+                  return this.sum;
+
                 }
 
               },
@@ -440,7 +705,10 @@
         "Moyenne": tpl.average(usFmt),
         "Écart-type": tpl.stdev(usFmt),
         "Écart%moyenne(lignes)": tpl.ecart_average(usFmt),
-        "Fiabilité(lignes)": tpl.fiabilite(usFmt,2,1),
+        "Fiabilité": tpl.fiabilite(usFmt),
+        "Nombre_Fiabilité(lignes)": tpl.nb_fiabilite(usFmt),
+        "Moyenne pondérée(lignes)": tpl.weighted_average(usFmt),
+        "Biais": tpl.biais(usFmt),
         "Minimum": tpl.min(usFmt),
         "Maximum": tpl.max(usFmt)
       };
@@ -847,6 +1115,7 @@
       colKeys = pivotData.getColKeys();
       result = document.createElement("table");
       result.className = "pvtTable";
+      result.setAttribute("ng-mouseover","console.log('salut')");
       spanSize = function(arr, i, j) {
         var l, len, n, noDraw, ref, ref1, stop, x;
         if (i !== 0) {
@@ -1476,7 +1745,6 @@
       if (scope == null) {
         scope = "heatmap";
       }
-      console.log();
       numRows = this.data("numrows");
       numCols = this.data("numcols");
       colorScaleGenerator = opts != null ? (ref = opts.heatmap) != null ? ref.colorScaleGenerator : void 0 : void 0;
@@ -1513,7 +1781,7 @@
 
           return function(x) {
             var nonRed;
-            nonRed = 255 - Math.round(105 * (x - min) / (max - min));
+            nonRed = 100 + Math.round(155 * (x - min) / (max - min));
             return "rgb("+ 255 + ", "+ nonRed +"," + nonRed + ")";
           };
 

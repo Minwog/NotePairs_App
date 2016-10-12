@@ -103,21 +103,20 @@
                                 $.getJSON("dist/workbook.json", function(mps) {
                                     var tmp = [];
                                     for(var i=0; i<mps.length; i++) {
-                                        if (tmp.indexOf(mps[i].copie+1000*mps[i].question) != -1) {
+                                        var l = 1000;
+                                        if (tmp.indexOf(mps[i].copie+l*mps[i].question) != -1) {
                                             for(var j=i-1; j>=0; j--) {
-                                                if (mps[j].copie+1000*mps[j].question ==
-                                                        mps[i].copie+1000*mps[i].question) {
+                                                if (mps[j].copie+l*mps[j].question ==
+                                                        mps[i].copie+l*mps[i].question) {
                                                     mps[i].numero_grader = mps[j].numero_grader + 1;
                                                     break
                                                 }
                                             }
                                         } else {
-                                            tmp.push(mps[i].copie+1000*mps[i].question);
+                                            tmp.push(mps[i].copie+l*mps[i].question);
                                             mps[i].numero_grader = 1;
-                                            //
                                         }
                                     }
-
                                     $("#output").pivotUI(mps, {
                                         renderers: renderers,
                                         derivedAttributes: {

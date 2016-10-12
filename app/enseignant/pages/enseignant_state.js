@@ -60,6 +60,17 @@
                         }
                     })
 
+                    .state('enseignant.pivot',{
+                        parent:'enseignant',
+                        url:'/pivot',
+                        views:{
+                            'content':{
+                                templateUrl:'app/enseignant/pages/evaluations/pivottable.html',
+                                controller: 'HighChartsController'
+                            }
+                        }
+                    })
+
                     .state('enseignant.diagrammeFiabilite',{
                         parent:'enseignant',
                         url:'/diagramme_fiabilite',
