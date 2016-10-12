@@ -17,9 +17,28 @@
             <div class="panel panel-info">
                 <div class="panel-heading">
                     Évaluation A386
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Sélectionner une question
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="" ng-click="filesrc='dist/question1.json'; reloadChart()">question 1</a>
+                                </li>
+                                <li><a href="" ng-click="filesrc='dist/question2.json'; reloadChart()">question 2</a>
+                                </li>
+                                <li><a href="" ng-click="filesrc='dist/question3.json'; reloadChart();">question 3</a>
+                                </li>
+                                <li><a href="" ng-click="filesrc='dist/question4.json'; reloadChart();">question 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
+                    <p>{{filesrc.substr(5,9)}}</p>
                     <div id="container" style="height: 400px"></div>
                     <div id="drag"></div>
                     <div id="drop"></div>
