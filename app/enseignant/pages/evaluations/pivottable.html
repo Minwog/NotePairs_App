@@ -1,0 +1,172 @@
+<style>
+    .panel-body {
+        overflow: scroll;
+    }
+</style>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Statistiques</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <!-- modified -->
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Évaluation A386
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Sélectionner une question
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="" ng-click="filesrc='dist/question1.json'; reloadChart()">question 1</a>
+                                </li>
+                                <li><a href="" ng-click="filesrc='dist/question2.json'; reloadChart()">question 2</a>
+                                </li>
+                                <li><a href="" ng-click="filesrc='dist/question3.json'; reloadChart();">question 3</a>
+                                </li>
+                                <li><a href="" ng-click="filesrc='dist/question4.json'; reloadChart();">question 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <p>{{filesrc.substr(5,9)}}</p>
+                    <div id="container" style="height: 400px"></div>
+                    <div id="drag"></div>
+                    <div id="drop"></div>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+
+                </div>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /modified -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <!-- modified -->
+        <div class="col-lg-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Évaluation A386
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body" >
+                    <div id="output"></div>
+                    <script type="text/javascript">
+                        $(function(){
+                            var derivers = $.pivotUtilities.derivers;
+                            var renderers = $.extend($.pivotUtilities.renderers,
+                                    $.pivotUtilities.gchart_renderers);
+                            $.getJSON("dist/workbook.json", function(mps) {
+                                var tmp = [];
+                                var copieValues = [];
+                                var questionValues = [];
+                                var graderValues = [];
+                                for(var i=0; i<mps.length; i++) {
+                                    if(copieValues.indexOf(mps[i].copie) == -1) {
+                                        copieValues.push(mps[i].copie);
+                                    }
+                                }
+                                for(var i=0; i<mps.length; i++) {
+                                    if(questionValues.indexOf(mps[i].question) == -1) {
+                                        questionValues.push(mps[i].question);
+                                    }
+                                }
+                                for(var i=0; i<mps.length; i++) {
+                                    if(graderValues.indexOf(mps[i].grader) == -1) {
+                                        graderValues.push(mps[i].grader);
+                                    }
+                                }
+
+                                var l = Math.max.apply(Math, copieValues);
+                                for(var i=0; i<mps.length; i++) {
+                                    if (tmp.indexOf(mps[i].copie+l*mps[i].question) != -1) {
+                                        for(var j=i-1; j>=0; j--) {
+                                            if (mps[j].copie+l*mps[j].question ==
+                                                    mps[i].copie+l*mps[i].question) {
+                                                mps[i].numero_grader = mps[j].numero_grader + 1;
+                                                break
+                                            }
+                                        }
+                                    } else {
+                                        tmp.push(mps[i].copie+l*mps[i].question);
+                                        mps[i].numero_grader = 1;
+                                    }
+                                }
+
+                                var l1 = Math.max.apply(Math, graderValues);
+                                var tmp1 = [];
+                                for(var i=0; i<mps.length; i++) {
+                                    if (tmp1.indexOf(mps[i].grader+l1*mps[i].question) != -1) {
+                                        for(var j=i-1; j>=0; j--) {
+                                            if (mps[j].grader+l1*mps[j].question ==
+                                                    mps[i].grader+l1*mps[i].question) {
+                                                mps[i].numero_eval = mps[j].numero_eval + 1;
+                                                break
+                                            }
+                                        }
+                                    } else {
+                                        tmp1.push(mps[i].grader+l1*mps[i].question);
+                                        mps[i].numero_eval = 1;
+                                    }
+                                }
+
+                                var moytmp = [];
+                                var itmp = [];
+                                for(var q in questionValues) {
+                                    for(var c in copieValues) {
+                                        for (var i = 0; i < mps.length; i++) {
+                                            if (mps[i].copie == copieValues[c]
+                                                    && mps[i].question == questionValues[q]) {
+                                                moytmp.push(mps[i].note)
+                                                itmp.push(i);
+                                            }
+                                        }
+                                        for (var ind in itmp) {
+                                            mps[itmp[ind]].moy_copie=(moytmp.reduce(function(a, b){return a + b;}, 0)/moytmp.length)
+                                        }
+                                        moytmp = [];
+                                        itmp = [];
+                                    }
+                                }
+
+                                $("#output").pivotUI(mps, {
+                                    parametresFiabilite: null,
+                                    renderers: renderers,
+                                    derivedAttributes: {
+
+                                    },
+                                    cols: ["note"], rows: ["question"],
+                                    rendererName: "Histogramme",
+                                    aggregatorName: "Effectifs totaux",
+                                    vals: [
+                                        "note"
+                                    ]
+                                });
+                            });
+                        });
+                    </script>
+                </div>
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+
+                </div>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /modified -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->

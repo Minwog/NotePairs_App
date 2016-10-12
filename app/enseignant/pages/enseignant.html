@@ -53,38 +53,38 @@
             <div class="sidebar-nav navbar-collapse">
 
                 <ul class="nav" id="side-menu">
-
-                   <li class="hidden-xs disabled">
-                       <a href="#">
-                       <img src="{{enseignantCo.avatar}}" class="img-rounded" alt="Robert" width="200" height="190">
-                        <h3>{{enseignantCo.nom}} {{enseignantCo.prenom}}</h3>
+                        <img src="{{enseignantCo.avatar}}" class="img-rounded" alt="Robert" width="200" height="190">
+                        <h3>{{enseignantCo.nom}} {{enseignantCo.prenom}} </h3>
                         <h5>{{enseignantCo.email}}</h5>
-                           </a>
-                        </li>
-
                         <!-- /input-group -->
                     <li>
-                        <a class="navbarEnseignantText" ui-sref="enseignant"><i class="fa fa-home fa-fw"></i> Tableau de bord</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a class="navbarEnseignantText" ui-sref="enseignant.cours"><i class="fa fa-book fa-fw"></i> Mes Cours</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant.mesCours"><i class="fa fa-book fa-fw"></i> Cours</a>
                     </li>
                     <li>
-                        <a class="navbarEnseignantText" ui-sref="enseignant.evaluations"><i class="fa fa-pencil fa-fw"></i> Editer une évaluation</a>
+                        <a class="navbarEnseignantText" ui-sref="enseignant.evaluations"><i class="fa fa-pencil fa-fw"></i> Évaluations</a>
                     </li>
                     <li>
                         <a class="navbarEnseignantText" ui-sref="enseignant.createEvaluation"><i class="fa fa-check-square fa-fw"></i> Créer une évaluation</a>
+                    </li>
+                    <li>
+                        <a class="navbarEnseignantText" ui-sref="enseignant.diagrammeFiabilite"><i class="fa fa-check-square fa-fw"></i> Diagramme de Fiabilité</a>
+                    </li>
+                    <li>
+                        <a class="navbarEnseignantText" href="forms.html"><i class="fa fa-cog fa-fw"></i> Paramètres</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <div ui-view="content"></div>
 </div>
 
 
 
-
-<div ui-view="content"></div>
 
 
 

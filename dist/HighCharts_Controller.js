@@ -1,90 +1,167 @@
 angular.module('NotePairApp')
-    .controller('HighChartsController',function () {
+.controller('HighChartsController', ['$scope', '$route', function ($scope, $route) {
 
-        /*------------ Diagramme de Fiabilité (Line => Fiabilité & Column => Notes) ----------------*/
+/*------------ Diagramme de Fiabilité (Line => Fiabilité & Column => Notes) ----------------*/
 
-        $(function () {
-            $('#container').highcharts({
-                chart: {
-                    renderTo: 'container',
-                    animation: false
-                },
+    $scope.filesrc = 'dist/question1.json'
 
-                title: {
-                    text: 'Diagramme de fiabilité'
-                },
+    $scope.reloadChart = function() {
+        $(document).ready(function () {
+            var categoriestmp = [];
+            var notestmp = [];
+            var pointstmp = Array().fill(null);
+            var noteValues = [];
+            $.getJSON($scope.filesrc, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    noteValues.push(data[i].note)
+                }
+                var maxnote = Math.max.apply(Math, noteValues);
+                var minnote = Math.min.apply(Math, noteValues);
+                var pasnote = calculpas();
 
-                xAxis: {
-                    labels:{padding:0,step: 2},
-                    title:{
-                        text: 'Note'
-                    },
-                    categories: ['0','0.5', '1','1.5', '2','2.5' ,'3','3.5', '4','4.5' ,'5','5.5' ,'6','6.5', '7','7.5' ,'8','8.5' ,'9','9.5' ,'10','10.5' ,'11','11.5' ,'12','12.5', '13','13.5', '14','14.5', '15','15.5', '16','16.5', '17','17.5' ,'18','18.5','19','19.5' ,'20']
-                },
-                yAxis: {
-                    title:{
-                        text:'Nombre d\'occurences de la note'
-                    }
-                },
-                plotOptions: {
-                    series: {
-                        connectNulls: true,
-                        pointPadding: -0.3,
-                        groupPadding: -0,
-                        borderWidth: 0.1,
-                        point: {
-                            events: {
-
-                                drag: function (e) {
-                                    // Returning false stops the drag and drops. Example:
-                                    /*
-                                    console.log(e)
-                                     if (e.newY > 13) {
-                                     this.y = 300;
-                                     return false;
-                                     }
-                                     */
-
-
-                                },
-                                drop: function () {
-                                    $('#drop').html(
-                                        'Dans la série <b>' + this.series.name + '</b>, la donnée a bien été déplacée à une abscisse de <b>' + this.category + '</b> pour une ordonnée à <b>' + Highcharts.numberFormat(this.y, 2) + '</b>');
-                                }
+                function calculpas() {
+                    var p = Infinity;
+                    for (var i = 0; i < noteValues.length - 1; i++) {
+                        for (var j = i + 1; j < noteValues.length; j++) {
+                            if (Math.abs(noteValues[i] - noteValues[j]) < p
+                                && Math.abs(noteValues[i] - noteValues[j]) > 0) {
+                                p = Math.abs(noteValues[i] - noteValues[j]);
                             }
-                        },
-                        stickyTracking: false
-                    },
-                    column: {
-                        stacking: 'normal'
-                    },
-                    line: {
-                        cursor: 'ns-resize'
+                        }
                     }
-                },
+                    return p;
+                };
 
-                tooltip: {
-                    yDecimals: 2
-                },
 
-                series: [{
-                    data: [0, null, 0, null, 0, null, 0, null, 0, null, 1, null, 0, null, 3, null, 5, null, 7, null, 6,
-                        null, 7, null, 2, null, 0, null, 0, null, 0, null, 0, null, 0, null, 0, null, 0, null, 1],
-                    name:"Notes attribuées",
-                    dragMinY: 0,
-                    type: 'column',
-                    minPointLength: 2
-                },
-                    {
-                        data: [0, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, null, 7, null, null,
-                            null, 7, null, null, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0],
-                        name: "Jauge de fiabilité",
-                        draggableX: true,
-                        dragPrecisionX:0.5
-                    }]
+                console.log("pas = " + pasnote + " max = " + maxnote + " min = " + minnote)
+                for (var i = minnote - 2 * pasnote; i <= maxnote + 2 * pasnote; i += pasnote / 2) {
+                    categoriestmp.push(Math.round(i * 100) / 100);
+                }
+
+
+                notestmp = Array(categoriestmp.length).fill(null);
+                for (var i = 0; i < data.length; i++) {
+                    notestmp[2 * ((2 * pasnote - minnote) / pasnote + Math.floor((data[i].note) / pasnote))]++;
+                }
+                var m = 0;
+                var s = 0;
+                for (var i = 0; i < noteValues.length; i++) {
+                    m += noteValues[i];
+                    s += noteValues[i] * noteValues[i];
+                }
+                m = m / noteValues.length;
+                s = Math.sqrt(s / noteValues.length - m * m);
+
+
+                var A = 0.5 * s;
+                var B = 2 * A + pasnote;
+
+                pointstmp = Array(categoriestmp.length).fill(null);
+                pointstmp[0] = 0;
+                pointstmp[2 * ((2 * pasnote - minnote) / pasnote + Math.round((m - B) / pasnote))] = 0;
+                pointstmp[2 * ((2 * pasnote - minnote) / pasnote + Math.round((m - A) / pasnote))] = Math.max.apply(Math, notestmp);
+                pointstmp[2 * ((2 * pasnote - minnote) / pasnote + Math.round((m + A) / pasnote))] = Math.max.apply(Math, notestmp);
+                pointstmp[2 * ((2 * pasnote - minnote) / pasnote + Math.round((m + B) / pasnote))] = 0;
+                pointstmp[pointstmp.length - 1] = 0;
+
+
+                /*
+                console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m - B) / pasnote)))
+                console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m - A) / pasnote)))
+                console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m + A) / pasnote)))
+                console.log(2 * ((2 * pasnote - minnote) / pasnote + Math.round((m + B) / pasnote)))
+
+                console.log("m = " + m + " s = " + s + " A = " + A + " B = " + B)
+                console.log(notestmp)
+                console.log(categoriestmp)
+                console.log(pointstmp)
+                */
+
+
+                $('#container').highcharts({
+                    chart: {
+                        renderTo: 'container',
+                        animation: false
+                    },
+
+                    title: {
+                        text: 'Diagramme de fiabilité'
+                    },
+
+                    xAxis: {
+                        labels: {padding: 0, step: 2},
+                        title: {
+                            text: 'Note'
+                        },
+                        categories: categoriestmp
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Nombre d\'occurences de la note'
+                        }
+                    },
+                    plotOptions: {
+                        series: {
+                            connectNulls: true,
+                            pointPadding: -0.35,
+                            groupPadding: 0,
+                            borderWidth: 0.3,
+                            point: {
+                                events: {
+                                    drag: function (e) {
+                                        // Returning false stops the drag and drops. Example:
+
+
+                                        //console.log(this)
+                                        /*
+                                        if(e.target.index == 0 || e.target.index == categoriestmp.length-1) {
+                                            return false;
+                                        }
+
+                                        if (e.x < 0 || e.x > categoriestmp[categoriestmp-1]) {
+                                            return false;
+                                        }
+                                        */
+                                    },
+                                    drop: function () {
+                                        $('#drop').html(
+                                            'Dans la série <b>' + this.series.name + '</b>, la donnée a bien été' +
+                                            ' déplacée à une abscisse de <b>' + this.category + '</b> pour une ordonnée ' +
+                                            'à <b>' + Highcharts.numberFormat(this.y, 2) + '</b>');
+                                    }
+                                }
+                            },
+                            stickyTracking: false
+                        },
+                        column: {
+                            stacking: 'normal'
+                        },
+                        line: {
+                            cursor: 'ns-resize'
+                        }
+                    },
+
+                    tooltip: {
+                        yDecimals: 2
+                    },
+
+                    series: [{
+                        data: notestmp,
+                        name: "Nombre d'évaluateurs",
+                        dragMinY: 0,
+                        type: 'column'
+                    },
+                        {
+                            data: pointstmp,
+                            name: "Jauge de fiabilité",
+                            draggableX: true,
+                            dragMinX: 0,
+                            dragMaxX: pointstmp.length-1,
+                            dragPrecisionX: 2
+                        }]
+                });
             });
         });
-
 
 
         /*------------ Module Drag & Drop ----------------*/
@@ -95,7 +172,8 @@ angular.module('NotePairApp')
             } else {
                 factory(Highcharts);
             }
-        }(function (Highcharts) {
+        }
+        (function (Highcharts) {
 
             'use strict';
 
@@ -113,7 +191,7 @@ angular.module('NotePairApp')
                     dragMax = pick(options['dragMax' + XOrY], undefined),
                     precision = pick(options['dragPrecision' + XOrY], undefined);
 
-                if(!isNaN(precision)) {
+                if (!isNaN(precision)) {
                     newY = Math.round(newY / precision) * precision;
                 }
 
@@ -364,11 +442,13 @@ angular.module('NotePairApp')
 
                             point.handle.element.point = point;
                         } else {
-                            point.handle.attr({ d: path });
+                            point.handle.attr({d: path});
                         }
                     });
                 }
             });
 
         }));
-    });
+    };
+    $scope.reloadChart();
+}]);

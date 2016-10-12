@@ -82,8 +82,8 @@
 
                         <tr class="infos" ng-repeat-start="eleve in ElevesList | filter:searchBox | orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
                             <td>
-                                <button ng-if="eleve.expanded" ng-click="eleve.expanded = false">&Hat;</button>
-                                <button ng-if="!eleve.expanded" ng-click="eleve.expanded = true">+</button>
+                                <button ng-if="eleve.expanded" ng-click="eleve.expanded = false" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-up"></i></button>
+                                <button ng-if="!eleve.expanded" ng-click="eleve.expanded = true" class="btn btn-success btn-circle-micro pull-right" ><i class="fa fa-angle-down"></i></button>
                             </td>
 
                             <td>{{eleve.nom}}</td>

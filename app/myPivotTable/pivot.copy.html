@@ -19,21 +19,36 @@
     <!-- optional: mobile support with jqueryui-touch-punch -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-
-    <script src="dist/HighCharts_Controller.js"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-
 </head>
 <body>
-    <div id="wrapper">
+<script type="text/javascript">
+    // This example adds Google Chart renderers.
 
-    </div>
+    google.load("visualization", "1", {packages:["corechart", "charteditor"]});
+    $(function(){
+        var derivers = $.pivotUtilities.derivers;
+        var renderers = $.extend($.pivotUtilities.renderers,
+                $.pivotUtilities.gchart_renderers);
+
+        $.getJSON("mps.json", function(mps) {
+            $("#output").pivotUI(mps, {
+                renderers: renderers,
+                derivedAttributes: {
+                    "Intervalle Note": derivers.bin("Note", 2.5)
+                },
+                cols: ["Question"], rows: ["Copie"],
+                rendererName: "Carte de Chaleur",
+                aggregatorName: "Moyenne",
+                vals: [
+                    "Note"
+                ]
+            });
+        });
+    });
+</script>
+
+
+<div id="output" style="margin: 30px;"></div>
+
 </body>
-
-
+</html>
