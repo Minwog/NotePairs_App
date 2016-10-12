@@ -42,7 +42,7 @@ var pointstmp: [0, null, null, null, null, null, null, null, null, null, null, n
 
         console.log("pas = "+pasnote+" max = "+maxnote+" min = "+minnote)
         for(var i=minnote-2*pasnote; i<=maxnote+2*pasnote; i+=pasnote/2) {
-            categoriestmp.push(Math.floor(i*100)/100);
+            categoriestmp.push(Math.round(i*100)/100);
         }
 
 
@@ -61,20 +61,20 @@ var pointstmp: [0, null, null, null, null, null, null, null, null, null, null, n
 
 
         var A = 0.5*s;
-        var B = 1.5*A+pasnote;
+        var B = 2*A+pasnote;
 
         pointstmp = Array(categoriestmp.length).fill(null);
         pointstmp[0] = 0;
-        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.floor((m-B)/pasnote))] = 0;
-        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.floor((m-A)/pasnote))] = Math.max.apply(Math, notestmp);
-        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.floor((m+A)/pasnote))] = Math.max.apply(Math, notestmp);
-        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.floor((m+B)/pasnote))] = 0;
+        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.round((m-B)/pasnote))] = 0;
+        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.round((m-A)/pasnote))] = Math.max.apply(Math, notestmp);
+        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.round((m+A)/pasnote))] = Math.max.apply(Math, notestmp);
+        pointstmp[2*((2*pasnote-minnote)/pasnote+Math.round((m+B)/pasnote))] = 0;
         pointstmp[pointstmp.length-1] = 0;
 
-        console.log(2*((2*pasnote-minnote)/pasnote+Math.floor((m-B)/pasnote)))
-        console.log(2*((2*pasnote-minnote)/pasnote+Math.floor((m-A)/pasnote)))
-        console.log(2*((2*pasnote-minnote)/pasnote+Math.floor((m+A)/pasnote)))
-        console.log(2*((2*pasnote-minnote)/pasnote+Math.floor((m+B)/pasnote)))
+        console.log(2*((2*pasnote-minnote)/pasnote+Math.round((m-B)/pasnote)))
+        console.log(2*((2*pasnote-minnote)/pasnote+Math.round((m-A)/pasnote)))
+        console.log(2*((2*pasnote-minnote)/pasnote+Math.round((m+A)/pasnote)))
+        console.log(2*((2*pasnote-minnote)/pasnote+Math.round((m+B)/pasnote)))
 
         console.log("m = "+m+" s = "+s)
         console.log(notestmp)
@@ -109,9 +109,9 @@ var pointstmp: [0, null, null, null, null, null, null, null, null, null, null, n
             plotOptions: {
               series: {
                   connectNulls: true,
-                  pointPadding: -0.35*pasnote,
-                  groupPadding: 0*pasnote,
-                  borderWidth: 0.3*pasnote,
+                  pointPadding: -0.35,
+                  groupPadding: 0,
+                  borderWidth: 0.3,
                   point: {
                       events: {
 
