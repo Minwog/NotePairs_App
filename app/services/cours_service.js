@@ -21,7 +21,7 @@ angular.module('NotePairApp')
                     deferred.resolve(data);
                     console.log(data);
                 }
-            )
+            );
             return deferred.promise;
         }
 
@@ -36,6 +36,28 @@ angular.module('NotePairApp')
             return deferred.promise;
         }
 
+        function deleteUser(coursId,userId) {
+            var deferred=$q.defer();
+            $http.delete('http://localhost:8000/api/cours/'+coursId+'/users/'+userId).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            );
+            return deferred.promise;
+        }
+
+        function addUser(coursId,users) {
+            var deferred=$q.defer();
+            $http.post('http://localhost:8000/api/cours/'+coursId+'/users/add',users).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            );
+            return deferred.promise;
+        }
+
         return{
             'query': resource.query,
             'save': resource.save,
@@ -43,7 +65,9 @@ angular.module('NotePairApp')
             'get': resource.get,
             'delete': resource.delete,
             'getEnseignant':getEnseignant,
-            'getEval':getEval
+            'getEval':getEval,
+            'deleteUser':deleteUser,
+            'addUser':addUser
         }
 
 
