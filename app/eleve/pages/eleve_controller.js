@@ -1,14 +1,14 @@
 angular.module('NotePairApp')
-    .controller('EleveController',['$scope','$state','$stateParams', 'httpq', 'textAngularManager','ElevesService', function ($scope,$state,$stateParams,httpq,textAngularManager,ElevesService) {
+    .controller('EleveController',['$scope','$state','$stateParams', 'httpq', 'textAngularManager','UserService', function ($scope,$state,$stateParams,httpq,textAngularManager,UserService) {
 
         $scope.version = textAngularManager.getVersion();
         $scope.versionNumber = $scope.version.substring(1);
         $scope.disabled = false;
         $scope.tab=0;
 
-        $scope.eleveCo = ElevesService.get({id:1});
+        $scope.eleveCo = UserService.get({id:1});
 
-        ElevesService.getCours(1).then(function(data){
+        UserService.getCours(1).then(function(data){
             $scope.MesCours=data;
         });
 /*

@@ -11,7 +11,7 @@ angular.module('NotePairApp')
                 },
 
                 title: {
-                    text: 'Diagramme de fiabilité'
+                    text: 'Diagramme de fiabilité dicté par les données'
                 },
 
                 xAxis: {
@@ -29,22 +29,20 @@ angular.module('NotePairApp')
                 plotOptions: {
                     series: {
                         connectNulls: true,
-                        pointPadding: -0.3,
-                        groupPadding: -0,
-                        borderWidth: 0.1,
+                        pointPadding: -1,
+                        groupePadding:-0.3,
+                        borderWodth:0,
                         point: {
                             events: {
 
                                 drag: function (e) {
                                     // Returning false stops the drag and drops. Example:
                                     /*
-                                    console.log(e)
-                                     if (e.newY > 13) {
+                                     if (e.newY > 300) {
                                      this.y = 300;
                                      return false;
                                      }
                                      */
-
 
                                 },
                                 drop: function () {
@@ -68,16 +66,14 @@ angular.module('NotePairApp')
                 },
 
                 series: [{
-                    data: [0, null, 0, null, 0, null, 0, null, 0, null, 1, null, 0, null, 3, null, 5, null, 7, null, 6,
-                        null, 7, null, 2, null, 0, null, 0, null, 0, null, 0, null, 0, null, 0, null, 0, null, 1],
+                    data: [0,null, 0 , null,0, null,0, null,0, null,1, null,0, null,3,null, 5, null,7, null,6, null,7,null,2,null,0,null,0,null,0,null,0,null,0,null,0,null,0,null,1],
                     name:"Notes attribuées",
                     dragMinY: 0,
                     type: 'column',
                     minPointLength: 2
                 },
                     {
-                        data: [0, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, null, 7, null, null,
-                            null, 7, null, null, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0],
+                        data: [0, null,null, null,null,null, null,null, null,null, null, null, null,0, null,7/2, null,7,null,7,null,7,null,7/2,null,0, null, null,null,null,null,null,null, null, null, null, null, null, null, null, 0],
                         name: "Jauge de fiabilité",
                         draggableX: true,
                         dragPrecisionX:0.5

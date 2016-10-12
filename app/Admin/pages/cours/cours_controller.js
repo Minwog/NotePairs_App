@@ -8,7 +8,7 @@
 
             $scope.deleteCours = function (id) {
                 if (alerteService.showPopup('Voulez-vous vraiment supprimer ce groupe ?')) {
-                    CoursService.delete({id:id});
+                    CoursService.delete({id: id});
                 }
                 $state.go('admin.cours')
             };
@@ -21,39 +21,62 @@
                 $state.go('admin.cours.update', {id: id})
             }
         }])
+})();
+
+(function () {
+    angular.module('NotePairApp')
+
+        .controller('UpdateCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', function ($scope, $state, $stateParams, alerteService, CoursService, UserService) {
 
 
-        .controller('UpdateCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', 'LocalGroupeService', 'UserService', function ($scope, $state, $stateParams, alerteService, CoursService, UserService, LocalGroupeService, UserService) {
+        CoursService.get({id: $stateParams.id}).$promise.then(function (data) {
+            $scope.Cours = data;
+        });
+
+        UserService.getByRole(2).then(function (data) {
+            $scope.ListEleves = data;
+        });
+
+        UserService.getByRole(3).then(function (data) {
+            $scope.ListEnseignant = data
+        });
+
+        $scope.updateCours = function () {
+
+            CoursService.update($scope.Cours);
+            console.log($scope.Cours);
+            $state.go('admin.cours');
+        };
+
+        CoursService.getEnseignant($stateParams.id).then(function (data) {
+            console.log(data);
+            $scope.UsersList = data;
+        });
+
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker();
+        });
+
+        $scope.deleteUser = function (coursid, userid) {
+            CoursService.deleteUser(coursid, userid);
+            $scope.UsersList.splice($scope.UsersList.map(function (e) {
+                return e.id
+            }).indexOf('userid'), 1)
+        }
+
+        $scope.goToAddUser = function (role) {
+            $state.go('admin.cours.addUser', {id: $scope.Cours.id, role: role})
+        }
 
 
-            CoursService.get($stateParams.id).then(function (data) {
-                console.log(data);
-                $scope.Cours = data;
-            });
+    }])
 
-            UserService.getByRole(2).then(function (data) {
-                $scope.ListEleves = data;
-            });
+})();
 
-            UserService.getByRole(3).then(function (data) {
-                $scope.ListEnseignant = data
-            });
+(function () {
+    angular.module('NotePairApp')
 
-            $scope.updateCours = function () {
-
-                LocalGroupeService.update($scope.Cours);
-                console.log($scope.Cours);
-                $state.go('admin.cours');
-            };
-
-            $(document).ready(function () {
-                $('.selectpicker').selectpicker();
-            });
-
-
-        }])
-
-        .controller('AddCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', 'UserService', function ($scope, $state, $stateParams, alerteService, LocalGroupeService, UserService, UserService) {
+        .controller('AddCoursController', ['$scope', '$state', '$stateParams', 'alerteService', 'CoursService', 'UserService', function ($scope, $state, $stateParams, alerteService, CoursService, UserService) {
 
             UserService.getByRole(2).then(function (data) {
                 $scope.ListEleves = data;
@@ -69,21 +92,41 @@
                 cours: [],
                 eleves: [],
                 groupes: [],
-                categorie:'',
-                image:''
+                categorie_id: '',
+                image: ''
             };
 
 //--- Methode add pour ajouter un Groupe à la liste ---//
             $scope.addCours = function () {
 
                 CoursService.save($scope.newCours);
-                $state.go('admin.cours')
+                $state.go('admin.cours', {reload: true})
             };
 
             $(document).ready(function () {
                 $('.selectpicker').selectpicker();
             });
 
-        }]);
+        }])
+
+})();
+
+(function () {
+    angular.module('NotePairApp')
+
+    .controller('AddUserCoursController',['$stateParams','UserService','CoursService',function($stateParams,UserService,CoursService){
+        var vm=this;
+        vm.roleid=$stateParams.role;
+        vm.coursid=$stateParams.id;
+
+        UserService.getByRole(vm.roleid).then(function (data) {
+            console.log(data);
+            console.log(vm.roleid)
+            vm.UsersList=data;
+        });
+
+        vm.UserOfCours=CoursService.getEnseignant(vm.coursid)
+
+    }])
 
 })();
