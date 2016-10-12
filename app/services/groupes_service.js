@@ -1,6 +1,6 @@
 angular.module('NotePairApp')
     .factory('GroupesService', ['$resource',function($resource) {
-        return $resource('/resources/json/groupes.json',{},{
+        return $resource('http://localhost:8000/api/groupes/:id',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',

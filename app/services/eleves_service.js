@@ -25,7 +25,6 @@ angular.module('NotePairApp')
                 $http.get('http://localhost:8000/api/userbyrole/' + id).success(
                     function (data) {
                         deferred.resolve(data);
-                        console.log(data);
                     }
                 );
                 return deferred.promise;
@@ -36,7 +35,6 @@ angular.module('NotePairApp')
                 $http.get('http://localhost:8000/api/users/'+id+'/cours/all').success(
                     function (data) {
                         deferred.resolve(data);
-                        console.log(data);
                     }
                 )
 

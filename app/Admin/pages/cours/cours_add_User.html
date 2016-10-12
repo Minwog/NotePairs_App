@@ -19,10 +19,10 @@
                     <div>
                         <div class="col-lg-6 pull-right" style="margin-bottom: 10px">
                             <div class="input-group">
-                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
+                                <input ng-show="!searchLabel" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
 
-                                <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Nom">
-                                <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.Prenom">
+                                <input ng-if="searchLabel === 'Nom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.nom">
+                                <input ng-if="searchLabel === 'Prenom'" type="text" class="form-control" aria-label="..." ng-model="searchBox.prenom">
                                 <input ng-if="searchLabel === 'Pseudo'" type="text" class="form-control" aria-label="..." ng-model="searchBox.username">
 
 
@@ -43,15 +43,15 @@
                     <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                         <tr class="">
-                            <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='Nom'; nomup=true">
+                            <th>Nom <a ng-show="!nomup" href="" ng-click="myOrderBy='nom'; nomup=true">
                                 <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                <a ng-show="nomup" href="" ng-click="myOrderBy='-Nom'; nomup=false">
+                                <a ng-show="nomup" href="" ng-click="myOrderBy='-nom'; nomup=false">
                                     <span class="glyphicon glyphicon-triangle-top"></span>
                                 </a>
                             </th>
-                            <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='Prenom'; prenomup=true">
+                            <th>Prenom <a ng-show="!prenomup" href="" ng-click="myOrderBy='prenom'; prenomup=true">
                                 <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                <a ng-show="prenomup" href="" ng-click="myOrderBy='-Prenom'; prenomup=false">
+                                <a ng-show="prenomup" href="" ng-click="myOrderBy='-prenom'; prenomup=false">
                                     <span class="glyphicon glyphicon-triangle-top"></span>
                                 </a>
                             </th>
@@ -66,20 +66,17 @@
                         </thead>
                         <tbody>
 
-                        <tr class="infos" ng-repeat-start="eleve in UserList | filter:searchBox| orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
-                            <td>{{eleve.Nom}}</td>
-                            <td>{{eleve.Prenom}}</td>
-                            <td class=>{{eleve.username}}</td>
-                            <td><input type="checkbox" value=""> </input>
+                        <tr class="infos" ng-repeat="user in UsersList | filter:searchBox| orderBy:myOrderBy" ng-class-odd="'odd'" ng-class-even="'even'">
+                            <td>{{user.nom}}</td>
+                            <td>{{user.prenom}}</td>
+                            <td class=>{{user.username}}</td>
+                            <td><input type="checkbox"  checklist-model="NewUsers" checklist-value="user.id"> </input>
                             </td>
-                        </tr>
-                        <tr ng-if="enseignant.expanded" ng-repeat-end="">
-                            <td></td>
                         </tr>
                         </tbody>
                     </table>
                     <!-- /.table-responsive -->
-                    <button class="btn btn-primary pull-right" ng-click="addToCours()">Ajouter au cours</button>
+                    <button class="btn btn-primary pull-right" ng-click="Ajouter()">Ajouter au cours</button>
                 </div>
                 <!-- /.panel-body -->
             </div>

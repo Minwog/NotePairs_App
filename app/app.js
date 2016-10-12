@@ -5,7 +5,8 @@
         'ngResource',
         'pdf',
         'textAngular',
-        'rzModule'
+        'rzModule',
+        'checklist-model'
     ]);
 
 })();
