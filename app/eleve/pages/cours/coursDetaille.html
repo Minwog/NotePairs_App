@@ -1,0 +1,87 @@
+<!-- Page Content -->
+<div>
+    <div id="page-wrapper">
+        <!-- Page Heading -->
+        <div class="jumbotron">
+            <h1>{{MonCours.nom}}</h1>
+            <p>{{MonCours.categorie.nom}}</p>
+            <p><span ng-repeat="ens in EnseignantsAssocies | filter:role:2 ">| {{ens.prenom}} {{ens.nom}} |</span></p>
+        </div>
+        <!-- /.row -->
+
+        <!-- Description -->
+        <div class="row">
+            <hr>
+            <div>
+                <p>{{MonCours.description}}</p>
+            </div>
+            <hr>
+        </div>
+        <!-- /.row -->
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#collapse1">Elèves</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body"  ng-repeat="eleve in EnseignantsAssocies" ng-class-odd="'odd'" ng-class-even="'even'">{{eleve.nom}} {{eleve.prenom}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+        <hr>
+
+        <div class="panel-body" ng-repeat="eval in Eval">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Evaluation : {{evaluation.nom}}</h3>
+                            <p>Devoir à rendre avant le {{date}}</p>
+                            <p>
+                                <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                    Faire le devoir
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</div>

@@ -1,6 +1,6 @@
 angular.module('NotePairApp')
-    .factory('CoursService', ['$resource',function($resource) {
-        return $resource('/resources/json/cours.json',{},{
+    .factory('CoursService', ['$resource', '$http', '$stateParams','$q', function ($resource, $http, $stateParams,$q) {
+        var resource= $resource('http://localhost:8000/api/cours/:id',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
@@ -11,8 +11,71 @@ angular.module('NotePairApp')
                     return data;
                 }
             },
-            'update': {method: 'PUT'}
+            'update': {method: 'POST'}
         });
+
+        function getEnseignant(id){
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/cours/'+id+'/users/all').success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            );
+            return deferred.promise;
+        }
+
+        function getEval(id) {
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/evaluationsbycours/'+id).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            )
+            return deferred.promise;
+        }
+
+        function deleteUser(coursId,userId) {
+            var deferred=$q.defer();
+            $http.delete('http://localhost:8000/api/cours/'+coursId+'/users/'+userId).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            );
+            return deferred.promise;
+        }
+
+        function addUser(coursId,users) {
+            var deferred=$q.defer();
+            $http.post('http://localhost:8000/api/cours/'+coursId+'/users/add',users).success(
+                function (data) {
+                    deferred.resolve(data);
+                    console.log(data);
+                }
+            );
+            return deferred.promise;
+        }
+
+        return{
+            'query': resource.query,
+            'save': resource.save,
+            'update': resource.update,
+            'get': resource.get,
+            'delete': resource.delete,
+            'getEnseignant':getEnseignant,
+            'getEval':getEval,
+            'deleteUser':deleteUser,
+            'addUser':addUser
+        }
+
+
+
+
+
+
+
     }])
 
     .service('alerteService',['$window',function ($window) {

@@ -122,24 +122,13 @@
                         }
                     })
 
-                    .state('admin.cours.addTeacher', {
+                    .state('admin.cours.addUser', {
                         parent:'admin',
-                        url:'/cours/addTeacher',
+                        url:'/cours/:id/addUser/:role',
                         views:{
                             'content':{
-                                templateUrl:"app/Admin/pages/cours/cours_add_Teacher.html",
-                                controller: 'CoursController'
-                            }
-                        }
-                    })
-
-                    .state('admin.cours.addEleve', {
-                        parent:'admin',
-                        url:'/cours/addEleve',
-                        views:{
-                            'content':{
-                                templateUrl:"app/Admin/pages/cours/cours_add_Eleve.html",
-                                controller: 'CoursController'
+                                templateUrl:"app/Admin/pages/cours/cours_add_User.html",
+                                controller: 'AddUserCoursController'
                             }
                         }
                     })
