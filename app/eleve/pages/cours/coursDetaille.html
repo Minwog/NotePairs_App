@@ -3,9 +3,12 @@
     <div id="page-wrapper">
         <!-- Page Heading -->
         <div class="jumbotron">
-            <h1>{{MonCours.nom}}</h1>
+            <h2>{{MonCours.nom}}</h2>
+            <hr>
             <p>{{MonCours.categorie.nom}}</p>
-            <p><span ng-repeat="ens in EnseignantsAssocies | filter:role:2 ">| {{ens.prenom}} {{ens.nom}} |</span></p>
+            <hr>
+            <p><span class="small">Professeur(s) :</span></p>
+            <p><span ng-repeat="ens in EnseignantsAssocies | filter:{role:{id:3}} ">   <em class="small">{{ens.prenom}} {{ens.nom}}</em>  . </span></p>
         </div>
         <!-- /.row -->
 
