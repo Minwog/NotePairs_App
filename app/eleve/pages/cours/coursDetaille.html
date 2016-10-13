@@ -34,14 +34,13 @@
 
         <div class="row">
         <hr>
-
-        <div class="panel-body" ng-repeat="eval in Eval">
-            <div class="row">
-                <div class="col-md-4 col-sm-6 hero-feature">
+         <div class="row">
+             <div class="panel" >
+                 <div class="col-md-4 col-sm-6 hero-feature" ng-repeat="eval in Eval">
                     <div class="thumbnail">
                         <div class="caption">
-                            <h3>Evaluation : {{evaluation.nom}}</h3>
-                            <p>Devoir à rendre avant le {{date}}</p>
+                            <h3>Evaluation : {{eval.nom}}</h3>
+                            <p>Devoir à rendre avant le {{eval.date_fin_correction}}</p>
                             <p>
                                 <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
                                     Faire le devoir

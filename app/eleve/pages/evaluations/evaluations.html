@@ -7,59 +7,69 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        <!-- .Copies à rendre -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Évaluations à faire
+                        Copies à rendre
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body" ng-repeat="eval in copiesARendre">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <img data-holder-rendered="true" src="{{eval.cours.image}}"
+                                         style="height: 200px; width: 90%; display: block;" alt="{{eval.cours.nom}}">
+                                    <div class="caption">
+                                        <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{eval.cours.nom}}">{{eval.cours.nom}}</h3>
+                                        <p>Il vous reste {{eval.copies.length}} copies à corriger avant le {{eval.date_fin_correction}}</p>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="">Liste de copies à corriger</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li ng-repeat="copie in eval.copies"><a ui-sref="eleve.evaluations.corriger{(id:copie.id)}">{{copie.id}}</a></li>
+                                            </ul>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+        </div>
+        <!-- .Evaluations à faire -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Évaluations à corriger
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>Référence</th>
-                                    <th>Cours</th>
-                                    <th>Date de fin de correction</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <button class="btn btn-primary pull-right" ng-click="goToHistorique()">Historique des évaluations</button>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 hero-feature" ng-repeat="eval in Eval">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <h3>Cours : {{eval.cours.nom}}</h3>
+                                        <hr>
+                                        <h3>Evaluation : {{eval.nom}}</h3>
+                                        <p>Devoir à rendre avant le {{eval.date_fin_correction}}</p>
+                                        <p>
+                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- /.table-responsive -->
                     </div>
                     <!-- /.panel-body -->
                 </div>
