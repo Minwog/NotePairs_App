@@ -266,6 +266,7 @@ angular.module('NotePairApp')
 
     .factory('LocalEvaluationsService',['$q','EvaluationsService',function ($q,EvaluationsService) {
 
+        var currentEvaluation;
         var _Evaluationsvalue;
 
         var service = {
@@ -278,8 +279,20 @@ angular.module('NotePairApp')
             'saveSection': saveSection,
             'updateSection': updateSection,
             'getSection': trouverSection,
-            'deleteSection':deletSection
+            'deleteSection':deletSection,
+            'memorize':memorize,
+            'getCurrentEval':trouverCurrent
         };
+
+        function memorize(data){
+            currentEvaluation=data;
+        }
+
+        function trouverCurrent(){
+            var deferred = $q.defer();
+            deferred.resolve(currentEvaluation);
+            return deferred.promise;
+        }
 
         function save(data) {
             _Evaluationsvalue.push(data);

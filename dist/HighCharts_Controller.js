@@ -33,7 +33,7 @@ angular.module('NotePairApp')
                 };
 
 
-                console.log("pas = " + pasnote + " max = " + maxnote + " min = " + minnote)
+                //console.log("pas = " + pasnote + " max = " + maxnote + " min = " + minnote)
                 for (var i = minnote - 2 * pasnote; i <= maxnote + 2 * pasnote; i += pasnote / 2) {
                     categoriestmp.push(Math.round(i * 100) / 100);
                 }

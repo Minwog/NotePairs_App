@@ -26,6 +26,18 @@ angular.module('NotePairApp')
         $scope.coursList=UserService.getCours($scope.enseignant.id);
 
 
+        console.log(LocalEvaluationsService)
+        LocalEvaluationsService.getCurrentEval()
+            .then(function(data){
+                $scope.newEval=data;
+                $scope.newEval.sectionList=$scope.getSections(data.id);
+                var i=0;
+                for(i=0;i<$scope.newEval.sectionList.length;i++){
+                    $scope.newEval.sectionList[i].critereList=$scope.getCriteres($scope.newEval.sectionList[i].id)
+                }
+            });
+
+
         $('input[type="checkbox"]').on('change', function() {
             $('input[name="' + this.name + '"]').not(this).prop('checked', false);
         });
@@ -208,14 +220,20 @@ angular.module('NotePairApp')
             'sectionList':[]
         };
 
+
+        $scope.evals=EvaluationsService.query()
+        console.log($scope.evals);
+
         $scope.createEval=function(){
             console.log($scope.newEval);
             EvaluationsService.save($scope.newEval)
                 .$promise.then(function(data) {
-                $scope.newEval=data;
-                console.log(data);
-                $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
+                    $scope.newEval=data;
+                    console.log(data);
+                    $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
+                    LocalEvaluationsService.memorize($scope.newEval);
             });
+            console.log($scope.newEval);
         }
 
         $scope.getSections=function(id){
@@ -223,6 +241,7 @@ angular.module('NotePairApp')
                 .then(function (data) {
                     $scope.newEval.sectionList=data;
                     console.log($scope.newEval.sectionList);
+                    LocalEvaluationsService.memorize($scope.newEval);
                 });
         }
 
@@ -235,7 +254,8 @@ angular.module('NotePairApp')
             }
             EvaluationsService.createSection($scope.newEval.id, section)
                 .then(function(data) {
-                    newEval.sectionList=$scope.getSections($scope.newEval.id);
+                    $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
+                    LocalEvaluationsService.memorize($scope.newEval);
                 });
         }
 
@@ -243,6 +263,7 @@ angular.module('NotePairApp')
             EvaluationsService.deleteSection(id)
                 .then(function (data) {
                     console.log($scope.newEval.sectionList);
+                    LocalEvaluationsService.memorize($scope.newEval);
                 });
         }
 
@@ -267,6 +288,7 @@ angular.module('NotePairApp')
                 .then(function (data) {
                     section.critereList=data;
                     console.log(section.critereList);
+                    LocalEvaluationsService.memorize($scope.newEval);
                 });
         }
 
@@ -282,6 +304,7 @@ angular.module('NotePairApp')
                 .then(function(data) {
                     section.critereList=$scope.getCriteres(section);
                     console.log(section.critereList);
+                    LocalEvaluationsService.memorize($scope.newEval);
                 });
         }
 
@@ -291,6 +314,7 @@ angular.module('NotePairApp')
                     $scope.newCritere=data;
                     console.log(data);
                     section.critereList=$scope.getCriteres(section);
+                    LocalEvaluationsService.memorize($scope.newEval);
             });
         }
 
