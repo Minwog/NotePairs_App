@@ -2,10 +2,207 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Tableau de Bord</h1>
+                <h1 class="page-header">Dashboard</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
+
+        <script type="text/javascript">
+            (function() {
+                $(function() {
+                    $('.thumbnail').matchHeight({
+                        byRow: true,
+                        property: 'height',
+                        target: null,
+                        remove: false
+                    });
+                });
+            })();
+        </script>
+
+        <style>
+            .thumbnail{
+                height:420px;
+                width:250px;
+            }
+        </style>
+
+        <!-- /.row -->
+        <div class="row">
+            <!-- .panel-heading -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Devoirs à rendre
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6 hero-feature">
+                                <div class="thumbnail">
+                                    <img data-holder-rendered="true" src="{{devoir.cours.image}}"
+                                         style="height: 200px; width: 90%; display: block;" alt="{{devoir.cours.nom}}">
+                                    <div class="caption">
+                                        <h3>Evaluation : {{evaluation.nom}}</h3>
+                                        <p>Devoir à rendre avant le {{date}}</p>
+                                        <p>
+                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
+                                            </button>
+                                        </p>
+                                        <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{devoir.cours.nom}}">{{devoir.cours.nom}}</h3>
+                                        <p>Devoir à rendre avant le {{devoir.date_rendu}}</p>
+                                        <button class="btn btn-primary" ui-sref="eleve.rendre_copie({id:devoir.id)}">
+                                            Faire le devoir
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 hero-feature">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/800x500" alt="">
+                                    <div class="caption">
+                                        <h3>Nom du cours</h3>
+                                        <p>3 devoirs à rendre avant le 10/10/2016</p>
+                                        <p>
+                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 hero-feature">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/800x500" alt="">
+                                    <div class="caption">
+                                        <h3>Nom du cours</h3>
+                                        <p>Devoir à rendre avant le 10/10/2016</p>
+                                        <p>
+                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 hero-feature">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/800x500" alt="">
+                                    <div class="caption">
+                                        <h3>Nom du cours</h3>
+                                        <p>Devoir à rendre avant le 10/10/2016</p>
+                                        <p>
+                                            <button class="btn btn-primary"ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 hero-feature">
+                                <div class="thumbnail">
+                                    <img src="http://placehold.it/800x500" alt="">
+                                    <div class="caption">
+                                        <h3>Nom du cours</h3>
+                                        <p>Devoir à rendre avant le 10/10/2016</p>
+                                        <p>
+                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
+                                            </button>
+
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+
+
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Évaluations en cours
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4" ng-repeat="eval in evalsAFaire">
+                                <div class="thumbnail">
+                                    <img data-holder-rendered="true" src="{{eval.cours.image}}"
+                                         style="height: 200px; width: 90%; display: block;" alt="{{eval.cours.nom}}">
+                                    <div class="caption">
+                                        <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{eval.cours.nom}}">{{eval.cours.nom}}</h3>
+                                        <p>Il vous reste {{eval.copies.length}} copies à corriger avant le {{eval.date_fin_correction}}</p>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="">Liste de copies à corriger</span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li ng-repeat="copie in eval.copies"><a ui-sref="eleve.evaluations.corriger{(id:copie.id)}">{{copie.id}}</a></li>
+                                            </ul>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Cours
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div>
+                                <a ui-sref="eleve.mesCours">Voir mes cours</a><br>
+                                <a ui-sref="eleve.cours">Voir la liste des cours</a><br>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+
+            <!-- /.col-lg-6 -->
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Groupes
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div>
+                            <a ui-sref="eleve.mesEvaluations">Voir mes groupes</a><br>
+                            <a ui-sref="eleve.Evaluations">Créer un groupe</a><br>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+
+
+            <!-- /modified -->
+
 
 
 
