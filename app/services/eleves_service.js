@@ -41,6 +41,26 @@ angular.module('NotePairApp')
                 return deferred.promise
             }
 
+            function getCopiesByUser(id){
+                var deferred=$q.defer();
+                $http.get('http://localhost:8000/api/copiesbyuser/'+id).success(
+                    function (data) {
+                        deferred.resolve(data);
+                    }
+                )
+
+                return deferred.promise
+            }
+            function getEvalByUser(id){
+                var deferred=$q.defer();
+                $http.get('http://localhost:8000/api/user/'+id+'/evaluations').success(
+                    function (data) {
+                        deferred.resolve(data);
+                    }
+                )
+
+                return deferred.promise
+            }
 
             return {
                 'query': resource.query,
@@ -49,7 +69,9 @@ angular.module('NotePairApp')
                 'get': resource.get,
                 'delete': resource.delete,
                 'getByRole': ByRole,
-                'getCours':getCours
+                'getCours':getCours,
+                'getCopiesByUser':getCopiesByUser,
+                'getEvalByUser':getEvalByUser
             };
 
         }])

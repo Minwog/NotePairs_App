@@ -39,8 +39,8 @@
                  <div class="col-md-4 col-sm-6 hero-feature" ng-repeat="eval in Eval">
                     <div class="thumbnail">
                         <div class="caption">
-                            <h3>Evaluation : {{eval.nom}}</h3>
-                            <p>Devoir à rendre avant le {{eval.date_fin_correction}}</p>
+                            <h3>Evaluation : <br><span class="small">{{eval.nom}}</span></h3>
+                            <p>Devoir à rendre avant le :<br><strong>{{eval.date_fin_correction | date:dd/mm/yy}}</strong></p>
                             <p>
                                 <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
                                     Faire le devoir

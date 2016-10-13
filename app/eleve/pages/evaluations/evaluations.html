@@ -15,15 +15,15 @@
                         Copies à rendre
                     </div>
                     <!-- /.panel-heading -->
-                    <div class="panel-body" ng-repeat="eval in copiesARendre">
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4">
+                    <div class="row">
+                        <div class="panel-body">
+                            <div class="col-sm-6 col-md-5" ng-repeat="eval in copiesARendre">
                                 <div class="thumbnail">
                                     <img data-holder-rendered="true" src="{{eval.cours.image}}"
                                          style="height: 200px; width: 90%; display: block;" alt="{{eval.cours.nom}}">
                                     <div class="caption">
                                         <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{eval.cours.nom}}">{{eval.cours.nom}}</h3>
-                                        <p>Il vous reste {{eval.copies.length}} copies à corriger avant le {{eval.date_fin_correction}}</p>
+                                        <p>Il vous reste ..{{eval.copies.length}} copies à corriger avant le :<br><strong>{{eval.date_rendu | date:dd/mm/yy}}</strong></p>
                                         <div class="dropdown">
                                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                                 <span class="">Liste de copies à corriger</span>
@@ -54,13 +54,13 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-4 col-sm-6 hero-feature" ng-repeat="eval in Eval">
+                            <div class="col-md-5 col-sm-6 hero-feature" ng-repeat="eval in Eval">
                                 <div class="thumbnail">
                                     <div class="caption">
-                                        <h3>Cours : {{eval.cours.nom}}</h3>
+                                        <h3>Cours : <span class="small">{{eval.cours.nom}}</span></h3>
                                         <hr>
-                                        <h3>Evaluation : {{eval.nom}}</h3>
-                                        <p>Devoir à rendre avant le {{eval.date_fin_correction}}</p>
+                                        <h3>Evaluation : <hr><span class="small">{{eval.nom}}</span></h3>
+                                        <p>Devoir à rendre avant le {{eval.date_fin_correction| date:dd/mm/yy}}</p>
                                         <p>
                                             <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
                                                 Faire le devoir
