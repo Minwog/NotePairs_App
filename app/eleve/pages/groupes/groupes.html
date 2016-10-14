@@ -11,16 +11,29 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Bar Chart Example
+                        Mes Groupes
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <div id="morris-bar-chart"></div>
+                        <div class="row">
+                            <div ng-if="MesGroupes.length<1" class="alert alert-success">Vous n'êtes pas affectés à un groupe.</div>
+                            <div class="col-md-5 col-sm-6 hero-feature" ng-repeat="groupe in MesGroupes">
+                                <div class="thumbnail">
+                                    <div class="caption">
+                                        <h3>Groupe : <span class="small">{{groupe.nom}}</span></h3>
+                                        <hr>
+                                        <h4>Elèves : <hr><span class="small">...</span></h4>
+                                        <h4>Cours associé : <hr><span class="small">...</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>
+            <!-- /.col-lg-6 -->
         </div>
     </div>
 </div>
