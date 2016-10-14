@@ -1,7 +1,6 @@
 angular.module('NotePairApp')
-    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', 'UserService', 'EvaluationsService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,LocalEvaluationsService,UserService,EvaluationsService) {
+    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', 'UserService', 'EvaluationsService', 'localStorageService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,localEvaluationsService,UserService,EvaluationsService, LocalStorageService) {
         $scope.mps='dist/mps.json';
-        $scope.file=false;
         $scope.critere=0;
         $scope.enseignant = {
             "cours":[
@@ -17,25 +16,48 @@ angular.module('NotePairApp')
             $scope.extensions=data;
         });
 
-        EvaluationsService.getMesEvaluations($scope.enseignant.id)
-            .then(function (data) {
-                $scope.evaluations=data;
-            })
 
+
+        /*$scope.getCriteres=function(section){
+            EvaluationsService.getCriteres(section.id)
+                .then(function (data) {
+                    section.critereList=data;
+                    console.log(section.critereList);
+                });
+            console.log(sectionList);
+        }*/
 
         $scope.coursList=UserService.getCours($scope.enseignant.id);
 
-
-        console.log(LocalEvaluationsService)
-        LocalEvaluationsService.getCurrentEval()
-            .then(function(data){
-                $scope.newEval=data;
-                $scope.newEval.sectionList=$scope.getSections(data.id);
-                var i=0;
-                for(i=0;i<$scope.newEval.sectionList.length;i++){
-                    $scope.newEval.sectionList[i].critereList=$scope.getCriteres($scope.newEval.sectionList[i].id)
-                }
-            });
+        if(LocalStorageService.get('eval')){
+            if(LocalStorageService.get('sectionList')){
+                $scope.sectionList=LocalStorageService.get('sectionList');
+                /*var i;
+                for(i=0;i<$scope.sectionList.length;i++) {
+                    console.log($scope.sectionList[i]);
+                    EvaluationsService.getCriteres($scope.sectionList[i].id)
+                        .then(function (data) {
+                            $scope.critereList.push(data);
+                            console.log($scope.critereList);
+                        });
+                    LocalStorageService.set('critereList',$scope.critereList);
+                    console.log($scope.critereList);
+                }*/
+            }
+            $scope.newEval=JSON.parse(LocalStorageService.get('eval'));
+            console.log($scope.newEval);
+        } else {
+            $scope.newEval={
+                'enseignant_id':1,
+                'cours_id':1,
+                'mode_calcul':1,
+                'nom':'aa',
+                'date_rendu':'',
+                'date_fin_correction':'',
+                'nombreEval':''
+            };
+            console.log($scope.newEval);
+        }
 
 
         $('input[type="checkbox"]').on('change', function() {
@@ -198,40 +220,17 @@ angular.module('NotePairApp')
             }
         ]*/
 
-        $scope.newSection={
-            'id':'',
-            'titre':'',
-            'description':'',
-            'enonce':'',
-            'ordre':'',
-            'points':'',
-            'type_rendu':'',
-            'evaluation_id':''
-        };
-
-        $scope.newEval={
-            'enseignant_id':1,
-            'cours_id':1,
-            'mode_calcul':1,
-            'nom':'aa',
-            'date_rendu':'',
-            'date_fin_correction':'',
-            'nombreEval':'',
-            'sectionList':[]
-        };
-
-
-        $scope.evals=EvaluationsService.query()
-        console.log($scope.evals);
-
         $scope.createEval=function(){
+            $scope.newEval.enseignant_id=1;
+            $scope.newEval.cours_id=1;
+            $scope.newEval.nombreEval=2;
+            $scope.newEval.nom="Eval de test";
             console.log($scope.newEval);
             EvaluationsService.save($scope.newEval)
                 .$promise.then(function(data) {
                     $scope.newEval=data;
                     console.log(data);
-                    $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
-                    LocalEvaluationsService.memorize($scope.newEval);
+                    LocalStorageService.set('eval', JSON.stringify($scope.newEval));
             });
             console.log($scope.newEval);
         }
@@ -239,31 +238,34 @@ angular.module('NotePairApp')
         $scope.getSections=function(id){
             EvaluationsService.getSections(id)
                 .then(function (data) {
-                    $scope.newEval.sectionList=data;
-                    console.log($scope.newEval.sectionList);
-                    LocalEvaluationsService.memorize($scope.newEval);
-                });
+                    $scope.sectionList=data;
+                    console.log($scope.sectionList);
+                    LocalStorageService.set('sectionList', $scope.sectionList);
+                    console.log($scope.sectionList);
+            });
         }
 
         $scope.addSection = function (section) {
-            $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
-            if($scope.newEval.sectionList!=null){
-                section.ordre=$scope.newEval.sectionList.length+1;
+            if($scope.sectionList!=null){
+                section.ordre=$scope.sectionList.length+1;
             } else {
                 section.ordre=1;
             }
+            console.log($scope.newEval.id);
             EvaluationsService.createSection($scope.newEval.id, section)
                 .then(function(data) {
-                    $scope.newEval.sectionList=$scope.getSections($scope.newEval.id);
-                    LocalEvaluationsService.memorize($scope.newEval);
+                    console.log($scope.newEval.id);
+                    $scope.sectionList=$scope.getSections($scope.newEval.id);
+                    LocalStorageService.set('sectionList', $scope.sectionList);
+                    console.log($scope.sectionList)
                 });
         }
 
         $scope.deleteSection=function(id){
             EvaluationsService.deleteSection(id)
                 .then(function (data) {
-                    console.log($scope.newEval.sectionList);
-                    LocalEvaluationsService.memorize($scope.newEval);
+                    console.log($scope.sectionList);
+                    LocalStorageService.set('sectionList', $scope.sectionList);
                 });
         }
 
@@ -283,42 +285,7 @@ angular.module('NotePairApp')
             });
         }
 
-        $scope.getCriteres=function(section){
-            EvaluationsService.getCriteres(section.id)
-                .then(function (data) {
-                    section.critereList=data;
-                    console.log(section.critereList);
-                    LocalEvaluationsService.memorize($scope.newEval);
-                });
-        }
-
-        $scope.addCritere=function(section, critere) {
-            console.log(section.id);
-            section.critereList = $scope.getCriteres(section);
-            if ($scope.critereList != null) {
-                critere.ordre = section.critereList.length + 1;
-            } else {
-                critere.ordre = 1;
-            }
-            EvaluationsService.createCritere(section.id, critere)
-                .then(function(data) {
-                    section.critereList=$scope.getCriteres(section);
-                    console.log(section.critereList);
-                    LocalEvaluationsService.memorize($scope.newEval);
-                });
-        }
-
-        $scope.deleteCritere=function(section){
-            EvaluationsService.deleteCritere(section.id)
-                .then(function(data) {
-                    $scope.newCritere=data;
-                    console.log(data);
-                    section.critereList=$scope.getCriteres(section);
-                    LocalEvaluationsService.memorize($scope.newEval);
-            });
-        }
-
-        $scope.sectionUp=function(pos, data){
+        /*$scope.sectionUp=function(pos, data){
             for(var i=data.length-1; i >= 0; i--){
                 if(data[i].ordre == pos && data[i].ordre > 1){
                     data[i].ordre = data[i].ordre-1;
@@ -338,7 +305,7 @@ angular.module('NotePairApp')
                     data[i].ordre = data[i].ordre-1;
                 }
             }
-        }
+        }*/
 
 
 
