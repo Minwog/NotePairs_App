@@ -2,13 +2,15 @@
 <div>
     <div id="page-wrapper">
         <!-- Page Heading -->
-        <div class="jumbotron">
-            <h2>{{MonCours.nom}}</h2>
-            <hr>
-            <p>{{MonCours.categorie.nom}}</p>
-            <hr>
-            <p><span class="small">Professeur(s) :</span></p>
-            <p><span ng-repeat="ens in EnseignantsAssocies | filter:{role:{id:3}} ">   <em class="small">{{ens.prenom}} {{ens.nom}}</em>  . </span></p>
+        <div class="margeJumbo">
+            <div class="jumbotron">
+                <h2>{{MonCours.nom}}</h2>
+                <hr>
+                <p>{{MonCours.categorie.nom}}</p>
+                <hr>
+                <p><span class="small">Professeur(s) :</span></p>
+                <p><span ng-repeat="ens in EnseignantsAssocies | filter:{role:{id:3}} ">   <em class="small">{{ens.prenom}} {{ens.nom}}</em>  . </span></p>
+            </div>
         </div>
         <!-- /.row -->
 
@@ -21,12 +23,14 @@
             <hr>
         </div>
         <!-- /.row -->
-
+        <!-- Eleve Collapse -->
         <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-target="#collapse1">Elèves</a>
+                        <a data-toggle="collapse" ng-click="expand()" data-target="#collapse1">Elèves
+                            <span ng-if="expanded" class="pull-right"><i class="fa fa-angle-up"></i></span>
+                            <span ng-if="!expanded" class="pull-right" ><i class="fa fa-angle-down"></i></span></a>
                     </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse">

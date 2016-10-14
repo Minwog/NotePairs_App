@@ -6,6 +6,8 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+
+        <!-- .Copies à rendre -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -15,22 +17,22 @@
                     <!-- /.panel-heading -->
                     <div class="row">
                         <div class="panel-body">
+                            <div ng-if="copiesARendre.length<1" class="alert alert-success">Vous n'avez pas de copies à rendre</div>
                             <div class="col-sm-6 col-md-5" ng-repeat="eval in copiesARendre">
                                 <div class="thumbnail">
                                     <img data-holder-rendered="true" src="http://placehold.it/800x500"
                                          style="height: 200px; width: 90%; display: block;" alt="{{eval.cours.nom}}">
                                     <div class="caption">
-                                        <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{eval.cours.nom}}">{{eval.cours.nom}}</h3>
-                                        <p>Il vous reste ..{{eval.copies.length}} copies à corriger avant le :<br><strong>{{eval.date_rendu | date:dd/mm/yy}}</strong></p>
-                                        <div class="dropdown">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <span class="">Liste de copies à corriger</span>
-                                                <span class="caret"></span>
+                                        <h3>Cours : <span class="small">{{cours.nom}}</span></h3>
+                                        <hr>
+                                        <h3>Evaluation : <hr><span class="small">{{evaluation.nom}}</span></h3>
+                                        <p>Devoir à rendre avant le ...{{evaluation.date_fin_correction| date:dd/mm/yy}}</p>
+                                        <hr>
+
+                                        <p>
+                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
+                                                Faire le devoir
                                             </button>
-                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
-                                                <li ng-repeat="copie in eval.copies"><a ui-sref="eleve.evaluations.corriger{(id:copie.id)}">{{copie.id}}</a></li>
-                                            </ul>
-                                        </div>
                                         </p>
                                     </div>
                                 </div>
@@ -53,17 +55,33 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="row">
+                            <div ng-if="Eval.length<1" class="alert alert-success">Vous n'avez pas d'évaluations en attente</div>
                             <div class="col-md-5 col-sm-6 hero-feature" ng-repeat="eval in Eval">
                                 <div class="thumbnail">
                                     <div class="caption">
-                                        <h3>Cours : <span class="small">{{eval.cours.nom}}</span></h3>
+                                        <h3 class="text-danger" style="text-align: center">{{eval.cours.nom}}</h3>
                                         <hr>
-                                        <h3>Evaluation : <hr><span class="small">{{eval.nom}}</span></h3>
-                                        <p>Devoir à rendre avant le {{eval.date_fin_correction| date:dd/mm/yy}}</p>
-                                        <p>
-                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
-                                                Faire le devoir
+                                        <h4 style="text-align: center">Evaluation : <span class="small">{{eval.nom}}</span><hr></h4>
+                                        <p style="text-align: center">Il vous reste ..{{eval.copies.length}} copies à corriger avant le :<br><strong>{{eval.date_rendu | date:dd/mm/yy}}</strong></p>
+                                        <hr>
+
+                                        <div class="dropdown" style="text-align: center">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="">Liste de copies à corriger</span>
+                                                <span class="caret"></span>
                                             </button>
+                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li > <!-- ng-repeat="copie in eval.evalRendues" -->
+                                                    <a ui-sref="eleve.evaluations.corriger({id:1})">Copie 1</a>
+                                                </li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a ui-sref="eleve.evaluations.corriger({id:2})">Copie 2</a>
+                                                </li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a ui-sref="eleve.evaluations.corriger({id:3})">Copie 3</a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                         </p>
                                     </div>
                                 </div>

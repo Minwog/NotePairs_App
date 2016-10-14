@@ -51,6 +51,7 @@ angular.module('NotePairApp')
 
                 return deferred.promise
             }
+
             function getEvalByUser(id){
                 var deferred=$q.defer();
                 $http.get('http://localhost:8000/api/user/'+id+'/evaluations').success(
@@ -61,6 +62,7 @@ angular.module('NotePairApp')
 
                 return deferred.promise
             }
+
 
             return {
                 'query': resource.query,

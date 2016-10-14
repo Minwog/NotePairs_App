@@ -1,6 +1,6 @@
 angular.module('NotePairApp')
-    .factory('GroupesService', ['$resource',function($resource) {
-        return $resource('http://localhost:8000/api/groupes/:id',{},{
+    .factory('GroupesService', ['$resource','$q','$http', function($resource,$q,$http) {
+        var resource = $resource('http://localhost:8000/api/groupes/:id',{},{
             'query': {method: 'GET', isArray: true},
             'get': {
                 method: 'GET',
@@ -12,7 +12,27 @@ angular.module('NotePairApp')
                 }
             },
             'update': {method: 'PUT'}
-        });
+        })
+
+        function getGroupeByUser(id){
+            var deferred=$q.defer();
+            $http.get('http://localhost:8000/api/users/'+id+'/groupe/all').success(
+                function (data) {
+                    deferred.resolve(data);
+                }
+            )
+
+            return deferred.promise
+        }
+
+        return {
+            'query': resource.query,
+            'save': resource.save,
+            'update': resource.update,
+            'get': resource.get,
+            'delete': resource.delete,
+            'getGroupeByUser':getGroupeByUser
+        };
     }])
 
     .service('alerteService',['$window',function ($window) {

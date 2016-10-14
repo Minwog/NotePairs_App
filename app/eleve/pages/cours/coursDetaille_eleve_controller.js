@@ -10,4 +10,9 @@ angular.module('NotePairApp')
         CoursService.getEval($stateParams.id ).then(function(data){
             $scope.Eval=data;
         });
+
+        $scope.expanded = false;
+        $scope.expand= function () {
+            $scope.expanded = !$scope.expanded;
+        }
     }]);

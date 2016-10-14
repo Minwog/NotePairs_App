@@ -7,33 +7,45 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        <!-- .Copies à rendre -->
+        <!-- .Copies Rendues -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Copies à rendre
+                        Copies rendues
                     </div>
                     <!-- /.panel-heading -->
                     <div class="row">
                         <div class="panel-body">
+                            <div ng-if="copiesARendre.length<1" class="alert alert-success">Vous n'avez pas de copies à rendre</div>
                             <div class="col-sm-6 col-md-5" ng-repeat="eval in copiesARendre">
                                 <div class="thumbnail">
                                     <img data-holder-rendered="true" src="http://placehold.it/800x500"
                                          style="height: 200px; width: 90%; display: block;" alt="{{eval.cours.nom}}">
                                     <div class="caption">
                                         <h3 style="max-height:55px; overflow:hidden" data-toggle="popover" title="{{eval.cours.nom}}">{{eval.cours.nom}}</h3>
-                                        <p>Il vous reste ..{{eval.copies.length}} copies à corriger avant le :<br><strong>{{eval.date_rendu | date:dd/mm/yy}}</strong></p>
+                                        <p>Copie rendue le :<span class="pull-right"><strong >{{eval.date_rendu | date:dd/mm/yy}}</strong></span></p>
+                                        <hr>
+                                        <p>Note Obtenue : <strong>{{copie.note}}</strong></p>
+                                        <hr>
+
                                         <div class="dropdown">
                                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                <span class="">Liste de copies à corriger</span>
+                                                <span class="">Voir Copie par Section</span>
                                                 <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
-                                                <li ng-repeat="copie in eval.copies"><a ui-sref="eleve.evaluations.corriger{(id:copie.id)}">{{copie.id}}</a></li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a >Section 1</a> <!-- ui-sref="eleve.copie.section({id:section.id})" -->
+                                                </li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a >Section 2</a> <!-- ui-sref="eleve.copie.section({id:section.id})" -->
+                                                </li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a >Section 3</a> <!-- ui-sref="eleve.copie.section({id:section.id})" -->
+                                                </li>
                                             </ul>
                                         </div>
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -49,23 +61,39 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Évaluations à corriger
+                        Corrections effectuées
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="row">
+                            <div ng-if="Eval.length<1" class="alert alert-success">Vous n'avez pas d'évaluations en attente</div>
                             <div class="col-md-5 col-sm-6 hero-feature" ng-repeat="eval in Eval">
                                 <div class="thumbnail">
                                     <div class="caption">
-                                        <h3>Cours : <span class="small">{{eval.cours.nom}}</span></h3>
+                                        <h3>Cours : <span class="pull-right text-info">{{eval.cours.nom}}</span></h3>
                                         <hr>
-                                        <h3>Evaluation : <hr><span class="small">{{eval.nom}}</span></h3>
+                                        <h3>Evaluation : <span class="pull-right text-info">{{eval.nom}}</span></h3>
+                                        <hr>
                                         <p>Devoir à rendre avant le {{eval.date_fin_correction| date:dd/mm/yy}}</p>
-                                        <p>
-                                            <button class="btn btn-primary" ui-sref="eleve.rendre_copie">
-                                                Faire le devoir
+                                        <hr>
+
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <span class="">Voir Correction par Section</span>
+                                                <span class="caret"></span>
                                             </button>
-                                        </p>
+                                            <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+                                                <li > <!-- ng-repeat="copie in eval.evalRendues" -->
+                                                    <a >Section 1</a> <!-- ui-sref="eleve.correction.section({id:section.id})" -->
+                                                </li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a >Section 2</a> <!-- ui-sref="eleve.correction.section({id:section.id})" -->
+                                                </li>
+                                                <li > <!-- ng-repeat="copie in eval.copiesRendues" -->
+                                                    <a >Section 3</a> <!-- ui-sref="eleve.correction.section({id:section.id})" -->
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
