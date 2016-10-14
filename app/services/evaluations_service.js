@@ -31,7 +31,7 @@ angular.module('NotePairApp')
 
         function getSections(id) {
             var deferred=$q.defer();
-            $http.get('http://localhost:8000/api/evaluations/'+id+'/sections').success(
+            $http.get('http://localhost:8000/api/evaluations/'+ id +'/sections').success(
                 function (data) {
                     deferred.resolve(data);
                     console.log(data);
@@ -56,6 +56,7 @@ angular.module('NotePairApp')
             $http.post('http://localhost:8000/api/evaluations/'+id+'/sections', section).success(
                 function (data) {
                     deferred.resolve(data);
+                    console.log(id);
                     console.log(data);
                 }
             )
@@ -119,7 +120,7 @@ angular.module('NotePairApp')
 
         function updateOrdreSection(id, ordre){
             var deferred=$q.defer();
-            $http.delete('http://localhost:8000/api/sections/'+id+'/update_ordre'+ordre).success(
+            $http.put('http://localhost:8000/api/sections/'+id+'/update_ordre/'+ordre).success(
                 function (data) {
                     deferred.resolve(data);
                     console.log(data);
@@ -130,7 +131,7 @@ angular.module('NotePairApp')
 
         function updateOrdreCritere(id, ordre){
             var deferred=$q.defer();
-            $http.delete('http://localhost:8000/api/criteres/'+id+'/update_ordre'+ordre).success(
+            $http.put('http://localhost:8000/api/criteres/'+id+'/update_ordre/'+ordre).success(
                 function (data) {
                     deferred.resolve(data);
                     console.log(data);
@@ -280,19 +281,8 @@ angular.module('NotePairApp')
             'updateSection': updateSection,
             'getSection': trouverSection,
             'deleteSection':deletSection,
-            'memorize':memorize,
-            'getCurrentEval':trouverCurrent
         };
 
-        function memorize(data){
-            currentEvaluation=data;
-        }
-
-        function trouverCurrent(){
-            var deferred = $q.defer();
-            deferred.resolve(currentEvaluation);
-            return deferred.promise;
-        }
 
         function save(data) {
             _Evaluationsvalue.push(data);

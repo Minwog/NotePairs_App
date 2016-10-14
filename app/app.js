@@ -6,7 +6,8 @@
         'pdf',
         'textAngular',
         'rzModule',
-        'checklist-model'
+        'checklist-model',
+        'LocalStorageModule'
     ]);
 
 })();
