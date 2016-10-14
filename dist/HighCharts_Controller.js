@@ -9,7 +9,7 @@ angular.module('NotePairApp')
         $(document).ready(function () {
             var categoriestmp = [];
             var notestmp = [];
-            var pointstmp = Array().fill(null);
+            var pointstmp = [];
             var noteValues = [];
             $.getJSON($scope.filesrc, function (data) {
                 for (var i = 0; i < data.length; i++) {
@@ -33,7 +33,7 @@ angular.module('NotePairApp')
                 };
 
 
-                console.log("pas = " + pasnote + " max = " + maxnote + " min = " + minnote)
+                //console.log("pas = " + pasnote + " max = " + maxnote + " min = " + minnote)
                 for (var i = minnote - 2 * pasnote; i <= maxnote + 2 * pasnote; i += pasnote / 2) {
                     categoriestmp.push(Math.round(i * 100) / 100);
                 }
@@ -75,7 +75,9 @@ angular.module('NotePairApp')
                 console.log(notestmp)
                 console.log(categoriestmp)
                 console.log(pointstmp)
+                console.log(Math.max.apply(Math, notestmp));
                 */
+
 
 
                 $('#container').highcharts({
@@ -95,11 +97,22 @@ angular.module('NotePairApp')
                         },
                         categories: categoriestmp
                     },
-                    yAxis: {
-                        title: {
-                            text: 'Nombre d\'occurences de la note'
+                    yAxis: [
+                        {
+                            title: {
+                                text: 'Nombre d\'occurences de la note'
+                            }
+                        },
+                        {
+                            labels: {
+                                format: '{value} %',
+                            },
+                            title: {
+                                text: 'Échelle de fiabilité'
+                            },
+                            opposite: true
                         }
-                    },
+                    ],
                     plotOptions: {
                         series: {
                             connectNulls: true,
@@ -138,16 +151,30 @@ angular.module('NotePairApp')
                         data: notestmp,
                         name: "Nombre d'évaluateurs",
                         dragMinY: 0,
-                        type: 'column'
+                        type: 'column',
+                        yAxis: 0
                     },
-                        {
-                            data: pointstmp,
-                            name: "Jauge de fiabilité",
-                            draggableX: true,
-                            dragMinX: 0,
-                            dragMaxX: pointstmp.length-1,
-                            dragPrecisionX: 2
-                        }]
+                    {
+                        data: pointstmp,
+                        name: "Jauge de fiabilité",
+                        type: "line",
+                        draggableX: true,
+                        dragMinX: 0,
+                        dragMaxX: pointstmp.length-1,
+                        dragPrecisionX: 2,
+                        tooltip: {
+                            pointFormatter: function() {
+                                if (this.y > 0) {
+                                    return this.series.name+': '+'<b>' + 100 + ' %</b>';
+
+                                } else {
+                                    return this.series.name+': '+'<b>' + this.y + ' %</b>';
+                                }
+                            },
+                            valueSuffix: ' %'
+                        },
+                        yAxis: 1
+                    }]
                 });
             });
         });

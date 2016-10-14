@@ -75,7 +75,9 @@
           return function(data, rowKey, colKey) {
             return {
               count: 0,
+              rec: "",
               push: function() {
+                this.rec += JSON.stringify(record);
                 return this.count++;
               },
               value: function() {
@@ -96,9 +98,11 @@
           return function(data, rowKey, colKey) {
             return {
               uniq: [],
+              rec: "",
               push: function(record) {
                 var ref;
                 if (ref = record[attr], indexOf.call(this.uniq, ref) < 0) {
+                  this.rec += JSON.stringify(record);
                   return this.uniq.push(record[attr]);
                 }
               },
@@ -118,9 +122,11 @@
           return function(data, rowKey, colKey) {
             return {
               uniq: [],
+              rec: "",
               push: function(record) {
                 var ref;
                 if (ref = record[attr], indexOf.call(this.uniq, ref) < 0) {
+                  this.rec += JSON.stringify(record);
                   return this.uniq.push(record[attr]);
                 }
               },
@@ -145,8 +151,10 @@
           return function(data, rowKey, colKey) {
             return {
               sum: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
+                  this.rec += JSON.stringify(record);
                   return this.sum += parseFloat(record[attr]);
                 }
               },
@@ -169,10 +177,12 @@
           return function(data, rowKey, colKey) {
             return {
               val: null,
+              rec: "",
               push: function(record) {
                 var ref, x;
                 x = parseFloat(record[attr]);
                 if (!isNaN(x)) {
+                  this.rec += JSON.stringify(record);
                   return this.val = Math.min(x, (ref = this.val) != null ? ref : x);
                 }
               },
@@ -195,10 +205,12 @@
           return function(data, rowKey, colKey) {
             return {
               val: null,
+              rec: "",
               push: function(record) {
                 var ref, x;
                 x = parseFloat(record[attr]);
                 if (!isNaN(x)) {
+                  this.rec += JSON.stringify(record);
                   return this.val = Math.max(x, (ref = this.val) != null ? ref : x);
                 }
               },
@@ -222,8 +234,10 @@
             return {
               sum: 0,
               len: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
+                  this.rec += JSON.stringify(record);
                   this.sum += parseFloat(record[attr]);
                   return this.len++;
                 }
@@ -252,6 +266,7 @@
               note: 0,
               len: 0,
               moy_copie: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
 
@@ -275,6 +290,7 @@
                   }
                   //-------------------------------------
 
+                  this.rec += JSON.stringify(record);
                   this.note = parseFloat(record[attr]);
                   this.moy_copie = parseFloat(record.moy_copie);
                   this.coeff += this.coeff_fiabilite_question;
@@ -313,8 +329,10 @@
               len: 0,
               moy_copie: 0,
               r: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
+                  this.rec += JSON.stringify(record);
                   this.note = parseFloat(record[attr]);
                   this.moy_copie = parseFloat(record.moy_copie);
                   this.sum += this.moy_copie-this.note;
@@ -352,6 +370,7 @@
               len: 0,
               B: 0,
               A: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
 
@@ -384,16 +403,17 @@
                   //-------------------------------------
 
 
+                  this.rec += JSON.stringify(record);
                   this.note = parseFloat(record[attr]);
                   this.moy_copie = parseFloat(record.moy_copie);
                   this.coeff += Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
-                  this.sum += this.note*this.coeff;
+                  this.sum += this.note*Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
                   //return this.note*Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
                   return this.len++;
                 }
               },
               value: function() {
-                if(rowKey.length) {
+                if(rowKey.length || true) {
                   //somme_coeff += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
                   //somme += this.note*Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
                   //return this.note*Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
@@ -435,6 +455,7 @@
               len: 0,
               B: 0,
               A: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
                   //this.sum += parseFloat(record[attr]);
@@ -475,6 +496,7 @@
                   }
                   //-------------------------------------
 
+                  this.rec += JSON.stringify(record);
                   this.note = parseFloat(record[attr]);
                   this.moy_copie = parseFloat(record.moy_copie);
                   //somme += Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0);
@@ -485,7 +507,7 @@
                 }
               },
               value: function() {
-                if(rowKey.length) {
+                if(rowKey.length || true) {
                   /*
                   somme += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
                   return Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0);
@@ -523,6 +545,7 @@
               B: 0,
               A: 0,
               seuil: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
 
@@ -554,6 +577,7 @@
                   //-------------------------------------
 
 
+                  this.rec += JSON.stringify(record);
                   this.note = parseFloat(record[attr]);
                   this.moy_copie = parseFloat(record.moy_copie);
                   this.sum += Math.max(Math.min((this.B-Math.abs(this.moy_copie - this.note))/(this.B-this.A),1),0)>this.seuil;
@@ -562,7 +586,7 @@
                 }
               },
               value: function() {
-                if(rowKey.length) {
+                if(rowKey.length || true) {
                   //somme += Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0)>0.75;
                   //return Math.max(Math.min((B-Math.abs(data.rowTotals[rowKey].sum/data.rowTotals[rowKey].len - this.note))/(B-A),1),0)>0.75;
 
@@ -590,8 +614,10 @@
               sum: 0,
               sumsquare: 0,
               len: 0,
+              rec: "",
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
+                  this.rec += JSON.stringify(record);
                   this.sum += parseFloat(record[attr]);
                   this.sumsquare += (parseFloat(record[attr]) * parseFloat(record[attr]));
                   return this.len++;
@@ -606,6 +632,7 @@
           };
         };
       },
+      /*
       sumOverSum: function(formatter) {
         if (formatter == null) {
           formatter = usFmt;
@@ -697,19 +724,20 @@
           };
         };
       }
+      */
     };
     aggregators = (function(tpl) {
       return {
+        "Moyenne": tpl.average(usFmt),
+        "Fiabilité": tpl.fiabilite(usFmtPct),
+        "Biais": tpl.biais(usFmt),
+        "Moyenne pondérée": tpl.weighted_average(usFmt),
+        "Écart-type": tpl.stdev(usFmt),
+        "Écart%moyenne(lignes)": tpl.ecart_average(usFmt),
+        "Nombre_Fiabilité": tpl.nb_fiabilite(usFmt),
         "Effectifs totaux": tpl.count(usFmtInt),
         "Effectifs Uniques": tpl.countUnique(usFmtInt),
         "Liste des Valeurs": tpl.listUnique(", "),
-        "Moyenne": tpl.average(usFmt),
-        "Écart-type": tpl.stdev(usFmt),
-        "Écart%moyenne(lignes)": tpl.ecart_average(usFmt),
-        "Fiabilité": tpl.fiabilite(usFmt),
-        "Nombre_Fiabilité": tpl.nb_fiabilite(usFmt),
-        "Moyenne pondérée(lignes)": tpl.weighted_average(usFmt),
-        "Biais": tpl.biais(usFmt),
         "Minimum": tpl.min(usFmt),
         "Maximum": tpl.max(usFmt)
       };
@@ -1233,6 +1261,14 @@
           val = aggregator.value();
           td = document.createElement("td");
           td.className = "pvtVal row" + i + " col" + j;
+          //-----------------------------
+          td.setAttribute("data-toggle","tooltip");
+          td.setAttribute("data-placement", "top");
+          //td.setAttribute("title", "Grader n°: "+i+" \n"+"Question n°: "+j+" \n  Google Maps \nAnimated Buttons \nModal Boxes \nModal Images \nTooltips \nLoaders \nFilter List \nJS Animations \nProgress Bars \nDropdowns \nSide Navigationv \nTop Navigation \nHTML Includes \nTabs");
+          td.setAttribute("title", JSON.stringify(aggregator.rec));
+          td.setAttribute("style","cursor: pointer");
+          td.setAttribute("onclick","window.location.href = '/#/"+i+"/"+j+"'");
+          //-----------------------------
           td.textContent = aggregator.format(val);
           td.setAttribute("data-value", val);
           tr.appendChild(td);
