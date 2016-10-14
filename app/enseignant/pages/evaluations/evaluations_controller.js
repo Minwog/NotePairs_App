@@ -1,7 +1,7 @@
 angular.module('NotePairApp')
-    .controller('EvaluationsController',['$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', 'UserService', 'EvaluationsService', 'localStorageService', function ($scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,localEvaluationsService,UserService,EvaluationsService, LocalStorageService) {
+    .controller('EvaluationsController',['$route','$scope','$state','$stateParams', 'httpq', 'LocalCoursService', 'LocalEnseignantService', 'LocalEvaluationsService', 'UserService', 'EvaluationsService', 'localStorageService', function ($route,$scope,$state,$stateParams,httpq,LocalCoursService,LocalEnseignantService,localEvaluationsService,UserService,EvaluationsService, LocalStorageService) {
         $scope.mps='dist/mps.json';
-        $scope.critere=0;
+        $scope.newEval=[];
         $scope.enseignant = {
             "cours":[
                 "azdazca",
@@ -15,6 +15,16 @@ angular.module('NotePairApp')
             console.log(data);
             $scope.extensions=data;
         });
+
+        $scope.getSections=function(id){
+            EvaluationsService.getSections(id)
+                .then(function (data) {
+                    $scope.sectionList=data;
+                    console.log($scope.sectionList);
+                    LocalStorageService.set('sectionList', $scope.sectionList);
+                    console.log($scope.sectionList);
+                });
+        }
 
 
 
@@ -30,22 +40,9 @@ angular.module('NotePairApp')
         $scope.coursList=UserService.getCours($scope.enseignant.id);
 
         if(LocalStorageService.get('eval')){
-            if(LocalStorageService.get('sectionList')){
-                $scope.sectionList=LocalStorageService.get('sectionList');
-                /*var i;
-                for(i=0;i<$scope.sectionList.length;i++) {
-                    console.log($scope.sectionList[i]);
-                    EvaluationsService.getCriteres($scope.sectionList[i].id)
-                        .then(function (data) {
-                            $scope.critereList.push(data);
-                            console.log($scope.critereList);
-                        });
-                    LocalStorageService.set('critereList',$scope.critereList);
-                    console.log($scope.critereList);
-                }*/
-            }
             $scope.newEval=JSON.parse(LocalStorageService.get('eval'));
             console.log($scope.newEval);
+            $scope.getSections($scope.newEval.id);
         } else {
             $scope.newEval={
                 'enseignant_id':1,
@@ -223,8 +220,6 @@ angular.module('NotePairApp')
         $scope.createEval=function(){
             $scope.newEval.enseignant_id=1;
             $scope.newEval.cours_id=1;
-            $scope.newEval.nombreEval=2;
-            $scope.newEval.nom="Eval de test";
             console.log($scope.newEval);
             EvaluationsService.save($scope.newEval)
                 .$promise.then(function(data) {
@@ -233,16 +228,6 @@ angular.module('NotePairApp')
                     LocalStorageService.set('eval', JSON.stringify($scope.newEval));
             });
             console.log($scope.newEval);
-        }
-
-        $scope.getSections=function(id){
-            EvaluationsService.getSections(id)
-                .then(function (data) {
-                    $scope.sectionList=data;
-                    console.log($scope.sectionList);
-                    LocalStorageService.set('sectionList', $scope.sectionList);
-                    console.log($scope.sectionList);
-            });
         }
 
         $scope.addSection = function (section) {
